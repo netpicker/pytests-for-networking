@@ -1,0 +1,13 @@
+import pytest
+from comfy.compliance import *
+
+@low(
+  name = rule_31_routing_rules,
+  platform = ['cisco_ios']
+)
+def rule_31_routing_rules(configuration,commands,device):
+    assert '' in configuration  
+
+#Remediation: 
+
+#References: 
