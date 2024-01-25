@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @low(
-  name = rule_241_create_a_single_interface_loopback,
+  name = 'rule_241_create_a_single_interface_loopback',
   platform = ['cisco_ios']
 )
 def rule_241_create_a_single_interface_loopback(configuration,commands,device):

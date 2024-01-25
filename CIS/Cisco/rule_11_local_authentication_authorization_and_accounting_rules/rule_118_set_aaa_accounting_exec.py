@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @low(
-  name = rule_118_set_aaa_accounting_exec,
+  name = 'rule_118_set_aaa_accounting_exec',
   platform = ['cisco_ios']
 )
 def rule_118_set_aaa_accounting_exec(configuration,commands,device):

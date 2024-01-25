@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @low(
-  name = rule_3316_set_authentication_key_chain,
+  name = 'rule_3316_set_authentication_key_chain',
   platform = ['cisco_ios']
 )
 def rule_3316_set_authentication_key_chain(configuration,commands,device):

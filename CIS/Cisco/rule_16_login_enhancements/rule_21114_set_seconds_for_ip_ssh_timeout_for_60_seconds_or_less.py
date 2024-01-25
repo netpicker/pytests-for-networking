@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_21114_set_seconds_for_ip_ssh_timeout_for_60_seconds_or_less,
+  name = 'rule_21114_set_seconds_for_ip_ssh_timeout_for_60_seconds_or_less',
   platform = ['cisco_ios']
 )
 def rule_21114_set_seconds_for_ip_ssh_timeout_for_60_seconds_or_less(configuration,commands,device):

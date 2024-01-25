@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_152_unset_private_for_snmp_server_c_ommunity,
+  name = 'rule_152_unset_private_for_snmp_server_c_ommunity',
   platform = ['cisco_ios']
 )
 def rule_152_unset_private_for_snmp_server_c_ommunity(configuration,commands,device):

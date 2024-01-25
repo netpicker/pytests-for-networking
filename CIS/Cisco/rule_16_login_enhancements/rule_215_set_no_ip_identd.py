@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_215_set_no_ip_identd,
+  name = 'rule_215_set_no_ip_identd',
   platform = ['cisco_ios']
 )
 def rule_215_set_no_ip_identd(configuration,commands,device):

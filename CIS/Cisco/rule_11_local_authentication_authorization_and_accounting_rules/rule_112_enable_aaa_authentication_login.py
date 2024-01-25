@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_112_enable_aaa_authentication_login,
+  name = 'rule_112_enable_aaa_authentication_login',
   platform = ['cisco_ios']
 )
 def rule_112_enable_aaa_authentication_login(configuration,commands,device):

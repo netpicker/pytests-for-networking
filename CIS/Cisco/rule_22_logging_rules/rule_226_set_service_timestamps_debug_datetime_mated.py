@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_226_set_service_timestamps_debug_datetime_mated,
+  name = 'rule_226_set_service_timestamps_debug_datetime_mated',
   platform = ['cisco_ios']
 )
 def rule_226_set_service_timestamps_debug_datetime_mated(configuration,commands,device):

@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @low(
-  name = rule_3335_set_ip_rip_authentication_mode_to_md5,
+  name = 'rule_3335_set_ip_rip_authentication_mode_to_md5',
   platform = ['cisco_ios']
 )
 def rule_3335_set_ip_rip_authentication_mode_to_md5(configuration,commands,device):

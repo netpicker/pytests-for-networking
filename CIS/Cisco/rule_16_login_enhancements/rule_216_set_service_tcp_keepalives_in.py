@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_216_set_service_tcp_keepalives_in,
+  name = 'rule_216_set_service_tcp_keepalives_in',
   platform = ['cisco_ios']
 )
 def rule_216_set_service_tcp_keepalives_in(configuration,commands,device):

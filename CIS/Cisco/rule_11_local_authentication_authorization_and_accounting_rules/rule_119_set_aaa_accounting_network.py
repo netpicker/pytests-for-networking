@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @low(
-  name = rule_119_set_aaa_accounting_network,
+  name = 'rule_119_set_aaa_accounting_network',
   platform = ['cisco_ios']
 )
 def rule_119_set_aaa_accounting_network(configuration,commands,device):

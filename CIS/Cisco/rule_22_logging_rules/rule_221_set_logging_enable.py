@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_221_set_logging_enable,
+  name = 'rule_221_set_logging_enable',
   platform = ['cisco_ios']
 )
 def rule_221_set_logging_enable(configuration,commands,device):

@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @low(
-  name = rule_3315_set_af_interface_default,
+  name = 'rule_3315_set_af_interface_default',
   platform = ['cisco_ios']
 )
 def rule_3315_set_af_interface_default(configuration,commands,device):

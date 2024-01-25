@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_142_enable_service_password_encryption,
+  name = 'rule_142_enable_service_password_encryption',
   platform = ['cisco_ios']
 )
 def rule_142_enable_service_password_encryption(configuration,commands,device):

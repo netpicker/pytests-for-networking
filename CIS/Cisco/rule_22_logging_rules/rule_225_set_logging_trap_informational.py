@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_225_set_logging_trap_informational,
+  name = 'rule_225_set_logging_trap_informational',
   platform = ['cisco_ios']
 )
 def rule_225_set_logging_trap_informational(configuration,commands,device):

@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @low(
-  name = rule_3331_set_key_chain,
+  name = 'rule_3331_set_key_chain',
   platform = ['cisco_ios']
 )
 def rule_3331_set_key_chain(configuration,commands,device):

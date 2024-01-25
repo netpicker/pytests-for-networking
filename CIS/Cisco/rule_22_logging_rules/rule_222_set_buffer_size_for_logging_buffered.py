@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_222_set_buffer_size_for_logging_buffered,
+  name = 'rule_222_set_buffer_size_for_logging_buffered',
   platform = ['cisco_ios']
 )
 def rule_222_set_buffer_size_for_logging_buffered(configuration,commands,device):

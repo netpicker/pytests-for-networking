@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_111_enable_aaa_new_model,
+  name = 'rule_111_enable_aaa_new_model',
   platform = ['cisco_ios']
 )
 def rule_111_enable_aaa_new_model(configuration,commands,device):

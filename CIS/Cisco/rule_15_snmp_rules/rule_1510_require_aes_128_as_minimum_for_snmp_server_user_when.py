@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @low(
-  name = rule_1510_require_aes_128_as_minimum_for_snmp_server_user_when,
+  name = 'rule_1510_require_aes_128_as_minimum_for_snmp_server_user_when',
   platform = ['cisco_ios']
 )
 def rule_1510_require_aes_128_as_minimum_for_snmp_server_user_when(configuration,commands,device):

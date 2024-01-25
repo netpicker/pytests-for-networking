@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_218_set_no_service_pad,
+  name = 'rule_218_set_no_service_pad',
   platform = ['cisco_ios']
 )
 def rule_218_set_no_service_pad(configuration,commands,device):

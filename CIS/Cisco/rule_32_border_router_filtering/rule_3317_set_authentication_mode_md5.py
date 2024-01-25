@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_3317_set_authentication_mode_md5,
+  name = 'rule_3317_set_authentication_mode_md5',
   platform = ['cisco_ios']
 )
 def rule_3317_set_authentication_mode_md5(configuration,commands,device):

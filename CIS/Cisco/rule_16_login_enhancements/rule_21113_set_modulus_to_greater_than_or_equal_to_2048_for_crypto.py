@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_21113_set_modulus_to_greater_than_or_equal_to_2048_for_crypto,
+  name = 'rule_21113_set_modulus_to_greater_than_or_equal_to_2048_for_crypto',
   platform = ['cisco_ios']
 )
 def rule_21113_set_modulus_to_greater_than_or_equal_to_2048_for_crypto(configuration,commands,device):

@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @low(
-  name = rule_3332_set_key,
+  name = 'rule_3332_set_key',
   platform = ['cisco_ios']
 )
 def rule_3332_set_key(configuration,commands,device):

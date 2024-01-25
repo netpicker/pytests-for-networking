@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_122_set_transport_input_ssh_for_line_vty_connections,
+  name = 'rule_122_set_transport_input_ssh_for_line_vty_connections',
   platform = ['cisco_ios']
 )
 def rule_122_set_transport_input_ssh_for_line_vty_connections(configuration,commands,device):

@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @low(
-  name = rule_3314_set_address_family_ipv4_autonomous_system_,
+  name = 'rule_3314_set_address_family_ipv4_autonomous_system_',
   platform = ['cisco_ios']
 )
 def rule_3314_set_address_family_ipv4_autonomous_system_(configuration,commands,device):

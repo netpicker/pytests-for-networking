@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_227_set_logging_source_interface,
+  name = 'rule_227_set_logging_source_interface',
   platform = ['cisco_ios']
 )
 def rule_227_set_logging_source_interface(configuration,commands,device):

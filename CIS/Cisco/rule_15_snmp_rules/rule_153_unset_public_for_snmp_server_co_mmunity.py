@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_153_unset_public_for_snmp_server_co_mmunity,
+  name = 'rule_153_unset_public_for_snmp_server_co_mmunity',
   platform = ['cisco_ios']
 )
 def rule_153_unset_public_for_snmp_server_co_mmunity(configuration,commands,device):

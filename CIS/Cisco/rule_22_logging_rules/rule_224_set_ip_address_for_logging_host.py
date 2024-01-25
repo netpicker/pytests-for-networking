@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_224_set_ip_address_for_logging_host,
+  name = 'rule_224_set_ip_address_for_logging_host',
   platform = ['cisco_ios']
 )
 def rule_224_set_ip_address_for_logging_host(configuration,commands,device):

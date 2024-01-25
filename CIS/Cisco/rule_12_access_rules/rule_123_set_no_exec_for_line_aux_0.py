@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_123_set_no_exec_for_line_aux_0,
+  name = 'rule_123_set_no_exec_for_line_aux_0',
   platform = ['cisco_ios']
 )
 def rule_123_set_no_exec_for_line_aux_0(configuration,commands,device):

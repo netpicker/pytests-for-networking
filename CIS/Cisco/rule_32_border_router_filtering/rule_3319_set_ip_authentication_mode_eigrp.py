@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @low(
-  name = rule_3319_set_ip_authentication_mode_eigrp,
+  name = 'rule_3319_set_ip_authentication_mode_eigrp',
   platform = ['cisco_ios']
 )
 def rule_3319_set_ip_authentication_mode_eigrp(configuration,commands,device):

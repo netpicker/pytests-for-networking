@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @low(
-  name = rule_3322_set_ip_ospf_message_digest_key_md5,
+  name = 'rule_3322_set_ip_ospf_message_digest_key_md5',
   platform = ['cisco_ios']
 )
 def rule_3322_set_ip_ospf_message_digest_key_md5(configuration,commands,device):

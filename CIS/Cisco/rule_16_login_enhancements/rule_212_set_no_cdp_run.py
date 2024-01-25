@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_212_set_no_cdp_run,
+  name = 'rule_212_set_no_cdp_run',
   platform = ['cisco_ios']
 )
 def rule_212_set_no_cdp_run(configuration,commands,device):

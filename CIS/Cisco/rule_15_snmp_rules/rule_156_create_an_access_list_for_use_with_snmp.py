@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_156_create_an_access_list_for_use_with_snmp,
+  name = 'rule_156_create_an_access_list_for_use_with_snmp',
   platform = ['cisco_ios']
 )
 def rule_156_create_an_access_list_for_use_with_snmp(configuration,commands,device):

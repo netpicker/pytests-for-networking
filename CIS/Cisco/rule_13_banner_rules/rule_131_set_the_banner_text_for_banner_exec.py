@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_131_set_the_banner_text_for_banner_exec,
+  name = 'rule_131_set_the_banner_text_for_banner_exec',
   platform = ['cisco_ios']
 )
 def rule_131_set_the_banner_text_for_banner_exec(configuration,commands,device):

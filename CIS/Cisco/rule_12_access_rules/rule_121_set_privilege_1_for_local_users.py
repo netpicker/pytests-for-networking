@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_121_set_privilege_1_for_local_users,
+  name = 'rule_121_set_privilege_1_for_local_users',
   platform = ['cisco_ios']
 )
 def rule_121_set_privilege_1_for_local_users(configuration,commands,device):

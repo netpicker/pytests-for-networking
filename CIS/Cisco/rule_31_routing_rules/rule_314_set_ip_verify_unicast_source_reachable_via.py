@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_314_set_ip_verify_unicast_source_reachable_via,
+  name = 'rule_314_set_ip_verify_unicast_source_reachable_via',
   platform = ['cisco_ios']
 )
 def rule_314_set_ip_verify_unicast_source_reachable_via(configuration,commands,device):

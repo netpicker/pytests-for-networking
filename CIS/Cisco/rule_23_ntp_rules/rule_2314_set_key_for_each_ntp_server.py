@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @low(
-  name = rule_2314_set_key_for_each_ntp_server,
+  name = 'rule_2314_set_key_for_each_ntp_server',
   platform = ['cisco_ios']
 )
 def rule_2314_set_key_for_each_ntp_server(configuration,commands,device):

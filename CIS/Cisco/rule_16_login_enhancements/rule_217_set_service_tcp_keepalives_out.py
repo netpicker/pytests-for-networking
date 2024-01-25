@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_217_set_service_tcp_keepalives_out,
+  name = 'rule_217_set_service_tcp_keepalives_out',
   platform = ['cisco_ios']
 )
 def rule_217_set_service_tcp_keepalives_out(configuration,commands,device):

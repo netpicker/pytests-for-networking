@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @low(
-  name = rule_321_set_ip_access_list_extended_to_forbid_privat_e_source,
+  name = 'rule_321_set_ip_access_list_extended_to_forbid_privat_e_source',
   platform = ['cisco_ios']
 )
 def rule_321_set_ip_access_list_extended_to_forbid_privat_e_source(configuration,commands,device):

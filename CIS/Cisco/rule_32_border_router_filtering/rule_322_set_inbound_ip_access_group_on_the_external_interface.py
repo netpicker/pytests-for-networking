@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @low(
-  name = rule_322_set_inbound_ip_access_group_on_the_external_interface,
+  name = 'rule_322_set_inbound_ip_access_group_on_the_external_interface',
   platform = ['cisco_ios']
 )
 def rule_322_set_inbound_ip_access_group_on_the_external_interface(configuration,commands,device):

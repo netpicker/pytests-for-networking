@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_2112_set_version_2_for_ip_ssh_version,
+  name = 'rule_2112_set_version_2_for_ip_ssh_version',
   platform = ['cisco_ios']
 )
 def rule_2112_set_version_2_for_ip_ssh_version(configuration,commands,device):

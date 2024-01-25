@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_115_set_login_authentication_for_ip_http_ed,
+  name = 'rule_115_set_login_authentication_for_ip_http_ed',
   platform = ['cisco_ios']
 )
 def rule_115_set_login_authentication_for_ip_http_ed(configuration,commands,device):

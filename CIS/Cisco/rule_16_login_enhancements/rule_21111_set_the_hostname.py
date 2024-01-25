@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_21111_set_the_hostname,
+  name = 'rule_21111_set_the_hostname',
   platform = ['cisco_ios']
 )
 def rule_21111_set_the_hostname(configuration,commands,device):

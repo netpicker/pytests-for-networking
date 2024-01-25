@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_311_set_no_ip_source_route,
+  name = 'rule_311_set_no_ip_source_route',
   platform = ['cisco_ios']
 )
 def rule_311_set_no_ip_source_route(configuration,commands,device):

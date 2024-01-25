@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_157_set_snmp_server_host_when_using_snmp,
+  name = 'rule_157_set_snmp_server_host_when_using_snmp',
   platform = ['cisco_ios']
 )
 def rule_157_set_snmp_server_host_when_using_snmp(configuration,commands,device):

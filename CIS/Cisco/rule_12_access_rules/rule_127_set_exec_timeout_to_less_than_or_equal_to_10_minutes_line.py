@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_127_set_exec_timeout_to_less_than_or_equal_to_10_minutes_line,
+  name = 'rule_127_set_exec_timeout_to_less_than_or_equal_to_10_minutes_line',
   platform = ['cisco_ios']
 )
 def rule_127_set_exec_timeout_to_less_than_or_equal_to_10_minutes_line(configuration,commands,device):

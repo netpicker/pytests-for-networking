@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @low(
-  name = rule_164_configure_web_interface,
+  name = 'rule_164_configure_web_interface',
   platform = ['cisco_ios']
 )
 def rule_164_configure_web_interface(configuration,commands,device):

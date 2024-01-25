@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @low(
-  name = rule_3334_set_ip_rip_authentication_key_chain,
+  name = 'rule_3334_set_ip_rip_authentication_key_chain',
   platform = ['cisco_ios']
 )
 def rule_3334_set_ip_rip_authentication_key_chain(configuration,commands,device):

@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_1210_set_http_secure_server_limit,
+  name = 'rule_1210_set_http_secure_server_limit',
   platform = ['cisco_ios']
 )
 def rule_1210_set_http_secure_server_limit(configuration,commands,device):

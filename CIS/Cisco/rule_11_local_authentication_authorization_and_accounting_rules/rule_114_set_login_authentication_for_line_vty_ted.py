@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_114_set_login_authentication_for_line_vty_ted,
+  name = 'rule_114_set_login_authentication_for_line_vty_ted',
   platform = ['cisco_ios']
 )
 def rule_114_set_login_authentication_for_line_vty_ted(configuration,commands,device):

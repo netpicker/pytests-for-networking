@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_21115_set_maximum_value_for_ip_ssh_authentication_retries,
+  name = 'rule_21115_set_maximum_value_for_ip_ssh_authentication_retries',
   platform = ['cisco_ios']
 )
 def rule_21115_set_maximum_value_for_ip_ssh_authentication_retries(configuration,commands,device):

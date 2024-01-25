@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @low(
-  name = rule_2312_set_ntp_authentication_key,
+  name = 'rule_2312_set_ntp_authentication_key',
   platform = ['cisco_ios']
 )
 def rule_2312_set_ntp_authentication_key(configuration,commands,device):

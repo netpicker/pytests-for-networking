@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_151_set_no_snmp_server_to_disable_snmp_when_unused,
+  name = 'rule_151_set_no_snmp_server_to_disable_snmp_when_unused',
   platform = ['cisco_ios']
 )
 def rule_151_set_no_snmp_server_to_disable_snmp_when_unused(configuration,commands,device):

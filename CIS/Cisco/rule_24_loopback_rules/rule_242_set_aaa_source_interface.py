@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @low(
-  name = rule_242_set_aaa_source_interface,
+  name = 'rule_242_set_aaa_source_interface',
   platform = ['cisco_ios']
 )
 def rule_242_set_aaa_source_interface(configuration,commands,device):

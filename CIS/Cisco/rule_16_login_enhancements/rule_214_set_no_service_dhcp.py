@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_214_set_no_service_dhcp,
+  name = 'rule_214_set_no_service_dhcp',
   platform = ['cisco_ios']
 )
 def rule_214_set_no_service_dhcp(configuration,commands,device):

@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @low(
-  name = rule_3318_set_ip_authentication_key_chain_eigrp_utomated,
+  name = 'rule_3318_set_ip_authentication_key_chain_eigrp_utomated',
   platform = ['cisco_ios']
 )
 def rule_3318_set_ip_authentication_key_chain_eigrp_utomated(configuration,commands,device):

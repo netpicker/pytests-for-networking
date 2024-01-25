@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_134_set_the_banner_text_for_webauth_banner,
+  name = 'rule_134_set_the_banner_text_for_webauth_banner',
   platform = ['cisco_ios']
 )
 def rule_134_set_the_banner_text_for_webauth_banner(configuration,commands,device):

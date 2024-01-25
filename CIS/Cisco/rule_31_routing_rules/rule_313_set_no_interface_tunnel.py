@@ -2,7 +2,7 @@ import pytest
 from comfy.compliance import *
 
 @medium(
-  name = rule_313_set_no_interface_tunnel,
+  name = 'rule_313_set_no_interface_tunnel',
   platform = ['cisco_ios']
 )
 def rule_313_set_no_interface_tunnel(configuration,commands,device):
