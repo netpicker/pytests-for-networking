@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_156_create_an_access_list_for_use_with_snmp(configuration, commands, device):
-    assert 'snmp-server community' in configuration
+    assert 'hostname#sh ip access-list <<em>snmp_acl_number</em>>' in configuration
 
 # Remediation: hostname(config)#access-list deny any log  
 

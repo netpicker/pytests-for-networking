@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_21111_set_the_hostname(configuration, commands, device):
-    assert '' in configuration
+    assert 'hostname#sh run | incl hostname' in configuration
 
 # Remediation: hostname(config)#hostname {<em>router_name</em>}  
 

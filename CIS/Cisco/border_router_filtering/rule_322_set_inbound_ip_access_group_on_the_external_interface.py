@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_322_set_inbound_ip_access_group_on_the_external_interface(configuration, commands, device):
-    assert '' in configuration
+    assert 'hostname#sh run | sec interface {<em>external_interface</em>}' in configuration
 
 # Remediation: hostname(config)#interface {external_interface}  
 

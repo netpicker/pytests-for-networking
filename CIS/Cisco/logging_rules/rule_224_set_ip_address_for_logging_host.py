@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_224_set_ip_address_for_logging_host(configuration, commands, device):
-    assert '' in configuration
+    assert 'hostname#sh log | incl logging host' in configuration
 
 # Remediation: hostname(config)#logging host {syslog_server}  
 

@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_3333_set_key_string(configuration, commands, device):
-    assert '' in configuration
+    assert 'hostname#sh run | sec key chain' in configuration
 
 # Remediation: 
 

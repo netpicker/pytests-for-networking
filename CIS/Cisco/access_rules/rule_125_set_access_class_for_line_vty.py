@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_125_set_access_class_for_line_vty(configuration, commands, device):
-    assert '' in configuration
+    assert 'hostname#sh run | sec vty <line-number> <ending-line-number>' in configuration
 
 # Remediation: hostname(config)#line vty <line-number> <ending-line-number> 
 

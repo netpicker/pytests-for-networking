@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_3321_set_authentication_message_digest_for_ospf_area(configuration, commands, device):
-    assert '' in configuration
+    assert 'hostname#sh run | sec router ospf' in configuration
 
 # Remediation: hostname(config)#router ospf <<em>osp f_process-id</em>>  
 

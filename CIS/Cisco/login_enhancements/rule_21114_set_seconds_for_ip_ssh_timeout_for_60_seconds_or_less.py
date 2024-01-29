@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_21114_set_seconds_for_ip_ssh_timeout_for_60_seconds_or_less(configuration, commands, device):
-    assert '' in configuration
+    assert 'hostname#sh ip ssh' in configuration
 
 # Remediation: hostname(config)#ip ssh time-out [<em>60</em>]  
 

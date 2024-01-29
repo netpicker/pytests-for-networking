@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_3322_set_ip_ospf_message_digest_key_md5(configuration, commands, device):
-    assert '' in configuration
+    assert 'hostname#sh run int {<em>interface</em>}' in configuration
 
 # Remediation: hostname(config)#interface {<em>interface_name</em>}  
 

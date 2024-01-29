@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_312_set_no_ip_proxy_arp(configuration, commands, device):
-    assert '' in configuration
+    assert 'hostname#sh ip int {<em>interface</em>} | incl proxy-arp' in configuration
 
 # Remediation: hostname(config)#interface {interface}  
 

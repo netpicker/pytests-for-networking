@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_3335_set_ip_rip_authentication_mode_to_md5(configuration, commands, device):
-    assert '' in configuration
+    assert 'hostname#sh run int <<em>interface</em>>' in configuration
 
 # Remediation: hostname(config)#interface <<em>interface_name</em>>  
 

@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_3334_set_ip_rip_authentication_key_chain(configuration, commands, device):
-    assert '' in configuration
+    assert 'hostname#sh run int {<em>interface_name</em>}' in configuration
 
 # Remediation: hostname(config)#interface {<em>interface_name</em>}  
 

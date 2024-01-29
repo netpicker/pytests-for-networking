@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_3315_set_af_interface_default(configuration, commands, device):
-    assert '' in configuration
+    assert 'hostname#sh run | sec router eigrp' in configuration
 
 # Remediation: hostname(config)#router eigrp <<em>virtual-instance-name</em>>  
 

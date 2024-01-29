@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_124_create_access_list_for_use_with_line_v_ty(configuration, commands, device):
-    assert '' in configuration
+    assert 'hostname#sh ip access-list <vty_acl_number>' in configuration
 
 # Remediation: hostname(config)#deny ip any any log  
 

@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_131_set_the_banner_text_for_banner_exec(configuration, commands, device):
-    assert '' in configuration
+    assert 'hostname#sh running-config | beg banner exec' in configuration
 
 # Remediation: hostname(config)#banner exec c  
 

@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_2112_set_version_2_for_ip_ssh_version(configuration, commands, device):
-    assert '' in configuration
+    assert 'hostname#sh ip ssh' in configuration
 
 # Remediation: hostname(config)#ip ssh version 2  
 

@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_241_create_a_single_interface_loopback(configuration, commands, device):
-    assert '' in configuration
+    assert 'hostname#sh ip int brief | incl Loopback' in configuration
 
 # Remediation: hostname(config)#interface loopback <<em>number</em>>  
 

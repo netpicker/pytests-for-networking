@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_3314_set_address_family_ipv4_autonomous_system_(configuration, commands, device):
-    assert '' in configuration
+    assert 'hostname#sh run | sec router eigrp' in configuration
 
 # Remediation: hostname(config)#router eigrp <<em>virtual-instance-name</em>>  
 

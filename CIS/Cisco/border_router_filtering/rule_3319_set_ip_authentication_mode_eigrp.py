@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_3319_set_ip_authentication_mode_eigrp(configuration, commands, device):
-    assert '' in configuration
+    assert 'hostname#sh run int {<em>interface_name</em>} | incl authentication mode' in configuration
 
 # Remediation: hostname(config)#interface {<em>interface_name</em>}  
 

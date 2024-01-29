@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_321_set_ip_access_list_extended_to_forbid_privat_e_source(configuration, commands, device):
-    assert '' in configuration
+    assert 'hostname#sh ip access-list {<em>name | number</em>}' in configuration
 
 # Remediation: hostname(config)#interface <external_<em>interface</em>>  
 

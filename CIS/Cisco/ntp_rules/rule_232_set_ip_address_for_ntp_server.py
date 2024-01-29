@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_232_set_ip_address_for_ntp_server(configuration, commands, device):
-    assert '' in configuration
+    assert 'hostname#sh ntp associations' in configuration
 
 # Remediation: hostname(config)#ntp server {ntp server vrf [vrf name] ip address}  
 

@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_244_set_ip_tftp_source_interface_to_the_loopback_interface(configuration, commands, device):
-    assert '' in configuration
+    assert 'hostname#sh run | incl tftp source-interface' in configuration
 
 # Remediation: hostname(config)#ip tftp source-interface loopback 
 
