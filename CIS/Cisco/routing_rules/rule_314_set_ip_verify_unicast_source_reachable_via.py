@@ -10,4 +10,4 @@ def rule_314_set_ip_verify_unicast_source_reachable_via(configuration, commands,
 
 # Remediation: hostname(config)#interface {<em>interface_name</em>}  
 
-# References: 2. https://community.cisco.com/t5/routing/ip -verify -unicast -source -reachable -via-
+# References: 2. https://community.cisco.com/t5/routing/ip-verify-unicast-source-reachable-via-

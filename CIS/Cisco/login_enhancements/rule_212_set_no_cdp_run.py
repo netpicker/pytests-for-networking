@@ -10,4 +10,4 @@ def rule_212_set_no_cdp_run(configuration, commands, device):
 
 # Remediation: hostname(config)#no cdp run  
 
-# References: 1. http://www.cisco.com/en/US/docs/io s-xml/ios/cdp/command/cdp -cr-
+# References: 1. http://www.cisco.com/en/US/docs/io s-xml/ios/cdp/command/cdp-cr-

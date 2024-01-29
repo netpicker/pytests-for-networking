@@ -10,4 +10,4 @@ def rule_3332_set_key(configuration, commands, device):
 
 # Remediation: 
 
-# References: 1. http://www.cisco.com/en/US/docs/ios -xml/ios/iproute_pi/command/iri -cr-
+# References: 1. http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_pi/command/iri-cr-

@@ -10,4 +10,4 @@ def rule_313_set_no_interface_tunnel(configuration, commands, device):
 
 # Remediation: hostname(config)#no interface tunnel {<em>instance</em>}  
 
-# References: 1. http://ww w.cisco.com/en/US/docs/ios -xml/ios/interface/command/ir -
+# References: 1. http://ww w.cisco.com/en/US/docs/ios-xml/ios/interface/command/ir -

@@ -10,4 +10,4 @@ def rule_242_set_aaa_source_interface(configuration, commands, device):
 
 # Remediation: 
 
-# References: 2. http://www.cisco.com/en/US/docs/ios -xml/ios/security/d1/sec -cr-i3.html#GUID -
+# References: 2. http://www.cisco.com/en/US/docs/ios-xml/ios/security/d1/sec-cr-i3.html#GUID -

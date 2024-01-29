@@ -10,4 +10,4 @@ def rule_3319_set_ip_authentication_mode_eigrp(configuration, commands, device):
 
 # Remediation: hostname(config)#interface {<em>interface_name</em>}  
 
-# References: 2. http://www.cisco.com/en/US/docs/ios -xml/ios/iproute_eigrp/command/ire -
+# References: 2. http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_eigrp/command/ire -

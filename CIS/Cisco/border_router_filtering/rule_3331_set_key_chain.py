@@ -8,6 +8,6 @@ from comfy.compliance import *
 def rule_3331_set_key_chain(configuration, commands, device):
     assert '' in configuration
 
-# Remediation: hostname(config)#key chain {<em>rip_key -chain_name</em>}  
+# Remediation: hostname(config)#key chain {<em>rip_key-chain_name</em>}  
 
-# References: 1. http://www.cisco.com/en/US/docs/ios -xml/ios/iproute_pi/command/iri -cr-
+# References: 1. http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_pi/command/iri-cr-

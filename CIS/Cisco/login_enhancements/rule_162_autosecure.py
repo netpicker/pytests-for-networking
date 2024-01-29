@@ -10,4 +10,4 @@ def rule_162_autosecure(configuration, commands, device):
 
 # Remediation: 
 
-# References: 1. https://www.cisco.com/c/en/us/td/docs/ios -xml/ios/sec_usr_cfg/configuration/xe -
+# References: 1. https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_usr_cfg/configuration/xe -

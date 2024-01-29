@@ -10,4 +10,4 @@ def rule_228_set_login_successfailure_logging_d(configuration, commands, device)
 
 # Remediation: hostname(config)#end  
 
-# References: 1. https://www.cisco.com/c/en/us/td/docs/ios -xml/ios/config -mgmt/con figuration/xe -
+# References: 1. https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/config-mgmt/con figuration/xe -

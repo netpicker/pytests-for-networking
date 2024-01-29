@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_132_set_the_banner_text_for_banner_login(configuration, commands, device):
-    assert 'hostname#show running -config | beg banner login' in configuration
+    assert 'hostname#show running-config | beg banner login' in configuration
 
 # Remediation: hostname(config)#banner login c 
 

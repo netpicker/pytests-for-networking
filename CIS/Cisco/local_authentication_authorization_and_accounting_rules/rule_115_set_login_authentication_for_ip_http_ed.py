@@ -10,4 +10,4 @@ def rule_115_set_login_authentication_for_ip_http_ed(configuration, commands, de
 
 # Remediation: 
 
-# References: 1. http://www.cisco.com/en/US/docs/ios -xml/ios/security/d1/sec -cr-k1.html#GUID -
+# References: 1. http://www.cisco.com/en/US/docs/ios-xml/ios/security/d1/sec-cr-k1.html#GUID -

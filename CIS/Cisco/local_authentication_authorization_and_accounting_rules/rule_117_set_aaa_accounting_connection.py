@@ -6,8 +6,8 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_117_set_aaa_accounting_connection(configuration, commands, device):
-    assert 'aaa accounting connection' in configuration
+    assert 'hostname#show running-config | incl aaa accounting connection' in configuration
 
-# Remediation: hostname(config)#aaa accounting connection {default | list -name | guarantee -
+# Remediation: hostname(config)#aaa accounting connection {default | list-name | guarantee -
 
-# References: 1. http://www.cisco.com/en/US/docs/ios -xml/ios/security/a1/sec -cr-a1.html#GUID -
+# References: 1. http://www.cisco.com/en/US/docs/ios-xml/ios/security/a1/sec-cr-a1.html#GUID -

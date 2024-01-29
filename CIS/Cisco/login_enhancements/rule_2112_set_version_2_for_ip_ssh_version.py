@@ -10,4 +10,4 @@ def rule_2112_set_version_2_for_ip_ssh_version(configuration, commands, device):
 
 # Remediation: hostname(config)#ip ssh version 2  
 
-# References: 1. http://www.cisco.com/en/US/docs/ios -xml/ios/security/d1/sec -cr-i3.html#GUID -
+# References: 1. http://www.cisco.com/en/US/docs/ios-xml/ios/security/d1/sec-cr-i3.html#GUID -

@@ -6,8 +6,8 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_2313_set_the_ntp_trusted_key(configuration, commands, device):
-    assert 'ude ntp trusted -key' in configuration
+    assert 'ude ntp trusted-key' in configuration
 
 # Remediation: 
 
-# References: 1. http://www.cisco.com/en/US/docs/ios -xml/ios/bsm/command/bsm -cr-
+# References: 1. http://www.cisco.com/en/US/docs/ios-xml/ios/bsm/command/bsm-cr-

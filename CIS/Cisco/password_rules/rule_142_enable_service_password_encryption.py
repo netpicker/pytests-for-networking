@@ -8,6 +8,6 @@ from comfy.compliance import *
 def rule_142_enable_service_password_encryption(configuration, commands, device):
     assert '' in configuration
 
-# Remediation: hostname(config)#service password -encryption  
+# Remediation: hostname(config)#service password-encryption  
 
-# References: 1. http://www.cisco.com/en/US/docs/ios -xml/ios/security/s1/sec -cr-s1.html#GUID -
+# References: 1. http://www.cisco.com/en/US/docs/ios-xml/ios/security/s1/sec-cr-s1.html#GUID -
