@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_223_set_logging_console_critical(configuration, commands, device):
-    assert 'ncl logging console' in configuration
+    assert 'logging console' in configuration
 
 # Remediation: hostname(config)#logging console critical  
 

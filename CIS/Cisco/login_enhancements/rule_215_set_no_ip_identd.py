@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_215_set_no_ip_identd(configuration, commands, device):
-    assert 'ncl identd' in configuration
+    assert 'identd' in configuration
 
 # Remediation: hostname(config)#no ip identd  
 

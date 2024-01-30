@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_2312_set_ntp_authentication_key(configuration, commands, device):
-    assert 'nclude ntp authentication-key' in configuration
+    assert 'ude ntp authentication-key' in configuration
 
 # Remediation: hostname(config)#ntp authentication-key {ntp_key_id} md5 {ntp_key_hash}  
 

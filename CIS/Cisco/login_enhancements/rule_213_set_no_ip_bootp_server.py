@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_213_set_no_ip_bootp_server(configuration, commands, device):
-    assert 'ncl bootp' in configuration
+    assert 'bootp' in configuration
 
 # Remediation: hostname(config)#ip dhcp bootp ignore  
 

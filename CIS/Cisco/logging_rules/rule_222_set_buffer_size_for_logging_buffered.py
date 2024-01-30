@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_222_set_buffer_size_for_logging_buffered(configuration, commands, device):
-    assert 'ncl logging buffered' in configuration
+    assert 'logging buffered' in configuration
 
 # Remediation: hostname(config)#logging buffered [<em>log_buffer_size</em>]  
 
