@@ -10,4 +10,4 @@ def rule_143_set_username_secret_for_all_local_users(configuration, commands, de
 
 # Remediation: hostname(config)#username {{em}LOCAL_USERNAME{/em}} secret 
 
-# References: 1. https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9600/software/r eleas
+# References: 1.https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9600/software/releas

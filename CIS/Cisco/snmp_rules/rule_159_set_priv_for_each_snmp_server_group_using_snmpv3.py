@@ -10,4 +10,4 @@ def rule_159_set_priv_for_each_snmp_server_group_using_snmpv3(configuration, com
 
 # Remediation: hostname(config)#snmp-server group {<em>group_name</em>} v3 priv  
 
-# References: 1. http://www.cisco.com/en/US/docs/ios-xml/ios/snmp/command/nm-snmp-cr-
+# References: 1.http://www.cisco.com/en/US/docs/ios-xml/ios/snmp/command/nm-snmp-cr-s5.html#GUID-56E87D02-C56F-4E2D-A5C8-617E31740C3F

@@ -10,4 +10,4 @@ def rule_241_create_a_single_interface_loopback(configuration, commands, device)
 
 # Remediation: hostname(config)#interface loopback <<em>number</em>>  
 
-# References: 1. http://www. cisco.com/en/US/docs/ios-xml/ios/interface/command/ir -
+# References: 1.http://www.cisco.com/en/US/docs/ios-xml/ios/interface/command/ir-i1.html#GUID-0D6BDFCD-3FBB-4D26-A274-C1221F8592DF

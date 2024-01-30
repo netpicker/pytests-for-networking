@@ -10,4 +10,4 @@ def rule_321_set_ip_access_list_extended_to_forbid_privat_e_source(configuration
 
 # Remediation: hostname(config)#interface <external_<em>interface</em>>  
 
-# References: 1. http://www.cisco.com/en/US/docs/ios-xml/ios/security/d1/sec-cr-i1.html#GUID -
+# References: 1.http://www.cisco.com/en/US/docs/ios-xml/ios/security/d1/sec-cr-i1.html#GUID-BD76E065-8EAC-4B32-AF25-04BA94DD2B11

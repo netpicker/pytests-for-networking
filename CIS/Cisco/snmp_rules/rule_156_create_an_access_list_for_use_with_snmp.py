@@ -10,4 +10,4 @@ def rule_156_create_an_access_list_for_use_with_snmp(configuration, commands, de
 
 # Remediation: hostname(config)#access-list deny any log  
 
-# References: 1. http://www.cisco.com/en/US/docs/ios-xml/ios/secu rity/a1/sec-cr-a2.html#GUID -
+# References: 1.http://www.cisco.com/en/US/docs/ios-xml/ios/security/a1/sec-cr-a2.html#GUID-9EA733A3-1788-4882-B8C3-AB0A2949120C

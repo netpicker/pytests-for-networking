@@ -10,4 +10,4 @@ def rule_129_set_transport_input_none_for_line_aux_0(configuration, commands, de
 
 # Remediation: hostname(config)#line aux 0  
 
-# References: 1. http://www.cisco.com/en/US/docs/ios/termserv/command/reference/tsv_s1.html#
+# References: 1.http://www.cisco.com/en/US/docs/ios/termserv/command/reference/tsv_s1.html#

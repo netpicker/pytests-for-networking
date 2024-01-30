@@ -10,4 +10,4 @@ def rule_141_set_password_for_enable_secret(configuration, commands, device):
 
 # Remediation: hostname(config)#enable secret 9 {ENABLE_SECRET_PASSWORD}  
 
-# References: 1. https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst 9600/software/releas
+# References: 1.https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9600/software/releas

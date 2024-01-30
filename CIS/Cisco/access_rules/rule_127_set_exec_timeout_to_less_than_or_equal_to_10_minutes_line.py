@@ -10,4 +10,4 @@ def rule_127_set_exec_timeout_to_less_than_or_equal_to_10_minutes_line(configura
 
 # Remediation: hostname(config)#line con 0  
 
-# References: 1. http://www.cisco.com/en/US/docs/ios -
+# References: 1.http://www.cisco.com/en/US/docs/ios-xml/ios/fundamentals/command/D_through_E.html#GUID-76805E6F-9E89-4457-A9DC-5944C8FE5419

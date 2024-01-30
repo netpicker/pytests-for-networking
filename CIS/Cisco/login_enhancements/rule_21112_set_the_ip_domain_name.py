@@ -10,4 +10,4 @@ def rule_21112_set_the_ip_domain_name(configuration, commands, device):
 
 # Remediation: 
 
-# References: 1. http://www.cisco.com/en/US/docs/ios-xml/ios/ipaddr/command/ipaddr -
+# References: 1.http://www.cisco.com/en/US/docs/ios-xml/ios/ipaddr/command/ipaddr-i3.html#GUID-A706D62B-9170-45CE-A2C2-7B2052BE2CAB

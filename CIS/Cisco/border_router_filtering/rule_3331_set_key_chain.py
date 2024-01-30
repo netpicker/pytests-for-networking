@@ -10,4 +10,4 @@ def rule_3331_set_key_chain(configuration, commands, device):
 
 # Remediation: hostname(config)#key chain {<em>rip_key-chain_name</em>}  
 
-# References: 1. http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_pi/command/iri-cr-
+# References: 1.http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_pi/command/iri-cr-a1.html#GUID-A62E89F5-0B8B-4CF0-B4EB-08F2762D88BB

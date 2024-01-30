@@ -10,4 +10,4 @@ def rule_2311_set_ntp_authenticate(configuration, commands, device):
 
 # Remediation: hostname(config)#ntp authenticate  
 
-# References: 1. http://www.cisco.com/en/US/docs/ios-xml/ios/bsm/command/bsm-cr-
+# References: 1.http://www.cisco.com/en/US/docs/ios-xml/ios/bsm/command/bsm-cr-n1.html#GUID-8BEBDAF4-6D03-4C3E-B8D6-6BCBC7D0F324

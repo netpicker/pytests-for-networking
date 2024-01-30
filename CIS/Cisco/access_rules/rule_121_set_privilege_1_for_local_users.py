@@ -10,4 +10,4 @@ def rule_121_set_privilege_1_for_local_users(configuration, commands, device):
 
 # Remediation: hostname(config)#username <LOCAL_USERNAME> privilege 1  
 
-# References: 1. http://www.cisco.com/en/US/docs/ios-xml/ios/security/s1/sec-cr-t2-z.html#GUID -
+# References: 1.http://www.cisco.com/en/US/docs/ios-xml/ios/security/s1/sec-cr-t2-z.html#GUID-34B3E43E-0F79-40E8-82B6-A4B5F1AFF1AD

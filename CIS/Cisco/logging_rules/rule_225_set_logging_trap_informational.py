@@ -10,4 +10,4 @@ def rule_225_set_logging_trap_informational(configuration, commands, device):
 
 # Remediation: hostname(config)#logging trap informational  
 
-# References: 1. http://www.cisco.com/en/US/docs/ios/netmgmt/command/reference/nm_09.html#
+# References: 1.http://www.cisco.com/en/US/docs/ios/netmgmt/command/reference/nm_09.html#

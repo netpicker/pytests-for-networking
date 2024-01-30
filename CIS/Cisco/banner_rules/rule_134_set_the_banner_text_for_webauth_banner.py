@@ -10,4 +10,4 @@ def rule_134_set_the_banner_text_for_webauth_banner(configuration, commands, dev
 
 # Remediation: hostname(config)#ip  admission auth-proxy-banner http {banner-text | filepath}  
 
-# References: 1. https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/releas
+# References: 1.https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/releas

@@ -10,4 +10,4 @@ def rule_311_set_no_ip_source_route(configuration, commands, device):
 
 # Remediation: hostname(config)#no ip source-route 
 
-# References: 1. http://www.cisco.com/en/US/docs/ios-xml/ios/ipaddr/command/ipaddr -
+# References: 1.http://www.cisco.com/en/US/docs/ios-xml/ios/ipaddr/command/ipaddr-i4.html#GUID-C7F971DD-358F-4B43-9F3E-244F5D4A3A93

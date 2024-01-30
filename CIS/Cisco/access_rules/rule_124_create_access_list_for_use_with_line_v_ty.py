@@ -10,4 +10,4 @@ def rule_124_create_access_list_for_use_with_line_v_ty(configuration, commands, 
 
 # Remediation: hostname(config)#deny ip any any log  
 
-# References: 1. http://www.cisco.com/en/US/docs/ios-xml/ios/security/a 1/sec-cr-a2.html#GUID -
+# References: 1.http://www.cisco.com/en/US/docs/ios-xml/ios/security/a1/sec-cr-a2.html#GUID-9EA733A3-1788-4882-B8C3-AB0A2949120C

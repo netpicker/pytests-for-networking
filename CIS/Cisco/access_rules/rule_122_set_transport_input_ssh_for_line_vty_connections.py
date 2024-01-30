@@ -10,4 +10,4 @@ def rule_122_set_transport_input_ssh_for_line_vty_connections(configuration, com
 
 # Remediation: hostname(config)#line vty <line-number> <ending-line-number> 
 
-# References: 1. http://www.cisco.com/en/US/docs/ios/termserv/command/reference/tsv_s1.html#
+# References: 1.http://www.cisco.com/en/US/docs/ios/termserv/command/reference/tsv_s1.html#

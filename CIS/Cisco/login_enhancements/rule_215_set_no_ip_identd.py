@@ -10,4 +10,4 @@ def rule_215_set_no_ip_identd(configuration, commands, device):
 
 # Remediation: hostname(config)#no ip identd  
 
-# References: 1. http://www.cisco.com/en/US/docs/solutions/Enterprise/Security/Baseline_Securit
+# References: 1.http://www.cisco.com/en/US/docs/solutions/Enterprise/Security/Baseline_Securit
