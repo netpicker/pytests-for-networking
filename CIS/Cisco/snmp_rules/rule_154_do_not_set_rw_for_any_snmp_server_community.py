@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_154_do_not_set_rw_for_any_snmp_server_community(configuration, commands, device):
-    assert 'snmp-server community' in configuration
+    assert 'ncl snmp-server community' in configuration
 
 # Remediation: hostname(config)#no s nmp-server community {<em>write_community_string</em>}  
 

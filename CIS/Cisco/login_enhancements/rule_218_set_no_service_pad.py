@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_218_set_no_service_pad(configuration, commands, device):
-    assert 'service pad' in configuration
+    assert 'ncl service pad' in configuration
 
 # Remediation: hostname(config)#no service pad  
 

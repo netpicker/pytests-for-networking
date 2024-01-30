@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_217_set_service_tcp_keepalives_out(configuration, commands, device):
-    assert 'service tcp' in configuration
+    assert 'ncl service tcp' in configuration
 
 # Remediation: hostname(config)#service tcp-keepalives-out 
 

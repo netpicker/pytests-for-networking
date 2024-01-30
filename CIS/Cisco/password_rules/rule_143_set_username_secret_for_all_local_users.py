@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_143_set_username_secret_for_all_local_users(configuration, commands, device):
-    assert 'username' in configuration
+    assert 'ncl username' in configuration
 
 # Remediation: hostname(config)#username {{em}LOCAL_USERNAME{/em}} secret 
 
