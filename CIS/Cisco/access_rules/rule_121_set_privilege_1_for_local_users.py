@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_121_set_privilege_1_for_local_users(configuration, commands, device):
-    assert 'hostname#show running-config | incl privilege' in configuration
+    assert 'privilege' in configuration
 
 # Remediation: hostname(config)#username <LOCAL_USERNAME> privilege 1  
 

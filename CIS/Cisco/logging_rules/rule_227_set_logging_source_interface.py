@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_227_set_logging_source_interface(configuration, commands, device):
-    assert 'hostname#sh run | incl logging source' in configuration
+    assert 'logging source' in configuration
 
 # Remediation: hostname(config)#logging source-interface loopback 
 

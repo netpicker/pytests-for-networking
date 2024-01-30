@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_142_enable_service_password_encryption(configuration, commands, device):
-    assert 'hostname#sh run | incl service password-encryption' in configuration
+    assert 'service password-encryption' in configuration
 
 # Remediation: hostname(config)#service password-encryption  
 

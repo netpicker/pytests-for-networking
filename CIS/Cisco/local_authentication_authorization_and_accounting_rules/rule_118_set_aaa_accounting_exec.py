@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_118_set_aaa_accounting_exec(configuration, commands, device):
-    assert 'hostname#show running-config | incl aaa accounting exec' in configuration
+    assert 'aaa accounting exec' in configuration
 
 # Remediation: hostname(config)#aaa accounting exec {default | list-name | guarantee-first}  
 

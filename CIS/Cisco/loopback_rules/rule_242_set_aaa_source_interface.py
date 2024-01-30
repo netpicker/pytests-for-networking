@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_242_set_aaa_source_interface(configuration, commands, device):
-    assert 'hostname#sh run | incl tacacs source | radius source' in configuration
+    assert 'tacacs source | radius source' in configuration
 
 # Remediation: 
 

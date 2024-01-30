@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_21112_set_the_ip_domain_name(configuration, commands, device):
-    assert 'hostname#sh run | incl domain-name' in configuration
+    assert 'domain-name' in configuration
 
 # Remediation: 
 

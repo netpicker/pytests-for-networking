@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_112_enable_aaa_authentication_login(configuration, commands, device):
-    assert 'hostname#show running-config | incl aaa authentication login' in configuration
+    assert 'aaa authentication login' in configuration
 
 # Remediation: hostname(config)#aaa authentication login {default | aaa_list_name} [passwd -
 

@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_311_set_no_ip_source_route(configuration, commands, device):
-    assert 'hostname#sh run | incl ip source-route' in configuration
+    assert 'ip source-route' in configuration
 
 # Remediation: hostname(config)#no ip source-route 
 

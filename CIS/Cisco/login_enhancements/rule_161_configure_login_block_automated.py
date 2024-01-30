@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_161_configure_login_block_automated(configuration, commands, device):
-    assert 'hostname#show running-config | inc login block' in configuration
+    assert 'login block' in configuration
 
 # Remediation: 
 

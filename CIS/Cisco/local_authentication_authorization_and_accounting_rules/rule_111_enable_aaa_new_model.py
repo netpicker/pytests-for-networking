@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_111_enable_aaa_new_model(configuration, commands, device):
-    assert 'hostname#show running-config | inc aaa new-model' in configuration
+    assert 'aaa new-model' in configuration
 
 # Remediation: hostname(config)#aaa new-model 
 

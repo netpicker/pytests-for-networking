@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_141_set_password_for_enable_secret(configuration, commands, device):
-    assert 'hostname#sh run | incl enable secret' in configuration
+    assert 'enable secret' in configuration
 
 # Remediation: hostname(config)#enable secret 9 {ENABLE_SECRET_PASSWORD}  
 

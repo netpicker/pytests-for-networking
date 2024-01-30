@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_115_set_login_authentication_for_ip_http_ed(configuration, commands, device):
-    assert 'hostname#show run ning-config | inc ip http authentication' in configuration
+    assert 'ip http authentication' in configuration
 
 # Remediation: 
 
