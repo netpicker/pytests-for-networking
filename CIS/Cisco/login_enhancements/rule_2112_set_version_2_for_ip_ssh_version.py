@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='sh ip ssh')
 )
 def rule_2112_set_version_2_for_ip_ssh_version(configuration, commands, device):
-    assert 'hostname#sh ip ssh' in configuration
+    assert f'hostname#sh ip ssh' in commands.check_command
 
 # Remediation: hostname(config)#ip ssh version 2  
 

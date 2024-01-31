@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='sh run | sec key chain')
 )
 def rule_3311_set_key_chain(configuration, commands, device):
-    assert ' key chain' in configuration
+    assert f' key chain' in commands.check_command
 
 # Remediation: hostname(config)#key chain {<em>key-chain_name</em>}  
 

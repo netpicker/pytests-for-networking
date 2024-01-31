@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='sh run | sec router eigrp')
 )
 def rule_3314_set_address_family_ipv4_autonomous_system_(configuration, commands, device):
-    assert ' router eigrp' in configuration
+    assert f' router eigrp' in commands.check_command
 
 # Remediation: hostname(config)#router eigrp <<em>virtual-instance-name</em>>  
 

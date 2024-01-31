@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='sh ip ssh')
 )
 def rule_21114_set_seconds_for_ip_ssh_timeout_for_60_seconds_or_less(configuration, commands, device):
-    assert 'hostname#sh ip ssh' in configuration
+    assert f'hostname#sh ip ssh' in commands.check_command
 
 # Remediation: hostname(config)#ip ssh time-out [<em>60</em>]  
 

@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='sh ip ssh')
 )
 def rule_21115_set_maximum_value_for_ip_ssh_authentication_retries(configuration, commands, device):
-    assert 'hostname#sh ip ssh' in configuration
+    assert f'hostname#sh ip ssh' in commands.check_command
 
 # Remediation: hostname(config)#ip ssh authentication-retries [<em>3</em>]  
 

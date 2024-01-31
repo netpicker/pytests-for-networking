@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='sh run int {<em>interface_name</em>} | incl key-chain')
 )
 def rule_3318_set_ip_authentication_key_chain_eigrp_utomated(configuration, commands, device):
-    assert ' key-chain' in configuration
+    assert f' key-chain' in commands.check_command
 
 # Remediation: hostname(config)#interface {<em>interface_name</em>}  
 

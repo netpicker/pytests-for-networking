@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='sh run int {<em>interface</em>}')
 )
 def rule_3322_set_ip_ospf_message_digest_key_md5(configuration, commands, device):
-    assert 'hostname#sh run int {<em>interface</em>}' in configuration
+    assert f'hostname#sh run int {<em>interface</em>}' in commands.check_command
 
 # Remediation: hostname(config)#interface {<em>interface_name</em>}  
 

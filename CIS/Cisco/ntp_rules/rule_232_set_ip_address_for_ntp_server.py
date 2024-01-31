@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='sh ntp associations')
 )
 def rule_232_set_ip_address_for_ntp_server(configuration, commands, device):
-    assert 'hostname#sh ntp associations' in configuration
+    assert f'hostname#sh ntp associations' in commands.check_command
 
 # Remediation: hostname(config)#ntp server {ntp server vrf [vrf name] ip address}  
 

@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='show running-config | beg banner login')
 )
 def rule_132_set_the_banner_text_for_banner_login(configuration, commands, device):
-    assert ' banner login' in configuration
+    assert f' banner login' in commands.check_command
 
 # Remediation: hostname(config)#banner login c 
 

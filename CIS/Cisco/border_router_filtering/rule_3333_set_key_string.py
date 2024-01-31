@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='sh run | sec key chain')
 )
 def rule_3333_set_key_string(configuration, commands, device):
-    assert ' key chain' in configuration
+    assert f' key chain' in commands.check_command
 
 # Remediation: 
 

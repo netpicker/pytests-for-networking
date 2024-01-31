@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='show line aux 0 | incl exec')
 )
 def rule_123_set_no_exec_for_line_aux_0(configuration, commands, device):
-    assert ' exec' in configuration
+    assert f' exec' in commands.check_command
 
 # Remediation: hostname(config)#line aux 0  
 

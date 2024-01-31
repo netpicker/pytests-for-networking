@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='sh run | sec vty <line-number> <ending-line-number>')
 )
 def rule_125_set_access_class_for_line_vty(configuration, commands, device):
-    assert ' vty <line-number> <ending-line-number>' in configuration
+    assert f' vty <line-number> <ending-line-number>' in commands.check_command
 
 # Remediation: hostname(config)#line vty <line-number> <ending-line-number> 
 

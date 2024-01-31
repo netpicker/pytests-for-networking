@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='show  cdp')
 )
 def rule_212_set_no_cdp_run(configuration, commands, device):
-    assert 'hostname#show  cdp' in configuration
+    assert f'hostname#show  cdp' in commands.check_command
 
 # Remediation: hostname(config)#no cdp run  
 

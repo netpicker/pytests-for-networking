@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='sh run | sec router eigrp')
 )
 def rule_3317_set_authentication_mode_md5(configuration, commands, device):
-    assert ' router eigrp' in configuration
+    assert f' router eigrp' in commands.check_command
 
 # Remediation: hostname(config)#router eigrp <virtual-instance-name> 
 

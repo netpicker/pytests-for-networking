@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='show running-config | sec vty')
 )
 def rule_122_set_transport_input_ssh_for_line_vty_connections(configuration, commands, device):
-    assert ' vty' in configuration
+    assert f' vty' in commands.check_command
 
 # Remediation: hostname(config)#line vty <line-number> <ending-line-number> 
 

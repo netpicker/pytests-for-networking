@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='sh run | sec line aux 0')
 )
 def rule_126_set_exec_timeout_to_less_than_or_equal_to_10_minutes_for(configuration, commands, device):
-    assert ' line aux 0' in configuration
+    assert f' line aux 0' in commands.check_command
 
 # Remediation: hostname(config)#line aux 0  
 

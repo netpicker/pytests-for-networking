@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='show running-config | sec line | incl l ogin authentication')
 )
 def rule_114_set_login_authentication_for_line_vty_ted(configuration, commands, device):
-    assert ' l ogin authentication' in configuration
+    assert f' l ogin authentication' in commands.check_command
 
 # Remediation: hostname(config)#line vty {line-number} [<em>ending-line-number] 
 

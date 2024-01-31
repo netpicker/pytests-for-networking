@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='sh ip int {<em>interface</em>} | incl proxy-arp')
 )
 def rule_312_set_no_ip_proxy_arp(configuration, commands, device):
-    assert ' proxy-arp' in configuration
+    assert f' proxy-arp' in commands.check_command
 
 # Remediation: hostname(config)#interface {interface}  
 

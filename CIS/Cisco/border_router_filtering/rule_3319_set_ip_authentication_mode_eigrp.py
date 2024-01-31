@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='sh run int {<em>interface_name</em>} | incl authentication mode')
 )
 def rule_3319_set_ip_authentication_mode_eigrp(configuration, commands, device):
-    assert ' authentication mode' in configuration
+    assert f' authentication mode' in commands.check_command
 
 # Remediation: hostname(config)#interface {<em>interface_name</em>}  
 

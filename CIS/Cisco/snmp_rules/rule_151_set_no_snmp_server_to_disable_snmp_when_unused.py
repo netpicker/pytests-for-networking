@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='show snmp community')
 )
 def rule_151_set_no_snmp_server_to_disable_snmp_when_unused(configuration, commands, device):
-    assert 'hostname#show snmp community' in configuration
+    assert f'hostname#show snmp community' in commands.check_command
 
 # Remediation: hostname(config)#no snmp-server  
 

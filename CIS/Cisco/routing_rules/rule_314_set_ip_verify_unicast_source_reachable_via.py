@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='sh ip int {<em>interface</em>} | incl verify source')
 )
 def rule_314_set_ip_verify_unicast_source_reachable_via(configuration, commands, device):
-    assert ' verify source' in configuration
+    assert f' verify source' in commands.check_command
 
 # Remediation: hostname(config)#interface {<em>interface_name</em>}  
 

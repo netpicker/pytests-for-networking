@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='sh running-config | beg banner motd')
 )
 def rule_133_set_the_banner_text_for_banner_motd(configuration, commands, device):
-    assert ' banner motd' in configuration
+    assert f' banner motd' in commands.check_command
 
 # Remediation: hostname(config)#banner motd c  
 

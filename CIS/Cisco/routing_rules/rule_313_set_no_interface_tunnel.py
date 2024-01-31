@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='sh ip int brief | incl tunnel')
 )
 def rule_313_set_no_interface_tunnel(configuration, commands, device):
-    assert ' tunnel' in configuration
+    assert f' tunnel' in commands.check_command
 
 # Remediation: hostname(config)#no interface tunnel {<em>instance</em>}  
 

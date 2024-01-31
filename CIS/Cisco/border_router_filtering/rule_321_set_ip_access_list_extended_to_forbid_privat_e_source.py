@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='sh ip access-list {<em>name | number</em>}')
 )
 def rule_321_set_ip_access_list_extended_to_forbid_privat_e_source(configuration, commands, device):
-    assert 'hostname#sh ip access-list {<em>name | number</em>}' in configuration
+    assert f'hostname#sh ip access-list {<em>name | number</em>}' in commands.check_command
 
 # Remediation: hostname(config)#interface <external_<em>interface</em>>  
 

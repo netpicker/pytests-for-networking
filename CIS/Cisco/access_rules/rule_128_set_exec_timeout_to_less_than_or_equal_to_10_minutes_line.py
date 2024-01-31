@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='sh line vty <tty_line_number> | begin Timeout')
 )
 def rule_128_set_exec_timeout_to_less_than_or_equal_to_10_minutes_line(configuration, commands, device):
-    assert 'in Timeout' in configuration
+    assert f'in Timeout' in commands.check_command
 
 # Remediation: hostname(config)#line vty {line_number} [ending_line_number]  
 

@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='sh run int {<em>interface_name</em>}')
 )
 def rule_3334_set_ip_rip_authentication_key_chain(configuration, commands, device):
-    assert 'hostname#sh run int {<em>interface_name</em>}' in configuration
+    assert f'hostname#sh run int {<em>interface_name</em>}' in commands.check_command
 
 # Remediation: hostname(config)#interface {<em>interface_name</em>}  
 

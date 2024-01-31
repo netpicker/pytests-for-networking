@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='sh ip access-list <<em>snmp_acl_number</em>>')
 )
 def rule_156_create_an_access_list_for_use_with_snmp(configuration, commands, device):
-    assert 'hostname#sh ip access-list <<em>snmp_acl_number</em>>' in configuration
+    assert f'hostname#sh ip access-list <<em>snmp_acl_number</em>>' in commands.check_command
 
 # Remediation: hostname(config)#access-list deny any log  
 

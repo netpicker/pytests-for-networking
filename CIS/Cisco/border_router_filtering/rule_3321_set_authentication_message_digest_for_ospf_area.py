@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='sh run | sec router ospf')
 )
 def rule_3321_set_authentication_message_digest_for_ospf_area(configuration, commands, device):
-    assert ' router ospf' in configuration
+    assert f' router ospf' in commands.check_command
 
 # Remediation: hostname(config)#router ospf <<em>osp f_process-id</em>>  
 

@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='sh ip int brief | incl Loopback')
 )
 def rule_241_create_a_single_interface_loopback(configuration, commands, device):
-    assert ' Loopback' in configuration
+    assert f' Loopback' in commands.check_command
 
 # Remediation: hostname(config)#interface loopback <<em>number</em>>  
 

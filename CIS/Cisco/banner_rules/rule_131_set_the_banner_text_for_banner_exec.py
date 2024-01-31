@@ -7,7 +7,7 @@ from comfy.compliance import *
   commands=dict(check_command='sh running-config | beg banner exec')
 )
 def rule_131_set_the_banner_text_for_banner_exec(configuration, commands, device):
-    assert ' banner exec' in configuration
+    assert f' banner exec' in commands.check_command
 
 # Remediation: hostname(config)#banner exec c  
 
