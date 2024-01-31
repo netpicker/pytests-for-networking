@@ -6,4 +6,4 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_226_set_service_timestamps_debug_datetime_mated(configuration, commands, device):
-    assert 'service timestamps' in configuration,"\n# Remediation: hostname(config)#service timestamps debug datetime {<em>msec</em>} show -\n# References: 1.http://www.cisco.com/en/US/docs/ios-xml/ios/fundamentals/command/R_through_setup.html#GUID-DC110E59-D294-4E3D-B67F-CCB06E607FC6\n\n
+    assert 'service timestamps' in configuration,"\n# Remediation: hostname(config)#service timestamps debug datetime {<em>msec</em>} show -\n# References: 1.http://www.cisco.com/en/US/docs/ios-xml/ios/fundamentals/command/R_through_setup.html#GUID-DC110E59-D294-4E3D-B67F-CCB06E607FC6\n\n"

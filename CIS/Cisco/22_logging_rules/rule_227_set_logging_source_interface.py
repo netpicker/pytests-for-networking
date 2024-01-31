@@ -6,4 +6,4 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_227_set_logging_source_interface(configuration, commands, device):
-    assert 'logging source' in configuration,"\n# Remediation: hostname(config)#logging source-interface loopback \n# References: 1.http://www.cisco.com/en/US/docs/ios/netmgmt/command/reference/nm_09.html#\n\n
+    assert 'logging source' in configuration,"\n# Remediation: hostname(config)#logging source-interface loopback \n# References: 1.http://www.cisco.com/en/US/docs/ios/netmgmt/command/reference/nm_09.html#\n\n"

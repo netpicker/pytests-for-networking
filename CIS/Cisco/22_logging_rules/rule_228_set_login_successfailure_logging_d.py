@@ -6,4 +6,4 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_228_set_login_successfailure_logging_d(configuration, commands, device):
-    assert '' in configuration,"\n# Remediation: hostname(config)#end  \n# References: 1.https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/config-mgmt/configuration/xe-16-6/config-mgmt-xe-16-6-book/cm-config-logger.pdf\n\n
+    assert '' in configuration,"\n# Remediation: hostname(config)#end  \n# References: 1.https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/config-mgmt/configuration/xe-16-6/config-mgmt-xe-16-6-book/cm-config-logger.pdf\n\n"

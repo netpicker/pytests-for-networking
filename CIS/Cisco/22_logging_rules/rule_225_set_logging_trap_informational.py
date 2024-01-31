@@ -7,4 +7,4 @@ from comfy.compliance import *
   commands=dict(check_command='sh log | incl trap logging')
 )
 def rule_225_set_logging_trap_informational(configuration, commands, device):
-    assert f' trap logging' in commands.check_command,"\n# Remediation: hostname(config)#logging trap informational  \n# References: 1.http://www.cisco.com/en/US/docs/ios/netmgmt/command/reference/nm_09.html#\n\n
+    assert f' trap logging' in commands.check_command,"\n# Remediation: hostname(config)#logging trap informational  \n# References: 1.http://www.cisco.com/en/US/docs/ios/netmgmt/command/reference/nm_09.html#\n\n"

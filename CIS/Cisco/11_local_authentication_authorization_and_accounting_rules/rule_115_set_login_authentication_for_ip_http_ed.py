@@ -6,4 +6,4 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_115_set_login_authentication_for_ip_http_ed(configuration, commands, device):
-    assert 'ip http authentication' in configuration,"\n# Remediation: \n# References: 1.http://www.cisco.com/en/US/docs/ios-xml/ios/security/d1/sec-cr-k1.html#GUID-297BDF33-4841-441C-83F3-4DA51C3C7284\n\n
+    assert 'ip http authentication' in configuration,"\n# Remediation: \n# References: 1.http://www.cisco.com/en/US/docs/ios-xml/ios/security/d1/sec-cr-k1.html#GUID-297BDF33-4841-441C-83F3-4DA51C3C7284\n\n"
