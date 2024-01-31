@@ -7,8 +7,8 @@ from comfy.compliance import *
   commands=dict(check_command='show ip admission auth-proxy-banner http')
 )
 def rule_134_set_the_banner_text_for_webauth_banner(configuration, commands, device):
-    assert f'hostname#show ip admission auth-proxy-banner http' in commands.check_command
-
+    assert f'hostname#show ip admission auth-proxy-banner http' in commands.check_command,"
 # Remediation: hostname(config)#ip  admission auth-proxy-banner http {banner-text | filepath}  
-
 # References: 1.https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/releas
+
+

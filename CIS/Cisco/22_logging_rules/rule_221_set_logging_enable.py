@@ -6,8 +6,8 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_221_set_logging_enable(configuration, commands, device):
-    assert 'logging host' in configuration
-
+    assert 'logging host' in configuration,"
 # Remediation: hostname(config)#archive  
-
 # References: 1.https://community.cisco.com/t5/networking-knowledge-base/how-to-configure-logging-in-cisco-ios/ta-p/3132434
+
+

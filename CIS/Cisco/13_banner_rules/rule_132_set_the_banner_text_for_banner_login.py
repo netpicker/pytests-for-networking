@@ -7,8 +7,8 @@ from comfy.compliance import *
   commands=dict(check_command='show running-config | beg banner login')
 )
 def rule_132_set_the_banner_text_for_banner_login(configuration, commands, device):
-    assert f' banner login' in commands.check_command
-
+    assert f' banner login' in commands.check_command,"
 # Remediation: hostname(config)#banner login c 
-
 # References: 1.http://www.cisco.com/en/US/docs/ios-xml/ios/fundamentals/command/A_through_B.html#GUID-FF0B6890-85B8-4B6A-90DD-1B7140C5D22F
+
+

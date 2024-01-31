@@ -6,8 +6,8 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_216_set_service_tcp_keepalives_in(configuration, commands, device):
-    assert 'service tcp' in configuration
-
+    assert 'service tcp' in configuration,"
 # Remediation: hostname(config)#serv ice tcp-keepalives-in 
-
 # References: 1.http://www.cisco.com/en/US/docs/ios-xml/ios/fundamentals/command/R_through_setup.html#GUID-1489ABA3-2428-4A64-B252-296A035DB85E
+
+

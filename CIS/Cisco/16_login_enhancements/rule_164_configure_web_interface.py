@@ -6,8 +6,8 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_164_configure_web_interface(configuration, commands, device):
-    assert '' in configuration
-
+    assert '' in configuration,"
 # Remediation: 
-
 # References: 
+
+
