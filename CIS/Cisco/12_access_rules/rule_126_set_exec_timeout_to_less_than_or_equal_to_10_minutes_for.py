@@ -7,8 +7,4 @@ from comfy.compliance import *
   commands=dict(check_command='sh run | sec line aux 0')
 )
 def rule_126_set_exec_timeout_to_less_than_or_equal_to_10_minutes_for(configuration, commands, device):
-    assert f' line aux 0' in commands.check_command,"
-# Remediation: hostname(config)#line aux 0  
-# References: 1.http://www.cisco.com/en/US/docs/ios-xml/ios/fundamentals/command/D_through_E.html#GUID-76805E6F-9E89-4457-A9DC-5944C8FE5419
-
-
+    assert f' line aux 0' in commands.check_command,"\n# Remediation: hostname(config)#line aux 0  \n# References: 1.http://www.cisco.com/en/US/docs/ios-xml/ios/fundamentals/command/D_through_E.html#GUID-76805E6F-9E89-4457-A9DC-5944C8FE5419\n\n
