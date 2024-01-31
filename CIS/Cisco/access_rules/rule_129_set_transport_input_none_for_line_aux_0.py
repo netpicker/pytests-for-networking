@@ -4,7 +4,7 @@ from comfy.compliance import *
 @medium(
   name = 'rule_129_set_transport_input_none_for_line_aux_0',
   platform = ['cisco_ios'],
-  commands=dict(check_command='hostname#sh line aux 0 | incl input transports')
+  commands=dict(check_command='sh line aux 0 | incl input transports')
 )
 def rule_129_set_transport_input_none_for_line_aux_0(configuration, commands, device):
     assert ' input transports' in configuration

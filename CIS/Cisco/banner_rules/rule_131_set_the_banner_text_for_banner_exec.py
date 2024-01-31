@@ -4,7 +4,7 @@ from comfy.compliance import *
 @medium(
   name = 'rule_131_set_the_banner_text_for_banner_exec',
   platform = ['cisco_ios'],
-  commands=dict(check_command='hostname#sh running-config | beg banner exec')
+  commands=dict(check_command='sh running-config | beg banner exec')
 )
 def rule_131_set_the_banner_text_for_banner_exec(configuration, commands, device):
     assert ' banner exec' in configuration

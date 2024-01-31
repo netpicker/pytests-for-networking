@@ -4,7 +4,7 @@ from comfy.compliance import *
 @medium(
   name = 'rule_122_set_transport_input_ssh_for_line_vty_connections',
   platform = ['cisco_ios'],
-  commands=dict(check_command='hostname#show running-config | sec vty')
+  commands=dict(check_command='show running-config | sec vty')
 )
 def rule_122_set_transport_input_ssh_for_line_vty_connections(configuration, commands, device):
     assert ' vty' in configuration

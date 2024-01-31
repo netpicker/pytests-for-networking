@@ -4,7 +4,7 @@ from comfy.compliance import *
 @low(
   name = 'rule_3332_set_key',
   platform = ['cisco_ios'],
-  commands=dict(check_command='hostname#sh run | sec key chain')
+  commands=dict(check_command='sh run | sec key chain')
 )
 def rule_3332_set_key(configuration, commands, device):
     assert ' key chain' in configuration

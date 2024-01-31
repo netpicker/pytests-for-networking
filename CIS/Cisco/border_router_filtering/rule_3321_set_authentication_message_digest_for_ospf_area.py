@@ -4,7 +4,7 @@ from comfy.compliance import *
 @low(
   name = 'rule_3321_set_authentication_message_digest_for_ospf_area',
   platform = ['cisco_ios'],
-  commands=dict(check_command='hostname#sh run | sec router ospf')
+  commands=dict(check_command='sh run | sec router ospf')
 )
 def rule_3321_set_authentication_message_digest_for_ospf_area(configuration, commands, device):
     assert ' router ospf' in configuration

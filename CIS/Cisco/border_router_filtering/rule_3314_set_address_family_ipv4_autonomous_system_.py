@@ -4,7 +4,7 @@ from comfy.compliance import *
 @low(
   name = 'rule_3314_set_address_family_ipv4_autonomous_system_',
   platform = ['cisco_ios'],
-  commands=dict(check_command='hostname#sh run | sec router eigrp')
+  commands=dict(check_command='sh run | sec router eigrp')
 )
 def rule_3314_set_address_family_ipv4_autonomous_system_(configuration, commands, device):
     assert ' router eigrp' in configuration

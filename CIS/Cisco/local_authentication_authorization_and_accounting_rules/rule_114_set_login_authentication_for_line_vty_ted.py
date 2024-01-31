@@ -4,7 +4,7 @@ from comfy.compliance import *
 @medium(
   name = 'rule_114_set_login_authentication_for_line_vty_ted',
   platform = ['cisco_ios'],
-  commands=dict(check_command='hostname#show running-config | sec line | incl l ogin authentication')
+  commands=dict(check_command='show running-config | sec line | incl l ogin authentication')
 )
 def rule_114_set_login_authentication_for_line_vty_ted(configuration, commands, device):
     assert ' l ogin authentication' in configuration

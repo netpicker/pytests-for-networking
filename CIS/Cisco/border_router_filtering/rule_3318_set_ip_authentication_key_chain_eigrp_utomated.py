@@ -4,7 +4,7 @@ from comfy.compliance import *
 @low(
   name = 'rule_3318_set_ip_authentication_key_chain_eigrp_utomated',
   platform = ['cisco_ios'],
-  commands=dict(check_command='hostname#sh run int {<em>interface_name</em>} | incl key-chain')
+  commands=dict(check_command='sh run int {<em>interface_name</em>} | incl key-chain')
 )
 def rule_3318_set_ip_authentication_key_chain_eigrp_utomated(configuration, commands, device):
     assert ' key-chain' in configuration

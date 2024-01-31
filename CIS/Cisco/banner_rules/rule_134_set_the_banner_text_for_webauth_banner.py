@@ -4,7 +4,7 @@ from comfy.compliance import *
 @medium(
   name = 'rule_134_set_the_banner_text_for_webauth_banner',
   platform = ['cisco_ios'],
-  commands=dict(check_command='hostname#show ip admission auth-proxy-banner http')
+  commands=dict(check_command='show ip admission auth-proxy-banner http')
 )
 def rule_134_set_the_banner_text_for_webauth_banner(configuration, commands, device):
     assert 'hostname#show ip admission auth-proxy-banner http' in configuration

@@ -4,7 +4,7 @@ from comfy.compliance import *
 @medium(
   name = 'rule_314_set_ip_verify_unicast_source_reachable_via',
   platform = ['cisco_ios'],
-  commands=dict(check_command='hostname#sh ip int {<em>interface</em>} | incl verify source')
+  commands=dict(check_command='sh ip int {<em>interface</em>} | incl verify source')
 )
 def rule_314_set_ip_verify_unicast_source_reachable_via(configuration, commands, device):
     assert ' verify source' in configuration

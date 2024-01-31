@@ -4,7 +4,7 @@ from comfy.compliance import *
 @medium(
   name = 'rule_128_set_exec_timeout_to_less_than_or_equal_to_10_minutes_line',
   platform = ['cisco_ios'],
-  commands=dict(check_command='hostname#sh line vty <tty_line_number> | begin Timeout')
+  commands=dict(check_command='sh line vty <tty_line_number> | begin Timeout')
 )
 def rule_128_set_exec_timeout_to_less_than_or_equal_to_10_minutes_line(configuration, commands, device):
     assert 'in Timeout' in configuration
