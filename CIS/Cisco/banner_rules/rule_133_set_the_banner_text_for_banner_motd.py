@@ -3,10 +3,11 @@ from comfy.compliance import *
 
 @medium(
   name = 'rule_133_set_the_banner_text_for_banner_motd',
-  platform = ['cisco_ios']
+  platform = ['cisco_ios'],
+  commands=dict(check_command=hostname#sh running-config | beg banner motd)
 )
 def rule_133_set_the_banner_text_for_banner_motd(configuration, commands, device):
-    assert 'hostname#sh running-config | beg banner motd' in configuration
+    assert ' banner motd' in configuration
 
 # Remediation: hostname(config)#banner motd c  
 

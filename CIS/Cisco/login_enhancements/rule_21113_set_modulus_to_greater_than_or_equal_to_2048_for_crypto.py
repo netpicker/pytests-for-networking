@@ -3,7 +3,8 @@ from comfy.compliance import *
 
 @medium(
   name = 'rule_21113_set_modulus_to_greater_than_or_equal_to_2048_for_crypto',
-  platform = ['cisco_ios']
+  platform = ['cisco_ios'],
+  commands=dict(check_command=hostname#sh crypto key mypubkey rsa)
 )
 def rule_21113_set_modulus_to_greater_than_or_equal_to_2048_for_crypto(configuration, commands, device):
     assert 'hostname#sh crypto key mypubkey rsa' in configuration

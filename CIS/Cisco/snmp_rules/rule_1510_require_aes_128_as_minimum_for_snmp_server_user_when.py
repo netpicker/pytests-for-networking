@@ -3,7 +3,8 @@ from comfy.compliance import *
 
 @low(
   name = 'rule_1510_require_aes_128_as_minimum_for_snmp_server_user_when',
-  platform = ['cisco_ios']
+  platform = ['cisco_ios'],
+  commands=dict(check_command=hostname#show snmp user)
 )
 def rule_1510_require_aes_128_as_minimum_for_snmp_server_user_when(configuration, commands, device):
     assert 'hostname#show snmp user' in configuration

@@ -3,7 +3,8 @@ from comfy.compliance import *
 
 @medium(
   name = 'rule_124_create_access_list_for_use_with_line_v_ty',
-  platform = ['cisco_ios']
+  platform = ['cisco_ios'],
+  commands=dict(check_command=hostname#sh ip access-list <vty_acl_number>)
 )
 def rule_124_create_access_list_for_use_with_line_v_ty(configuration, commands, device):
     assert 'hostname#sh ip access-list <vty_acl_number>' in configuration

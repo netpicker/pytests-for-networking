@@ -3,10 +3,11 @@ from comfy.compliance import *
 
 @low(
   name = 'rule_3311_set_key_chain',
-  platform = ['cisco_ios']
+  platform = ['cisco_ios'],
+  commands=dict(check_command=hostname#sh run | sec key chain)
 )
 def rule_3311_set_key_chain(configuration, commands, device):
-    assert 'hostname#sh run | sec key chain' in configuration
+    assert ' key chain' in configuration
 
 # Remediation: hostname(config)#key chain {<em>key-chain_name</em>}  
 

@@ -3,7 +3,8 @@ from comfy.compliance import *
 
 @medium(
   name = 'rule_212_set_no_cdp_run',
-  platform = ['cisco_ios']
+  platform = ['cisco_ios'],
+  commands=dict(check_command=hostname#show  cdp)
 )
 def rule_212_set_no_cdp_run(configuration, commands, device):
     assert 'hostname#show  cdp' in configuration

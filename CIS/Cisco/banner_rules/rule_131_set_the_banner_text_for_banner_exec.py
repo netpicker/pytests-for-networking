@@ -3,10 +3,11 @@ from comfy.compliance import *
 
 @medium(
   name = 'rule_131_set_the_banner_text_for_banner_exec',
-  platform = ['cisco_ios']
+  platform = ['cisco_ios'],
+  commands=dict(check_command=hostname#sh running-config | beg banner exec)
 )
 def rule_131_set_the_banner_text_for_banner_exec(configuration, commands, device):
-    assert 'hostname#sh running-config | beg banner exec' in configuration
+    assert ' banner exec' in configuration
 
 # Remediation: hostname(config)#banner exec c  
 

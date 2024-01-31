@@ -3,10 +3,11 @@ from comfy.compliance import *
 
 @low(
   name = 'rule_3316_set_authentication_key_chain',
-  platform = ['cisco_ios']
+  platform = ['cisco_ios'],
+  commands=dict(check_command=hostname#sh run | sec router eigrp)
 )
 def rule_3316_set_authentication_key_chain(configuration, commands, device):
-    assert 'hostname#sh run | sec router eigrp' in configuration
+    assert ' router eigrp' in configuration
 
 # Remediation: hostname(config)#router eigrp  <virtual-instance-name> 
 

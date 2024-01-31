@@ -3,7 +3,8 @@ from comfy.compliance import *
 
 @low(
   name = 'rule_159_set_priv_for_each_snmp_server_group_using_snmpv3',
-  platform = ['cisco_ios']
+  platform = ['cisco_ios'],
+  commands=dict(check_command=hostname#show snmp group)
 )
 def rule_159_set_priv_for_each_snmp_server_group_using_snmpv3(configuration, commands, device):
     assert 'hostname#show snmp group' in configuration

@@ -3,10 +3,11 @@ from comfy.compliance import *
 
 @medium(
   name = 'rule_3317_set_authentication_mode_md5',
-  platform = ['cisco_ios']
+  platform = ['cisco_ios'],
+  commands=dict(check_command=hostname#sh run | sec router eigrp)
 )
 def rule_3317_set_authentication_mode_md5(configuration, commands, device):
-    assert 'hostname#sh run | sec router eigrp' in configuration
+    assert ' router eigrp' in configuration
 
 # Remediation: hostname(config)#router eigrp <virtual-instance-name> 
 

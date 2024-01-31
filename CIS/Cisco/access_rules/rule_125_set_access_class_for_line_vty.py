@@ -3,10 +3,11 @@ from comfy.compliance import *
 
 @medium(
   name = 'rule_125_set_access_class_for_line_vty',
-  platform = ['cisco_ios']
+  platform = ['cisco_ios'],
+  commands=dict(check_command=hostname#sh run | sec vty <line-number> <ending-line-number>)
 )
 def rule_125_set_access_class_for_line_vty(configuration, commands, device):
-    assert 'hostname#sh run | sec vty <line-number> <ending-line-number>' in configuration
+    assert ' vty <line-number> <ending-line-number>' in configuration
 
 # Remediation: hostname(config)#line vty <line-number> <ending-line-number> 
 

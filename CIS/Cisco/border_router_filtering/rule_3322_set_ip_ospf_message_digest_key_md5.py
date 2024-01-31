@@ -3,7 +3,8 @@ from comfy.compliance import *
 
 @low(
   name = 'rule_3322_set_ip_ospf_message_digest_key_md5',
-  platform = ['cisco_ios']
+  platform = ['cisco_ios'],
+  commands=dict(check_command=hostname#sh run int {<em>interface</em>})
 )
 def rule_3322_set_ip_ospf_message_digest_key_md5(configuration, commands, device):
     assert 'hostname#sh run int {<em>interface</em>}' in configuration

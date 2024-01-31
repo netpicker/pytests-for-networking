@@ -3,10 +3,11 @@ from comfy.compliance import *
 
 @medium(
   name = 'rule_224_set_ip_address_for_logging_host',
-  platform = ['cisco_ios']
+  platform = ['cisco_ios'],
+  commands=dict(check_command=hostname#sh log | incl logging host)
 )
 def rule_224_set_ip_address_for_logging_host(configuration, commands, device):
-    assert 'hostname#sh log | incl logging host' in configuration
+    assert ' logging host' in configuration
 
 # Remediation: hostname(config)#logging host {syslog_server}  
 

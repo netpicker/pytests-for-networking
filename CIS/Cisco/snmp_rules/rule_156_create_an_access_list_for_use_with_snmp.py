@@ -3,7 +3,8 @@ from comfy.compliance import *
 
 @medium(
   name = 'rule_156_create_an_access_list_for_use_with_snmp',
-  platform = ['cisco_ios']
+  platform = ['cisco_ios'],
+  commands=dict(check_command=hostname#sh ip access-list <<em>snmp_acl_number</em>>)
 )
 def rule_156_create_an_access_list_for_use_with_snmp(configuration, commands, device):
     assert 'hostname#sh ip access-list <<em>snmp_acl_number</em>>' in configuration

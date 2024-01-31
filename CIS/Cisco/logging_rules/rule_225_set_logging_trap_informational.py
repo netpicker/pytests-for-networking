@@ -3,10 +3,11 @@ from comfy.compliance import *
 
 @medium(
   name = 'rule_225_set_logging_trap_informational',
-  platform = ['cisco_ios']
+  platform = ['cisco_ios'],
+  commands=dict(check_command=hostname#sh log | incl trap logging)
 )
 def rule_225_set_logging_trap_informational(configuration, commands, device):
-    assert 'hostname#sh log | incl trap logging' in configuration
+    assert ' trap logging' in configuration
 
 # Remediation: hostname(config)#logging trap informational  
 
