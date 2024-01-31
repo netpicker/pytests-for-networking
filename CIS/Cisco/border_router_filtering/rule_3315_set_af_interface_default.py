@@ -4,7 +4,7 @@ from comfy.compliance import *
 @low(
   name = 'rule_3315_set_af_interface_default',
   platform = ['cisco_ios'],
-  commands=dict(check_command=hostname#sh run | sec router eigrp)
+  commands=dict(check_command='hostname#sh run | sec router eigrp')
 )
 def rule_3315_set_af_interface_default(configuration, commands, device):
     assert ' router eigrp' in configuration

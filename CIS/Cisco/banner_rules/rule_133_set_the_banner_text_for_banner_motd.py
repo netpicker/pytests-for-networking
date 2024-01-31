@@ -4,7 +4,7 @@ from comfy.compliance import *
 @medium(
   name = 'rule_133_set_the_banner_text_for_banner_motd',
   platform = ['cisco_ios'],
-  commands=dict(check_command=hostname#sh running-config | beg banner motd)
+  commands=dict(check_command='hostname#sh running-config | beg banner motd')
 )
 def rule_133_set_the_banner_text_for_banner_motd(configuration, commands, device):
     assert ' banner motd' in configuration

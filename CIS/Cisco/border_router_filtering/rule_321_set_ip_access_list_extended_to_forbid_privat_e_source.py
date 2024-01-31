@@ -4,7 +4,7 @@ from comfy.compliance import *
 @low(
   name = 'rule_321_set_ip_access_list_extended_to_forbid_privat_e_source',
   platform = ['cisco_ios'],
-  commands=dict(check_command=hostname#sh ip access-list {<em>name | number</em>})
+  commands=dict(check_command='hostname#sh ip access-list {<em>name | number</em>}')
 )
 def rule_321_set_ip_access_list_extended_to_forbid_privat_e_source(configuration, commands, device):
     assert 'hostname#sh ip access-list {<em>name | number</em>}' in configuration

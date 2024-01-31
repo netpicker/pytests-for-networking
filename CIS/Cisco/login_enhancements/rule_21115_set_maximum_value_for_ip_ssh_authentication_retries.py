@@ -4,7 +4,7 @@ from comfy.compliance import *
 @medium(
   name = 'rule_21115_set_maximum_value_for_ip_ssh_authentication_retries',
   platform = ['cisco_ios'],
-  commands=dict(check_command=hostname#sh ip ssh)
+  commands=dict(check_command='hostname#sh ip ssh')
 )
 def rule_21115_set_maximum_value_for_ip_ssh_authentication_retries(configuration, commands, device):
     assert 'hostname#sh ip ssh' in configuration

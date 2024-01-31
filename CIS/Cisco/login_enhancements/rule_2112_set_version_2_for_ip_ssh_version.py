@@ -4,7 +4,7 @@ from comfy.compliance import *
 @medium(
   name = 'rule_2112_set_version_2_for_ip_ssh_version',
   platform = ['cisco_ios'],
-  commands=dict(check_command=hostname#sh ip ssh)
+  commands=dict(check_command='hostname#sh ip ssh')
 )
 def rule_2112_set_version_2_for_ip_ssh_version(configuration, commands, device):
     assert 'hostname#sh ip ssh' in configuration

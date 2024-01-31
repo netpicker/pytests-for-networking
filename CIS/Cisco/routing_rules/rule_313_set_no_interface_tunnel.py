@@ -4,7 +4,7 @@ from comfy.compliance import *
 @medium(
   name = 'rule_313_set_no_interface_tunnel',
   platform = ['cisco_ios'],
-  commands=dict(check_command=hostname#sh ip int brief | incl tunnel)
+  commands=dict(check_command='hostname#sh ip int brief | incl tunnel')
 )
 def rule_313_set_no_interface_tunnel(configuration, commands, device):
     assert ' tunnel' in configuration

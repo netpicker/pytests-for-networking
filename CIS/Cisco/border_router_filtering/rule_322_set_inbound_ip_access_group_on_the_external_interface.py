@@ -4,7 +4,7 @@ from comfy.compliance import *
 @low(
   name = 'rule_322_set_inbound_ip_access_group_on_the_external_interface',
   platform = ['cisco_ios'],
-  commands=dict(check_command=hostname#sh run | sec interface {<em>external_interface</em>})
+  commands=dict(check_command='hostname#sh run | sec interface {<em>external_interface</em>}')
 )
 def rule_322_set_inbound_ip_access_group_on_the_external_interface(configuration, commands, device):
     assert ' interface {<em>external_interface</em>}' in configuration

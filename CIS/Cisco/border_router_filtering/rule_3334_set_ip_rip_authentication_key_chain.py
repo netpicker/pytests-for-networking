@@ -4,7 +4,7 @@ from comfy.compliance import *
 @low(
   name = 'rule_3334_set_ip_rip_authentication_key_chain',
   platform = ['cisco_ios'],
-  commands=dict(check_command=hostname#sh run int {<em>interface_name</em>})
+  commands=dict(check_command='hostname#sh run int {<em>interface_name</em>}')
 )
 def rule_3334_set_ip_rip_authentication_key_chain(configuration, commands, device):
     assert 'hostname#sh run int {<em>interface_name</em>}' in configuration
