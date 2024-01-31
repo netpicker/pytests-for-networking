@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_2311_set_ntp_authenticate(configuration, commands, device):
-    assert 'ude ntp' in configuration
+    assert 'ntp' in configuration
 
 # Remediation: hostname(config)#ntp authenticate  
 

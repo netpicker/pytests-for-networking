@@ -6,7 +6,7 @@ from comfy.compliance import *
   platform = ['cisco_ios']
 )
 def rule_2314_set_key_for_each_ntp_server(configuration, commands, device):
-    assert 'ude ntp server' in configuration
+    assert 'ntp server' in configuration
 
 # Remediation: hostname(config)#ntp server {<em> ntp-server_ip_address</em>}{key 
 
