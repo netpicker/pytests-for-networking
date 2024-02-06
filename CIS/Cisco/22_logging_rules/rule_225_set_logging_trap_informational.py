@@ -1,10 +1,23 @@
-import pytest
-from comfy.compliance import *
+from comfy.compliance import medium
+
+
+uri = (
+    "http://www.cisco.com/en/US/docs/ios/netmgmt/command/reference/nm_09.html#"
+    ""
+)
+
+remediation = (f"""
+    Remediation: hostname(config)#logging trap informational
+
+    References: {uri}
+
+    """)
+
 
 @medium(
-  name = 'rule_225_set_logging_trap_informational',
-  platform = ['cisco_ios'],
-  commands=dict(check_command='sh log | incl trap logging')
+  name='rule_225_set_logging_trap_informational',
+  platform=['cisco_ios', 'cisco_xe'],
+  commands=dict(chk_cmd='sh log | incl trap logging')
 )
-def rule_225_set_logging_trap_informational(configuration, commands, device):
-    assert f' trap logging' in commands.check_command,"\n# Remediation: hostname(config)#logging trap informational  \n# References: 1.http://www.cisco.com/en/US/docs/ios/netmgmt/command/reference/nm_09.html#\n\n"
+def rule_225_set_logging_trap_informational(commands):
+    assert ' trap logging' in commands.chk_cmd, remediation

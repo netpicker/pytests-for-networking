@@ -1,9 +1,21 @@
-import pytest
-from comfy.compliance import *
+from comfy.compliance import medium
+
+uri = (
+    "http://www.cisco.com/en/US/docs/ios-xml/ios/security/a1/sec-cr-ahtml#GUID-4171D649-2973-4707-9"
+    "5F3-9D96971893D0"
+)
+
+remediation = (f"""
+    Remediation: hostname(config)#aaa authentication enable default {{method1}} enable
+
+    References: {uri}
+
+    """)
+
 
 @medium(
-  name = 'rule_113_enable_aaa_authentication_enable_default',
-  platform = ['cisco_ios']
+  name='rule_113_enable_aaa_authentication_enable_default',
+  platform=['cisco_ios', 'cisco_xe']
 )
-def rule_113_enable_aaa_authentication_enable_default(configuration, commands, device):
-    assert 'aaa authentication enable' in configuration,"\n# Remediation: hostname(config)#aaa authentication enable default {method1} enable  \n# References: 1.http://www.cisco.com/en/US/docs/ios-xml/ios/security/a1/sec-cr-a1.html#GUID-4171D649-2973-4707-95F3-9D96971893D0\n\n"
+def rule_113_enable_aaa_authentication_enable_default(configuration):
+    assert 'aaa authentication enable' in configuration, remediation

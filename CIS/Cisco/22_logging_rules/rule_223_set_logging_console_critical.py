@@ -1,9 +1,21 @@
-import pytest
-from comfy.compliance import *
+from comfy.compliance import medium
+
+uri = (
+    ""
+    ""
+)
+
+remediation = (f"""
+    Remediation: hostname(config)#logging console critical
+
+    References: {uri}
+
+    """)
+
 
 @medium(
-  name = 'rule_223_set_logging_console_critical',
-  platform = ['cisco_ios']
+  name='rule_223_set_logging_console_critical',
+  platform=['cisco_ios', 'cisco_xe']
 )
-def rule_223_set_logging_console_critical(configuration, commands, device):
-    assert 'logging console' in configuration,"\n# Remediation: hostname(config)#logging console critical  \n# References: \n\n"
+def rule_223_set_logging_console_critical(configuration):
+    assert 'logging console' in configuration, remediation

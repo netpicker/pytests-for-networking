@@ -1,9 +1,21 @@
-import pytest
-from comfy.compliance import *
+from comfy.compliance import medium
+
+uri = (
+    "http://www.cisco.com/en/US/docs/ios-xml/ios/fundamentals/command/F_through_K.html#GUID-F334998"
+    "8-EC16-484A-BE81-4C40110E6625"
+)
+
+remediation = (f"""
+    Remediation: hostname(config)#hostname {{<em>router_name</em>}}
+
+    References: {uri}
+
+    """)
+
 
 @medium(
-  name = 'rule_21111_set_the_hostname',
-  platform = ['cisco_ios']
+  name='rule_21111_set_the_hostname',
+  platform=['cisco_ios', 'cisco_xe']
 )
-def rule_21111_set_the_hostname(configuration, commands, device):
-    assert 'hostname' in configuration,"\n# Remediation: hostname(config)#hostname {<em>router_name</em>}  \n# References: 1.http://www.cisco.com/en/US/docs/ios-xml/ios/fundamentals/command/F_through_K.html#GUID-F3349988-EC16-484A-BE81-4C40110E6625\n\n"
+def rule_21111_set_the_hostname(configuration):
+    assert 'hostname' in configuration, remediation
