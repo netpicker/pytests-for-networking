@@ -1,10 +1,23 @@
-import pytest
-from comfy.compliance import *
+from comfy.compliance import medium
+
+
+uri = (
+    "http://www.cisco.com/en/US/docs/ios-xml/ios/interface/command/ir-ihtml#GUID-0D6BDFCD-3FBB-4D26"
+    "-A274-C1221F8592DF"
+)
+
+remediation = (f"""
+    Remediation: hostname(config)#no interface tunnel {{<em>instance</em>}}
+
+    References: {uri}
+
+    """)
+
 
 @medium(
-  name = 'rule_313_set_no_interface_tunnel',
-  platform = ['cisco_ios'],
-  commands=dict(check_command='sh ip int brief | incl tunnel')
+  name='rule_313_set_no_interface_tunnel',
+  platform=['cisco_ios', 'cisco_xe'],
+  commands=dict(chk_cmd='sh ip int brief | incl tunnel')
 )
-def rule_313_set_no_interface_tunnel(configuration, commands, device):
-    assert f' tunnel' in commands.check_command,"\n# Remediation: hostname(config)#no interface tunnel {<em>instance</em>}  \n# References: 1.http://www.cisco.com/en/US/docs/ios-xml/ios/interface/command/ir-i1.html#GUID-0D6BDFCD-3FBB-4D26-A274-C1221F8592DF\n\n"
+def rule_313_set_no_interface_tunnel(commands):
+    assert ' tunnel' in commands.chk_cmd, remediation
