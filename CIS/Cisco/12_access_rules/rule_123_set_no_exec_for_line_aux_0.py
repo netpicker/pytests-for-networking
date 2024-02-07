@@ -1,10 +1,23 @@
-import pytest
-from comfy.compliance import *
+from comfy.compliance import medium
+
+
+uri = (
+    "http://www.cisco.com/en/US/docs/ios-xml/ios/fundamentals/command/D_through_E.html#GUID-429A2B8"
+    "C-FC26-49C4-94C4-0FD99C32EC34"
+)
+
+remediation = (f"""
+    Remediation: hostname(config-line)#no exec
+
+    References: {uri}
+
+    """)
+
 
 @medium(
-  name = 'rule_123_set_no_exec_for_line_aux_0',
-  platform = ['cisco_ios'],
-  commands=dict(check_command='show line aux 0 | incl exec')
+  name='rule_123_set_no_exec_for_line_aux_0',
+  platform=['cisco_ios', 'cisco_xe'],
+  commands=dict(chk_cmd='show line aux 0 | incl exec')
 )
-def rule_123_set_no_exec_for_line_aux_0(configuration, commands, device):
-    assert f' exec' in commands.check_command,"\n# Remediation: hostname(config)#line aux 0  \n# References: 1.http://www.cisco.com/en/US/docs/ios-xml/ios/fundamentals/command/D_through_E.html#GUID-429A2B8C-FC26-49C4-94C4-0FD99C32EC34\n\n"
+def rule_123_set_no_exec_for_line_aux_0(commands):
+    assert ' exec' in commands.chk_cmd, remediation

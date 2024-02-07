@@ -1,10 +1,23 @@
-import pytest
-from comfy.compliance import *
+from comfy.compliance import medium
+
+
+uri = (
+    "http://www.cisco.com/en/US/docs/ios-xml/ios/fundamentals/command/A_through_B.html#GUID-0DEF5B5"
+    "7-A7D9-4912-861F-E837C82A3881"
+)
+
+remediation = (f"""
+    Remediation: hostname(config)#banner exec c
+
+    References: {uri}
+
+    """)
+
 
 @medium(
-  name = 'rule_131_set_the_banner_text_for_banner_exec',
-  platform = ['cisco_ios'],
-  commands=dict(check_command='sh running-config | beg banner exec')
+  name='rule_131_set_the_banner_text_for_banner_exec',
+  platform=['cisco_ios', 'cisco_xe'],
+  commands=dict(chk_cmd='sh running-config | beg banner exec')
 )
-def rule_131_set_the_banner_text_for_banner_exec(configuration, commands, device):
-    assert f' banner exec' in commands.check_command,"\n# Remediation: hostname(config)#banner exec c  \n# References: 1.http://www.cisco.com/en/US/docs/ios-xml/ios/fundamentals/command/A_through_B.html#GUID-0DEF5B57-A7D9-4912-861F-E837C82A3881\n\n"
+def rule_131_set_the_banner_text_for_banner_exec(commands):
+    assert ' banner exec' in commands.chk_cmd, remediation

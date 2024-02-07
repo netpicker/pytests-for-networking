@@ -1,10 +1,23 @@
-import pytest
-from comfy.compliance import *
+from comfy.compliance import low
+
+
+uri = (
+    "http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_eigrp/command/ire-ahtml#GUID-C03CFC8A-3CE3"
+    "-4CF9-9D65-52990DBD3377"
+)
+
+remediation = (f"""
+    Remediation: hostname(config-router)#address-family ipv4 autonomous-system {{<em>eigrp_as -
+
+    References: {uri}
+
+    """)
+
 
 @low(
-  name = 'rule_3314_set_address_family_ipv4_autonomous_system_',
-  platform = ['cisco_ios'],
-  commands=dict(check_command='sh run | sec router eigrp')
+  name='rule_3314_set_address_family_ipv4_autonomous_system_',
+  platform=['cisco_ios', 'cisco_xe'],
+  commands=dict(chk_cmd='sh run | sec router eigrp')
 )
-def rule_3314_set_address_family_ipv4_autonomous_system_(configuration, commands, device):
-    assert f' router eigrp' in commands.check_command,"\n# Remediation: hostname(config)#router eigrp <<em>virtual-instance-name</em>>  \n# References: 2.http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_eigrp/command/ire-a1.html#GUID-C03CFC8A-3CE3-4CF9-9D65-52990DBD3377\n\n"
+def rule_3314_set_address_family_ipv4_autonomous_system_(commands):
+    assert ' router eigrp' in commands.chk_cmd, remediation

@@ -1,10 +1,23 @@
-import pytest
-from comfy.compliance import *
+from comfy.compliance import low
+
+
+uri = (
+    "3.http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_eigrp/command/ire-ahtml#GUID-6B6ED6A3-1A"
+    "AA-4EFA-B6B8-9BF11EEC37A0"
+)
+
+remediation = (f"""
+    Remediation: hostname(config-router-af-interface)#authentication key-chain {{eigrp_key -
+
+    References: {uri}
+
+    """)
+
 
 @low(
-  name = 'rule_3316_set_authentication_key_chain',
-  platform = ['cisco_ios'],
-  commands=dict(check_command='sh run | sec router eigrp')
+  name='rule_3316_set_authentication_key_chain',
+  platform=['cisco_ios', 'cisco_xe'],
+  commands=dict(chk_cmd='sh run | sec router eigrp')
 )
-def rule_3316_set_authentication_key_chain(configuration, commands, device):
-    assert f' router eigrp' in commands.check_command,"\n# Remediation: hostname(config)#router eigrp  <virtual-instance-name> \n# References: 3.http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_eigrp/command/ire-a1.html#GUID-6B6ED6A3-1AAA-4EFA-B6B8-9BF11EEC37A0\n\n"
+def rule_3316_set_authentication_key_chain(commands):
+    assert ' router eigrp' in commands.chk_cmd, remediation
