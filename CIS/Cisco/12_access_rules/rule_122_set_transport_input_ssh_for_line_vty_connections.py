@@ -19,4 +19,4 @@ def rule_122_set_transport_input_ssh_for_line_vty_connections(commands):
 
     """)
 
-    assert ' vty' in commands.chk_cmd, remediation
+    assert 'vty' in commands.chk_cmd, remediation

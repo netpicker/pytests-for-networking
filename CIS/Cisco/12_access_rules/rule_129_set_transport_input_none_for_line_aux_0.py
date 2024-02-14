@@ -19,4 +19,4 @@ def rule_129_set_transport_input_none_for_line_aux_0(commands):
 
     """)
 
-    assert ' input transports' in commands.chk_cmd, remediation
+    assert 'input transports' in commands.chk_cmd, remediation

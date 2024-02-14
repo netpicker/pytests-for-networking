@@ -19,4 +19,4 @@ def rule_123_set_no_exec_for_line_aux_0(commands):
 
     """)
 
-    assert ' exec' in commands.chk_cmd, remediation
+    assert 'exec' in commands.chk_cmd, remediation

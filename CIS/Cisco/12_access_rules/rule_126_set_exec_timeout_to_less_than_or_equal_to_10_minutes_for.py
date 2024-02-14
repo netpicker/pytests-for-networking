@@ -19,4 +19,4 @@ def rule_126_set_exec_timeout_to_less_than_or_equal_to_10_minutes_for(commands):
 
     """)
 
-    assert ' line aux 0' in commands.chk_cmd, remediation
+    assert 'line aux 0' in commands.chk_cmd, remediation

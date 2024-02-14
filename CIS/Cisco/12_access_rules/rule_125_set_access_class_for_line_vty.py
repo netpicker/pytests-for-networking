@@ -19,4 +19,4 @@ def rule_125_set_access_class_for_line_vty(commands):
 
     """)
 
-    assert ' vty <line-number> <ending-line-number>' in commands.chk_cmd, remediation
+    assert 'vty <line-number> <ending-line-number>' in commands.chk_cmd, remediation

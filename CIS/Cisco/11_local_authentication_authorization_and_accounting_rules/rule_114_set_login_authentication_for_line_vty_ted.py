@@ -4,7 +4,7 @@ from comfy.compliance import medium
 @medium(
   name='rule_114_set_login_authentication_for_line_vty_ted',
   platform=['cisco_ios', 'cisco_xe'],
-  commands=dict(chk_cmd='show running-config | sec line | incl l ogin authentication')
+  commands=dict(chk_cmd='show running-config | sec line | incl login authentication')
 )
 def rule_114_set_login_authentication_for_line_vty_ted(commands):
     uri = (
@@ -19,4 +19,4 @@ def rule_114_set_login_authentication_for_line_vty_ted(commands):
 
     """)
 
-    assert ' l ogin authentication' in commands.chk_cmd, remediation
+    assert 'login authentication' in commands.chk_cmd, remediation
