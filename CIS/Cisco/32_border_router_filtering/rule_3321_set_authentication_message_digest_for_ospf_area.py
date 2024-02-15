@@ -19,4 +19,4 @@ def rule_3321_set_authentication_message_digest_for_ospf_area(commands):
 
     """)
 
-    assert ' router ospf' in commands.chk_cmd, remediation
+    assert 'router ospf' in commands.chk_cmd, remediation

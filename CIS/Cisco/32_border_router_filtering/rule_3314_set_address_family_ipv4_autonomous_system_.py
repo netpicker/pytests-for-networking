@@ -19,4 +19,4 @@ def rule_3314_set_address_family_ipv4_autonomous_system_(commands):
 
     """)
 
-    assert ' router eigrp' in commands.chk_cmd, remediation
+    assert 'router eigrp' in commands.chk_cmd, remediation

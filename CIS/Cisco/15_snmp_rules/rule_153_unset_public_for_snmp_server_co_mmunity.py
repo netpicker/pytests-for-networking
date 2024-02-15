@@ -18,4 +18,4 @@ def rule_153_unset_public_for_snmp_server_co_mmunity(configuration):
 
     """)
 
-    assert '' in configuration, remediation
+    assert '?' in configuration, remediation

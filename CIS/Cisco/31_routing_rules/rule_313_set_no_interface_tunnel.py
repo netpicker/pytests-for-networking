@@ -19,4 +19,4 @@ def rule_313_set_no_interface_tunnel(commands):
 
     """)
 
-    assert ' tunnel' in commands.chk_cmd, remediation
+    assert 'tunnel' in commands.chk_cmd, remediation

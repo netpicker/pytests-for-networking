@@ -18,4 +18,4 @@ def rule_228_set_login_successfailure_logging_d(configuration):
 
     """)
 
-    assert '' in configuration, remediation
+    assert '?' in configuration, remediation

@@ -19,4 +19,4 @@ def rule_133_set_the_banner_text_for_banner_motd(commands):
 
     """)
 
-    assert ' banner motd' in commands.chk_cmd, remediation
+    assert 'banner motd' in commands.chk_cmd, remediation

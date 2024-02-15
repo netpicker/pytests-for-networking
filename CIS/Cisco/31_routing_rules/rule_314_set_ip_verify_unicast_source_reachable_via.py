@@ -19,4 +19,4 @@ def rule_314_set_ip_verify_unicast_source_reachable_via(commands):
 
     """)
 
-    assert ' verify source' in commands.chk_cmd, remediation
+    assert 'verify source' in commands.chk_cmd, remediation

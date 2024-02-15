@@ -19,4 +19,4 @@ def rule_131_set_the_banner_text_for_banner_exec(commands):
 
     """)
 
-    assert ' banner exec' in commands.chk_cmd, remediation
+    assert 'banner exec' in commands.chk_cmd, remediation

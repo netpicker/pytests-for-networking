@@ -19,4 +19,4 @@ def rule_3332_set_key(commands):
 
     """)
 
-    assert ' key chain' in commands.chk_cmd, remediation
+    assert 'key chain' in commands.chk_cmd, remediation

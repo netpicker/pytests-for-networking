@@ -19,4 +19,4 @@ def rule_3315_set_af_interface_default(commands):
 
     """)
 
-    assert ' router eigrp' in commands.chk_cmd, remediation
+    assert 'router eigrp' in commands.chk_cmd, remediation

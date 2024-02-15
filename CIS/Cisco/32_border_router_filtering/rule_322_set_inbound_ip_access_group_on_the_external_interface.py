@@ -19,4 +19,4 @@ def rule_322_set_inbound_ip_access_group_on_the_external_interface(commands):
 
     """)
 
-    assert ' interface {<em>external_interface</em>}' in commands.chk_cmd, remediation
+    assert 'interface {<em>external_interface</em>}' in commands.chk_cmd, remediation

@@ -19,4 +19,4 @@ def rule_312_set_no_ip_proxy_arp(commands):
 
     """)
 
-    assert ' proxy-arp' in commands.chk_cmd, remediation
+    assert 'proxy-arp' in commands.chk_cmd, remediation

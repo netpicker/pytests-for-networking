@@ -19,4 +19,4 @@ def rule_3318_set_ip_authentication_key_chain_eigrp_utomated(commands):
 
     """)
 
-    assert ' key-chain' in commands.chk_cmd, remediation
+    assert 'key-chain' in commands.chk_cmd, remediation

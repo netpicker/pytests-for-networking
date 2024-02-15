@@ -19,4 +19,4 @@ def rule_225_set_logging_trap_informational(commands):
 
     """)
 
-    assert ' trap logging' in commands.chk_cmd, remediation
+    assert 'trap logging' in commands.chk_cmd, remediation

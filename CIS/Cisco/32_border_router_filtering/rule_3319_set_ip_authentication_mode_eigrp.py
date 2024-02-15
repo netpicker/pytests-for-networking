@@ -19,4 +19,4 @@ def rule_3319_set_ip_authentication_mode_eigrp(commands):
 
     """)
 
-    assert ' authentication mode' in commands.chk_cmd, remediation
+    assert 'authentication mode' in commands.chk_cmd, remediation

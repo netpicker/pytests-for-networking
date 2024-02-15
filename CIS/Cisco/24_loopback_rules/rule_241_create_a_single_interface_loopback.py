@@ -19,4 +19,4 @@ def rule_241_create_a_single_interface_loopback(commands):
 
     """)
 
-    assert ' Loopback' in commands.chk_cmd, remediation
+    assert 'Loopback' in commands.chk_cmd, remediation

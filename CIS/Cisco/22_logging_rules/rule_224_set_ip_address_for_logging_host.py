@@ -19,4 +19,4 @@ def rule_224_set_ip_address_for_logging_host(commands):
 
     """)
 
-    assert ' logging host' in commands.chk_cmd, remediation
+    assert 'logging host' in commands.chk_cmd, remediation

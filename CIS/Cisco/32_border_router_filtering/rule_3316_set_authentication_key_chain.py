@@ -19,4 +19,4 @@ def rule_3316_set_authentication_key_chain(commands):
 
     """)
 
-    assert ' router eigrp' in commands.chk_cmd, remediation
+    assert 'router eigrp' in commands.chk_cmd, remediation

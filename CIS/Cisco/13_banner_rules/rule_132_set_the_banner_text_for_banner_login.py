@@ -19,4 +19,4 @@ def rule_132_set_the_banner_text_for_banner_login(commands):
 
     """)
 
-    assert ' banner login' in commands.chk_cmd, remediation
+    assert 'banner login' in commands.chk_cmd, remediation
