@@ -18,4 +18,4 @@ def rule_1211_set_exec_timeout_to_less_than_or_equal_to_10_min_on_ip(configurati
 
     """)
 
-    assert '' in configuration, remediation
+    assert '?' in configuration, remediation

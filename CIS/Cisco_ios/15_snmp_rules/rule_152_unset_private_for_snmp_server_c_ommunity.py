@@ -18,4 +18,4 @@ def rule_152_unset_private_for_snmp_server_c_ommunity(configuration):
 
     """)
 
-    assert '' in configuration, remediation
+    assert '?' in configuration, remediation

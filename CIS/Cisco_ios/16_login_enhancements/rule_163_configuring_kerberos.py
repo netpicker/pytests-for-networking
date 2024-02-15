@@ -18,4 +18,4 @@ def rule_163_configuring_kerberos(configuration):
 
     """)
 
-    assert '' in configuration, remediation
+    assert '?' in configuration, remediation
