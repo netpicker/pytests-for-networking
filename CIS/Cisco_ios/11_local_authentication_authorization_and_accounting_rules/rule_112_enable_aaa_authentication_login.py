@@ -7,7 +7,7 @@ from comfy.compliance import medium
 )
 def rule_112_enable_aaa_authentication_login(configuration):
     uri = (
-        "http://www.cisco.com/en/US/docs/ios-xml/ios/security/a1/sec-cr-ahtml#GUID-3DB1CC8A-4A98-40"
+        "http://www.cisco.com/en/US/docs/ios-xml/ios/security/a1/sec-cr-a.html#GUID-3DB1CC8A-4A98-40"
         "0B-A906-C42F265C7EA2"
     )
 
