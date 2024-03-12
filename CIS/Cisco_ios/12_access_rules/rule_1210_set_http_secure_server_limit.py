@@ -6,16 +6,9 @@ from comfy.compliance import medium
   platform=['cisco_ios', 'cisco_xe']
 )
 def rule_1210_set_http_secure_server_limit(configuration):
-    uri = (
-        ""
-        ""
-    )
-
     remediation = (f"""
     Remediation: hostname(config)#ip http max-connections 2
 
-    References: {uri}
-
     """)
 
-    assert 'ip http secure-server' in configuration, remediation
+    assert 'ip http max-connections' in configuration, remediation

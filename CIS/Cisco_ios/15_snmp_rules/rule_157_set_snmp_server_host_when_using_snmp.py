@@ -18,4 +18,4 @@ def rule_157_set_snmp_server_host_when_using_snmp(configuration):
 
     """)
 
-    assert 'snmp-server' in configuration, remediation
+    assert 'snmp-server host' in configuration, remediation

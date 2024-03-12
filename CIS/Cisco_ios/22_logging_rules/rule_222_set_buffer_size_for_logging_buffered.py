@@ -8,7 +8,7 @@ from comfy.compliance import medium
 def rule_222_set_buffer_size_for_logging_buffered(configuration):
     uri = (
         "http://www.cisco.com/en/US/docs/ios/netmgmt/command/reference/nm_09.html#"
-        ""
+        "wp1015177"
     )
 
     remediation = (f"""

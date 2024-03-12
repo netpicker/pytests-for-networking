@@ -4,7 +4,7 @@ from comfy.compliance import low
 @low(
   name='rule_312_set_no_ip_proxy_arp',
   platform=['cisco_ios', 'cisco_xe'],
-  commands=dict(chk_cmd='sh ip int {<em>interface</em>} | incl proxy-arp')
+  commands=dict(chk_cmd='sh inter | incl Interface|proxy-arp')
 )
 def rule_312_set_no_ip_proxy_arp(commands):
     uri = (
@@ -14,9 +14,10 @@ def rule_312_set_no_ip_proxy_arp(commands):
 
     remediation = (f"""
     Remediation: hostname(config)#interface {{interface}}
+                 hostname(config-if)#no ip proxy-arp
 
     References: {uri}
 
     """)
 
-    assert ' proxy-arp' in commands.chk_cmd, remediation
+    assert 'proxy-arp' in commands.chk_cmd, remediation

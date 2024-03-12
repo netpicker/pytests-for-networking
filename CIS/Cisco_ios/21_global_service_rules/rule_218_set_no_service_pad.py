@@ -18,4 +18,4 @@ def rule_218_set_no_service_pad(configuration):
 
     """)
 
-    assert 'service pad' in configuration, remediation
+    assert 'no service pad' in configuration, remediation

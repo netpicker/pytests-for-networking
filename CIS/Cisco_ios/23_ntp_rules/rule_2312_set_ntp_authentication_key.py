@@ -7,7 +7,7 @@ from comfy.compliance import low
 )
 def rule_2312_set_ntp_authentication_key(configuration):
     uri = (
-        "http://www.cisco.com/en/US/docs/ios-xml/ios/bsm/command/bsm-cr-nhtml#GUID-0435BFD1-D7D7-41"
+        "http://www.cisco.com/en/US/docs/ios-xml/ios/bsm/command/bsm-cr-n1.html#GUID-0435BFD1-D7D7-41"
         "D4-97AC-7731C11226BC"
     )
 

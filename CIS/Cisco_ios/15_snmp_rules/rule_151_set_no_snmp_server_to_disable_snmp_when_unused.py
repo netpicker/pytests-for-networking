@@ -9,7 +9,6 @@ from comfy.compliance import medium
 def rule_151_set_no_snmp_server_to_disable_snmp_when_unused(commands):
     uri = (
         "http://www.cisco.com/en/US/docs/ios-xml/ios/snmp/command/nm-snmp-cr-book.html"
-        ""
     )
 
     remediation = (f"""
@@ -19,4 +18,4 @@ def rule_151_set_no_snmp_server_to_disable_snmp_when_unused(commands):
 
     """)
 
-    assert 'hostname#show snmp community' in commands.chk_cmd, remediation
+    assert 'SNMP agent not enabled' in commands.chk_cmd, remediation

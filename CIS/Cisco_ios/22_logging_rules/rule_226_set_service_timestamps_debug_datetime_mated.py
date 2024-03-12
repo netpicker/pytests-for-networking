@@ -18,4 +18,4 @@ def rule_226_set_service_timestamps_debug_datetime_mated(configuration):
 
     """)
 
-    assert 'service timestamps' in configuration, remediation
+    assert 'service timestamps debug datetime' in configuration, remediation

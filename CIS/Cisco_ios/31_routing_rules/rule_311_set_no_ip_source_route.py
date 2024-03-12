@@ -18,4 +18,4 @@ def rule_311_set_no_ip_source_route(configuration):
 
     """)
 
-    assert 'ip source-route' in configuration, remediation
+    assert 'no ip source-route' in configuration, remediation

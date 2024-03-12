@@ -7,7 +7,7 @@ from comfy.compliance import medium
 )
 def rule_152_unset_private_for_snmp_server_c_ommunity(configuration):
     uri = (
-        "http://www.cisco.com/en/US/docs/ios-xml/ios/snmp/command/nm-snmp-cr-shtml#GUID-2F3F13E4-EE"
+        "http://www.cisco.com/en/US/docs/ios-xml/ios/snmp/command/nm-snmp-cr-s2.html#GUID-2F3F13E4-EE"
         "81-4590-871D-6AE1043473DE"
     )
 
@@ -18,4 +18,4 @@ def rule_152_unset_private_for_snmp_server_c_ommunity(configuration):
 
     """)
 
-    assert '' in configuration, remediation
+    assert 'private' not in configuration, remediation

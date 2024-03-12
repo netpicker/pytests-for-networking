@@ -12,10 +12,10 @@ def rule_154_do_not_set_rw_for_any_snmp_server_community(configuration):
     )
 
     remediation = (f"""
-    Remediation: hostname(config)#no s nmp-server community {{<em>write_community_string</em>}}
+    Remediation: hostname(config)#no snmp-server community {{<em>write_community_string</em>}}
 
     References: {uri}
 
     """)
 
-    assert 'snmp-server community' in configuration, remediation
+    assert 'RW' in configuration, remediation

@@ -8,15 +8,16 @@ from comfy.compliance import medium
 )
 def rule_156_create_an_access_list_for_use_with_snmp(commands):
     uri = (
-        "http://www.cisco.com/en/US/docs/ios-xml/ios/security/a1/sec-cr-ahtml#GUID-9EA733A3-1788-48"
+        "http://www.cisco.com/en/US/docs/ios-xml/ios/security/a1/sec-cr-a2.html#GUID-9EA733A3-1788-48"
         "82-B8C3-AB0A2949120C"
     )
 
     remediation = (f"""
-    Remediation: hostname(config)#access-list deny any log
+    Remediation: hostname(config)#access-list <<em>snmp_acl_number</em>> permit <<em>snmp_access-list</em>>
+                 hostname(config)#access-list deny any log
 
     References: {uri}
 
     """)
 
-    assert 'hostname#sh ip access-list <<em>snmp_acl_number</em>>' in commands.chk_cmd, remediation
+    assert 'access-list deny any log' in commands.chk_cmd, remediation

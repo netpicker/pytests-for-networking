@@ -8,15 +8,16 @@ from comfy.compliance import low
 )
 def rule_241_create_a_single_interface_loopback(commands):
     uri = (
-        "http://www.cisco.com/en/US/docs/ios-xml/ios/interface/command/ir-ihtml#GUID-0D6BDFCD-3FBB-"
+        "http://www.cisco.com/en/US/docs/ios-xml/ios/interface/command/ir-i1.html#GUID-0D6BDFCD-3FBB-"
         "4D26-A274-C1221F8592DF"
     )
 
     remediation = (f"""
-    Remediation: hostname(config-if)#ip address <<em>loopback_ip_address</em>>
-
+    Remediation: hostname(config)#interface loopback <<em>number</em>>
+                 hostname(config-if)#ip address <<em>loopback_ip_address</em>>
+                 <<em>loopback_subnet_mask</em>>
     References: {uri}
 
     """)
 
-    assert ' Loopback' in commands.chk_cmd, remediation
+    assert 'Loopback' in commands.chk_cmd, remediation

@@ -12,10 +12,13 @@ def rule_221_set_logging_enable(configuration):
     )
 
     remediation = (f"""
-    Remediation: hostname(config-archive-log-cfg)#end
+    Remediation: hostname(config)#archive
+                 hostname(config-archive)#log config
+                 hostname(config-archive-log-cfg)#logging enable
+                 hostname(config-archive-log-cfg)#end
 
     References: {uri}
 
     """)
 
-    assert 'logging host' in configuration, remediation
+    assert 'logging enable' in configuration, remediation

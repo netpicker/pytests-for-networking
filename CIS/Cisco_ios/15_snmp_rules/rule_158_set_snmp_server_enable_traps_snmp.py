@@ -18,4 +18,4 @@ def rule_158_set_snmp_server_enable_traps_snmp(configuration):
 
     """)
 
-    assert 'snmp-server' in configuration, remediation
+    assert 'snmp-server enable traps' in configuration, remediation

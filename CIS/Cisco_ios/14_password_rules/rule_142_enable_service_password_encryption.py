@@ -7,7 +7,7 @@ from comfy.compliance import medium
 )
 def rule_142_enable_service_password_encryption(configuration):
     uri = (
-        "http://www.cisco.com/en/US/docs/ios-xml/ios/security/s1/sec-cr-shtml#GUID-CC0E305A-604E-4A"
+        "http://www.cisco.com/en/US/docs/ios-xml/ios/security/s1/sec-cr-s1.html#GUID-CC0E305A-604E-4A"
         "74-8A1A-975556CE5871"
     )
 
