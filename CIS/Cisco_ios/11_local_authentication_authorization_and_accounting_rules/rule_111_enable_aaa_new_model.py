@@ -1,4 +1,4 @@
-from comfy.compliance import medium
+from comfy.compliance import *
 
 
 @medium(
@@ -12,9 +12,9 @@ def rule_111_enable_aaa_new_model(configuration):
     )
 
     remediation = (f"""
-    Remediation: hostname(config)#aaa new-model
+Remediation: hostname(config)#aaa new-model
 
-    References: {uri}
+References: {uri}
 
     """)
 
