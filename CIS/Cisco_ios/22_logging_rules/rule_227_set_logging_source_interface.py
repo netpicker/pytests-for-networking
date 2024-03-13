@@ -8,12 +8,12 @@ from comfy.compliance import medium
 def rule_227_set_logging_source_interface(configuration):
     uri = (
         "http://www.cisco.com/en/US/docs/ios/netmgmt/command/reference/nm_09.html#"
-        ""
+        "wp1095099"
     )
 
     remediation = (f"""
     Remediation: hostname(config)#logging source-interface loopback
-
+                 {<em>loopback_interface_number</em>}
     References: {uri}
 
     """)

@@ -12,8 +12,10 @@ def rule_242_set_aaa_source_interface(configuration):
     )
 
     remediation = (f"""
-    Remediation: Hostname(config)#aaa group server tacacs+ {{group_name}} hostname(config-sg-
-
+    Remediation: Hostname(config)#ip radius source-interface loopback {loopback_interface_number}
+                 or
+                 Hostname(config)#aaa group server tacacs+ {{group_name}} hostname(config-sg-
+                 tacacs+)#ip tacacs source-interface {loopback_interface_number}
     References: {uri}
 
     """)

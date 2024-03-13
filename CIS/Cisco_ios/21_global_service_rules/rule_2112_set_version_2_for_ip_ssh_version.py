@@ -19,4 +19,4 @@ def rule_2112_set_version_2_for_ip_ssh_version(commands):
 
     """)
 
-    assert 'hostname#sh ip ssh' in commands.chk_cmd, remediation
+    assert 'SSH Enabled - version 2.0' in commands.chk_cmd, remediation

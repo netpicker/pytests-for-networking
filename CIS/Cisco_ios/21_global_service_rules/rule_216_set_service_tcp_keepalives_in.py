@@ -18,4 +18,4 @@ def rule_216_set_service_tcp_keepalives_in(configuration):
 
     """)
 
-    assert 'service tcp' in configuration, remediation
+    assert 'service tcp-keepalives-in' in configuration, remediation

@@ -1,3 +1,4 @@
+import re
 from comfy.compliance import medium
 
 
@@ -13,10 +14,20 @@ def rule_127_set_exec_timeout_to_less_than_or_equal_to_10_minutes_line(commands)
     )
 
     remediation = (f"""
-    Remediation: hostname(config-line)#exec-timeout <timeout_in_minutes> <timeout_in_seconds>
+    Remediation: hostname(config)#line con 0
+                 hostname(config-line)#exec-timeout <timeout_in_minutes> <timeout_in_seconds>
 
     References: {uri}
 
     """)
-
-    assert ' line con 0' in commands.chk_cmd, remediation
+    timeout_found = False
+    for line in commands.chk_cmd:
+        if "exec-timeout" in line:
+            match = re.search(r'exec-timeout\s+(\d+)\s*(\d*)', line)
+            if match:
+                timeout_found = True
+                minutes = int(match.group(1))
+                seconds = int(match.group(2)) if match.group(2) else 0
+                assert minutes < 10 or (minutes == 10 and seconds == 0), remediation
+    if not timeout_found:
+        assert False, remediation

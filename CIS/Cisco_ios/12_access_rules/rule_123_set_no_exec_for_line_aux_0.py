@@ -4,7 +4,7 @@ from comfy.compliance import medium
 @medium(
   name='rule_123_set_no_exec_for_line_aux_0',
   platform=['cisco_ios', 'cisco_xe'],
-  commands=dict(chk_cmd='show line aux 0 | incl exec')
+  commands=dict(chk_cmd='show running-config | sec aux')
 )
 def rule_123_set_no_exec_for_line_aux_0(commands):
     uri = (
@@ -19,4 +19,4 @@ def rule_123_set_no_exec_for_line_aux_0(commands):
 
     """)
 
-    assert ' exec' in commands.chk_cmd, remediation
+    assert 'no exec' in commands.chk_cmd, remediation

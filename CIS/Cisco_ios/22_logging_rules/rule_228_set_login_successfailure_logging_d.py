@@ -12,10 +12,12 @@ def rule_228_set_login_successfailure_logging_d(configuration):
     )
 
     remediation = (f"""
-    Remediation: hostname(config)#end
+    Remediation: hostname(config)#login on-failure log
+                 hostname(config)#login on-success log
+                 hostname(config)#end
 
     References: {uri}
 
     """)
 
-    assert '?' in configuration, remediation
+    assert 'login on' in configuration, remediation

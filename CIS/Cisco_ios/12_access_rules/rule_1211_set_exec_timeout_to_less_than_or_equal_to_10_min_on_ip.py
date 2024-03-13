@@ -12,10 +12,23 @@ def rule_1211_set_exec_timeout_to_less_than_or_equal_to_10_min_on_ip(configurati
     )
 
     remediation = (f"""
-    Remediation: -
+    Remediation: ip http timeout-policy idle 600 life <nnnn> requests <nn>
 
     References: {uri}
 
     """)
+    if "no ip http" not in configuration:
+        timeout_found = False
+        for line in configuration:
+            if "ip http timeout-policy idle" in line:
+                match = re.search(r'ip http timeout-policy idle\s+(\d+)\s*life', line)
+                if match:
+                    timeout_found = True
+                    seconds = int(match.group(1))
+                    assert seconds < 600, remediation
+        if not timeout_found:
+            assert False, remediation
+    else:
+        assert True, remeidation
 
-    assert '?' in configuration, remediation
+

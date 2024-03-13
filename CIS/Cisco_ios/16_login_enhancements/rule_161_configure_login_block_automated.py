@@ -3,7 +3,7 @@ from comfy.compliance import low
 
 @low(
   name='rule_161_configure_login_block_automated',
-  platform=['cisco_ios', 'cisco_xe']
+  platform=['cisco_xe']
 )
 def rule_161_configure_login_block_automated(configuration):
     uri = (
@@ -12,8 +12,9 @@ def rule_161_configure_login_block_automated(configuration):
     )
 
     remediation = (f"""
-    Remediation: Hostname#(config)login delay {{**seconds**}}
-
+    Remediation: Hostname#(config)login block-for {**seconds**} attempts {**tries**} within {**seconds**
+                 Hostname#(config)login quiet-mode access class {**acl-name | acl-number**}
+                 Hostname#(config)login delay {**seconds**}
     References: {uri}
 
     """)

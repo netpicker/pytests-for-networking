@@ -9,7 +9,7 @@ from comfy.compliance import medium
 def rule_224_set_ip_address_for_logging_host(commands):
     uri = (
         "http://www.cisco.com/en/US/docs/ios/netmgmt/command/reference/nm_09.html#"
-        ""
+        "wp1015177"
     )
 
     remediation = (f"""

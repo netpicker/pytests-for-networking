@@ -18,4 +18,4 @@ def rule_217_set_service_tcp_keepalives_out(configuration):
 
     """)
 
-    assert 'service tcp' in configuration, remediation
+    assert 'service tcp-keepalives-out' in configuration, remediation

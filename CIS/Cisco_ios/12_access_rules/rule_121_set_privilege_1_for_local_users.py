@@ -18,4 +18,4 @@ def rule_121_set_privilege_1_for_local_users(configuration):
 
     """)
 
-    assert 'privilege' in configuration, remediation
+    assert 'privilege 1' in configuration, remediation

@@ -8,15 +8,16 @@ from comfy.compliance import medium
 )
 def rule_122_set_transport_input_ssh_for_line_vty_connections(commands):
     uri = (
-        "http://www.cisco.com/en/US/docs/ios/termserv/command/reference/tsv_shtml#"
-        ""
+        "http://www.cisco.com/en/US/docs/ios/termserv/command/reference/tsv_s1.html#"
+        "wp1069219"
     )
 
     remediation = (f"""
-    Remediation: hostname(config-line)#transport input ssh
+    Remediation: hostname(config)#line vty <line-number> <ending-line-number>
+                 hostname(config-line)#transport input ssh
 
     References: {uri}
 
     """)
 
-    assert ' vty' in commands.chk_cmd, remediation
+    assert ' transport input ssh' in commands.chk_cmd, remediation

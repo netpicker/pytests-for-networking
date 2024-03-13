@@ -12,7 +12,7 @@ def rule_21111_set_the_hostname(configuration):
     )
 
     remediation = (f"""
-    Remediation: hostname(config)#hostname {{<em>router_name</em>}}
+    Remediation: hostname(config)#hostname [router_name]
 
     References: {uri}
 

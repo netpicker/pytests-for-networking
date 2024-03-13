@@ -8,7 +8,7 @@ from comfy.compliance import medium
 )
 def rule_212_set_no_cdp_run(commands):
     uri = (
-        "http://www.cisco.com/en/US/docs/ios-xml/ios/cdp/command/cdp-cr-ahtml#GUID-E006FAC8-417E-4C"
+        "http://www.cisco.com/en/US/docs/ios-xml/ios/cdp/command/cdp-cr-a1.html#GUID-E006FAC8-417E-4C"
         "3F-B732-4D47B0447750"
     )
 
@@ -19,4 +19,4 @@ def rule_212_set_no_cdp_run(commands):
 
     """)
 
-    assert 'hostname#show  cdp' in commands.chk_cmd, remediation
+    assert 'CDP is not enabled' in commands.chk_cmd, remediation

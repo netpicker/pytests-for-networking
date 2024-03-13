@@ -18,4 +18,4 @@ def rule_214_set_no_service_dhcp(configuration):
 
     """)
 
-    assert 'dhcp' in configuration, remediation
+    assert 'service dhcp' not in configuration, remediation

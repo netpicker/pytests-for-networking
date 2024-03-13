@@ -8,7 +8,7 @@ from comfy.compliance import medium
 def rule_215_set_no_ip_identd(configuration):
     uri = (
         "http://www.cisco.com/en/US/docs/solutions/Enterprise/Security/Baseline_Securit"
-        ""
+        "y/sec_chap4.html#wp1056539"
     )
 
     remediation = (f"""
@@ -18,4 +18,4 @@ def rule_215_set_no_ip_identd(configuration):
 
     """)
 
-    assert 'identd' in configuration, remediation
+    assert 'no ip identd' in configuration, remediation
