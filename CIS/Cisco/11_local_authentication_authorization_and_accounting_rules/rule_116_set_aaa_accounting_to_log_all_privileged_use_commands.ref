@@ -1,0 +1,9 @@
+.rule_116_set_aaa_accounting_to_log_all_privileged_use_commands_using_commands_15:
+
+
+    Reference:    Additional Information: Valid privilege level entries are integers from 0 through 15. 
+
+
+    Remediation:  Configure AAA accounting for commands. hostname(config)#aaa accounting commands 15 {default | list-name | guarantee- first} {start-stop | stop-only | none} {radius | group group-name}
+
+.
