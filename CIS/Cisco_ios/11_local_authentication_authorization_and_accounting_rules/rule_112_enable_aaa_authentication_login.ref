@@ -1,0 +1,9 @@
+.rule_112_enable_aaa_authentication_login:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/security/a1/sec-cr-a1.html#GUID-3DB1CC8A-4A98-400B-A906-C42F265C7EA2  Additional Information: Only “the default method list is automatically applied to all interfaces except those that have a named method list explicitly defined. A defined method list overrides the default method list.” (1)
+
+
+    Remediation:  Configure AAA authentication method(s) for login authentication. hostname(config)#aaa authentication login {default | aaa_list_name} [passwd- expiry] [method1] [method2] 
+
+.
