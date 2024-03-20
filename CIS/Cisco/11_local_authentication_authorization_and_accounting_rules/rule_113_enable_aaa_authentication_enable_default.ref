@@ -1,7 +1,7 @@
 .rule_113_enable_aaa_authentication_enable_default:
 
 
-    Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/security/a1/sec-cr-a1.html#GUID- 4171D649-2973-4707-95F3-9D96971893D0 
+    Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/security/a1/sec-cr-a1.html#GUID-4171D649-2973-4707-95F3-9D96971893D0 
 
 
     Remediation:  Configure AAA authentication method(s) for enable authentication. hostname(config)#aaa authentication enable default {method1} enable
