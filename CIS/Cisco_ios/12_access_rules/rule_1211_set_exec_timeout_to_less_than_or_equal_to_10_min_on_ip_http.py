@@ -2,10 +2,10 @@ from comfy.compliance import medium
 
 
 @medium(
-  name='rule_1211_set_exec_timeout_to_less_than_or_equal_to_10_min_on_ip',
+  name='rule_1211_set_exec_timeout_to_less_than_or_equal_to_10_min_on_ip_http',
   platform=['cisco_ios', 'cisco_xe']
 )
-def rule_1211_set_exec_timeout_to_less_than_or_equal_to_10_min_on_ip(configuration,ref):
+def rule_1211_set_exec_timeout_to_less_than_or_equal_to_10_min_on_ip_http(configuration,ref):
     if "no ip http" not in configuration:
         timeout_found = False
         for line in configuration:
