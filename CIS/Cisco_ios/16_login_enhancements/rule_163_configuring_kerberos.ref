@@ -1,0 +1,17 @@
+.rule_163_configuring_kerberos:
+
+
+    Reference:    1. https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_usr_cfg/configuration/xe-16-5/sec-usr-cfg-xe-16-5-book/sec-cfg-kerberos.html  
+
+
+    Remediation:  Adding Users to the KDC Database 
+                  Hostname# ank {username@REALM} 
+                  Hostname# ank {username/instance@REALM} 
+                  Creating SRVTABs on the KDC 
+                  Hostname# ark {SERVICE/HOSTNAME@REALM} 
+                  Make entries for all network services on all Kerberized hosts that use this KDC for authentication. Defining a Kerberos Realm 
+                  Hostname#(config)kerberos local-realm {kerberos-realm} 
+                  Hostname#(config)kerberos server {kerberos-realm {hostname | ip-address}} {port-number} 
+                  Hostname#(config)kerberos realm {dns-domain | host} {kerberos-realm}
+
+.

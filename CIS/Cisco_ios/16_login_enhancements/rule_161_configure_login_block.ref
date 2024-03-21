@@ -1,0 +1,13 @@
+.rule_161_configure_login_block:
+
+
+    Reference:    1. https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_usr_cfg/configuration/xe-16-5/sec-usr-cfg-xe-16-5-book/sec-login-enhance.html  
+
+
+    Remediation:  To enable the feature enter the commands 
+                  Hostname#(config)login block-for {**seconds**} attempts {**tries**} within {**seconds**} 
+                  All login attempts made via Telnet or SSH are denied during the quiet period; that is, no ACLs are exempt from the login period until the login quiet-mode access-class command is issued  
+                  Hostname#(config)login quiet-mode access class {**acl-name | acl-number**} 
+                  Hostname#(config)login delay {**seconds**}
+
+.

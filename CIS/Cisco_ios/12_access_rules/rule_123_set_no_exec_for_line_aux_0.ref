@@ -1,0 +1,11 @@
+.rule_123_set_no_exec_for_line_aux_0:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/fundamentals/command/D_through_E.html#GUID-429A2B8C-FC26-49C4-94C4-0FD99C32EC34 
+
+
+    Remediation:  Disable the EXEC process on the auxiliary port. 
+                  hostname(config)#line aux 0 
+                  hostname(config-line)#no exec
+
+.

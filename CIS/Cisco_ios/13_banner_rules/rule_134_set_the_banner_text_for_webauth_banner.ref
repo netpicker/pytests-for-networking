@@ -1,0 +1,10 @@
+.rule_134_set_the_banner_text_for_webauth_banner:
+
+
+    Reference:    1. https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/16-9/configuration_guide/sec/b_169_sec_9500_cg/configuring_web_based_authentication.html
+
+
+    Remediation:  Configure the webauth banner presented when a user connects to the device. 
+                  hostname(config)#ip admission auth-proxy-banner http {banner-text | filepath}
+
+.
