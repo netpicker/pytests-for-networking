@@ -1,0 +1,13 @@
+.rule_162_autosecure:
+
+
+    Reference:    1. https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_usr_cfg/configuration/xe-16-5/sec-usr-cfg-xe-16-5-book/sec-autosecure.html  
+
+
+    Remediation:  How to Configure AutoSecure 
+                  Hostname#(config)auto secure {management | forwarding} {no-interact | full} {ntp | login | ssh |firewall | tcp-intercept} 
+                  Configuring Enhanced Security Access to the Router 
+                  Hostname#(config)enable password {password | [encryption-type ] encrypted- password } 
+                  Hostname#security authentication failure rate {**threshold-rate**} log
+
+.

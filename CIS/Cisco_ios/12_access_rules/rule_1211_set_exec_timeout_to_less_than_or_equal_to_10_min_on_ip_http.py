@@ -5,18 +5,7 @@ from comfy.compliance import medium
   name='rule_1211_set_exec_timeout_to_less_than_or_equal_to_10_min_on_ip',
   platform=['cisco_ios', 'cisco_xe']
 )
-def rule_1211_set_exec_timeout_to_less_than_or_equal_to_10_min_on_ip(configuration):
-    uri = (
-        "http://www.cisco.com/en/US/docs/ios-xml/ios/fundamentals/command/D_through_E.html#GUID-768"
-        "05E6F-9E89-4457-A9DC-5944C8FE5419"
-    )
-
-    remediation = (f"""
-    Remediation: ip http timeout-policy idle 600 life <nnnn> requests <nn>
-
-    References: {uri}
-
-    """)
+def rule_1211_set_exec_timeout_to_less_than_or_equal_to_10_min_on_ip(configuration,ref):
     if "no ip http" not in configuration:
         timeout_found = False
         for line in configuration:
@@ -25,10 +14,10 @@ def rule_1211_set_exec_timeout_to_less_than_or_equal_to_10_min_on_ip(configurati
                 if match:
                     timeout_found = True
                     seconds = int(match.group(1))
-                    assert seconds < 600, remediation
+                    assert seconds < 600, remediation,ref
         if not timeout_found:
-            assert False, remediation
+            assert False, remediation,ref
     else:
-        assert True, remeidation
+        assert True, remeidation,ref
 
 
