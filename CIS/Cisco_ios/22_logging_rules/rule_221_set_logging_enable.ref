@@ -1,0 +1,13 @@
+.rule_221_set_logging_enable:
+
+
+    Reference:    1. https://community.cisco.com/t5/networking-knowledge-base/how-to-configure-logging-in-cisco-ios/ta-p/3132434 
+
+
+    Remediation:  Enable system logging.  
+                  hostname(config)#archive 
+                  hostname(config-archive)#log config 
+                  hostname(config-archive-log-cfg)#logging enable 
+                  hostname(config-archive-log-cfg)#end
+
+.
