@@ -1,6 +1,7 @@
 from comfy.compliance import medium
 import re
 
+
 @medium(
   name='rule_1211_set_exec_timeout_to_less_than_or_equal_to_10_min_on_ip_http',
   platform=['cisco_ios', 'cisco_xe']
