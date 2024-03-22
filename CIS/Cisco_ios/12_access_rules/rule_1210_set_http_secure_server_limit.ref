@@ -1,7 +1,7 @@
 .rule_1210_set_http_secure_server_limit:
 
 
-    Reference:    
+    Reference:
 
 
     Remediation:  hostname(config)#ip http max-connections 2
