@@ -6,5 +6,5 @@ from comfy.compliance import low
   platform=['cisco_ios', 'cisco_xe'],
   commands=dict(chk_cmd='show auto secure config')
 )
-def rule_162_autosecure(commands,ref):
+def rule_162_autosecure(commands, ref):
     assert 'auto secure ' in commands.chk_cmd, ref

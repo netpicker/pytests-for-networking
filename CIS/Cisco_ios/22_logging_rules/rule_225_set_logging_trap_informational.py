@@ -6,5 +6,5 @@ from comfy.compliance import medium
     platform=['cisco_ios', 'cisco_xe'],
     commands=dict(chk_cmd='sh log | incl logging trap')
 )
-def rule_225_set_logging_trap_informational(commands,ref):
+def rule_225_set_logging_trap_informational(commands, ref):
     assert 'logging trap informational' in commands.chk_cmd, ref
