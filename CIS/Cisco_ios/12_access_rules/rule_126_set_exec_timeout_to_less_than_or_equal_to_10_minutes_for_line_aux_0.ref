@@ -1,0 +1,11 @@
+.rule_126_set_exec_timeout_to_less_than_or_equal_to_10_minutes_for_line_aux_0:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/fundamentals/command/D_through_E.html#GUID-76805E6F-9E89-4457-A9DC-5944C8FE5419 
+
+
+    Remediation:  Configure device timeout (10 minutes or less) to disconnect sessions after a fixed idle time. 
+                  hostname(config)#line aux 0 
+                  hostname(config-line)#exec-timeout <timeout_in_minutes> <timeout_in_seconds>
+
+.

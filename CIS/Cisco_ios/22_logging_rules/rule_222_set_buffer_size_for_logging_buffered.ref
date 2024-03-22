@@ -1,0 +1,10 @@
+.rule_222_set_buffer_size_for_logging_buffered:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/ios/netmgmt/command/reference/nm_09.html#wp1060051 
+
+
+    Remediation:  Configure buffered logging (with minimum size). Recommended size is 64000.  
+                  hostname(config)#logging buffered [<em>log_buffer_size</em>]
+
+.

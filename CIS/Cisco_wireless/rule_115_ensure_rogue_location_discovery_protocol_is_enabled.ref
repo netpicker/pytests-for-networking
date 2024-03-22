@@ -1,0 +1,10 @@
+.rule_115_ensure_rogue_location_discovery_protocol_is_enabled:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/wireless/controller/7.0/command/reference/cli70commands.html#wp4999879
+
+
+    Remediation:  Enable the Rogue Location Discovery Protocol:
+                  (Cisco Controller) ><strong>config rogue ap rldp enable {alarm-only | auto- contain}</strong>
+
+.

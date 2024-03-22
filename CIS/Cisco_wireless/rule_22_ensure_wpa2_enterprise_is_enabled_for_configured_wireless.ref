@@ -1,0 +1,13 @@
+.rule_22_ensure_wpa2_enterprise_is_enabled_for_configured_wireless:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/wireless/controller/7.0/command/reference/cli70commands.html#wp4891599
+
+
+    Additional Information: PCI DSS §2.1.1 §4.2 PCI DSS Wireless Guidelines - Section 4.4 - Strong Wireless Authentication and Encryption PCI DSS Requirement - Section 4.1.1 - Ensure wireless networks transmitting cardholder data or connected to the cardholder data environment, use industry best practices (for example, IEEE 802.11i) to implement strong encryption for authentication and transmission. Note: The use of WEP as a security control was prohibited as of 30 June 2010.
+
+
+    Remediation:  Run the following command for each WLAN ID when WPA2 is not enabled.
+                  (Cisco Controller) ><strong>config wlan security wpa2 enable </strong><WLAN ID>
+
+.

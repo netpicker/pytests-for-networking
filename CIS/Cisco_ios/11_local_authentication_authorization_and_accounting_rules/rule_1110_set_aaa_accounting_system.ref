@@ -1,0 +1,9 @@
+.rule_1110_set_aaa_accounting_system:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/security/a1/sec-cr-a1.html#GUID-0520BCEF-89FB-4505-A5DF-D7F1389F1BBA  Additional Information: When system accounting is used and the accounting server is unreachable at system startup time, the system will not be accessible for approximately two minutes.
+
+
+    Remediation:  Configure AAA accounting system. hostname(config)#aaa accounting system {default | list-name | guarantee- first} {start-stop | stop-only | none} {radius | group group-name}
+
+.

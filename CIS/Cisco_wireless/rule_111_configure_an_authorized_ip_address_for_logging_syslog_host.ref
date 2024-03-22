@@ -1,0 +1,10 @@
+.rule_111_configure_an_authorized_ip_address_for_logging_syslog_host:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/wireless/controller/7.0/command/reference/cli70commands.html#wp5110363
+
+
+    Remediation:  To enable external logging to a syslog server execute the following command:
+                  (Cisco Controller) ><strong>config logging syslog host </strong><IP Address>
+
+.

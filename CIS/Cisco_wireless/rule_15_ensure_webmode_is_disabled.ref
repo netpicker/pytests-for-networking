@@ -1,0 +1,10 @@
+.rule_15_ensure_webmode_is_disabled:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/wireless/controller/7.0/command/reference/cli70commands.html#wp1319452
+
+
+    Remediation:  1. Disable administration through webmode.
+                     (Cisco Controller) ><strong>config network webmode disable </strong>
+
+.

@@ -1,0 +1,9 @@
+.rule_151_set_no_snmp_server_to_disable_snmp_when_unused:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/snmp/command/nm-snmp-cr-book.html
+
+
+    Remediation:  Disable SNMP read and write access if not in used to monitor and/or manage device. hostname(config)#no snmp-server
+
+.

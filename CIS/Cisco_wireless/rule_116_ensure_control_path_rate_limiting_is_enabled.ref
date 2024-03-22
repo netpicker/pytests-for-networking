@@ -1,0 +1,11 @@
+.rule_116_ensure_control_path_rate_limiting_is_enabled:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/wireless/controller/7.0/command/reference/cli70commands.html#wp7209817
+                  2 Wireless Local Area Network (LAN) Configurations This section prescribes controls to secure Wireless Local Area Networks (LAN).
+
+
+    Remediation:  Enable control plane policing on the controller.
+                  (Cisco Controller) ><strong>config advanced rate enable </strong>
+
+.

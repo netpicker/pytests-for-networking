@@ -1,0 +1,12 @@
+.rule_110_delete_the_snmp_v3_user_name_default:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/wireless/controller/7.0/command/reference/cli70commands.html#wp1319901
+
+
+    Remediation:  Delete the default Simple Network Management Protocol Version 3 user.
+                  (Cisco Controller) ><strong>config snmp v3user delete<span style="color: black;"> default</span></strong>
+                  If Simple Network Management Protocol Version 3 is to be used for network management, create a new Simple Network Management Protocol Version 3 user:
+                  (Cisco Controller) ><strong>config snmp v3user create</strong> <username> <ro/rw> <authentication type> <encryption type> <authentication key> <encryption key>
+
+.

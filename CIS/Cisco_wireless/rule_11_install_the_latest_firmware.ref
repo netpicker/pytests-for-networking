@@ -1,0 +1,9 @@
+.rule_11_install_the_latest_firmware:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/wireless/controller/7.0/command/reference/cli70commands.html#wp1320208
+
+
+    Remediation:  Download the latest firmware from the Cisco Website and apply it to the Wireless LAN Controller.
+
+.

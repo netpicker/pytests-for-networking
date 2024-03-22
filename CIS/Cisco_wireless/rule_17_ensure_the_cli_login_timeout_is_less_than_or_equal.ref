@@ -1,0 +1,10 @@
+.rule_17_ensure_the_cli_login_timeout_is_less_than_or_equal:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/wireless/controller/7.0/command/reference/cli70commands.html#wp1319842
+
+
+    Remediation:  Reset the default authentication timeout value to 5 minutes.
+                  (Cisco Controller) ><strong>config sessions timeout 5</strong>
+
+.

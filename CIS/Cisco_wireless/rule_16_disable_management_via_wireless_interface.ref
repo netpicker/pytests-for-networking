@@ -1,0 +1,10 @@
+.rule_16_disable_management_via_wireless_interface:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/wireless/controller/7.0/command/reference/cli70commands.html#wp1324232
+
+
+    Remediation:  Disable access to the admin interface from wireless clients using the following command.
+                  (Cisco Controller) ><strong>config network mgmt-via-wireless disable</strong>
+
+.

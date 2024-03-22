@@ -1,0 +1,10 @@
+.rule_227_set_logging_source_interface:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/ios/netmgmt/command/reference/nm_09.html#wp1095099 
+
+
+    Remediation:  Bind logging to the loopback interface.  
+                  hostname(config)#logging source-interface loopback {<em>loopback_interface_number</em>}
+
+.

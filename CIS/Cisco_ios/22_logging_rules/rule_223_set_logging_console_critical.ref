@@ -1,0 +1,8 @@
+.rule_223_set_logging_console_critical:
+
+
+
+    Remediation:  Configure console logging level.  
+                  hostname(config)#logging console critical
+
+.
