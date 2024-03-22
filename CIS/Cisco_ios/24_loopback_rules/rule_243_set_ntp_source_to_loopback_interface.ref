@@ -1,0 +1,10 @@
+.rule_243_set_ntp_source_to_loopback_interface:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/bsm/command/bsm-cr-n1.html#GUID-DF29FBFB-E1C0-4E5C-9013-D4CE59CA0B88
+
+
+    Remediation:  Bind the NTP service to the loopback interface.
+                  hostname(config)#ntp source loopback {<em>loopback_interface_number}</em>
+
+.

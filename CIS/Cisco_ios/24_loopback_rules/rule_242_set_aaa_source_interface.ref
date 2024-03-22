@@ -1,0 +1,14 @@
+.rule_242_set_aaa_source_interface:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/security/d1/sec-cr-i2.html#GUID-22E8B211-751F-48E0-9C76-58F0FE0AABA8
+                  2. http://www.cisco.com/en/US/docs/ios-xml/ios/security/d1/sec-cr-i3.html#GUID-54A00318-CF69-46FC-9ADC-313BFC436713
+
+
+    Remediation:  Bind AAA services to the loopback interface.
+                  Hostname(config)#ip radius source-interface loopback {loopback_interface_number}
+                     or
+                  Hostname(config)#aaa group server tacacs+ {group_name}
+                  hostname(config-sg- tacacs+)#ip tacacs source-interface {loopback_interface_number}
+
+.

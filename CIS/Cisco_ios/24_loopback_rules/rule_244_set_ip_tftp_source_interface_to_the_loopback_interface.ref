@@ -1,0 +1,10 @@
+.rule_244_set_ip_tftp_source_interface_to_the_loopback_interface:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/fundamentals/command/F_through_K.html#GUID-9AA27050-A578-47CD-9F1D-5A8E2B449209
+
+
+    Remediation:  Bind the TFTP client to the loopback interface.
+                  hostname(config)#ip tftp source-interface loopback {<em>loobpback_interface_number</em>}
+
+.
