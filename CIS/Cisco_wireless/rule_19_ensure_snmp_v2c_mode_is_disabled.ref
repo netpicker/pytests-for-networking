@@ -1,0 +1,10 @@
+.rule_19_ensure_snmp_v2c_mode_is_disabled:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/wireless/controller/7.0/command/reference/cli70commands.html#wp1319918
+
+
+    Remediation:  Disable SNMP version v2c
+                  (Cisco Controller) ><strong>config snmp version v2c disable</strong>
+
+.

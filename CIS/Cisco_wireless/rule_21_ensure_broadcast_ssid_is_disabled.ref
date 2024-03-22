@@ -1,0 +1,12 @@
+.rule_21_ensure_broadcast_ssid_is_disabled:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/wireless/controller/7.0/command/reference/cli70commands.html#wp8366770
+
+
+    Remediation:  1. Determine the WLANs to which the change will be made:
+                     (Cisco Controller) ><strong>show wlan summary </strong>
+                  2. Disable broadcast SSID on all WLANs using:
+                     (Cisco Controller) ><strong>config wlan broadcast-ssid disable</strong> <WLAN ID>
+
+.

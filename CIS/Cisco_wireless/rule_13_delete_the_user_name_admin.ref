@@ -1,0 +1,12 @@
+.rule_13_delete_the_user_name_admin:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/wireless/controller/7.0/command/reference/cli70commands.html#wp7649595
+
+
+    Remediation:  New management users can be configured using the following command.
+                  (Cisco Controller) <strong>>config mgmtuser add</strong> <username> <password> <privilege level>
+                  After the creation of a new administrative username with the appropriate privileges the default one can be removed.
+                  (Cisco Controller) ><strong>config mgmtuser delete admin</strong>
+
+.

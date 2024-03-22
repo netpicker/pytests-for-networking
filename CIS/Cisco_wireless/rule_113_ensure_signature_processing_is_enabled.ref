@@ -1,0 +1,10 @@
+.rule_113_ensure_signature_processing_is_enabled:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/wireless/controller/7.0/command/reference/cli70commands.html#wp6871472
+
+
+    Remediation:  Enable all Wireless Protection Policies.
+                  (Cisco Controller) > <span class="content"><span style="color: black; font- style: normal; font-weight: bold;">config wps signature enable</span></span>
+
+.

@@ -1,0 +1,12 @@
+.rule_14_ensure_telnet_is_disabled:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/wireless/controller/7.0/command/reference/cli70commands.html#wp1319452
+
+
+    Remediation:  1. Disable command-line administration through telnet.
+                     (Cisco Controller) ><strong>config network telnet disable</strong>
+                  2. Enable command-line administration through Secure Shell Version 2 (SSHv2).
+                     (Cisco Controller) ><strong>config network ssh enable </strong>
+
+.

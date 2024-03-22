@@ -1,0 +1,10 @@
+.rule_112_configure_an_authorized_ip_address_for_ntp_server:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/wireless/controller/7.0/command/reference/cli70commands.html#wp2505839
+
+
+    Remediation:  Configure an authorized IP address for time NTP Server.
+                  (Cisco Controller) ><strong>config time ntp server</strong> <index> <IP Address>
+
+.

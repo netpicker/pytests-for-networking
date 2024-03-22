@@ -1,0 +1,12 @@
+.rule_23_ensure_peer_to_peer_blocking_action_is_set_to_drop_for_all_wireless_lan_identifiers:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/wireless/controller/7.0/command/reference/cli70commands.html#wp10562677
+
+
+    Remediation:  1. Determine which WLANs will be changed:
+                     (Cisco Controller) ><strong>show wlan summary</strong>
+                  2. Enable client isolation or Publicly Secure Packet Forwarding on WLANs:
+                     (Cisco Controller) ><strong>config wlan peer-blocking drop</strong> <WLAN ID>
+
+.

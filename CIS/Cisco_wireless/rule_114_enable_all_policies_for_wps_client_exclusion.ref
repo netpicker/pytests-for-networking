@@ -1,0 +1,10 @@
+.rule_114_enable_all_policies_for_wps_client_exclusion:
+
+
+    Reference:    1. http://www.cisco.com/en/US/docs/wireless/controller/7.0/command/reference/cli70commands.html#wp9541897
+
+
+    Remediation:  Enable the Client Exclusion Policies:
+                  (Cisco Controller) ><strong>config wps client-exclusion all </strong>
+
+.
