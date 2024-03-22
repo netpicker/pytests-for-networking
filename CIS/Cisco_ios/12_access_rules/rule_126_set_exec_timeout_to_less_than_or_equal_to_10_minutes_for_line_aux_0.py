@@ -7,7 +7,7 @@ from comfy.compliance import medium
     platform=['cisco_ios', 'cisco_xe'],
     commands=dict(chk_cmd='sh run | sec line aux 0')
 )
-def rule_126_set_exec_timeout_to_less_than_or_equal_to_10_minutes_for(commands,ref):
+def rule_126_set_exec_timeout_to_less_than_or_equal_to_10_minutes_for(commands, ref):
     timeout_found = False
     for line in commands.chk_cmd:
         if "exec-timeout" in line:

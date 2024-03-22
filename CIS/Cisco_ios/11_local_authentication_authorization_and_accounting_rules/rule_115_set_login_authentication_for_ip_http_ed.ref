@@ -1,9 +1,0 @@
-.rule_115_set_login_authentication_for_ip_http:
-
-
-    Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/security/d1/sec-cr-k1.html#GUID-297BDF33-4841-441C-83F3-4DA51C3C7284 
-
-
-    Remediation:  Configure management lines to require login using the default or a named AAA authentication list. This configuration must be set individually for all line types. hostname#(config)ip http secure-server hostname#(config)ip http authentication {default | _aaa\_list\_name_}
-
-.
