@@ -25,3 +25,4 @@ def rule_cve202320273(commands):
     if s_version.startswith('17.9.'):
         version = tuple(map(int, s_version.split('.')))
         assert version < (17, 9, 0) or version > (17, 9, 4)
+        
