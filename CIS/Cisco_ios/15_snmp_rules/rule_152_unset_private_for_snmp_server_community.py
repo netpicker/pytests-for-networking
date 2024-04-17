@@ -6,4 +6,4 @@ from comfy.compliance import medium
   platform=['cisco_ios', 'cisco_xe']
 )
 def rule_152_unset_private_for_snmp_server_community(configuration, ref):
-    assert 'private' not in configuration, ref
+    assert 'snmp-server community private' not in configuration, ref
