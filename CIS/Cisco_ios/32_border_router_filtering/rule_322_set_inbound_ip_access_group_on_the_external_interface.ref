@@ -1,0 +1,6 @@
+.rule_322_set_inbound_ip_access_group_on_the_external_interface:
+    
+    Reference:        http://www.cisco.com/en/US/docs/ios-xml/ios/security/d1/sec-cr-ihtml#GUID-D9FE7E44-7831-4C64-ACB8-840811A0C993"
+
+
+    Remediation: hostname(config-if)#ip access-group {{name | number}} in
