@@ -5,10 +5,10 @@ from comfy.compliance import low
     name='rule_321_set_ip_access_list_extended_to_forbid_private_source_addresses_from_external_networks',
     platform=['cisco_ios_xe'],  # Targeting Cisco IOS XE as specified
     commands={
-        'show_ip_access_list': 'show ip access-list'
+        'show_ip_access_list': 'show ip access-list TEST'
     }
 )
-def rule_321_set_ip_access_list_extended_to_forbid_private_source_addresses_from_external_networks(configuration, commands, device, devices):
+def rule_321_set_ip_access_list_extended_to_forbid_private_source_addresses_from_external_networks(configuration, commands, device, devices, ref):
     """
     Verifies that 'ip access-list extended' is correctly configured to deny private source IP addresses from external networks.
 
