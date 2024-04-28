@@ -8,9 +8,10 @@ from comfy.compliance import low
         'show_ip_access_list': 'show ip access-list TEST'
     }
 )
-def rule_321_set_ip_access_list_extended_to_forbid_private_source_addresses_from_external_networks(configuration, commands, device, devices, ref):
+def rule_321_set_ip_access_list_extended_to_forbid_private_source_addresses_from_external_networks(commands, ref):
     """
-    Verifies that 'ip access-list extended' is correctly configured to deny private source IP addresses from external networks.
+    Verifies that 'ip access-list extended' is correctly configured to deny private source IP addresses
+    from external networks.
 
     Arguments:
         configuration (str): Full configuration of the device.
@@ -19,7 +20,8 @@ def rule_321_set_ip_access_list_extended_to_forbid_private_source_addresses_from
         devices (list): List of device objects that may be related to the current test.
 
     Raises:
-        AssertionError: If the access list does not properly deny traffic from private IP addresses or other specified ranges.
+        AssertionError: If the access list does not properly deny traffic from private IP addresses or
+        other specified ranges.
     """
 
     access_list_output = commands['show_ip_access_list'].splitlines()
@@ -42,4 +44,3 @@ def rule_321_set_ip_access_list_extended_to_forbid_private_source_addresses_from
     # Ensure there is a corresponding 'permit' entry that correctly specifies allowed traffic
     permit_entries = [line for line in access_list_output if 'permit' in line]
     assert permit_entries, ref
-
