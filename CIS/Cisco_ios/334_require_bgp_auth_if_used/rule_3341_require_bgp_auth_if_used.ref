@@ -1,4 +1,4 @@
-.3341_require_bgp_auth_if_used:
+.rule_3341_require_bgp_auth_if_used:
 
 
     Reference: http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_bgp/command/bgp-n1.html#GUID-A8900842-ECF3-42D3-B188-921BE0EC060B
