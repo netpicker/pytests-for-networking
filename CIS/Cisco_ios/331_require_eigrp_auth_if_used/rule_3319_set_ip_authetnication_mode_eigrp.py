@@ -12,4 +12,3 @@ def rule_3319_set_ip_authentication_mode_eigrp(commands, ref):
 
     # Verifying that the EIGRP authentication mode is set to MD5 on the interface
     assert 'ip authentication mode eigrp md5' in interface_eigrp_auth_mode_config, ref
-

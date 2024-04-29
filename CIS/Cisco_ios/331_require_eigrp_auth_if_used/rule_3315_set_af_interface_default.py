@@ -12,4 +12,3 @@ def rule_3315_set_af_interface_default(commands, ref):
 
     # Verifying that 'af-interface default' is configured within the EIGRP address family
     assert 'af-interface default' in eigrp_af_config, ref
-

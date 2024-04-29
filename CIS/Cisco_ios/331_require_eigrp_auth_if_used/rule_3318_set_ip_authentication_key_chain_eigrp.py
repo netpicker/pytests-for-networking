@@ -12,4 +12,3 @@ def rule_3318_set_ip_authentication_key_chain_eigrp(commands, ref):
 
     # Verifying that the EIGRP authentication key chain is properly configured on the interface
     assert 'ip authentication key-chain eigrp' in interface_eigrp_key_chain_config, ref
-

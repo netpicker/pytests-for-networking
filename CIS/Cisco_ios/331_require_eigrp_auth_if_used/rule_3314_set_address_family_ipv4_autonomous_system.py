@@ -12,4 +12,3 @@ def rule_3314_set_address_family_ipv4_autonomous_system(commands, ref):
 
     # Verifying that the 'address-family ipv4 autonomous-system' is configured for EIGRP
     assert 'address-family ipv4 autonomous-system' in eigrp_config, ref
-
