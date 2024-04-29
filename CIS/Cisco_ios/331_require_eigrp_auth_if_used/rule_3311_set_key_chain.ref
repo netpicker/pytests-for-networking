@@ -1,0 +1,6 @@
+.rule_3311_set_key_chain:
+
+    Reference:  http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_pi/command/iri-cr-a1.html#GUID-A62E89F5-0B8B-4CF0-B4EB-08F2762D88BB
+
+    Remediation:  hostname(config)#key chain {<em>rip_key-chain_name</em>}
+.
