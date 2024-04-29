@@ -1,0 +1,6 @@
+.rule_3332_set_key:
+
+    References: http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_pi/command/iri-cr-a1.html#GUID-3F31B2E0-0E4B-4F49-A4A8-8ADA1CA0D73F
+
+    Remediation:  hostname(config-keychain)#key {<em>key-number</em>}
+.
