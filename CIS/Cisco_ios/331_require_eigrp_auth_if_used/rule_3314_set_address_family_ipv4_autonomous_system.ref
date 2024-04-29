@@ -1,8 +1,0 @@
-,rule_3314_set_address_family_ipv4_autonomous_system:
-
-   References: 1. http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_eigrp/command/ire-i1.html#GUID-67388D6C-AE9C-47CA-8C35-2A2CF9FA668E
-               2. http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_eigrp/command/ire-a1.html#GUID-C03CFC8A-3CE3-4CF9-9D65-52990DBD3377
-
-   Remediation: hostname(config)#router eigrp <<em>virtual-instance-name</em>> 
-                hostname(config-router)#address-family ipv4 autonomous-system {<em>eigrp_as-number</em>}
-.
