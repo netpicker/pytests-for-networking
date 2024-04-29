@@ -1,4 +1,4 @@
-from compfy import meidum
+from compfy import medium
 
 
 @medium(
