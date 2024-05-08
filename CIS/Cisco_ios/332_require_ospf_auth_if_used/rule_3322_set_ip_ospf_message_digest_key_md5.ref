@@ -1,0 +1,10 @@
+.rule_3322_set_ip_ospf_message_digest_key_md5:
+
+    Reference: 1. http://www.cisco.com/en/US/docs/ios-xml/ios/interface/command/ir-i1.html#GUID-0D6BDFCD-3FBB-4D26-A274-C1221F8592DF
+               2. http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_ospf/command/ospf-i1.html#GUID-939C79FF-8C09-4D5A-AEB5-DAF25038CA18
+
+    Remediation: hostname(config)#interface {<em>interface_name</em>} 
+                 hostname(config-if)#ip ospf message-digest-key {<em>ospf_md5_key-id</em>} md5 {<em>ospf_md5_key</em>}
+
+.
+
