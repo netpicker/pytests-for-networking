@@ -1,0 +1,22 @@
+anchors:
+  show-version: &show_version 'show version | include RELEASE SOFTWARE'
+
+defaults:
+  tenant: default
+
+  devices:
+    - ipaddress: 192.168.1.1
+      platform: cisco_xe
+      tenant: default
+
+tests:
+  rule_cve202320273:
+    - commands:
+        'show version | include RELEASE SOFTWARE': 'Version 200.300.400'
+      outcome: OK
+    - commands:
+        'show version | include RELEASE SOFTWARE': '4.5.6'
+      outcome: TESTS_FAILED
+    - commands:
+        *show_version: 'Version 16.12.11'
+      outcome: OK
