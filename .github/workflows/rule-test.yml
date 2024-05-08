@@ -1,0 +1,15 @@
+name: CI
+on:
+  push:
+
+jobs:
+  container-test-job:
+    runs-on: ubuntu-latest
+    container:
+      image: netpicker/crt
+      volumes:
+        - tests:/tests
+      options: --cpus 1
+    steps:
+      - name: Run yaml tests
+        run: --sys -p runner.yaml_rules -vvvl --rootdir /rules /rules
