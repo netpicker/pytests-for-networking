@@ -7,12 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: netpicker/crt
-      volumes:
-        - tests:/tests
       options: --cpus 1
     steps:
       - uses: actions/checkout@v3
       - name: Debug info
         run: (pwd && ls -la)
       - name: Run yaml tests
-        run: execute-rules --sys -p runner.yaml_rules -vvvl --rootdir /rules /rules
+        run: execute-rules --sys -p runner.yaml_rules -vvvl --rootdir $PWD $PWD
