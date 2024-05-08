@@ -1,0 +1,14 @@
+defaults:
+  devices:
+    - ipaddress: 192.168.1.1
+      platform: cisco_wlc
+      tenant: default
+
+tests:
+  rule_11_install_the_latest_firmware:
+    - outcome: OK
+      commands:
+          show sysinfo: Product Version.................................. 17.3
+    - outcome: TESTS_FAILED
+      commands:
+          show sysinfo: Product Version.................................. 17.4
