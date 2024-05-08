@@ -12,4 +12,4 @@ jobs:
       options: --cpus 1
     steps:
       - name: Run yaml tests
-        run: --sys -p runner.yaml_rules -vvvl --rootdir /rules /rules
+        run: test-rules --sys -p runner.yaml_rules -vvvl --rootdir /rules /rules
