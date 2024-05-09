@@ -6,13 +6,11 @@ tests:
   rule_111_enable_aaa_new_model:
     - outcome: TESTS_FAILED
       configuration: |
-        ! hello testers
-        aaa new-model
         hostname not-interesting
         no aaa new-model
     - outcome: OK
       configuration: |
-        new-model
+        aaa new-model
     - outcome: OK
       configuration: |
         no aab new-model
