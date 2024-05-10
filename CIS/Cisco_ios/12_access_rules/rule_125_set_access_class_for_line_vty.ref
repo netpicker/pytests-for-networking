@@ -1,11 +1,11 @@
 .rule_125_set_access_class_for_line_vty:
 
 
-    Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/security/a1/sec-cr-a2.html#GUID-FB9BC58A-F00A-442A-8028-1E9E260E54D3 
+    Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/security/a1/sec-cr-a2.html#GUID-FB9BC58A-F00A-442A-8028-1E9E260E54D3
 
 
-    Remediation:  Configure remote management access control restrictions for all VTY lines. 
-                  hostname(config)#line vty <line-number> <ending-line-number> 
+    Remediation:  Configure remote management access control restrictions for all VTY lines.
+                  hostname(config)#line vty <line-number> <ending-line-number>
                   hostname(config-line)# access-class <vty_acl_number> in
 
 .

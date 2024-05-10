@@ -1,10 +1,10 @@
 .rule_2313_set_the_ntp_trusted_key:
 
 
-    Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/bsm/command/bsm-cr-n1.html#GUID-89CA798D-0F12-4AE8-B382-DE10CBD261DB 
+    Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/bsm/command/bsm-cr-n1.html#GUID-89CA798D-0F12-4AE8-B382-DE10CBD261DB
 
 
-    Remediation:  Configure the NTP trusted key using the following command  
+    Remediation:  Configure the NTP trusted key using the following command
                   hostname(config)#ntp trusted-key {ntp_key_id}
 
 .

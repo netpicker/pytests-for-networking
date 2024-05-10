@@ -1,11 +1,11 @@
 .rule_128_set_exec_timeout_to_less_than_or_equal_to_10_minutes_line_vty:
 
 
-    Reference:    1. https://www.cisco.com/c/en/us/td/docs/switches/datacenter/mds9000/sw/command/b_cisco_mds_9000_cr_book/l_commands.html#wp3716128869 
+    Reference:    1. https://www.cisco.com/c/en/us/td/docs/switches/datacenter/mds9000/sw/command/b_cisco_mds_9000_cr_book/l_commands.html#wp3716128869
 
 
-    Remediation:  Configure device timeout (10 minutes or less) to disconnect sessions after a fixed idle time. 
-                  hostname(config)#line vty {line_number} [ending_line_number] 
+    Remediation:  Configure device timeout (10 minutes or less) to disconnect sessions after a fixed idle time.
+                  hostname(config)#line vty {line_number} [ending_line_number]
                   hostname(config-line)#exec-timeout <<span>timeout_in_minutes> <timeout_in_seconds</span>>
 
 .

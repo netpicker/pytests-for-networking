@@ -3,7 +3,7 @@
     References:  1. http://www.cisco.com/en/US/docs/ios-xml/ios/interface/command/ir-i1.html#GUID-0D6BDFCD-3FBB-4D26-A274-C1221F8592DF
                  2. http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_rip/command/irr-cr-rip.html#GUID-47536344-60DC-4D30-9E03-94FF336332C7
 
-    Remediation:  hostname(config)#interface <<em>interface_name</em>> 
+    Remediation:  hostname(config)#interface <<em>interface_name</em>>
                   hostname(config-if)#ip rip authentication mode md5
 
 .

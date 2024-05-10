@@ -3,7 +3,7 @@
   References: 1. http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_ospf/command/ospf-i1.html#GUID-3D5781A3-F8DF-4760-A551-6A3AB80A42ED
               2. http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_ospf/command/ospf-a1.html#GUID-81D0F753-D8D5-494E-9A10-B15433CFD445
 
-  Remediation: hostname(config)#router ospf <<em>ospf_process-id</em>> 
+  Remediation: hostname(config)#router ospf <<em>ospf_process-id</em>>
                hostname(config-router)#area <<em>ospf_area-id</em>> authentication message-digest
 
 .

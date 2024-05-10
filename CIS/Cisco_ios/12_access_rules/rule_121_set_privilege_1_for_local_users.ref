@@ -1,10 +1,10 @@
 .rule_121_set_privilege_1_for_local_users:
 
 
-    Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/security/s1/sec-cr-t2-z.html#GUID-34B3E43E-0F79-40E8-82B6-A4B5F1AFF1AD  
+    Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/security/s1/sec-cr-t2-z.html#GUID-34B3E43E-0F79-40E8-82B6-A4B5F1AFF1AD
 
 
-    Remediation:  Set the local user to privilege level 1. 
+    Remediation:  Set the local user to privilege level 1.
                   hostname(config)#username <LOCAL_USERNAME> privilege 1
 
 .

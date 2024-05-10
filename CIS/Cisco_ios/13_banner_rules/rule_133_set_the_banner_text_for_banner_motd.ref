@@ -4,7 +4,7 @@
     Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/fundamentals/command/A_through_B.html#GUID-7416C789-9561-44FC-BB2A-D8D8AFFB77DD
 
 
-    Remediation:  Configure the message of the day (MOTD) banner presented when a user first connects to the device.  
+    Remediation:  Configure the message of the day (MOTD) banner presented when a user first connects to the device.
                   hostname(config)#banner motd c Enter TEXT message. End with the character 'c'. <banner-text> c
 
 .
