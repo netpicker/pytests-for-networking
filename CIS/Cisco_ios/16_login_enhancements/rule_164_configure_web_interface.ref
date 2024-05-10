@@ -2,12 +2,12 @@
 
 
 
-    Remediation:  Configuring the Authentication Rule and Interfaces 
-                  Hostname#(config)ip admission name {Name} proxy http 
-                  Hostname#(config)interface {type slot/port} 
-                  Hostname#(config)ip access-group {Name} 
-                  Hostname#(config)ip admission name 
-                  Hostname#(config)ip admission max-login-attempts {number} 
+    Remediation:  Configuring the Authentication Rule and Interfaces
+                  Hostname#(config)ip admission name {Name} proxy http
+                  Hostname#(config)interface {type slot/port}
+                  Hostname#(config)ip access-group {Name}
+                  Hostname#(config)ip admission name
+                  Hostname#(config)ip admission max-login-attempts {number}
 
 
 .

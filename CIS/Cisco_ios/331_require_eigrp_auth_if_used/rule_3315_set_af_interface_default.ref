@@ -4,8 +4,8 @@
                2. http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_eigrp/command/ire-a1.html#GUID-C03CFC8A-3CE3-4CF9-9D65-52990DBD3377
                3. http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_eigrp/command/ire-a1.html#GUID-DC0EF1D3-DFD4-45DF-A553-FA432A3E7233
 
-  Remediation:  hostname(config)#router eigrp <<em>virtual-instance-name</em>> 
-                hostname(config-router)#address-family ipv4 autonomous-system {<em>eigrp_as-number</em>} 
+  Remediation:  hostname(config)#router eigrp <<em>virtual-instance-name</em>>
+                hostname(config-router)#address-family ipv4 autonomous-system {<em>eigrp_as-number</em>}
                 hostname(config-router-af)#af-interface default
 
 .

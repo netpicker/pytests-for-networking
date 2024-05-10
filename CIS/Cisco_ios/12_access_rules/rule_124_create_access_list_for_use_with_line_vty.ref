@@ -1,12 +1,12 @@
 .rule_124_create_access_list_for_use_with_line_vty:
 
 
-    Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/security/a1/sec-cr-a2.html#GUID-9EA733A3-1788-4882-B8C3-AB0A2949120C 
+    Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/security/a1/sec-cr-a2.html#GUID-9EA733A3-1788-4882-B8C3-AB0A2949120C
 
 
-    Remediation:  Configure the VTY ACL that will be used to restrict management access to the device. 
-                  hostname(config)#access-list <vty_acl_number> permit tcp <vty_acl_block_with_mask> any 
-                  hostname(config)#access-list <vty_acl_number> permit tcp host <vty_acl_host> any 
+    Remediation:  Configure the VTY ACL that will be used to restrict management access to the device.
+                  hostname(config)#access-list <vty_acl_number> permit tcp <vty_acl_block_with_mask> any
+                  hostname(config)#access-list <vty_acl_number> permit tcp host <vty_acl_host> any
                   hostname(config)#deny ip any any log
 
 .

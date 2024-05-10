@@ -4,7 +4,7 @@
     Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/snmp/command/nm-snmp-cr-s2.html#GUID-2F3F13E4-EE81-4590-871D-6AE1043473DE
 
 
-    Remediation:  Configure authorized SNMP community string and restrict access to authorized management systems.  
+    Remediation:  Configure authorized SNMP community string and restrict access to authorized management systems.
                   hostname(config)#snmp-server community <<em>community_string</em>> ro {<em>snmp_access-list_number | <span>snmp_access-list_name</span></em><span>}</span>
 
 .

@@ -3,17 +3,17 @@ defaults:
     - platform: cisco_xe
 
 tests:
-  rule_111_enable_aaa_new_model:
+  rule_112_enable_aaa_authentication_login:
     - outcome: TESTS_FAILED
       configuration: |
         hostname not-interesting
         no aaa new-model
     - outcome: OK
       configuration: |
-        aaa new-model
-    - outcome: OK
+        aaa authentication login
+    - outcome: TESTS_FAILED
       configuration: |
-        no aab new-model
+        aaa authentication
 
     - outcome: NO_TESTS_COLLECTED
       devices:

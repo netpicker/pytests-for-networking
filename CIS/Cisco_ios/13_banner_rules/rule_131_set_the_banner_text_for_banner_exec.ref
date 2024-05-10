@@ -4,7 +4,7 @@
     Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/fundamentals/command/A_through_B.html#GUID-0DEF5B57-A7D9-4912-861F-E837C82A3881 Additional Information: The default is no banner.
 
 
-    Remediation:  Configure the EXEC banner presented to a user when accessing the devices enable prompt.  
+    Remediation:  Configure the EXEC banner presented to a user when accessing the devices enable prompt.
                   hostname(config)#banner exec c Enter TEXT message. End with the character 'c'. <banner-text> c
 
 .

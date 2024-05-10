@@ -2,7 +2,7 @@
 
 
 
-    Remediation:  Configure each NTP Server to use a key ring using the following command.  
+    Remediation:  Configure each NTP Server to use a key ring using the following command.
                   hostname(config)#ntp server {<em>ntp-server_ip_address</em>}{key <em>ntp_key_id</em>}
 
 .

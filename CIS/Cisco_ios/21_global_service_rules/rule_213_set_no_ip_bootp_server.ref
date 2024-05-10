@@ -4,7 +4,7 @@
     Reference:
 
 
-    Remediation:  Disable the bootp server.  
+    Remediation:  Disable the bootp server.
                   hostname(config)#ip dhcp bootp ignore
 
 .
