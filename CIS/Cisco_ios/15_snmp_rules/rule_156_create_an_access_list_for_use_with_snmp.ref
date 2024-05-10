@@ -1,11 +1,11 @@
 .rule_156_create_an_access_list_for_use_with_snmp:
 
 
-    Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/security/a1/sec-cr-a2.html#GUID-9EA733A3-1788-4882-B8C3-AB0A2949120C 
+    Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/security/a1/sec-cr-a2.html#GUID-9EA733A3-1788-4882-B8C3-AB0A2949120C
 
 
-    Remediation:  Configure SNMP ACL for restricting access to the device from authorized management stations segmented in a trusted management zone.  
-                  hostname(config)#access-list <<em>snmp_acl_number</em>> permit <<em>snmp_access-list</em>> 
+    Remediation:  Configure SNMP ACL for restricting access to the device from authorized management stations segmented in a trusted management zone.
+                  hostname(config)#access-list <<em>snmp_acl_number</em>> permit <<em>snmp_access-list</em>>
                   hostname(config)#access-list deny any log
 
 .

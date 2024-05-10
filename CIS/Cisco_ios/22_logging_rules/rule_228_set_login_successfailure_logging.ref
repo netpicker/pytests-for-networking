@@ -4,8 +4,8 @@
     Reference:    1. https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/config-mgmt/configuration/xe-16-6/config-mgmt-xe-16-6-book/cm-config-logger.pdf
 
 
-    Remediation:  hostname(config)#login on-failure log 
-                  hostname(config)#login on-success log 
+    Remediation:  hostname(config)#login on-failure log
+                  hostname(config)#login on-success log
                   hostname(config)#end
 
 .

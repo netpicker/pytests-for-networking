@@ -1,11 +1,11 @@
 .rule_314_set_ip_verify_unicast_source_reachable_via:
 
 
-    Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/security/d1/sec-cr-i3.html#GUID-2ED313DB-3D3F-49D7-880A-047463632757 2. https://community.cisco.com/t5/routing/ip-verify-unicast-source-reachable-via-rx/td-p/1710172 
+    Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/security/d1/sec-cr-i3.html#GUID-2ED313DB-3D3F-49D7-880A-047463632757 2. https://community.cisco.com/t5/routing/ip-verify-unicast-source-reachable-via-rx/td-p/1710172
 
 
-    Remediation:  Configure uRPF.  
-                  hostname(config)#interface {<em>interface_name</em>} 
+    Remediation:  Configure uRPF.
+                  hostname(config)#interface {<em>interface_name</em>}
                   hostname(config-if)#ip verify unicast source reachable-via rx allow-default
 
 .

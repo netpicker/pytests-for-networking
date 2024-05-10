@@ -1,10 +1,10 @@
 .rule_215_set_no_ip_identd:
 
 
-    Reference:    1. http://www.cisco.com/en/US/docs/solutions/Enterprise/Security/Baseline_Security/sec_chap4.html#wp1056539 
+    Reference:    1. http://www.cisco.com/en/US/docs/solutions/Enterprise/Security/Baseline_Security/sec_chap4.html#wp1056539
 
 
-    Remediation:  Disable the ident server. 
+    Remediation:  Disable the ident server.
                   hostname(config)#no ip identd
 
 .

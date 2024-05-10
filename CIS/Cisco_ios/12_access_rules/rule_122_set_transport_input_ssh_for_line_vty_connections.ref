@@ -4,8 +4,8 @@
     Reference:    1. http://www.cisco.com/en/US/docs/ios/termserv/command/reference/tsv_s1.html#wp1069219
 
 
-    Remediation:  Apply SSH to transport input on all VTY management lines 
-                  hostname(config)#line vty <line-number> <ending-line-number> 
+    Remediation:  Apply SSH to transport input on all VTY management lines
+                  hostname(config)#line vty <line-number> <ending-line-number>
                   hostname(config-line)#transport input ssh
 
 .

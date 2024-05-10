@@ -1,11 +1,11 @@
 .rule_21114_set_seconds_for_ip_ssh_timeout_for_60_seconds_or_less:
 
 
-    Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/security/d1/sec-cr-i3.html#GUID-5BAC7A2B-0A25-400F-AEE9-C22AE08513C6 
-                  Additional Information: This cannot exceed 120 seconds. 
+    Reference:    1. http://www.cisco.com/en/US/docs/ios-xml/ios/security/d1/sec-cr-i3.html#GUID-5BAC7A2B-0A25-400F-AEE9-C22AE08513C6
+                  Additional Information: This cannot exceed 120 seconds.
 
 
-    Remediation:  Configure the SSH timeout  
+    Remediation:  Configure the SSH timeout
                   hostname(config)#ip ssh time-out [<em>60</em>]
 
 .

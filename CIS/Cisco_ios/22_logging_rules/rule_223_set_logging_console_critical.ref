@@ -2,7 +2,7 @@
 
 
 
-    Remediation:  Configure console logging level.  
+    Remediation:  Configure console logging level.
                   hostname(config)#logging console critical
 
 .

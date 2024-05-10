@@ -3,7 +3,7 @@
     References: 1. http://www.cisco.com/en/US/docs/ios-xml/ios/interface/command/ir-i1.html#GUID-0D6BDFCD-3FBB-4D26-A274-C1221F8592DF
                 2. http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_eigrp/command/ire-i1.html#GUID-0B344B46-5E8E-4FE2-A3E0-D92410CE5E91
 
-    Remediation:  hostname(config)#interface {<em>interface_name</em>} 
+    Remediation:  hostname(config)#interface {<em>interface_name</em>}
                   hostname(config-if)#ip authentication key-chain eigrp {<em>eigrp_as-number</em>} {<em>eigrp_key-chain_name</em>}
 
 .
