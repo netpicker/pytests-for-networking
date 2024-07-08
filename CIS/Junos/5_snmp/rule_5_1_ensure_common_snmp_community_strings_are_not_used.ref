@@ -1,0 +1,11 @@
+.rule_5_1_ensure_common_snmp_community_strings_are_not_used
+
+Reference: Security Agency (NSA)
+Requirement 8.2.1 and 8.5
+
+Remediation: If you have deployed SNMPv1 or SNMPv2c on your router using one of these strings,
+rename the community using the following command under the [edit snmp] hierarchy;
+[edit snmp]
+user@host#rename community <old community> to community <new community>
+
+.

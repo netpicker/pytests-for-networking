@@ -1,0 +1,13 @@
+.rule_5_8_ensure_interface_restrictions_are_set_for_snmp
+
+Reference: Software Management Configuration Guide, Juniper Networks
+
+
+
+
+Remediation: To restrict SNMP to required interfaces issue the following command from the [edit
+snmp] hierarchy;
+[edit snmp]
+user@host#set interface <interface or interface list>
+
+.

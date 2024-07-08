@@ -1,0 +1,26 @@
+.rule_5_5_ensure_snmp_write_access_is_not_set
+
+Reference: Security Agency (NSA)
+Requirement 8.1.6 and 8.2.1
+
+Remediation: If you have deployed SNMP below Version 3 on your router with Read-Write access, delete
+the associated community using the following command under the [edit snmp] hierarchy;
+[edit snmp]
+user@host#delete community <community>
+Alternatively you can set the communities authorization level to Read Only with the
+following command from the [edit snmp <community>] hierarchy;
+
+
+
+[edit snmp]
+user@host#set community <community> authorization read-only
+If you have deployed SNMP Version 3 on your router with Write access, delete the write
+view using the following command under the [edit snmp v3 vacm access] hierarchy;
+[edit snmp v3 vacm access]
+user@host#delete group <group name> default-context-prefix security-model
+<security model> security-level <security level> write-view
+Complete the sections in <> with the details configured for your group/s. This command
+will leave any read or notify views for the group in place. If only a write-view is configured,
+the group can be deleted instead.
+
+.
