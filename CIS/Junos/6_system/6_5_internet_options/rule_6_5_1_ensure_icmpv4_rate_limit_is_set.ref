@@ -1,0 +1,22 @@
+.rule_6_5_1_ensure_icmpv4_rate_limit_is_set
+
+Reference: (https://www.juniper.net/techpubs/software/junos/junos93/swconfig-system-
+basics/icmpv4-rate-limit.html#id-11178870)
+tion-statement/icmpv4-rate-limit-edit-system.html
+
+
+
+
+Remediation: ICMPv4 Rate Limiting can be configured by issuing the following commands from the [edit
+system internet-options] hierarchy.
+[edit system internet-options]
+user@host#set icmpv4-rate-limit bucket-size <bucket> packet-limit <limit>
+Where:
+
+<bucket> is the size of the Rate Limit Bucket, in seconds (if not specified, defaults to
+5 seconds)
+
+<limit> is the rate at which packets are added to the bucket, in packets per second
+(if not specified, defaults to 1000pps)
+
+.

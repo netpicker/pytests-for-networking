@@ -1,0 +1,47 @@
+.rule_6_10_5_2_ensure_rest_is_set_to_https
+
+Reference: Requirement 2.3 and 8.2.1
+tion-statement/https-edit-system-services-rest.html
+
+
+
+rest-api-configuring.html
+digital-certificates-with-pki-overview.html
+
+Remediation: To configure REST over HTTPS, enter the following command from the [edit system
+services rest] hierarchy:
+[edit system services rest]
+user@host# set https server-certificate <Certificate ID>
+
+
+
+Where <Certificate ID> is the name of a Certificate which has already been loaded to the
+devices PKI Store.
+To create a new Public/Private Key Pair in the devices PKI Store and generate Certificate
+Signing Request issue the following commands from Operational Mode:
+user@host> request security pki generate-key-pair certificate-id <Certificate
+ID> type <Algorithm> size <Size>
+
+user@host> request security pki generate-certificate-request certificate-id
+<Certificate ID> domain-name <Device DNS Name> subject <Device Subject DN>
+Where:
+<Certificate ID> is the Name that will be used for this Certificate throughout configuration
+<Algorithm> is the Encryption Algorithm to be used (this should be either RSA or ECC)
+<Size> is the number of Bits used for the keys (use at least 2048bits for RSA or 256bits for
+ECC)
+<Device DNS Name> is the FQDN which will be used to manage the device and <Device
+Subject DN> is the Distinguished Name used to identify this device and certificate.
+Optionally, fields for email address, the device's IP Address and output Filename for the
+PKCS#10 CSR which will be generated can be included.
+The CSR should then be submitted to the Certificate Authority for review and signing.
+Once the CA returns the Certificate it can be uploaded to the JUNOS device and imported
+with the following command from Operational Mode:
+user@host> request security pki local-certificate load certificate-id
+<Certificate ID> filename <File Upload Location>
+Alternatively, a "Self Signed" Certificate can be generated using the Public/Private Key Pair
+previously generated with the following command:
+user@host> request security pki local-certificate generate-self-signed
+certificate-id <Certificate ID>
+Use of Self Signed Certificates is not recommended in secure environments.
+
+.

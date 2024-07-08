@@ -1,0 +1,11 @@
+.rule_6_16_ensure_ping_record_route_is_set_to_disabled
+
+Reference: cmp-ip-address-timestamp-disabling.html
+tion-statement/no-ping-record-route-edit-system.html
+
+Remediation: To disable reporting of Interface details in responses to Echo Requests with the Record
+Route option set, issue the following command from the [edit system] hierarchy;
+[edit system]
+user@host#set no-ping-record-route
+
+.

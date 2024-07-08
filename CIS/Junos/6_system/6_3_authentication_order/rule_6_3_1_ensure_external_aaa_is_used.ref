@@ -1,0 +1,25 @@
+.rule_6_3_1_ensure_external_aaa_is_used
+
+Reference: Juniper Networks
+(http://www.juniper.net/techpubs/software/junos/junos93/swconfig-system-
+basics/configuring-the-authentication-order.html)
+Requirement 8
+
+Remediation: Configure at least one external Authentication method using the following commands
+under the [edit system] hierarchy; For RADIUS
+[edit system]
+user@host#set authentication-order radius
+
+
+
+For TACACS+
+[edit system]
+user@host#set authentication-order tacplus
+For RADIUS then TACACS+
+[edit system]
+user@host#set authentication-order [radius, tacplus]
+For TACACS+ then RADIUS
+[edit system]
+user@host#set authentication-order [tacplus, radius]
+
+.

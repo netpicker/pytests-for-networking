@@ -1,0 +1,14 @@
+.rule_6_3_2_ensure_local_accounts_can_only_be_used_during_loss_of_external_aaa
+
+Reference: Juniper Networks
+(http://www.juniper.net/techpubs/software/junos/junos93/swconfig-system-
+basics/configuring-the-authentication-order.html)
+Requirement 8
+
+Remediation: Remove local user authentication from the authentication order by issuing the following
+command from the [edit system] hierarchy; [edit system]
+user@host#delete authentication-order password
+This command will leave other authentication methods (RADIUS or TACACS+) that are
+already configured under the authentication-order statement.
+
+.

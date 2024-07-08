@@ -1,0 +1,14 @@
+.rule_6_11_2_ensure_auxiliary_port_is_set_as_insecure_if_used
+
+Reference: Agency (NSA)
+tion-statement/auxiliary-edit-system.html
+
+Remediation: To set the Auxiliary Port as Insecure, issue the following command from the [edit system
+ports] hierarchy;
+
+
+
+[edit system ports]
+user@host#set auxiliary insecure
+
+.

@@ -1,0 +1,22 @@
+.rule_6_5_2_ensure_icmpv6_rate_limit_is_set
+
+Reference: (https://www.juniper.net/techpubs/software/junos/junos93/swconfig-system-
+basics/icmpv6-rate-limit.html#id-11148130)
+
+
+
+
+
+Remediation: ICMPv6 Rate Limiting can be configured by issuing the following commands from the [edit
+system internet-options] hierarchy.
+[edit system internet-options]
+user@host#set icmpv6-rate-limit bucket <bucket> limit <limit>
+Where:
+
+is the size of the Rate Limit Bucket, in seconds (if not specified, defaults to 5
+seconds)
+
+is the rate at which packets are added to the bucket, in packets per second (if not
+specified, defaults to 1000pps)
+
+.

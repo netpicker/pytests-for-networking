@@ -1,0 +1,50 @@
+.rule_6_12_6_ensure_local_logging_is_set_to_messages_file
+
+Reference: Agency (NSA)
+tion-statement/file-edit-accounting-options.html
+
+Remediation: To configure a local SYSLOG messages file, issue the following commands from the [edit
+system syslog] hierarchy;
+[edit system syslog]
+user@host#set file messages any critical
+
+[edit system syslog]
+user@host#set file messages authorization info
+On some JUNOS platforms, the factory-default configuration may include additional
+elements to be logged to the /var/log/messages file.
+You can confirm what the factory-default settings for SYSLOG are on your JUNOS Device
+by issuing the following commands from a new configuration mode session - which does not
+have any outstanding changes.
+First, confirm that there are no pending changes:
+[edit]
+user@host# show | compare
+If any difference were highlighted do not proceed with the next set of commands until you
+have either rolled back or committed the outstanding changes.
+Next load the factory-default configuration (do not commit this configuration):
+[edit]
+user@host# load factory-default
+Now we can compare the factory-default configuration to your current Active
+Configuration (rollback 0):
+[edit]
+user@host# edit system syslog file messages
+
+[edit system syslog file messages]
+user@host# show | compare
+Finally, roll the Candidate Configuration back to the current Active Configuration and quit
+from Configuration Mode:
+[edit system syslog file messages]
+user@host# top
+
+
+
+
+[edit]
+user@host# rollback 0
+load complete
+
+[edit]
+user@host# quit
+Any logging which was missing from the current Active Configuration should be added to
+restore the original configuration.
+
+.

@@ -1,0 +1,23 @@
+.rule_6_10_5_8_ensure_rest_allowed_sources_is_set
+
+Reference: tion-statement/https-edit-system-services-rest.html
+rest-api-configuring.html
+
+Remediation: To add an IP Address to the REST API Allowed Sources whitelist, enter the following
+command from the [edit system services rest] hierarchy:
+[edit system services rest]
+user@host# set control allowed-sources <Source IP>
+
+
+
+Where <Source IP> is a single host IP Address.
+To add multiple addresses to the Allowed Sources whitelist, enter the following command:
+[edit system services rest]
+user@host# set control allowed-sources [<Source IP 1> <Source IP 2> <Source
+IP ...> ]
+To remove a single address from the current list (for example, if the host is no longer used
+for Network Management) enter the following command:
+[edit system services rest]
+user@host# delete control allowed-sources <Source IP>
+
+.
