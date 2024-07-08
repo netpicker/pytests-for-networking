@@ -1,0 +1,9 @@
+.rule_3_4_ensure_interface_description_is_set
+
+Reference: 
+Remediation: To configure an interface description enter the following command from the[edit interfaces
+unit ] hierarchy.
+[edit interfaces <interface name> unit <unit number>]
+user@host#set description <description>
+
+.

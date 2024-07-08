@@ -1,0 +1,14 @@
+.rule_3_5_ensure_proxy_arp_is_disabled
+
+Reference: Security Agency (NSA)
+
+Remediation: To disable Proxy ARP enter the following command from the [edit interfaces
+<interface name> unit <unit number>] hierarchy:
+[edit interfaces <interface name> unit <unit number>]
+user@host#delete proxy-arp
+
+
+
+
+
+.
