@@ -1,0 +1,8 @@
+.rule_3_9_review_and_log_implied_rules
+
+Reference: 
+Remediation: Go to the following path in the Smart Console and enabled the Log Implied Rules.
+Navigate to Global Properties > Firewall
+Enable the Log Implied Rules
+
+.

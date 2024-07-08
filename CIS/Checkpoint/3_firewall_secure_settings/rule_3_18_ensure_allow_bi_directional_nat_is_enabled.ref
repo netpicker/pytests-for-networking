@@ -1,0 +1,17 @@
+.rule_3_18_ensure_allow_bi_directional_nat_is_enabled
+
+Reference: 
+Remediation: Go to the following path and Configured the Allow bi-directional NAT.
+SmartConsole > Gateways & Servers > select each Gateway > NAT - Network
+Address Translation
+Unchecked the Allow bi-directional NAT
+
+
+
+
+
+
+
+
+
+.

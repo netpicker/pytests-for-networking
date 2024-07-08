@@ -1,0 +1,8 @@
+.rule_3_14_ensure_accept_rip_is_not_enabled
+
+Reference: 
+Remediation: Go to the following path and Configured the Accept RIP.
+SmartConsole > Gateways & Servers > select each Gateway > Firewall
+Unchecked the Accept RIP
+
+.

@@ -1,0 +1,26 @@
+.rule_1_12_ensure_maximum_number_of_failed_attempts_allowed_is_set_to_5_or_fewer
+
+Reference: #o94478
+Notes:
+Looking for input regarding a value for this recommendation.
+Note from checkpoint documentation....
+Warning: Enabling this leaves you open to a "denial of service" -- if an attacker issues
+unsuccessful login attempts often enough you will be locked out. Please consider the
+advantages and disadvantages of this option, in light of your security policy, before
+enabling it.
+
+Remediation: Run the following command to set the deny-on-fail failures-allowed setting.
+CLI:
+Hostname>set password-controls deny-on-fail failures-allowed 5
+
+
+
+
+
+GUI:
+Navigate to User Management > Password Policy > Deny Access After Failed
+Login Attempts:
+checked and set ' Maximum number of failed attempts allowed is set to'
+setting to 5 or fewer.
+
+.

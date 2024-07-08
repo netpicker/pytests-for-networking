@@ -1,0 +1,6 @@
+.rule_3_8_logging_should_be_enable_for_all_firewall_rules
+
+Reference: 
+Remediation: Set the Track field to Log in all firewall rules.
+
+.

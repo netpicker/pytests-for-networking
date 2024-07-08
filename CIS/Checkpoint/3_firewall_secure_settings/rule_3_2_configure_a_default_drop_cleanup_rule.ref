@@ -1,0 +1,20 @@
+.rule_3_2_configure_a_default_drop_cleanup_rule
+
+Reference: 
+Remediation: Create or edit the last rule in the rulebase which is denying all traffic from any source to
+any destination.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.

@@ -1,0 +1,19 @@
+.rule_1_9_ensure_days_of_non_use_before_lock_out_is_set_to_30
+
+Reference: 
+Remediation: Run the following command to set the deny-on-nonuse allowed-days setting.
+CLI:
+Hostname>set password-controls deny-on-nonuse allowed-days 30
+
+
+
+
+
+
+GUI:
+Navigate to User Management > Password Policy > Deny access to unused
+accounts:
+Set 'Days of non-use before lock-out' to 30 or less.
+Note: This setting only takes effect if 'Deny access to unused accounts' is enabled.
+
+.

@@ -1,0 +1,18 @@
+.rule_2_6_1_ensure_mgmtauditlogs_is_set_to_on
+
+Reference: 
+Remediation: Run the following command to enable the mgmtauditlogs.
+CLI:
+Hostname> set syslog mgmtauditlogs on
+
+
+
+
+
+
+GUI:
+Navigate to System Management > System Logging > System Logging
+checked the Send audit logs to management server upon successful
+configuration
+
+.

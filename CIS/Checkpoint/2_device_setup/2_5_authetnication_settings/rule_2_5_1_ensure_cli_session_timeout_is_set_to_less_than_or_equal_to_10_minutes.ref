@@ -1,0 +1,15 @@
+.rule_2_5_1_ensure_cli_session_timeout_is_set_to_less_than_or_equal_to_10_minutes
+
+Reference: 
+Remediation: Run the following command to Configure the Inactivity Timeout for Command Line.
+CLI:
+Hostname> set inactivity-timeout 10
+GUI:
+Navigate to System Management > Session > Command Line Shell  >  Inactivity
+Timeout - Set to 10 or less
+
+
+
+
+
+.

@@ -1,0 +1,12 @@
+.rule_3_13_ensure_disk_space_alert_is_set
+
+Reference: 
+Remediation: Go to the following path and configured the Disk Space Alert.
+SmartConsole > Gateways & Servers > Select each Gateway > Logs > Local
+Storage
+
+* Checked the When disk space is below and value MBytes or Percentage is
+configured as per the Organization Policy.
+* Set the Issue alert to Log, Popup Alert, Mail or SNMP trap alert.
+
+.

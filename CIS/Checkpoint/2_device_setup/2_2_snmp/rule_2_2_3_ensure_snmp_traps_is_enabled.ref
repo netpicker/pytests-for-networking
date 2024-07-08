@@ -1,0 +1,23 @@
+.rule_2_2_3_ensure_snmp_traps_is_enabled
+
+Reference: 
+Remediation: Run the following command to Configure the SNMP traps.
+CLI:
+Hostname> set snmp traps trap authorizationError enable
+Hostname> set snmp traps trap coldStart enable
+Hostname> set snmp traps trap configurationChange enable
+Hostname> set snmp traps trap configurationSave enable
+Hostname> set snmp traps trap linkUpLinkDown enable
+Hostname> set snmp traps trap lowDiskSpace enable
+
+
+
+
+
+GUI:
+Navigate to System Management > SNMP > Enabled Traps > Set and select the
+following traps
+uthorizationError, coldStart, configurationChange, configurationSave,
+linkUpLinkDown and lowDiskSpace
+
+.

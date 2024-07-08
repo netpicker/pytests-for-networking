@@ -1,0 +1,24 @@
+.rule_2_5_4_ensure_radius_or_tacacs__server_is_configured
+
+Reference: 
+Remediation: run the following command to enable and add TACACS+ servers.
+CLI:
+Hostname> set aaa tacacs-servers state on
+Hostname> add aaa tacacs-servers priority <priority_value> server
+<IP_Address> key <Key> timeout <timeout_value>
+GUI:
+Navigate to User Management > Authentication Servers > TACACS+ configuration
+> Ensuere Enable TACACS+ authentication is checked
+
+Navigate to User Management > Authentication Servers > TACACS+ configuration
+> Enable TACACS+ Servers > Add Provide <Server_IP_Address>, <Priority> and
+<Timeout>.
+Run the following command to enable and add Radius servers.
+CLI:
+Hostname>add aaa radius-servers priority <priority_value> host <IP_Address>
+secret <Key>  port <Port_number> timeout <timeout_value>
+GUI:
+Navigate to User Management > Authentication Servers > Radius Servers > Add
+Provide <Server_IP_Address>, <Priority>, <UDP_Port> and <Timeout>.
+
+.
