@@ -1,0 +1,13 @@
+.rule_6_6_1_2_ensure_max_login_backoff_threshold_of_2
+
+Reference: Configuration Guide, Juniper Network
+(http://www.juniper.net/techpubs/software/junos-security/junos-
+security95/junos-security-admin-guide/config-passwd-retry-telnet-
+ssh.html#config-passwd-retry-telnet-ssh)
+
+Remediation: Configure the backoff threshold using the following command under the [edit system]
+hierarchy:
+[edit system]
+user@host#set login retry-options backoff-threshold <threshold>
+
+.

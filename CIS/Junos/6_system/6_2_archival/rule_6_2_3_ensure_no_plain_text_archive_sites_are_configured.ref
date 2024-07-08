@@ -1,0 +1,13 @@
+.rule_6_2_3_ensure_no_plain_text_archive_sites_are_configured
+
+Reference: 
+
+
+
+Remediation: Archival is not configured by default. If plain text Archive Sites have been configured, they
+can be removed by issuing the following command from the [edit system] hierarchy;
+[edit system]
+user@host#delete archival configuration archive-site <URL>
+Archive sites should be reconfigured using SCP.
+
+.

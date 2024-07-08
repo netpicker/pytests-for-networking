@@ -1,0 +1,19 @@
+.rule_6_6_6_ensure_predefined_login_classes_are_not_used
+
+Reference: products/pathway-pages/system-basics/user-access.html
+Requirement 7.1.
+
+Remediation: To create a new class you can issue the following commands from the [edit system
+login] hierarchy. In this example, we create a new class named 'noc' and allow them
+permissions to run show commands like show bgp summary, view the configuration and
+access the network with ping, SSH, traceroute and Telnet.
+[edit system login]
+user@host#set class noc permissions [ view view-configuration network ]
+(this class should also have Idle timeouts and other options set in line with other
+recommendations in this section).
+To change the class for a user account, use the following command under the [edit system
+login] hierarchy:
+[edit system login]
+user@host#set user <username> class <class name>
+
+.

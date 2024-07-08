@@ -1,0 +1,22 @@
+.rule_6_10_5_5_ensure_rest_https_cipher_list_is_set
+
+Reference: Requirement 2.3 and 8.2.1
+tion-statement/https-edit-system-services-rest.html
+rest-api-configuring.html
+tion-statement/cipher-list-edit-system-services-rest-https.html
+
+Remediation: To restrict the Cipher Suites used REST over HTTPS, enter the following command from the
+[edit system services rest] hierarchy:
+[edit system services rest]
+user@host# set https cipher-list [ rsa-with-aes-128-cbc-SHA256 rsa-with-aes-
+256-cbc-SHA256 dhe-rsa-with-aes-128-cbc-SHA256 dhe-rsa-with-aes-256-cbc-
+SHA256 rsa-with-aes-128-gcm-SHA256 rsa-with-aes-256-gcm-SHA384 dhe-rsa-with-
+aes-128-gcm-SHA256 dhe-rsa-with-aes-256-gcm-SHA384 ecdhe-rsa-with-aes-128-
+cbc-SHA256 ecdhe-rsa-with-aes-256-cbc-SHA384 ecdhe-rsa-with-aes-128-gcm-
+SHA256 ecdhe-rsa-with-aes-256-gcm-SHA384 ]
+No all Cipher Suites are required to meet this recommendation. A shorter list, or individual
+Cipher Suites, may be configured using the same command.
+Some JUNOS Devices do not support all of the above Cipher Suite (most notably, AES in
+Galois Counter Mode support is not universal), unsupported Cipher Suites can be skipped.
+
+.

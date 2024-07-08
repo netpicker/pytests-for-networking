@@ -1,0 +1,12 @@
+.rule_6_2_2_ensure_at_least_one_scp_archive_site_is_configured
+
+Reference: (http://www.juniper.net/techpubs/software/junos/junos92/swconfig-system-
+basics/archival.html)
+
+Remediation: To enable a Secure Copy Archival Site on commit issue the following commands from the
+[edit system] hierarchy;
+[edit system]
+user@host#set archival configuration archive-site <SCP URL> password
+<password>
+
+.

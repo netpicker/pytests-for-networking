@@ -1,0 +1,11 @@
+.rule_6_19_ensure_hostname_is_not_set_to_device_make_or_model
+
+Reference: tion-statement/host-name-edit-system.html
+
+Remediation: To configure the hostname, issue the following command from the [edit system]
+hierarchy;
+[edit system]
+user@host#set host-name <hostname>
+The hostname should not include any indication of the make or model of the device.
+
+.

@@ -1,0 +1,122 @@
+.rule_6_6_7_ensure_remote_login_class_for_authorization_through_external_aaa
+
+Reference: products/pathway-pages/system-basics/user-access.html
+Requirement 7.1.
+acacs-vendor-specific-attributes-juniper-networks.html
+adius-vendor-specific-attributes-juniper-networks.html
+
+Remediation: To create a new class you can issue the following commands from the [edit system
+login] hierarchy. In this example, we create a new class named 'remote', granting only
+view permissions, and assign the remote user to the new class. More detailed permissions
+will be added to these permissions
+[edit system login]
+user@host#set class remote permissions [ view ]
+(this class should also have Idle timeouts and other options set in line with other
+recommendations in this section).
+To change the class for a user account, use the following command under the [edit system
+login] hierarchy:
+[edit system login]
+user@host#set user remote class remote
+
+
+
+A full discussion of RADIUS or TACACS+ configuration and options is beyond the scope of
+this guide, but a simple example of using a TACACS.net server running on Windows with
+AD integration for a remote user is shown below.
+This example is taken from an anonymized real world deployment, so also includes
+sections to allow access to different groups of TACACS+ Clients and permissions for Cisco
+IOS and Netscreen devices. The most relevant section is the <Service> for service=junos-
+exec, where the VSAs for TACACS+ Clients running JUNOS are defined, but the entire
+Authorization for this Class is given for context.
+<Authorization>
+<!--CIS Example remote user Authorization from TACACS.net Authorization.xml--
+>
+
+<UserGroups>
+
+<!-- The UserGroup is defined elsewhere - in this case it maps to an
+Active Directory Group call GRP-NETOPS -->
+
+<UserGroup>GRP-NETOPS</UserGroup>
+
+</UserGroups>
+
+<ClientGroups>
+
+<!--Defines the Groups of devices this usergroup can login to -->
+
+
+<ClientGroup>CORE-NET</ClientGroup>
+
+
+<ClientGroup>ACCESS-NET</ClientGroup>
+
+
+<ClientGroup>FIREWALLS</ClientGroup>
+
+</ClientGroups>
+
+<Shell>
+
+<!--note that the login and exit commands are always permitted.  (used
+for Cisco and Netscreen devices) -->
+
+
+<Permit>show.*</Permit>
+
+
+<Permit>terminal.*</Permit>
+
+
+<Permit>get.*</Permit>
+
+
+<Deny>.*</Deny>
+</Shell>
+
+<Services>
+
+
+<Service>
+
+
+<!-- JUNOS VSAs to set additional user permissions -->
+
+
+<Set>service=junos-exec</Set>
+
+
+<Set>local-user-name=remote</Set> <!--This will be
+mapped to a template user on JUNOS devices with "remote" class permissions --
+>
+
+
+<Set>allow-commands=show.*</Set> <!-- Additional
+permission (above remote class set above) to allow all "show" operational
+commands -->
+
+
+
+<Set>user-permissions=view-configuration</Set> <!--
+Grants additional permission to view the full config (no secrets)-->
+
+
+
+<Set>user-permissions=network</Set> <!-- Grants access
+to the network for SSH, Ping, etc -->
+
+
+</Service>
+</Services>
+<AutoExec>
+<!--Set the Priv lvl to 15 for Cisco devices, ignored by JUNOS
+devices -->
+
+<Set>priv-lvl=15</Set>
+</AutoExec>
+</Authorization>
+
+
+
+
+.

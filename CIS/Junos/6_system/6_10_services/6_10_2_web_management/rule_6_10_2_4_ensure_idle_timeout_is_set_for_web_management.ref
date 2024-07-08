@@ -1,0 +1,11 @@
+.rule_6_10_2_4_ensure_idle_timeout_is_set_for_web_management
+
+Reference: Requirement 8.1.8
+tion-statement/system-edit-web-management.html
+
+Remediation: To enable Idle Timeouts for JWeb issue the following command from the [edit system
+services web-management] hierarchy:
+[edit system services web-management]
+user@host#set session idle-timeout <Time in Minutes>
+
+.

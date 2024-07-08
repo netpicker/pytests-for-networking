@@ -1,0 +1,11 @@
+.rule_6_1_2_ensure_accounting_of_logins
+
+Reference: Agency (NSA)
+Requirement 10.2
+
+Remediation: Configure Accounting of Logins and Configuration Changes by entering the following
+commands under the [edit system accounting] hierarchy;
+[edit system accounting]
+user@host#set events login
+
+.

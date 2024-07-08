@@ -1,0 +1,12 @@
+.rule_6_10_4_2_ensure_netconf_connection_limit_is_set
+
+Reference: tion-statement/connection-limit-edit-system.html
+products/pathway-pages/netconf-guide/netconf.html
+
+Remediation: The NETCONF-over-SSH Connection Limit can be configured by issuing the following
+command from the [edit system services netconf] hierarchy;
+[edit system services netconf]
+user@host#set ssh connection-limit <limit>
+Where <limit> is the desired Connection Limit.
+
+.

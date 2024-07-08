@@ -1,0 +1,16 @@
+.rule_6_10_5_7_ensure_rest_api_explorer_is_not_set
+
+Reference: Requirement 1.1.6
+tion-statement/enable-explorer-edit-system-services-rest.html
+explorer-example.html
+
+Remediation: To disable the REST API Explorer, issue the following command from the [edit system
+services rest] hierarchy:
+[edit system services rest]
+user@host# delete enable-explorer
+This will disable the API Explorer for both HTTP and HTTPS access.
+
+
+
+
+.

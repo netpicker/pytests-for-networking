@@ -1,0 +1,27 @@
+.rule_6_7_6_ensure_different_authentication_keys_for_each_ntp_server
+
+Reference: 
+
+
+Guide](https://www.juniper.net/documentation/en_US/junos/information-
+products/pathway-pages/system-basics/time-management.html)
+Requirement 10.4
+Paper](https://www.cisco.com/c/en/us/support/docs/availability/high-
+availability/19643-ntpm.html)
+
+Remediation: Keys are configured on a key ring and identified by an ID number. To add a key enter the
+following commands from the [edit system ntp] hierarchy:
+[edit system ntp]
+user@host#set authentication-key <Key ID> type <algorithm> value <Key>
+user@host#set trusted-key <Key ID>
+Set the keys for all configured NTP servers using the following commands under the [edit
+system ntp] hierarchy:
+[edit system ntp]
+user@host#set server <Servers IP> key <key ID>
+If this device is operating as an NTP Server and has clients which use different keys or
+algorithms, these can be set with the peer option:
+[edit system ntp]
+user@host#set peer <Peers IP> key <key ID>
+NOTE - The Key ID must also be listed in the trusted-key list to be accepted.
+
+.

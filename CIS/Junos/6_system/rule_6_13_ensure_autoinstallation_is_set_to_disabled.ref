@@ -1,0 +1,18 @@
+.rule_6_13_ensure_autoinstallation_is_set_to_disabled
+
+Reference: Requirement 1.2.2, 2.3 and 8.2.1
+autoinstallation-overview.html
+tion-statement/autoinstallation-edit-system.html
+
+
+
+
+
+
+
+Remediation: To disable Autoinstallation issue the following command from the [edit system]
+hierarchy;
+[edit system]
+user@host#delete autoinstallation
+
+.

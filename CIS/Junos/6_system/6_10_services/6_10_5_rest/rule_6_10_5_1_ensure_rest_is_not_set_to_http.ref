@@ -1,0 +1,16 @@
+.rule_6_10_5_1_ensure_rest_is_not_set_to_http
+
+Reference: Requirement 2.3 and 8.2.1
+tion-statement/http-edit-system-services-rest.html
+rest-api-configuring.html
+
+Remediation: To disable REST HTTP, enter the following command from the [edit system services
+rest] hierarchy:
+[edit system services rest]
+user@host# delete http
+
+
+
+
+
+.

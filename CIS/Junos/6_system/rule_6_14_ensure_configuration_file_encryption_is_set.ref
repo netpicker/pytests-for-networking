@@ -1,0 +1,22 @@
+.rule_6_14_ensure_configuration_file_encryption_is_set
+
+Reference: map/encrypting-and-decrypting.html
+
+Remediation: To enable Configuration File Encryption, you must first set an encryption key by issuing the
+following command from Operational Mode:
+user@host>request system set-encryption-key
+You will be prompted to enter and then verify the key.
+The preferred encryption algorithm may be specified by adding the algorithm option, or
+left as default. If the device is running the US/Domestic version of JUNOS the default
+algorithm will be AES. Devices running the Export version of JUNOS will default to the
+weaker DES standard and cannot be configured to support AES.
+Optionally, the unique option may be specified. This will cause JUNOS to combine the
+device's Serial Number as part of the Encryption Key, making the configuration unloadable
+on any other JUNOS device, even with the key set at the prompt.
+Once a key has been set the following command should be issued from the [edit system]
+hierarchy:
+[edit system]
+user@host# set encrypt-configuration-files
+The encryption will not be carried out until the configuration is committed.
+
+.

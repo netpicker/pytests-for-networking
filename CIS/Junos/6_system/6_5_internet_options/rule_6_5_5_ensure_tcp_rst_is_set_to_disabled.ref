@@ -1,0 +1,10 @@
+.rule_6_5_5_ensure_tcp_rst_is_set_to_disabled
+
+Reference: tion-statement/no-tcp-reset-edit-system-internet-options.html
+
+Remediation: To disable sending TCP RSTs to any connections to closed ports issue the following
+command from the [edit system internet-options] hierarchy.
+[edit system internet-options]
+user@host#set no-tcp-reset drop-all-tcp
+
+.

@@ -1,0 +1,10 @@
+.rule_6_11_5_ensure_log_out_on_disconnect_is_set_for_console
+
+Reference: Agency (NSA)
+
+Remediation: To log console sessions out when the console cable is unplugged, issue the following
+command from the [edit system ports console] hierarchy;
+[edit system ports console]
+user@host#set log-out-on-disconnect
+
+.
