@@ -1,0 +1,18 @@
+.rule_3_1_1_ensure_caller_id_is_set
+
+Reference: Guide, Juniper Networks](http://www.juniper.net/techpubs/software/junos-
+security/junos-security95/junos-security-admin-guide/config-usb-modem-
+chapter.html#config-usb-modem-chapter)
+
+Remediation: If you have configured a dialer interface to accept incoming calls, you should restrict the
+allowable Caller ID by entering the following command under the [edit interfaces dln unit 0
+dialer-options] hierarchy (where n is the dialer interface number);
+
+
+
+[edit interfaces dln unit 0 dialer-options]
+user@host#set incoming-map caller <Approved CallerID Number>
+Up to 15 caller numbers may be configured on a dialer interface, repeat the command
+above for each number you wish to add.
+
+.
