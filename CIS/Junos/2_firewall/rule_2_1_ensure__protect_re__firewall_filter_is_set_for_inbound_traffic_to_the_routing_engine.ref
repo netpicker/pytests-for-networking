@@ -1,0 +1,20 @@
+.rule_2_1_ensure__protect_re__firewall_filter_is_set_for_inbound_traffic_to_the_routing_engine:
+
+    Reference: 1. Router Security Configuration Guide, Version 1.1b, Section 4.4.1 (page 55), National Security Agency (NSA)
+               2. [Firewall Filter Overview, JUNOS Software Policy Framework Configuration Guide, Juniper Networks](https://www.juniper.net/documentation/partners/ibm/junos11.4-oemlitedocs/config-guide-firewall-policer.pdf)
+               3. [Hardening Junos Devices 2nd Edition, Juniper DayOne](https://www.juniper.net/documentation/en_US/day-one-books/TW_HardeningJunosDevices_2ndEd.zip)
+               4. O'Reilly JUNOS Cookbook - Recipe 2.14. Restricting Inbound SSH and Telnet Access - https://www.oreilly.com/library/view/junos-cookbook/0596100140/
+               5. *Recipe 15: Low-Risk Methodology for Deploying Firewall Filters* in the [Day One: Juniper Ambassadors' Cookbook 2019](https://www.juniper.net/documentation/en_US/day-one-books/DO_Ambassadors2019.pdf)
+
+
+    Remediation: A full discussion of Firewall Filters is beyond the scope of this Benchmark. It is important to ensure that Firewall Filters include terms to match and accept all of your required Routing Protocols, Management Services and any other services used on your Junos Device. As noted elsewhere, it is strongly recommended that changes to Firewall Filters applied to the Loopback interface always be applied using commit confirmed so that the change will be automatically rolled back should the administrator lose connection after committing the change. To create a IPv4 firewall filter enter the following command from the [edit firewall] hierarchy. 
+                 [edit firewall]
+                 user@host#edit family inet 
+                 [edit firewall family inet] 
+                 user@host#edit filter <filter name> 
+                 [edit firewall family inet filter <filter name>] 
+                 user@host#edit term <term name> 
+                 [edit firewall family inet filter <filter name> term <term name>] 
+                 user@host#set from <match conditions> 
+                 user@host#set then <action>
+
