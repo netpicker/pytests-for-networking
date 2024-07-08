@@ -1,0 +1,7 @@
+.rule_1_2_5_ensure_exec_timeout_for_remote_administrative_sessions_vty_is_set
+
+Reference: 
+Remediation: switch(config)# line vty
+switch(config)# exec-timeout 10
+
+.

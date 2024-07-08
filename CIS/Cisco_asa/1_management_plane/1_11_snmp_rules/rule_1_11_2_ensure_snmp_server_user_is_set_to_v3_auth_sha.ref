@@ -1,0 +1,9 @@
+.rule_1_11_2_ensure_snmp_server_user_is_set_to_v3_auth_sha
+
+Reference: asa_90_cli_config/monitor_snmp.html#56907
+
+Remediation: Run the following:
+hostname(config)#snmp-server user <snmp_username>  <group-name> v3 auth SHA
+<authentication_password> priv AES 256 <encryption_password>
+
+.

@@ -1,0 +1,18 @@
+.rule_1_6_3_ensure_rsa_key_pair_is_greater_than_or_equal_to_2048_bits
+
+Reference: l/asa_91_general_config/admin_management.html
+
+Remediation: 
+Step 1: Acquire the enterprise standard RSA key size greater or equal than 2048 bits
+
+Step 2: If the audit procedure revealed existing non-compliant key pairs, run the
+following to remove them:
+hostname(config)#crypto key zeroize rsa
+
+Step 3: Run the following to generate compliant RSA key pair:
+hostname(config)# crypto key generate rsa modulus <enterprise_RSA_key_size>
+
+Step 4: Run the following to save the RSA keys to persistent Flash memory
+hostname(config)#write memory
+
+.

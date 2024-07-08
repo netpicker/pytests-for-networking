@@ -1,0 +1,80 @@
+.rule_1_6_3_configure_netflow_on_strategic_ports
+
+Reference: 
+Remediation: If needed, either Layer 3 or Layer 2 netflow can be configured.
+Layer 3 IP and IPv6 flow monitors can be applied to VLANs, SVIs, Layer 3 routed
+interfaces or subinterfaces.
+Layer 2 flow monitors can be applied to a physical interface or trunks
+L3 netflow - typical application to a VLAN is shown
+First, enable the netflow feature:
+
+
+switch(config)#feature netflow
+The flow record defines what data to record and export. Typical settings are shown, the
+important thing is that a valid flow record setting exists:
+switch(config)# flow-record FLOW-RECORD
+switch(config-flow-record)#  match ipv4 protocol
+switch(config-flow-record)#  match ipv4 source address
+switch(config-flow-record)#  match ipv4 destination address
+switch(config-flow-record)#  match transport source-port
+switch(config-flow-record)#  match transport destination-port
+switch(config-flow-record)#  collect routing source as
+switch(config-flow-record)#  collect routing destination as
+switch(config-flow-record)#  collect transport tcp flags
+switch(config-flow-record)#  collect counter bytes
+switch(config-flow-record)#  collect counter packets
+The flow exporter defines the destination and options around sent data. Again, the
+specific values are not important. The VRF can be specified in the "destination" line if
+needed.:
+switch(config)# flow exporter FLOW-EXPORT
+switch(config-flow-exporter)# transport udp 9996
+switch(config-flow-exporter)# destination 10.10.10.10
+switch(config-flow-exporter)# source mgmt 0
+switch(config-flow-exporter)# version 9
+switch(config-flow-exporter-version-9)# option exporter-stats timeout 120
+switch(config-flow-exporter-version-9)# option interface-table timeout 120
+The flow monitor "ties" the exporter and record together:
+switch(config)# flow monitor FLOW-MONITOR
+switch(config-flow-monitor)# exporter FLOW-EXPORT
+switch(config-flow-monitor)#  record FLOW-RECORD
+The sampling rate, "x packets out of y" can also be defined. Both should be a power of
+2 (for instance, 8 out-of 64 is a valid combination)
+switch(config)#sampler FLOWSAMPLER01
+switch(config-flow-sampler)# mode 8 out-of 64
+Finally, apply the monitor and optionally the sampler to a layer 3 interface:
+switch(config-flow-monitor)# int vlan <interface number>
+10GCORE01(config-if)# ip flow monitor FLOW-MONITOR input sampler
+FLOWSAMPLER01
+=======================================
+**L2 netflow - typical application to physical interface shown **
+Because if it's reliance on MAC Addresses, L2 netflow implementations are much less
+often used
+switch(config)#feature netflow
+The exporter configuration remains the same as L3:
+
+
+switch(config)# flow exporter L2_FLOWEXPORTER01
+switch(config-flow-exporter)# destination <netflow server ip> [use-vrf
+management]
+switch(config-flow-exporter)# transport udp <netflow port>
+switch(config-flow-exporter)# source mgmt0
+switch(config-flow-exporter)# version 9
+The flow record reflects different (layer 2) tuple inputs:
+switch(config)# flow record L2_FLOWRECORD01
+switch(config-flow-record)#  match datalink ethertype
+switch(config-flow-record)#  match datalink mac source-address
+switch(config-flow-record)#  match datalink mac destination-address
+switch(config-flow-record)#  match datalink vlan
+The flow monitor remains similar:
+switch(config)# flow monitor L2_FLOWMONITOR01
+switch(config-flow-monitor)# record L2_FLOWRECORD01
+switch(config-flow-monitor)# exporter L2_FLOWEXPORTER01
+The flow sampler commands remain the same
+switch(config)#sampler FLOWSAMPLER01
+switch(config-flow-sampler)# mode <x> out-of <y>
+Finally, apply the L2 definition to an L2 interface:
+switch(config)# int Ethernet x/yy
+switch(config-if)# layer2-switched flow monitor L2_FLOWMONITOR01 input
+sampler FLOWSAMPLER01
+
+.

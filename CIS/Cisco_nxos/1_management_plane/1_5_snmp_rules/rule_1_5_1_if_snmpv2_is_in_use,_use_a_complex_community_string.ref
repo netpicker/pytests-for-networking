@@ -1,0 +1,6 @@
+.rule_1_5_1_if_snmpv2_is_in_use,_use_a_complex_community_string
+
+Reference: 
+Remediation: switch(config)# snmp-server community <SomeComplexString> ro
+
+.

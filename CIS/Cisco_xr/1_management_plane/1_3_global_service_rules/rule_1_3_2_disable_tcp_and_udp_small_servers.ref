@@ -1,0 +1,11 @@
+.rule_1_3_2_disable_tcp_and_udp_small_servers
+
+Reference: 3/addr_serv/command/reference/b_ipaddr_cr43xr12k/b_ipaddr_cr42xr12k_chapt
+er_01010.html
+
+Remediation: Disable TCp and UDP small services
+IOSXR(config)#no service ipv4 tcp-small-servers max-servers 10
+IOSXR(config)#no service ipv4 udp-small-servers max-servers 10
+IOSXR(config)#commit
+
+.

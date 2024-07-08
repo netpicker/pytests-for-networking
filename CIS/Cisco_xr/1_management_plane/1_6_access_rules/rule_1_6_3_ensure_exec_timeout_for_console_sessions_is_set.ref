@@ -1,0 +1,9 @@
+.rule_1_6_3_ensure_exec_timeout_for_console_sessions_is_set
+
+Reference: mmand/reference/yr37term.pdf
+
+Remediation: vty-pool default 0 4 line-template default
+line default
+exec-timeout 10 0
+
+.

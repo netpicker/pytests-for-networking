@@ -1,0 +1,14 @@
+.rule_1_2_1_ensure_domain_name_is_set
+
+Reference: /asa_90_cli_config/basic_hostname_pw.html
+
+
+
+
+Remediation: 
+Step 1: Acquire the enterprise domain name (enterprise_domain)
+
+Step 2: Run the following to configure the domain name
+hostname(config)#domain-name <enterprise_domain>
+
+.

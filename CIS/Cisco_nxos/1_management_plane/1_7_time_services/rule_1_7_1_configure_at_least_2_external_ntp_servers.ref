@@ -1,0 +1,16 @@
+.rule_1_7_1_configure_at_least_2_external_ntp_servers
+
+Reference: 
+Remediation: If the default VRF is used (note that the IP addresses are for demonstrations purposes
+only, production configurations will likely vary):
+switch(config)#ntp server 13.86.101.172 use-vrf default
+switch(config)#ntp server 132.163.97.6 use-vrf default
+switch(config)#ntp server 132.246.11.231 use-vrf default
+switch(config)#ntp source-interface loopback1
+If a management VRF is used:
+switch(config)#ntp server 13.86.101.172 use-vrf management
+switch(config)#ntp server 132.163.97.6 use-vrf management
+switch(config)#ntp server 132.246.11.231 use-vrf management
+switch(config)#ntp source-interface loopback1
+
+.

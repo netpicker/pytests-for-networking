@@ -1,0 +1,13 @@
+.rule_1_10_8_ensure_logging_buffer_size_is_greater_than_or_equal_to_524288_bytes_512kb
+
+Reference: al/asa-95-general-config/monitor-syslog.html
+
+Remediation: 
+Step 1: Run the following command to set the logging buffer-size to 524288
+The size is in bytes and is to be chosen between 4096 and 1048576 bytes
+hostname(config)# logging buffer-size 524288
+
+
+
+
+.

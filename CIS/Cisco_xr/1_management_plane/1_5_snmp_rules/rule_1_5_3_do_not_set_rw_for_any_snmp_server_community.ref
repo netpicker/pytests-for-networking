@@ -1,0 +1,8 @@
+.rule_1_5_3_do_not_set_rw_for_any_snmp_server_community
+
+Reference: s2.html#GUID-2F3F13E4-EE81-4590-871D-6AE1043473DE
+
+Remediation: Disable SNMP write access.
+IOSXR(config)#no snmp-server community {community_string}
+
+.

@@ -1,0 +1,11 @@
+.rule_3_1_1_3_configure_eigrp_log_adjacency_changes
+
+Reference: 
+Remediation: By default EIGRP adjacency changes are logged, and this does not show in the
+configuration.
+If however it is disabled, it can be re-enabled as shown below.
+
+switch(config)# router eigrp <eigrp process tag>
+switch(config-router)# log-adjacency-changes
+
+.

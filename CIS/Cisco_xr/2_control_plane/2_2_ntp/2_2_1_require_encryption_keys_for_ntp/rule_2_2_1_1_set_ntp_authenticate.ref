@@ -1,0 +1,11 @@
+.rule_2_2_1_1_set_ntp_authenticate
+
+Reference: n1.html#GUID-8BEBDAF4-6D03-4C3E-B8D6-6BCBC7D0F324
+
+
+
+Remediation: Configure NTP authentication:
+
+IOSXR(config)#ntp authenticate
+
+.

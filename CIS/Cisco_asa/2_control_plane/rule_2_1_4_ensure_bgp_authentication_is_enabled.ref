@@ -1,0 +1,33 @@
+.rule_2_1_4_ensure_bgp_authentication_is_enabled
+
+Reference: al/asa-95-general-config/route-bgp.html
+
+Remediation: Step 1
+Enable BGP.
+Step 2
+Define the Best Path for a BGP Routing Process.
+Step 3
+Configure Policy Lists.
+Step 4
+Configure AS Path Filters.
+Step 5
+Configure Community Rules.
+Step 6
+
+
+
+Configure IPv4 Address Family Settings.
+Step 7
+Configure IPv6 Address Family Settings.
+ciscoasa#(config)router bgp 2
+ciscoasa(config-router)# bgp default local-preference 500
+ciscoasa(config)# policy-list Example-policy-list1 permit
+ciscoasa(config)# as-path access-list 35 permit testaspath
+ciscoasa(config)# community-list standard excomm1 permit 100 internet no-
+advertise no-export
+ciscoasa(config-router-af)# bgp router-id 10.86.118.3
+ciscoasa(config-router-af) aggregate-address 10.86.118.0 255.255.255.0 as-set
+summary-only suppress-map example1 advertise-map example1 attribute-map
+example1
+
+.

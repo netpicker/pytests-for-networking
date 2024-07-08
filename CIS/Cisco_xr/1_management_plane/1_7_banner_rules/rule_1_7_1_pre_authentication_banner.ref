@@ -1,0 +1,8 @@
+.rule_1_7_1_pre_authentication_banner
+
+Reference: 
+Remediation: Configure a login banner as shown below. The delimiter character shown is a "^", but
+any character can serve as a delimiter.
+IOSXR(config)# banner login ^ {login_banner} ^
+
+.

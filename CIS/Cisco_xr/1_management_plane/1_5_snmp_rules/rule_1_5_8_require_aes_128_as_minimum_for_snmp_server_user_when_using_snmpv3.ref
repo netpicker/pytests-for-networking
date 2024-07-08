@@ -1,0 +1,14 @@
+.rule_1_5_8_require_aes_128_as_minimum_for_snmp_server_user_when_using_snmpv3
+
+Reference: s5.html#GUID-4EED4031-E723-4B84-9BBF-610C3CF60E31
+
+
+
+Remediation: For each SNMPv3 user created on your router add privacy options by issuing the
+following command.
+
+hostname(config)#snmp-server user {snmp_user_name} {snmp_group_name} v3 auth
+sha {snmp_auth_password} priv aes 128 {snmp_priv_password} ipv4 {snmp_access-
+list}
+
+.

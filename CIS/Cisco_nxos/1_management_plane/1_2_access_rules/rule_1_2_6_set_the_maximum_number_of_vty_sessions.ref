@@ -1,0 +1,7 @@
+.rule_1_2_6_set_the_maximum_number_of_vty_sessions
+
+Reference: 
+Remediation: switch(config)# line vty
+switch(config)# session-limit 16
+
+.

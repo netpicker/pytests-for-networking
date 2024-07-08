@@ -1,0 +1,9 @@
+.rule_1_8_3_ensure_http_idle_timeout_is_less_than_or_equal_to_5_minutes
+
+Reference: config/intro.html
+
+Remediation: 
+Step 1: Run the following to set the HTTP timeout to less than or equal to 5 minutes
+hostname(config)# http server idle-timeout 5
+
+.

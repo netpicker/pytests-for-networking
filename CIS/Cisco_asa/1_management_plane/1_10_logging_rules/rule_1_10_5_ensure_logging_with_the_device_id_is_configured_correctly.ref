@@ -1,0 +1,13 @@
+.rule_1_10_5_ensure_logging_with_the_device_id_is_configured_correctly
+
+Reference: al/asa-95-general-config/monitor-syslog.html
+
+
+
+
+Remediation: Run the following to enable logging with the device hostname:
+hostname(config)#logging device-id hostname
+In a multi-context security appliance, run the following command:
+hostname(config)#logging device-id context-name
+
+.

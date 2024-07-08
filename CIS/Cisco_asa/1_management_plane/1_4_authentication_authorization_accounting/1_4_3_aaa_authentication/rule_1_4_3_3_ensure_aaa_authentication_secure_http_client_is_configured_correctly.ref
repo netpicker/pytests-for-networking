@@ -1,0 +1,8 @@
+.rule_1_4_3_3_ensure_aaa_authentication_secure_http_client_is_configured_correctly
+
+Reference: /asa_90_cli_config/access_fwaaa.html
+
+Remediation: Configure the secure aaa authentication for http
+hostname(config)#aaa authentication secure-http-client
+
+.

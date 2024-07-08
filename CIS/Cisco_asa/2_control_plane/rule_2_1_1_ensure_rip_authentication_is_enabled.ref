@@ -1,0 +1,17 @@
+.rule_2_1_1_ensure_rip_authentication_is_enabled
+
+Reference: generation-firewalls/107255-asa-8x-rip-config-ex.html
+
+Remediation: 
+Step 1: Acquire the interface <interface_name> used by the firewall to receive RIP
+routing updates
+
+Step 2: Agree with the neighbor device on the authencation key <key_value> and
+determine an authentication key ID <key_id>
+
+Step 3: Run the following to enable RIP authentication
+hostname(config)#interface <interface_name>
+hostname(config-if)#rip authentication mode md5
+hostname(config-if)#rip authentication key<key_value> key_id <key_id>
+
+.

@@ -1,0 +1,15 @@
+.rule_1_1_1_1_tacacs
+
+Reference: 5/system-security/configuration/guide/b-system-security-cg-asr9000-
+75x/configuring-aaa-services.html
+
+Remediation: For complete instructions how to configure AAA please refer to the configuration guide.
+Below you can find some minimum config snippets to implement a radius or tacacs+
+server group.
+IOSXR(config)#tacacs-server host {tacacs_ip_address} port 49
+IOSXR(config-tacacs-host)#key {tacacs_key}
+
+IOSXR(config)#aaa group server tacacs+ {tacacs_group_name}
+IOSXR(config-sg-tacacs)#server {tacacs_ip_address}
+
+.

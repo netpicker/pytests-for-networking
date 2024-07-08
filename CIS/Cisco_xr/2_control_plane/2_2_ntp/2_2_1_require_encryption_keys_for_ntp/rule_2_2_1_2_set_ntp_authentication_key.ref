@@ -1,0 +1,11 @@
+.rule_2_2_1_2_set_ntp_authentication_key
+
+Reference: n1.html#GUID-0435BFD1-D7D7-41D4-97AC-7731C11226BC
+
+
+
+Remediation: Configure at the NTP key ring and encryption key using the following command
+
+IOSXR(config)#ntp authentication-key {ntp_key_id} md5 {ntp_key}
+
+.

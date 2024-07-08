@@ -1,0 +1,19 @@
+.rule_3_8_ensure_security_level_is_set_to_0_for_internet_facing_interface
+
+Reference: conf_gd/int5505.html
+levels#:~:text=Security%20level%200%3A%20This%20is,it%20within%20an%20
+access%2Dlist.
+
+Remediation: 
+Step 1: Acquire the physical name of the Internet facing interface
+<interface_physical_name>
+
+Step 2: Run the following command assigned the security-level 0
+hostname(config)#interface <interface_physical_name>
+hostname(config-if)#security-level 0
+
+
+
+
+
+.

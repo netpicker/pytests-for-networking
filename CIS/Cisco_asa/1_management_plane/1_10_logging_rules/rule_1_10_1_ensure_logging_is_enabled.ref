@@ -1,0 +1,12 @@
+.rule_1_10_1_ensure_logging_is_enabled
+
+Reference: appliances/63884-config-asa-00.html
+
+
+
+
+
+Remediation: Run the following to enable logging
+hostname(config)#logging enable>
+
+.

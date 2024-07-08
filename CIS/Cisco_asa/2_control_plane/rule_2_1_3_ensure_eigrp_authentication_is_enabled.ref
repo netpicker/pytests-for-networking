@@ -1,0 +1,21 @@
+.rule_2_1_3_ensure_eigrp_authentication_is_enabled
+
+Reference: al/asa-95-general-config/route-eigrp.html
+
+Remediation: 
+Step 1: Acquire the interface <interface_name> used by the firewall to receive EIGRP
+routing updates and the EIGRP Autonomous System number <as_number>
+
+
+
+
+Step 2: Agree with the neighbor device on the authencation key <key_value> and
+determine an authentication key ID <key_id>
+
+Step 3: Run the following to enable RIP authentication
+hostname(config)#interface <interface_name>
+hostname(config-if)#authentication mode eigrp <as_number> md5
+hostname(config-if)#authentication key eigrp <as_number> <key_value> key-id
+<key_id>
+
+.

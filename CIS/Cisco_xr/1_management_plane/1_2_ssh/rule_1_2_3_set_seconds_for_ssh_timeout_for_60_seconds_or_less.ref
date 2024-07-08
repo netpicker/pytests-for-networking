@@ -1,0 +1,11 @@
+.rule_1_2_3_set_seconds_for_ssh_timeout_for_60_seconds_or_less
+
+Reference: 1/security/configuration/guide/b-syssec-cg-crs-61x.html
+
+
+
+Remediation: Configure the SSH timeout
+
+IOSXR(config)#ssh timeout {ssh_timeout}
+
+.

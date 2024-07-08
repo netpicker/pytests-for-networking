@@ -1,0 +1,13 @@
+.rule_3_1_urpf
+
+Reference: security-cg-ncs5500-73x/implementing-urpf.pdf
+
+
+
+
+
+Remediation: Configure the Interface with the RIPv2 key chain.
+IOSXR(config)#int {interface}
+IOSXR(config-if)#ipv4 verify unicast source reachable-via rx
+
+.

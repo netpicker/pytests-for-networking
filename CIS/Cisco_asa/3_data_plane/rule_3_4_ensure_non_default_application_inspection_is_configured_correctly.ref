@@ -1,0 +1,16 @@
+.rule_3_4_ensure_non_default_application_inspection_is_configured_correctly
+
+Reference: generation-firewalls/113069-asa-disgi-enai-asdm-00.html
+
+Remediation: Run the following to enable the inspection of the protocol:
+hostname(config)# policy-map global_policy
+hostname(config-pmap)# class inspection_default
+hostname(config-pmap-c)# inspect <protocol_name>
+hostname(config-pmap-c)# exit
+
+
+
+hostname(config-pmap)# exit
+hostname(config)#service-policy global_policy global
+
+.

@@ -1,0 +1,12 @@
+.rule_1_10_7_ensure_logging_with_timestamps_is_enabled
+
+Reference: al/asa-95-general-config/monitor-syslog.html
+
+
+
+
+
+Remediation: Run the following command to enable the logging timestamp
+hostname(config)#logging timestamp
+
+.

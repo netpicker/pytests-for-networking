@@ -1,0 +1,9 @@
+.rule_1_4_3_1_ensure_aaa_authentication_enable_console_is_configured_correctly
+
+Reference: eral/asa-910-general-config/aaa-local.html
+
+Remediation: Configure the aaa authentication for enable access using the TACACS+ server-group as
+primary method and the local database as backup method
+hostname(config)# aaa authentication enable console <server-group_name> local
+
+.

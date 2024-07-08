@@ -1,0 +1,13 @@
+.rule_1_11_3_ensure_snmp_server_host_is_set_to_version_3
+
+Reference: /asa_90_cli_config/monitor_snmp.html#37189
+
+Remediation: Run the following to configure the SNMP v3 host
+hostname(config)# snmp-server host <interface_name> <host_ip_address> version
+3 <snmp_user>
+
+
+
+
+
+.
