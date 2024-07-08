@@ -1,0 +1,12 @@
+.rule_4_5_1_ensure_rip_authentication_is_set_to_md5
+
+Reference: National Security Agency (NSA)
+
+Remediation: If you have deployed RIP in your network you should use MD5 authentication for all
+neighbors. To configure authentication enter the following command from the [edit
+protocols rip] hierarchy:
+[edit protocols rip]
+user@host#set authentication-type md5
+user@host#set authentication-key <key>
+
+.

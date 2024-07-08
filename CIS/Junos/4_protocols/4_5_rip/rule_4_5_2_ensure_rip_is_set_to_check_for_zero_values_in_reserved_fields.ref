@@ -1,0 +1,15 @@
+.rule_4_5_2_ensure_rip_is_set_to_check_for_zero_values_in_reserved_fields
+
+Reference: Configuration Guide, Juniper Networks
+
+Remediation: If you have deployed RIP in your network and disabled zero value checking of reserved
+fields, you should re-enable it by issuing the following command from the [edit protocols
+rip] hierarchy:
+[edit protocols rip]
+user@host#set check-zero
+
+
+
+
+
+.

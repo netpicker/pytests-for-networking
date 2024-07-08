@@ -1,0 +1,19 @@
+.rule_4_7_1_ensure_authentication_is_set_to_md5
+
+Reference: Configuration Guide, Juniper Networks
+(http://www.juniper.net/techpubs/en_US/junos9.5/information-products/topic-
+collections/config-guide-mpls-applications/mpls-configuring-miscellaneous-ldp-
+properties.html)
+
+Remediation: If you have deployed LDP in your network you should use MD5 authentication for all
+neighbors.
+
+
+
+To configure authentication for a session-group enter the following command from the
+[edit protocols ldp] hierarchy:
+[edit protocols ldp]
+user@host#set session-group <Destination IP Address or IP/Mask>
+authentication-key <key>
+
+.

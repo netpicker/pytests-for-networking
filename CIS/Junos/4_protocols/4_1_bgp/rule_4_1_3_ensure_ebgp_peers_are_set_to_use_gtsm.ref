@@ -1,0 +1,24 @@
+.rule_4_1_3_ensure_ebgp_peers_are_set_to_use_gtsm
+
+Reference: National Security Agency (NSA)
+
+Remediation: If you have deployed multihop in your network but do not have any peers more then 1 hop
+away, disable multihop with the following command from the [edit protocols bgp],
+[edit protocols bgp group <group name>] or [edit protocols bgp group <group
+name> neighbor <neighbor address>] depending at which level you have configured
+multihop;
+
+[edit protocols bgp]
+user@host#delete multihop
+To change the number of hops distance from which a route update can originate, enter the
+following command from the [edit protocols bgp group <group name>] to apply
+multihop to a group or [edit protocols bgp group <group name> neighbor <neighbor
+address>] to apply multihop to a single neighbor;
+
+[edit protocols bgp group <group name>]
+user@host#set multihop ttl <number of hops>
+Remember that, in both cases, more specific settings override less specific ones. So if
+multihop is set to 5 at the neighbor level, but the default of 1 at the global level, the
+neighbor level setting will apply for communications with that peer.
+
+.

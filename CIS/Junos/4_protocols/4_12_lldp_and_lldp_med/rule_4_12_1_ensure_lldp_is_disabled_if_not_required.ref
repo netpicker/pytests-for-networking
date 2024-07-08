@@ -1,0 +1,27 @@
+.rule_4_12_1_ensure_lldp_is_disabled_if_not_required
+
+Reference: discovery-using-lldp-lldp-med.html
+ayer-2-services-lldp-configuring.html
+
+Remediation: To turn off LLDP globally for all interfaces, issue the following command from the [edit
+protocols] configuration hierarchy:
+[edit protocols]
+user@host# set lldp disable
+Sending of LLDPDUs will be disabled, while any LLDP related configuration will be retained
+(but ignored).
+Alternatively, you may wish to disable LLDP on a per-interface basis by issuing the
+
+
+
+following command from the [edit protocols] configuration hierarchy:
+To disable LLDP for a specific interface, leaving LLDP enabled for all others:
+[edit protocols]
+user@host# set lldp interface <interface name> disable
+Or to disable LLDP for all interfaces and allow only for specific ports:
+[edit protocols]
+user@host# delete lldp interface all
+user@host# set lldp interface <interface name>
+This procedure should be repeated for all Routing Instances/Logical Systems where LLDP
+is configured but not required.
+
+.

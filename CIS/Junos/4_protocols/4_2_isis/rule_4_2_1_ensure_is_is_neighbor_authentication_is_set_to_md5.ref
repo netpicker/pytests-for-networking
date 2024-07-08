@@ -1,0 +1,20 @@
+.rule_4_2_1_ensure_is_is_neighbor_authentication_is_set_to_md5
+
+Reference: National Security Agency (NSA)
+Guide, Juniper Networks
+(http://www.juniper.net/techpubs/software/junos/junos92/swconfig-
+routing/configuring-is-is-authentication.html#id-11133728)
+
+Remediation: If you have deployed IS-IS in your network you should use MD5 authentication for all
+neighbors at each IS-IS Level configured.
+
+
+
+To configure MD5 authentication and the secret key to be used, issue the following
+commands from the [edit protocols isis] hierarchy:
+
+[edit protocols isis]
+user@host#set level <level> authentication-type md5
+user@host#set level <level> authentication-key <key>
+
+.

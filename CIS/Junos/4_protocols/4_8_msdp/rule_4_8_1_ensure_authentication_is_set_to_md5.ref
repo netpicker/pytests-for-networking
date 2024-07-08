@@ -1,0 +1,10 @@
+.rule_4_8_1_ensure_authentication_is_set_to_md5
+
+Reference: Configuration Guide, Juniper Networks
+
+Remediation: If you have deployed MSDP, authentication can be configured on a peer by peer basis, by
+issuing the following command from the [edit protocols msdp] hierarchy:
+[edit protocols msdp]
+user@host#set peer <peer address> authentication-key <key>
+
+.

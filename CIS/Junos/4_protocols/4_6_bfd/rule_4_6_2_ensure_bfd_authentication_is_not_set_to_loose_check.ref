@@ -1,0 +1,16 @@
+.rule_4_6_2_ensure_bfd_authentication_is_not_set_to_loose_check
+
+Reference: static-routes-understanding.html
+tion-statement/bfd-liveness-detection-edit-routing-options.html
+
+Remediation: If you have deployed BFD with Loose Authentication Checking, it can be disabled by issuing
+the appropriate [.* bfd-liveness-detection] hierarchy, in this example we are
+configuring BFD Authentication for BGP:
+[edit protocols bgp bfd-liveness-detection]
+user@host# delete authentication loose-check
+BFD may be configured at a wide variety of configuration hierarchies, for different
+Protocols, Routing Instances or even for Static Routes. The bfd-liveness-detection
+hierarchy is the same at each level it is used, so the Remediation Process is the same and
+should be applied at each hierarchy indicated in the Audit Procedure.
+
+.
