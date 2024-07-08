@@ -1,0 +1,15 @@
+.rule_6_11_1_ensure_auxiliary_port_is_set_to_disabled
+
+Reference: Agency (NSA)
+tion-statement/auxiliary-edit-system.html
+
+Remediation: To disable the Auxiliary Port, issue the following command from the [edit system ports]
+hierarchy;
+[edit system ports]
+user@host#set auxiliary disable
+
+
+
+
+
+.

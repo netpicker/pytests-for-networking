@@ -1,0 +1,14 @@
+.rule_6_5_3_ensure_icmp_source_quench_is_set_to_disabled
+
+Reference: Networks (https://www.juniper.net/techpubs/software/junos/junos93/swconfig-
+system-basics/configuring-source-quench.html#id-10993765)
+
+Remediation: Configure the JUNOS Device to ignore ICMP source-quench messages by issuing the
+following command from the [edit system internet-options] hierarchy.
+[edit system internet-options]
+user@host#set no-source-quench
+
+
+
+
+.

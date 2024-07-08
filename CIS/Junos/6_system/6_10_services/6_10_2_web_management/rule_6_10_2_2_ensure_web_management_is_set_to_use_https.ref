@@ -1,0 +1,39 @@
+.rule_6_10_2_2_ensure_web_management_is_set_to_use_https
+
+Reference: Requirement 2.3 and 8.2.1 -
+https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf
+digital-certificates-with-pki-overview.html
+tion-statement/system-edit-web-management.html
+
+
+
+
+
+
+Remediation: To enable HTTPS access using the System Generated "Self Signed" Certificate, issue the
+following command from the [edit system service web-management] hierarchy;
+[edit system services web-management]
+user@host#set https system-generated-certificate
+
+
+
+Alternatively, you may which to use a Local Certificate which is stored in the device's
+Configuration File:
+[edit system services web-management]
+user@host#set https local-certificate <Certificate Name>
+<Certificate Name> should match an X.509 Certificate loaded under the [edit security
+certificates] hierarchy as shown below:
+[edit security certificates]
+user@host# set <Certificate Name> load-key-file <File Name/URL>
+Where <File Name/URL> is either the name and path of a local Certificate and Key Pair file,
+or the URL from which the file can be fetched.
+Note - This method leaves the Certificate and Private Key as part of the devices
+Configuration file, potentially exposing them. This is not the preferred method to configure
+a certificate in most instances.
+Finally, you can configure JUNOS to use a PKI-Certificate:
+[edit system services web-management]
+user@host#set https pki-local-certificate <Certificate Name>
+Where <Certificate Name> is an X.509 Certificate which has already been loaded to the
+JUNOS device's local PKI store.
+
+.

@@ -1,0 +1,20 @@
+.rule_6_10_5_10_ensure_rest_service_address_is_set
+
+Reference: tion-statement/https-edit-system-services-rest.html
+rest-api-configuring.html
+
+Remediation: To restrict the IP Address/es on which the REST API will listen, enter the following
+command from the [edit system services rest] hierarchy:
+[edit system services rest]
+user@host# set https addresses <Service IP>
+Where <Service IP> is a single IP Address configured on one of the JUNOS Device's
+interfaces.
+To add multiple addresses, enter the following command:
+[edit system services rest]
+user@host# set https addresses [<Service IP 1> <Service IP 2> <Service IP
+...> ]
+To remove a single address from the current list enter the following command:
+[edit system services rest]
+user@host# delete https addresses <Service IP>
+
+.

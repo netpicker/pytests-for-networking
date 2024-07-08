@@ -1,0 +1,21 @@
+.rule_6_10_1_1_ensure_ssh_service_is_configured_if_remote_cli_is_required
+
+Reference: Requirement 2.3 and 8.2.1
+Basics Guide, Juniper Networks
+(http://www.juniper.net/techpubs/en_US/junos9.5/information-products/topic-
+collections/swconfig-system-basics/ssh-services-configuring.html)
+tion-statement/ssh-edit-system.html
+
+Remediation: To enable SSH access issue the following command from the [edit system] hierarchy:
+[edit system]
+user@host#set services ssh
+
+
+
+Where SSH is used, all other Recommendations in this section should be considered.
+If SSH is currently configured but is not required it should be disabled using the following
+command from the [edit system] hierarchy:
+[edit system]
+user@host#delete services ssh
+
+.

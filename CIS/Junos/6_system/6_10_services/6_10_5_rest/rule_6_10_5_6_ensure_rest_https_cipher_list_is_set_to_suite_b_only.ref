@@ -1,0 +1,20 @@
+.rule_6_10_5_6_ensure_rest_https_cipher_list_is_set_to_suite_b_only
+
+Reference: Requirement 2.3 and 8.2.1
+tion-statement/https-edit-system-services-rest.html
+rest-api-configuring.html
+tion-statement/cipher-list-edit-system-services-rest-https.html
+
+
+
+
+
+Remediation: To restrict the Cipher Suites used REST over HTTPS, enter the following command from the
+[edit system services rest] hierarchy:
+[edit system services rest]
+user@host# set https cipher-list [ ecdhe-rsa-with-aes-128-gcm-SHA256 ecdhe-
+rsa-with-aes-256-gcm-SHA384 ]
+Either Cipher Suite may be omitted, but at least one of these Cipher Suites must be set. No
+other Cipher Suites may be used.
+
+.

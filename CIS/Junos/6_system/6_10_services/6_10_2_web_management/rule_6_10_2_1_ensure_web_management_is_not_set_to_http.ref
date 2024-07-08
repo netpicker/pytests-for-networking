@@ -1,0 +1,17 @@
+.rule_6_10_2_1_ensure_web_management_is_not_set_to_http
+
+Reference: Requirement 2.3 and 8.2.1
+tion-statement/system-edit-web-management.html
+independent/junos/topics/task/configuration/ex-series-j-web-interface-
+starting.html
+
+Remediation: To disable HTTP access issue the following command from the [edit system services
+web-management] hierarchy:
+[edit system services web-management]
+user@host#delete http
+
+
+
+
+
+.

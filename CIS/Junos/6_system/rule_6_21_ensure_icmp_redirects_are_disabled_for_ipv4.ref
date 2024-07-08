@@ -1,0 +1,13 @@
+.rule_6_21_ensure_icmp_redirects_are_disabled_for_ipv4
+
+Reference: tion-statement/no-redirects-edit-system.html
+
+Remediation: To disable ICMP redirects globally for IPv4, issue the following command from the [edit
+system] heirachy:
+
+
+
+[edit system]
+user@host# set no-redirects
+
+.
