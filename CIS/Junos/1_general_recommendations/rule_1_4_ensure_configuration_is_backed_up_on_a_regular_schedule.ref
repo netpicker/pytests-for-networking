@@ -1,0 +1,18 @@
+.rule_1_4_ensure_configuration_is_backed_up_on_a_regular_schedule
+
+Reference: Security Agency (NSA)
+
+
+
+
+Remediation: A discussion of all possible backup methods is beyond the scope of this Benchmark.
+Consider the Archival section of this Benchmark for one method of obtaining remote
+backups whenever your configuration is changed.
+CVS tools such as RANCID provide an alternative method to backup and manage
+configuration files from a central location as well as keeping track of changes over time.
+Also consider a method of maintaining offline copies of your backup data, such as tape
+storage. This provides a vital tool in Disaster Recovery and is also extremely helpful when
+recovering from a successful attack, as you can be certain that the attacker was unable to
+alter the offline version.
+
+.
