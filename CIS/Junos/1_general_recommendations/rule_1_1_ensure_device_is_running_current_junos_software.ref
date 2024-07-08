@@ -1,0 +1,35 @@
+.rule_1_1_ensure_device_is_running_current_junos_software
+
+Reference: DATA
+ORIES
+S&cat=SIRT_1&detail=content
+
+Remediation: Software patching procedures may vary between different platforms or organizations and
+can be accomplished using the CLI, the JWeb GUI, centrally through Junos Space or other
+management platforms.
+To update a standalone JUNOS Device through the CLI, first upload the desired software
+image (downloaded from Juniper or your Support Partner) to the JUNOS Device in the
+/var/tmp/ folder.
+In most cases an upgrade is performed with the following command, issued from
+Operational Mode:
+user@host> request system software add /var/tmp/<image name>
+Where <image name> is the filename of the JUNOS image provided by Juniper.
+NOTE - Updating JUNOS Software with this command will result in a reboot of the system
+and loss of service.
+In platforms deployed with redundant Routing Engines, as Virtual Chassis or as HA
+Clusters, an In-Service Software Updates (or ISSU) may be supported. An ISSU update
+updates and reboots each node or RE separately, failing services on to the other node/RE
+prior to the reboot.
+To perform an ISSU Update, on most platforms, issue the following command from
+Operational Mode:
+user@host> request system software in-service-upgrade /var/tmp/<image name>
+
+
+
+NOTE - The specific procedure and prerequisites for ISSU varies by platform and deployment
+type. If some prerequisites (such as NSR or GRES) are not correctly configured a loss of
+service may still occur.
+Please refer to the documentation for your platform and network enviroment before
+attempting to update software.
+
+.
