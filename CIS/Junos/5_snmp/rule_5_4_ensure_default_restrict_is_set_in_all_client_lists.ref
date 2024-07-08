@@ -1,0 +1,19 @@
+.rule_5_4_ensure_default_restrict_is_set_in_all_client_lists
+
+Reference: Configuration Guide, Juniper Networks
+(http://www.juniper.net/techpubs/software/junos/junos92/swconfig-net-
+mgmt/configuring-the-snmp-community-string.html#id-10428981)
+
+Remediation: To configure a client list issue the following command under the [edit snmp client-list
+<client list name>] hierarchy;
+[edit snmp client-list <client list name>]
+user@host#set default restrict
+Note - Client-lists may also be defined directly under the [edit snmp community <community
+name> clients] hierarchy for use within the specified community with the same effect, but
+for ease of management and audit, the first method is preferred.
+
+
+
+
+
+.
