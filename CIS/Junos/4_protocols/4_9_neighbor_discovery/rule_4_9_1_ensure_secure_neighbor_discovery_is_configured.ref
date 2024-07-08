@@ -1,0 +1,29 @@
+.rule_4_9_1_ensure_secure_neighbor_discovery_is_configured
+
+Reference: Protocol Configuration Guide, Juniper Networks
+(http://www.juniper.net/techpubs/software/junos/junos95/swconfig-
+routing/jd0e84357.html)
+
+Remediation: If you have deployed IPv6 you can configure SEND by issuing the following commands from
+the [edit protocols neighbor-discovery] hierarchy: If you have not already done so,
+you will need to generate or install an RSA key pair, to generate a new pair enter the
+following command:
+user@host>request pki generate-key-pair <name> <ca-profile>
+
+
+
+Next, set the security level to define how unsecure NDP messages should be handled. If only
+a subset of devices will be configured to use SEND, then use the default option. If all nodes
+on the segment require protection, which is recommended, use the secure-messages-only
+option:
+[edit protocols neighbor-discovery]
+user@host#set secure security-level secure-messages-only
+Finally, specify the key pair and details you generated/installed earlier:
+[edit protocols neighbor-discovery]
+user@host#set secure cryptographic-address key-pair <name>
+user@host#set secure cryptographic-address key-length <length>
+For more details on configuring Public/Private Key Pairs in JUNOS please refer to:
+Generating a Public-Private Key Pair, JUNOS Software Security Configuration Guide, Juniper
+Networks
+
+.
