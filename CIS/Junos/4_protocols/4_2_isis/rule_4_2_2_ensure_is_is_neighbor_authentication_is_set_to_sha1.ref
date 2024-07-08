@@ -1,0 +1,39 @@
+.rule_4_2_2_ensure_is_is_neighbor_authentication_is_set_to_sha1
+
+Reference: National Security Agency (NSA)
+ion-hitless-keychain-isis.html
+
+Remediation: If you have deployed IS-IS in your network you should consider configuring Hitless Key
+Rollover with SHA1 authentication for all neighbors at each IS-IS Level configured.
+First a key-chain must be configured. The same key-chain may be used for multiple levels
+or separate key-chains used for each level (or even for individual interfaces where
+required). From the [edit security authentication-key-chains] hierarchy issue the
+following commands:
+[edit security authentication-key-chains]
+user@host#set key-chain <name> key <key number> secret "<secret key>"
+user@host#set key-chain <name> key <key number> start-time "<yyyy-mm-
+dd.hh:mm:ss>"
+user@host#set key-chain <name> key <key number> algorithm hmac-sha-1
+user@host#set key-chain <name> key <key number> options isis-enhanced
+The start-time must be provided for all keys and provides the mechanism for controlled
+key rollover. Keys with a start time in the future can be configured across all of the devices
+in advance, when the time is reached all of the devices will hitlessly rollover to the new
+keys without disruption to IS-IS Adjacencies.
+Next the key should be set for all Levels at which SHA1 HMAC authentication will be used.
+From the [edit protocols isis] hierarchy, issue the following command:
+[edit protocols isis]
+user@host#set level <level> authentication-key-chain <name>
+Where a different key is required for a specific area or interface, the key-chain used at the
+Level can be overridden on a per interface per level basis using the following command
+from the `[edit protocols isis]' hierarchy:
+
+
+
+[edit protocols isis]
+user@host#set interface <interface name> level <level> hello-authentication-
+key-chain <name>
+Note - Only the setting of the authentication-key-chain on a per level basis is included in the
+audit procedure for scoring this recommendation, the per interface override is included as
+additional information only.
+
+.

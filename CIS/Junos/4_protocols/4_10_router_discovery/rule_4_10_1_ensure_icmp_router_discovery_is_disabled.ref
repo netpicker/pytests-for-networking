@@ -1,0 +1,9 @@
+.rule_4_10_1_ensure_icmp_router_discovery_is_disabled
+
+Reference: 
+Remediation: If you have configured ICMP Router Discovery and do not require it, you can disable it by
+issuing the following command from the [edit protocols router-discovery] hierarchy:
+[edit protocols router-discovery]
+user@host#set disable
+
+.
