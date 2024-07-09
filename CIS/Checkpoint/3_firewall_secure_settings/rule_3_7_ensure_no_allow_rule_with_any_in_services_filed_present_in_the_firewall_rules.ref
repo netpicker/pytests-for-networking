@@ -1,0 +1,6 @@
+.rule_3_7_ensure_no_allow_rule_with_any_in_services_filed_present_in_the_firewall_rules
+
+Reference: 
+Remediation: Delete the rule from the firewall which has Any used in the Service field.
+
+.

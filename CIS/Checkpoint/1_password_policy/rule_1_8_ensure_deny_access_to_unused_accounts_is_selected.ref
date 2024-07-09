@@ -1,0 +1,12 @@
+.rule_1_8_ensure_deny_access_to_unused_accounts_is_selected
+
+Reference: 
+Remediation: Run the following command to set the deny-on-nonuse setting.
+CLI:
+Hostname>set password-controls deny-on-nonuse enable on
+GUI:
+Navigate to User Management > Password Policy > Deny access to unused
+accounts:
+Checked the 'Deny access to unused accounts' setting.
+
+.

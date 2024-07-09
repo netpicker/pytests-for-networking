@@ -1,0 +1,17 @@
+.rule_1_6_1_ensure_syslog_logging_is_configured
+
+Reference: 
+Remediation: Configure a logging level and a syslog host:
+switch(config)#logging server <server ip address or name>
+switch(config)#logging level <service name> <logging level>
+or
+switch(config)#logging level all <logging level>
+switch(config)#logging source-interface <interface name>
+switch(config)#logging server <server ip address or name>
+optionally:
+switch(config)#logging server <server ip address or name>  vrf [management
+vrf name]
+switch(config)#logging source-interface <mgmt 0 or other dedicated management
+interface>
+
+.

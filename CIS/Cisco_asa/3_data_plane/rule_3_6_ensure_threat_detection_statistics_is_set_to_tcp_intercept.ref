@@ -1,0 +1,11 @@
+.rule_3_6_ensure_threat_detection_statistics_is_set_to_tcp_intercept
+
+Reference: 
+
+
+wall/asa-912-firewall-config/conns-threat.html
+
+Remediation: Run the following to enable threat detection statistics for TCP Intercept
+hostname(config)# threat-detection statistics tcp-intercept
+
+.

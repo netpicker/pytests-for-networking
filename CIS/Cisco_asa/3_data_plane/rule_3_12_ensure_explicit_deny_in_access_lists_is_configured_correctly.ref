@@ -1,0 +1,13 @@
+.rule_3_12_ensure_explicit_deny_in_access_lists_is_configured_correctly
+
+Reference: wall/asa-910-firewall-config/access-rules.html
+
+Remediation: 
+Step 1: Acquire the name <access-list_name> of the access-list that is not compliant
+from the audit procedure
+
+Step 2: Run the following to configure the explicit deny.
+hostname(config)#<access-list_name> extended deny ip any any log
+The statement will be placed at the end of the access-list
+
+.

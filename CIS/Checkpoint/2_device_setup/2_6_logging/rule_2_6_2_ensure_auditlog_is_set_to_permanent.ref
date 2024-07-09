@@ -1,0 +1,18 @@
+.rule_2_6_2_ensure_auditlog_is_set_to_permanent
+
+Reference: 
+Remediation: Run the following command to enable the auditlog.
+CLI:
+Hostname> set syslog auditlog permanent
+GUI:
+Navigate to System Management > System Logging > System Logging
+checked the Send audit logs to syslog upon successful configuration
+
+
+
+
+
+
+
+
+.

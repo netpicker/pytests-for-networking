@@ -1,0 +1,18 @@
+.rule_1_5_2_if_snmpv2_is_in_use,_set_restrictions_on_access
+
+Reference: 
+Remediation: Create the ACL:
+switch(config)# ip access-list ACL-IPV4-SNMPv2
+switch(config-acl)# permit udp 1.2.3.4/2 1.2.3.6/32 eq 161
+switch(config-acl)# deny ip any any log
+Then apply the ACL to the configured SNMP Community. The snmp-server community
+must be configured before applying the ACL.
+switch(config)# snmp-server community <somecomplexstring> ro
+switch(config)# snmp-server community <somecomplexstring> use-ipv4acl ACL-
+IPV4-SNMPV2
+For IPv6, the parameter "use-ipv6acl" would be used instead. Note that either an IPv4
+OR an IPv6 ACL can be applied to a given SNMP community string, not both.
+In releases prior to Cisco NX-OS Release 7.0(3)I4(1), this CLI command includes use-
+acl rather than use-ipv4acl.
+
+.

@@ -1,0 +1,17 @@
+.rule_1_11_ensure_deny_access_after_failed_login_attempts_is_selected
+
+Reference: 
+Remediation: Run the following command to set the deny-on-fail setting.
+CLI:
+Hostname>set password-controls deny-on-fail enable on
+GUI:
+Navigate to User Management > Password Policy > Deny Access After Failed
+Login Attempts:
+Checked the 'Deny access after failed login attempts' setting.
+
+
+
+
+
+
+.

@@ -1,0 +1,33 @@
+.rule_1_1_1_2_configure_aaa_authentication___local_ssh_keys
+
+Reference: 
+Remediation: •
+Create the client's SSH public and private keys. The keys must be in OpenSSH
+format for the NX-OS switch to interpret them correctly. Use either RSA or DSA
+algorithms, and be sure to specify enough bits for entropy (2048 minimum, more
+is of course better)
+•
+Upload the client's SSH public key, and store it on the bootflash of the switch.
+•
+Be sure that the file has a meaningful name, often the users's initials and the key
+algorithm (RSA or DSA) is in the filename. This makes it easier to remove or
+replace that file as keys are expired out, workstations migrate or administrators
+leave the organization.
+•
+To enable key-based authentication for one local user (for instance, Davey
+Jones), enter the command:
+switch(config)# username djadmin sshkey file bootflash:dj_rsa.pub
+Alternatively, the ssh key can be defined in the username configuration line:
+switch(config)# username djadmin sshkey ssh-rsa
+AAAAB3NzaC1yc2EAAAABIwAAAIEAy19oF6QaZl9G+3f1XswK3OiW4H7YyUyuA50rv7gsEPjhOBYms
+i6PAVKui1nIf/DQhum+lJNqJP/eLowb7ubO+lVKRXFY/G+lJNIQW3g9igG30c6k6+XVn+NjnI1B7i
+hvpVh7dLddMOXwOnXHYshXmSiH3UD/vKyziEh5S4Tplx8=
+The file based method is usually preferred, as they keys can be changed without
+modifying the configuration of the switch. Also, the keys are not stored in any archived
+copy of the configuration.
+Note that the username and file name will vary depending on your organization's
+policies, procedures and standards
+
+
+
+.

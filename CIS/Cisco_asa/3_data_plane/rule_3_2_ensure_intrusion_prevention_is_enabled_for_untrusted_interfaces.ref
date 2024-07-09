@@ -1,0 +1,21 @@
+.rule_3_2_ensure_intrusion_prevention_is_enabled_for_untrusted_interfaces
+
+Reference: a-firewall-asdm/modules-ips.html
+
+Remediation: 
+Step 1: Acquire the Enterprise standard action <prevention_action> to be performed
+when an attack signature is matched. It is to be chosen between 'drop' (The packet
+is dropped) and 'reset' (The packet is dropped and the connection closed)
+
+Step 2: Run the following to enable the audit policy against the attack signatures
+with the Enterprise standard action
+hostname(config)# ip audit name <audit_name> attack action alarm
+<prevention_action>
+
+Step 3: Identify the untrusted interface <interface_name>
+
+Step 4: Run the following to enable the intrusion prevention on the untrusted
+interface
+hostname(config)# ip audit interface <interface_name> <audit_name>
+
+.

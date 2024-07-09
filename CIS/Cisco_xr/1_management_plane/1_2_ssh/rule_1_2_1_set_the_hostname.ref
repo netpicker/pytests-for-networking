@@ -1,0 +1,9 @@
+.rule_1_2_1_set_the_hostname
+
+Reference: 1/security/configuration/guide/b-syssec-cg-crs-61x.html
+
+Remediation: Configure an appropriate host name for the router.
+
+IOSXR(config)#hostname {hostname}
+
+.

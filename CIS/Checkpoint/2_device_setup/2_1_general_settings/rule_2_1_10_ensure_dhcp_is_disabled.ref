@@ -1,0 +1,11 @@
+.rule_2_1_10_ensure_dhcp_is_disabled
+
+Reference: 
+Remediation: Run the following command to disable the DHCP.
+CLI:
+Hostname> set dhcp server disable
+GUI:
+Navigate to Network Management > DHCP Server > DHCP Server Configuration >
+veriify Enable DHCP Server is unchecked
+
+.

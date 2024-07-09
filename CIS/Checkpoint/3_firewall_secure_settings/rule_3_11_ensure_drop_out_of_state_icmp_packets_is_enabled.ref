@@ -1,0 +1,8 @@
+.rule_3_11_ensure_drop_out_of_state_icmp_packets_is_enabled
+
+Reference: 
+Remediation: Go to the following path and checked the Drop Out of State ICMP Packets and Log on Drop.
+SmartConsole > Global Properties > Stateful Inspection
+Checked the Drop Out of State ICMP Packets and Log on Drop
+
+.

@@ -1,0 +1,8 @@
+.rule_1_9_1_1_ensure_ntp_authentication_is_enabled
+
+Reference: al/asa-96-general-config/basic-hostname-pw.html
+
+Remediation: Run the following command to enable NTP authentication
+hostname(config)#ntp authenticate
+
+.

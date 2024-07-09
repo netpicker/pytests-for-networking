@@ -1,0 +1,12 @@
+.rule_1_10_4_ensure_syslog_hosts_is_configured_correctly
+
+Reference: appliances/63884-config-asa-00.html
+
+Remediation: Run the following to configure the Syslog server
+hostname(config)# logging host <interface_name> <host_ip_address>
+
+
+
+
+
+.

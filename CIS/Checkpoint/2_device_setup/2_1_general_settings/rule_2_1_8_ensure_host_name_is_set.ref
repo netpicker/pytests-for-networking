@@ -1,0 +1,10 @@
+.rule_2_1_8_ensure_host_name_is_set
+
+Reference: 
+Remediation: Run the following command to set Host Name.
+CLI:
+Hostname> set hostname <name>
+GUI:
+Navigate to Network Management > Hosts and DNS > System Name > Host Name
+
+.

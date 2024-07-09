@@ -1,0 +1,10 @@
+.rule_3_2_4_disable_ip_directed_broadcasts_on_all_layer_3_interfaces
+
+Reference: t/config/cisco_nexus7000_unicast_routing_config_guide_8x/configuring_ipv4.htm
+l#concept_e5q_4tt_cbb
+
+
+
+Remediation: switch(config-if)# no ip directed-broadcast
+
+.

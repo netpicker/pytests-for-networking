@@ -1,0 +1,18 @@
+.rule_3_1_ensure_dns_services_are_configured_correctly
+
+Reference: /asa_90_cli_config/basic_hostname_pw.html
+
+Remediation: 
+Step 1: Run the following to enable the DNS lookup
+hostname(config)# dns domain-lookup <interface_name>
+<interface_name> is the name of the interface connected to the DNS server
+
+Step 2: Configure the group of DNS servers
+hostname(config)# dns server-group DefaultDNS
+
+Step 3: Acquire the enterprise authorized DNS servers' IP addresses
+<dns_ip_address> and for each of them, run the following command to configure the
+DNS server in the DNS server group
+hostname(config-dns-server-group)#name-server <dns_ip_address>
+
+.

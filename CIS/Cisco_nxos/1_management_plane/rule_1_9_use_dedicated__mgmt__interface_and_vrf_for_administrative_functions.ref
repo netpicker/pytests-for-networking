@@ -1,0 +1,19 @@
+.rule_1_9_use_dedicated__mgmt__interface_and_vrf_for_administrative_functions
+
+Reference: 
+Remediation: First configure the mgmt0 interface:
+switch(config)# interface mgmt0
+switch(config-if)#   ip address 1.2.3.1/24
+If needed, add the various routes needed for connectivity for the mgmt interface. Note
+that this can also be accomplished with a routing protocol implemented for the vrf
+"management"
+ip route 5.6.7.8 255.255.255.0 1.2.3.254 vrf management
+Then, configure the source-interface commands for each target protocol that is
+implemented:
+switch(config)# snmp-server source-interface traps mgmt0
+switch(config)# snmp-server source-interface informs mgmt0
+switch(config)# snmp-server host 1.2.3.4 source-interface loopback0
+switch(config)# ntp source-interface mgmt0
+switch(config)# logging source-interface mgmt0
+
+.

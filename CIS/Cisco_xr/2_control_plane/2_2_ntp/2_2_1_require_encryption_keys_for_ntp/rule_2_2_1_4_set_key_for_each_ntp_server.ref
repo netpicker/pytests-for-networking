@@ -1,0 +1,7 @@
+.rule_2_2_1_4_set_key_for_each_ntp_server
+
+Reference: 
+Remediation: Configure each NTP Server to use a key ring using the following command.
+IOSXR(config)#ntp server {ntp-server_ip_address} key {ntp_key_id}
+
+.

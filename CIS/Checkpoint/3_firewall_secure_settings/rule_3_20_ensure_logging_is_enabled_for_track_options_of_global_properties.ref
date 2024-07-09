@@ -1,0 +1,23 @@
+.rule_3_20_ensure_logging_is_enabled_for_track_options_of_global_properties
+
+Reference: 
+Remediation: Logging is set to Log or Popup Alert or Mail Alert or SNMP Trap Alert for the following
+events
+SmartConsole > Global Properties > Log and Alert > Track Options
+VPN successful key exchange
+VPN packet handling errors
+VPN configuration & key exchange errors
+IP Options drop
+Administrative Notification
+Connection matched by SAM
+Dynamic object resolution failure
+Packet is incorrectly tagged
+Packet tagging brute force attack
+
+Checked the  Log every authenticated HTTP connection.
+
+
+
+
+
+.

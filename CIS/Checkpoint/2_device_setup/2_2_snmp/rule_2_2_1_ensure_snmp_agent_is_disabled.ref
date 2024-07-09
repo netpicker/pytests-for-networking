@@ -1,0 +1,14 @@
+.rule_2_2_1_ensure_snmp_agent_is_disabled
+
+Reference: 
+Remediation: Run the following command to configure the SNMP.
+CLI:
+Hostname> set snmp agent off
+GUI:
+System Management > SNMP > Unhecked the Enable SNMP Agent
+
+
+
+
+
+.

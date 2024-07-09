@@ -1,0 +1,19 @@
+.rule_2_4_1_ensure_system_backup_is_set
+
+Reference: 
+Remediation: Run the following command to Configure the backup.
+CLI:
+To take the backup local on the device.
+Hostname> add backup local
+
+To take the backup of FTP or SCP server.
+Hostname>add backup [ftp|scp] ip [IP Address] path [Path to store backup]
+username [Username] password [Password]
+
+To take the backup on tftp server.
+Hostname>add backup tftp [IP address of tftp server]
+GUI:
+Navigate to Maintenance > System Backup  >  Backup > Select (This appliance |
+SCP Server | FTP Server | TFTP Server)
+
+.

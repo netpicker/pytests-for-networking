@@ -1,0 +1,9 @@
+.rule_1_4_5_1_ensure_aaa_accounting_command_is_configured_correctly
+
+Reference: guides/cli/general/asa-94-general-config/aaa-local.html
+
+Remediation: Run the following in order to record all the commands entered at all the privilege levels
+and to send them to the AAA servers
+hostname(config)# aaa accounting command <server-group_name>
+
+.

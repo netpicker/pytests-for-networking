@@ -1,0 +1,9 @@
+.rule_1_1_2_1_vty_line_authentication
+
+Reference: os/nexus9000/102x/configuration/Security/cisco-nexus-9000-nx-os-security-
+configuration-guide-102x/m-configuring-aaa.html
+
+Remediation: Configure central authentication for vty lines as follows:
+aaa authentication login default group <servergroup>
+
+.

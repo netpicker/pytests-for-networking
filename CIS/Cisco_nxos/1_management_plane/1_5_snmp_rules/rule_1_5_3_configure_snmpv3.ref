@@ -1,0 +1,21 @@
+.rule_1_5_3_configure_snmpv3
+
+Reference: 3se/3850/snmp-xe-3se-3850-book/nm-snmp-snmpv3.html
+
+
+
+Remediation: Create SNMPv3 Users (and groups if needed). Ensure that SHA hashes are used
+rather than MD5. Also ensure that appropriate authorization levels are set ("network-
+admin" is shown below):
+switch(config)#snmp-server user SNMPv3_UserName network-admin auth sha
+0x12624c4dcb90cffeb43a1177324f547d priv 0x12624c4dcb90cffeb43a1177324f547d
+localizedkey
+To set SNMP to version 3, add the "version" parameter to the snmp-server command
+(note that SNMPv3 users and groups need to be configured first):
+switch(config)# snmp-server host 1.2.3.4 traps version 3 priv
+<SNMPv3_UserName>
+To enforce encryption for all SNMPv3 Users. This can be done by individual user, but
+it's recommended to enforce it globally:
+switch(config)# snmp-server globalEnforcePriv
+
+.

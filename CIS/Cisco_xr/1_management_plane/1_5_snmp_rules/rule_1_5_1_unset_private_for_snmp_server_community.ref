@@ -1,0 +1,8 @@
+.rule_1_5_1_unset_private_for_snmp_server_community
+
+Reference: 9/system_management/configuration/guide/yc39xr12k_chapter10.html
+
+Remediation: Disable the default SNMP community string private
+IOSXR(config)#no snmp-server community {community_string}
+
+.

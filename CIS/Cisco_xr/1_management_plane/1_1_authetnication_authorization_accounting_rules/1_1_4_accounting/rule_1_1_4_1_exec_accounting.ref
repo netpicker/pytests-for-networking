@@ -1,0 +1,16 @@
+.rule_1_1_4_1_exec_accounting
+
+Reference: 5/system-security/configuration/guide/b-system-security-cg-asr9000-
+75x/configuring-aaa-services.html
+
+Remediation: Configure an accounting list which for example includes the tacacs+ or radius server
+group, which was defined in the prerequisites or local or both:
+
+
+IOSXR(config)#aaa accounting exec default start-stop group
+{tacacs_group|radius_group}
+IOSXR(config)#line console accounting exec default
+IOSXR(config)#line default accounting exec default
+Note: exec accounting doesn't support the "local" / syslog target.
+
+.

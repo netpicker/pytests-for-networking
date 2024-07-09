@@ -1,2 +1,2 @@
 #!/bin/bash
-docker run -ti --rm -v $PWD:/rules netpicker/crt --sys -p runner.yaml_rules -vvvl --rootdir /rules /rules
+docker run -ti --rm -v $PWD:/rules netpicker/crt execute-rules --sys -p runner.yaml_rules -vvvl --rootdir /rules /rules

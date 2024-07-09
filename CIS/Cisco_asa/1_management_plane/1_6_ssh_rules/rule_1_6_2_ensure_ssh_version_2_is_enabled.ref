@@ -1,0 +1,11 @@
+.rule_1_6_2_ensure_ssh_version_2_is_enabled
+
+Reference: generation-firewalls/118075-configure-asa-00.pdf
+
+
+
+
+Remediation: Run the following to enable SSH version 2
+hostname(config)# ssh version 2
+
+.

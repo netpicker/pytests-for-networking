@@ -1,0 +1,9 @@
+.rule_2_2_1_3_set_the_ntp_trusted_key
+
+Reference: n1.html#GUID-89CA798D-0F12-4AE8-B382-DE10CBD261DB
+
+Remediation: Configure the NTP trusted key using the following command
+
+IOSXR(config)#ntp trusted-key {ntp_key_id}
+
+.

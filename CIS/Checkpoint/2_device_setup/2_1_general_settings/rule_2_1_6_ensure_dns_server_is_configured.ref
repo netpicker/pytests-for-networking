@@ -1,0 +1,18 @@
+.rule_2_1_6_ensure_dns_server_is_configured
+
+Reference: 
+Remediation: Run the following command to set DNS server.
+CLI:
+Hostname> set dns primary <IP_Address>
+Hostname> set dns secondary <IP_Address>
+Hostname> set dns tertiary <IP_Address>
+
+
+
+
+
+GUI:
+Navigate to Network Management > Hosts and DNS > DNS
+Set Primary, secondary and tertiary DNS server address.
+
+.

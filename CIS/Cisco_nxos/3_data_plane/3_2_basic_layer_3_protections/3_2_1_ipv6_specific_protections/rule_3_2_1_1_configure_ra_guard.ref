@@ -1,0 +1,18 @@
+.rule_3_2_1_1_configure_ra_guard
+
+Reference: 
+Remediation: In the example below, the RA Guard policy is created, then applied to a VLAN.
+Example
+switch(config)# ipv6 nd raguard policy RAGuardPol01
+switch(config-ra-guard)# device-role router
+switch(config-ra-guard)# hop-limit minimum 3
+switch(config-ra-guard)# managed-config-flag on
+switch(config-ra-guard)# other-config-flag on
+switch(config-ra-guard)# router-preference maximum high
+switch(config-ra-guard)# trusted-port
+Configuring RA Guard on an interface
+Example
+switch(config)#vlan configuration 10
+switch(config-if) ipv6 nd raguard attach-policy RAGuardPol01
+
+.

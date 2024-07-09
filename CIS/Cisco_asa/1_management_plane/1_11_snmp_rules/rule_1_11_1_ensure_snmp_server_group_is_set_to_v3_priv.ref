@@ -1,0 +1,8 @@
+.rule_1_11_1_ensure_snmp_server_group_is_set_to_v3_priv
+
+Reference: asa_90_cli_config/monitor_snmp.html#37189
+
+Remediation: Run the following to configure the SNMP v3 group.
+hostname(config)# snmp-server group <group_name> v3 priv
+
+.

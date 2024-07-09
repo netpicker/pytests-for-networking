@@ -1,0 +1,20 @@
+.rule_1_7_3_if_a_local_time_zone_is_used,_configure_daylight_savings
+
+Reference: 
+Remediation: In most cases, just the name of the DST timezone name is sufficient. NX-OS assumes 1
+hour offset, using the United States dates for DST.
+switch(config)# clock summer-time <DST Timezone Name>
+for example:
+switch(config)# clock summer-time EDT
+If a full definition of the change is needed, it can certainly be set:
+switch(config)# clock summer-time <DST Timezone Name> <day1> <month1> <time1>
+<day2> <month2> <time2> <offset in minutes>
+where:
+•
+day1, month1, time1 define the start of the DST period
+•
+day2, month2, time2 define the end of the DST period
+
+
+
+.
