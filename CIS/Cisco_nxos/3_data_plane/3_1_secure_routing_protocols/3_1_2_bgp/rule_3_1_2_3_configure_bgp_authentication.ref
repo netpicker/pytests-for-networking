@@ -1,0 +1,21 @@
+.rule_3_1_2_3_configure_bgp_authentication
+
+Reference: os/unicast/configuration/guide/l3_cli_nxos/l3_advbgp.html#wp1066903
+
+Remediation: For each BGP neighbor, add the "password" command to the matching stanza, with a
+long and complex string. Note that the same password must be used on the matching
+peer.
+Different passwords should be used for each peer.
+
+
+switch(config)# router bgp 65520
+switch(config-router)# neigh 10.10.10.11
+switch(config-router-neighbor)# password ?
+0     Specifies an UNENCRYPTED neighbor password will follow
+3     Specifies an 3DES ENCRYPTED neighbor password will follow
+7     Specifies a Cisco type 7  ENCRYPTED neighbor password will follow
+LINE  The UNENCRYPTED (cleartext) neighbor password
+
+switch(config-router-neighbor)# password somelongcomplexstring
+
+.

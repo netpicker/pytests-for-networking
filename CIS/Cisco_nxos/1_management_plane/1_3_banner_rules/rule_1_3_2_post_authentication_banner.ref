@@ -1,0 +1,12 @@
+.rule_1_3_2_post_authentication_banner
+
+Reference: 
+Remediation: Configure an exec banner as shown below. The delimiter character shown is a "^", but
+any character can serve as a delimiter.
+switch(config)# banner exec ^
+> Enter your standard EXEC Banner text here.  End with the same delimiter as
+used above
+> ^
+switch(config)#
+
+.

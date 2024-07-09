@@ -1,0 +1,10 @@
+.rule_1_5_2_ensure_exec_banner_is_set
+
+Reference: /asa_84_cli_config/access_management.html#36060
+
+Remediation: Run the following command to set the EXEC banner where <line_of_message> is a line of
+the banner text.
+hostname(config)#banner exec <line_of_message>
+Repeat the command for each line if the banner text has several lines.
+
+.

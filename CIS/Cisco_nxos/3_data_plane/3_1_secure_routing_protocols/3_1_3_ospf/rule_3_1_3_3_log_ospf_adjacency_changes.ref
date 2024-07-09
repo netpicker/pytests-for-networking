@@ -1,0 +1,11 @@
+.rule_3_1_3_3_log_ospf_adjacency_changes
+
+Reference: 
+Remediation: Enabling the logging of adjacencies is a single line in the OSPF process section. It is
+globally applied to all OSPF neighbors.
+
+
+switch(config)# router ospf <Process tag>
+switch(config-router)# log-adjacency-changes
+
+.

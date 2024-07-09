@@ -1,0 +1,23 @@
+.rule_2_3_1_authentication
+
+Reference: configuration-on-cisco-ios-xr/ta-p/3147683
+
+
+The Hot Standby Router Protocol (HSRP) is an IP routing redundancy protocol
+designed to allow for transparent failover at the first-hop IP router. HSRP provides high
+network availability, because it routes IP traffic from hosts on networks without relying
+on the availability of any single router. HSRP is used in a group of routers for selecting
+an active router and a standby router. (An active router is the router of choice for routing
+packets; a standby router is a router that takes over the routing duties when an active
+router fails, or when preset conditions are met.
+
+
+
+Remediation: Configure VRRP with the appropriate password.
+IOSXR(config)#router vrrp
+IOSXR(config-vrrp)#interface {interface}
+IOSXR(config-vrrp-if)#address-family ipv4
+IOSXR(config-vrrp-address-family)#vrrp {virtual_router_id}
+IOSXR(config-vrrp-virtual-router)#text-authentication {password}
+
+.

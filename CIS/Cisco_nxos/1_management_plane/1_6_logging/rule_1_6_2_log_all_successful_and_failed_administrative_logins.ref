@@ -1,0 +1,6 @@
+.rule_1_6_2_log_all_successful_and_failed_administrative_logins
+
+Reference: 
+Remediation: switch(config)# login level authpriv 5
+
+.

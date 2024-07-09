@@ -1,0 +1,15 @@
+.rule_2_3_1_ensure_ntp_is_enabled_and_ip_address_is_set_for_primary_and_secondary_ntp_server
+
+Reference: 
+Remediation: Run the following command to enable the NTP and configure the Primary & Secondary NTP
+server.
+CLI:
+Hostname> set ntp active on
+Hostname> set ntp server primary ntpserver.time.com version 3
+Hostname> set ntp server primary 10.22.13.33 version 3
+GUI:
+System Management > Time > Set Time and Date > Checked Set Time and Date
+automatically using Network Time Protocol (NTP) and configured the Primary
+NTP Server and Secondary NTP server
+
+.

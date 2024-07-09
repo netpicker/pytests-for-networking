@@ -1,0 +1,9 @@
+.rule_2_1_3_ensure_core_dump_is_enabled
+
+Reference: 
+Remediation: Run the following command to set Core Dump.
+Hostname> set core-dump enable
+GUI:
+Navigate to System Management > Core Dump > select Enable Core Dumps
+
+.

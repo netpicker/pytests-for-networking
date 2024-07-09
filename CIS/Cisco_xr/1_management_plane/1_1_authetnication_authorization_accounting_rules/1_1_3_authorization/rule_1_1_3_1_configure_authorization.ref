@@ -1,0 +1,10 @@
+.rule_1_1_3_1_configure_authorization
+
+Reference: 5/system-security/configuration/guide/b-system-security-cg-asr9000-
+75x/configuring-aaa-services.html
+
+Remediation: Currently CIS makes no recommendations how to implement command authorization.
+Roles and access-privileges should be defined in collaboration with your operations and
+security teams.
+
+.

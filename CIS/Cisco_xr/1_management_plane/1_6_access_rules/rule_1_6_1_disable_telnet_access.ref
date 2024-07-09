@@ -1,0 +1,13 @@
+.rule_1_6_1_disable_telnet_access
+
+Reference: 
+Remediation: It's recommended to restrict VTYs to SSH for management access and not allow this
+device to SSH to other devices:
+
+
+vty-pool default 0 4 line-template default
+line default
+transport input ssh
+transport output none
+
+.

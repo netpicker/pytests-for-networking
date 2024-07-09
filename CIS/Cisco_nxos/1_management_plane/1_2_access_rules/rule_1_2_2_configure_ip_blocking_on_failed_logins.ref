@@ -1,0 +1,29 @@
+.rule_1_2_2_configure_ip_blocking_on_failed_logins
+
+Reference: 16-12/sec-usr-cfg-xe-16-12-book/sec-login-enhance.html
+
+Remediation: This configuration consists of:
+•
+A "watch" time window (in seconds)
+•
+the number of failed attempts to trigger on
+•
+the amount of time (in seconds) to block further login attempts from that IP
+address
+
+
+For NX-OS 7.x:
+login block-for <block time window> attempts <fail count> within <detect time
+window>
+for instance:
+login block-for 120 attempts 5 within 120
+
+For NX-OS 9.x:
+system login block-for <block time window> attempts <fail count> within
+<detect time window>
+for instance:
+system login block-for 120 attempts 5 within 120
+
+Any values at all will thwart most brute force or dictionary attacks.
+
+.

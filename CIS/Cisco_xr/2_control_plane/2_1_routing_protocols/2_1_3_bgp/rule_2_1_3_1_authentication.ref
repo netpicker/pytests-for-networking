@@ -1,0 +1,14 @@
+.rule_2_1_3_1_authentication
+
+Reference: n1.html#GUID-A8900842-ECF3-42D3-B188-921BE0EC060B
+
+
+m1.html#GUID-159A8006-F0DF-4B82-BB71-C39D2C134205
+
+Remediation: Configure BGP neighbor authentication where feasible.
+IOSXR(config)#router bgp {local_AS_number}
+IOSXR(config-bgp)#neighbor {neighbor_IP_address} remote-as {remote_AS_number}
+IOSXR(config-bgp)#neighbor {neighbor_IP_address} password clear
+{BGP_password}
+
+.

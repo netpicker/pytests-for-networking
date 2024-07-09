@@ -1,0 +1,10 @@
+.rule_1_4_4_set_ip_address_for_logging_host
+
+Reference: 4/system-monitoring/configuration/guide/b-system-monitoring-cg-asr9000-64x/b-
+system-monitoring-cg-asr9000-64x_chapter_0101.html
+
+Remediation: Designate one or more syslog servers by IP address.
+
+hostname(config)#logging host {syslog_server}
+
+.

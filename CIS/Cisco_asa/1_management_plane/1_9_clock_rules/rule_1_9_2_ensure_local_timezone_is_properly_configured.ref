@@ -1,0 +1,15 @@
+.rule_1_9_2_ensure_local_timezone_is_properly_configured
+
+Reference: al/asa-96-general-config/basic-hostname-pw.html
+
+Remediation: 
+Step 1: Acquire standard zone name (enterprise_zone_name) used by the enterprise
+(GMT, UTC, EDT, PST)
+
+
+
+
+Step 2: Run the following to configure the required value
+hostname(config)# clock timezone <enterprise_zone_name> <local_offset>
+
+.

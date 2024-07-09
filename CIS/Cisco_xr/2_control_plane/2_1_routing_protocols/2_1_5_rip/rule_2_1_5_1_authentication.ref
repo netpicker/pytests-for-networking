@@ -1,0 +1,14 @@
+.rule_2_1_5_1_authentication
+
+Reference: 0/routing/configuration/guide/rc40xr12k_chapter6.html
+
+
+
+Remediation: Configure the Interface with the RIPv2 key chain.
+
+
+IOSXR(config)#router rip
+IOSXR(config-rip)#interface {interface}
+IOSXR(config-rip-if)#authentication keychain {key_chain_name} mode md5
+
+.

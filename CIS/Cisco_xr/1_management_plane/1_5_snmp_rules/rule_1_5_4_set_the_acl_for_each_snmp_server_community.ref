@@ -1,0 +1,12 @@
+.rule_1_5_4_set_the_acl_for_each_snmp_server_community
+
+Reference: s2.html#GUID-2F3F13E4-EE81-4590-871D-6AE1043473DE
+
+
+
+Remediation: Configure authorized SNMP community string and restrict access to authorized
+management systems.
+IOSXR(config)#snmp-server community {community_string} RO IPv4 {snmp_access-
+list}
+
+.

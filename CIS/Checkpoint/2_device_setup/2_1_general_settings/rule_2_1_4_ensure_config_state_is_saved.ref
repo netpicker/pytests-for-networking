@@ -1,0 +1,7 @@
+.rule_2_1_4_ensure_config_state_is_saved
+
+Reference: 
+Remediation: Run the following command to save the configuration.
+Hostname> save config
+
+.

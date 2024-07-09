@@ -1,0 +1,11 @@
+.rule_1_2_ensure_disallow_palindromes_is_selected
+
+Reference: 
+Remediation: Run the following command to set the palindrome-check setting.
+CLI:
+Hostname>set password-controls palindrome-check on
+GUI:
+Navigate to User Management > Password Policy
+Ensure 'Disallow Palindrome' is checked.
+
+.

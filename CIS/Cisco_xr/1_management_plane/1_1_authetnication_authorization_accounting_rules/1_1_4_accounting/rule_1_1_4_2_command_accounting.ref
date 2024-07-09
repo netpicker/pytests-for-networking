@@ -1,0 +1,15 @@
+.rule_1_1_4_2_command_accounting
+
+Reference: 5/system-security/configuration/guide/b-system-security-cg-asr9000-
+75x/configuring-aaa-services.html
+
+Remediation: Configure an accounting list which for example includes the tacacs+ or radius server
+group, which was defined in the prerequisites or local or both:
+
+
+IOSXR(config)#aaa accounting commands default start-stop group
+{tacacs_group|radius_group} local
+IOSXR(config)#line console accounting commands default
+IOSXR(config)#line default accounting commands default
+
+.

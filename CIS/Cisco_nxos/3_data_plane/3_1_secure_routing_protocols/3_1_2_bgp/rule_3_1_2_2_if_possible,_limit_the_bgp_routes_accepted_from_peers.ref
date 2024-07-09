@@ -1,0 +1,33 @@
+.rule_3_1_2_2_if_possible,_limit_the_bgp_routes_accepted_from_peers
+
+Reference: os/unicast/configuration/guide/l3_cli_nxos/l3_bgp.html
+
+Remediation: First, define the subnets that will be permitted from the peer PEERNAME (use
+descriptive, self documenting names in NX-OS constructions where possible). Note that
+any subnets not listed as permitted are by default denied (there is an implicit "deny all"
+at the bottom of the list)
+switch(config)# ip prefix-list PL_PEERNAME_PERMIT_SUBNETS description
+Permitted Subnets from Peer PEERNAME
+switch(config)# ip prefix-list PL_PEERNAME_PERMIT_SUBNETS permit
+switch(config)# ip prefix-list PL_PEERNAME_PERMIT_SUBNETS permit
+In this example above, only "permits" are defined. Deny lines are also allowed - refusing
+routes that are not accepted (for instance "bogon" or "martian" subnets), and may be
+more important in some situations, for example if this switch is accepting routes from
+the public internet. (note that this is not typical deployment scenario for an NX-OS
+switch)
+Next, create the route-map, will will apply that list:
+switch(config)# route-map RM_BGP_PEERNAME_IN permit 10
+switch(config-route-map)#   match ip address prefix-list
+PL_PEERNAME_PERMIT_SUBNETS
+Finally, within the BGP configuration, apply that route-map to the BGP peer definition.
+Note that the "in" keyword denotes inbound (accepted) information.:
+switch(config)# router bgp 65520
+switch(config-router)#   router-id 10.10.10.10
+switch(config-router)#   address-family ipv4 unicast
+switch(config-router-af)#     network 10.10.10.0/24
+switch(config-router-af)#   neighbor 10.10.10.11
+switch(config-router-neighbor)#     remote-as 65521
+switch(config-router-neighbor)#     address-family ipv4 unicast
+switch(config-router-neighbor-af)#      route-map RM_BGP_PEERNAME_IN in
+
+.

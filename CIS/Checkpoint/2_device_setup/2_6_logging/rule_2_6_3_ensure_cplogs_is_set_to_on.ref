@@ -1,0 +1,11 @@
+.rule_2_6_3_ensure_cplogs_is_set_to_on
+
+Reference: 
+Remediation: Run the following command to enable the cplogs.
+CLI:
+Hostname> set syslog cplogs on
+GUI:
+Navigate to System Management > System Logging > System Logging
+checked the Send Syslog messages to management server
+
+.

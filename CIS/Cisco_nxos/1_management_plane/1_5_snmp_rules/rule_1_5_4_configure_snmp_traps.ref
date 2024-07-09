@@ -1,0 +1,54 @@
+.rule_1_5_4_configure_snmp_traps
+
+Reference: uration/guide/cli/CLIConfigurationGuide/sm_snmp.html
+
+
+
+Remediation: Examples of traps
+All notifications
+switch(config)##switch(config)#snmp-server enable traps
+CISCO-AAA-SERVER-MIB
+switch(config)#switch(config)#snmp-server enable traps aaa
+ENITY-MIB, CISCO-ENTITY-FRU-CONTROL-MIB, CISCO-ENTITY-SENSOR-MIB
+switch(config)#switch(config)#snmp-server enable traps entity
+switch(config)#switch(config)#snmp-server enable traps entity fru
+CISCO-LICENSE-MGR-MIB
+switch(config)#switch(config)#snmp-server enable traps license
+IF-MIB
+switch(config)#switch(config)#snmp-server enable traps link
+switch(config)#CISCO-PSM-MIB
+switch(config)#switch(config)#snmp-server enable traps port-security
+switch(config)#snmpv2-MIB
+switch(config)#switch(config)#snmp-server enable traps switch(config)#snmp
+switch(config)#switch(config)#snmp-server enable traps switch(config)#snmp
+authentication
+CISCO-FCC-MIB
+
+
+switch(config)##switch(config)#snmp-server enable traps fcc
+CISCO-DM-MIB
+switch(config)#snmp-server enable traps fcdomain
+CISCO-NS-MIB
+switch(config)#snmp-server enable traps fcns
+CISCO-FCS-MIB
+switch(config)#snmp-server enable traps fcs discovery-complete
+switch(config)#snmp-server enable traps fcs request-reject
+CISCO-FDMI-MIB
+switch(config)#snmp-server enable traps fdmi
+CISCO-FSPF-MIB
+switch(config)#snmp-server enable traps fspf
+CISCO-PSM-MIB
+switch(config)#snmp-server enable traps port-security
+CISCO-RSCN-MIB
+switch(config)#snmp-server enable traps rscn
+switch(config)#snmp-server enable traps rscn els
+switch(config)#snmp-server enable traps rscn ils
+CISCO-ZS-MIB
+switch(config)#snmp-server enable traps zone
+switch(config)#snmp-server enable traps zone default-zone-behavior-change
+switch(config)#snmp-server enable traps zone merge-failure
+switch(config)#snmp-server enable traps zone merge-success
+switch(config)#snmp-server enable traps zone request-reject
+switch(config)#snmp-server enable traps zone unsupp-mem
+
+.

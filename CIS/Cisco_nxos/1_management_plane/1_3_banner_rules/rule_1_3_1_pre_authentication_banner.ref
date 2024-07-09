@@ -1,0 +1,12 @@
+.rule_1_3_1_pre_authentication_banner
+
+Reference: 
+Remediation: Configure an MOTD banner as shown below. The delimiter character shown is a "^", but
+any character can serve as a delimiter.
+switch(config)# banner motd ^
+> Enter MOTD Banner here.
+> End this message with the same delimiter as above
+> ^
+switch(config)#
+
+.

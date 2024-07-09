@@ -1,0 +1,11 @@
+.rule_1_2_2_ensure_host_name_is_set
+
+Reference: /asa_90_cli_config/basic_hostname_pw.html#pgfId-1103007
+
+Remediation: 
+Step 1: Acquire the enterprise naming convention to build the name_of_device
+
+Step 2: Run the following to configure the device hostname
+hostname(config)#hostname <name_of_device>
+
+.

@@ -1,0 +1,12 @@
+.rule_3_1_3_2_authenticate_ospf_peers_with_md5_authentication_keys
+
+Reference: 
+Remediation: For each OSPF routeable interface, set the message-digest authentication method, and
+assign the appropriate keychain.
+Each OSPF routeable interface should either have authentication configured or be
+configured as an OSPF passive interface.
+switch(config)# interface Vlan1
+switch(config-int)# ip ospf authentication message-digest
+switch(config-int)#  ip ospf authentication key-chain <OSPF Key Chain>
+
+.

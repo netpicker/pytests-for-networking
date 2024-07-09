@@ -1,0 +1,11 @@
+.rule_1_11_4_ensure_snmp_traps_is_enabled
+
+Reference: /asa_90_cli_config/monitor_snmp.html#52733
+
+Remediation: Run the following command to enable SNMP traps
+hostname(config)# snmp-server enable traps snmp authentication
+hostname(config)# snmp-server enable traps snmp coldstart
+hostname(config)# snmp-server enable traps snmp linkdown
+hostname(config)# snmp-server enable traps snmp linkup
+
+.

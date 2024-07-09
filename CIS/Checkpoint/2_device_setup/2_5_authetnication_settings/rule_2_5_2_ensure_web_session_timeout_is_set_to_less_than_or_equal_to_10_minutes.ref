@@ -1,0 +1,11 @@
+.rule_2_5_2_ensure_web_session_timeout_is_set_to_less_than_or_equal_to_10_minutes
+
+Reference: 
+Remediation: Run the following command to Configure the Inactivity Timeout for Web UI.
+CLI:
+Hostname> set web session-timeout 10
+GUI:
+Navigate to System Management > Session > Web UI  >  Inactivity Timeout - Set
+to 10 or less
+
+.

@@ -1,0 +1,15 @@
+.rule_3_3_ensure_packet_fragments_are_restricted_for_untrusted_interfaces
+
+Reference: /asa_90_cli_config/protect_tools.html
+
+Remediation: 
+Step 1: Acquire the name of the untrusted interface <interface_name>
+
+Step 2: Run the following command to deny fragments on the interface.
+hostname(config)#fragment chain 1 <interface_name>
+
+
+
+
+
+.

@@ -1,0 +1,21 @@
+.rule_2_1_2_1_authentication
+
+Reference: i1.html#GUID-0D6BDFCD-3FBB-4D26-A274-C1221F8592DF
+i1.html#GUID-939C79FF-8C09-4D5A-AEB5-DAF25038CA18
+
+
+Border Gateway Protocol (BGP) is an Exterior Gateway Protocol (EGP) that allows you
+to create loop-free interdomain routing between autonomous systems. An autonomous
+system is a set of routers under a single technical administration. Routers in an
+autonomous system can use multiple Interior Gateway Protocols (IGPs) to exchange
+routing information inside the autonomous system and an EGP to route packets outside
+the autonomous system.
+
+
+
+Remediation: Configure the appropriate interface(s) for Message Digest authentication
+IOSXR(config)#router ospf {process_id}
+IOSXR(config-ospf)# address-family ipv4
+IOSXR(config-ospf)#area 0 authentication keychain {key_chain_name}
+
+.

@@ -1,0 +1,26 @@
+.rule_1_1_1_3_configure_aaa_authentication___radius_if_applicable
+
+Reference: show-running-config.html
+
+Remediation: First define two or more RADIUS Servers
+
+
+switch(config)#radius-server host 3.4.5.6 key somekey authentication
+accounting
+switch(config)#radius-server host 4.5.6.7 key someotherkey authentication
+accounting
+Then create an AAA group for RADIUS
+switch(config)# aaa group server radius RADIUSGROUP
+server 3.4.5.6
+server 4.5.6.7
+Finally, create the authentication lists in the correct order - to be effective the RADIUS
+group needs to appear first in the list. Both the default and console access should be
+secured in the same way:
+switch(config)# aaa authentication login default group RADIUSGROUP local
+switch(config)# aaa authentication login console group RADIUSGROUP local
+It is common to include "local" as the last entry in the list, to allow access to administer
+the device even if the RADIUS server is offline. Note that while this ensures access in
+the case of the device or the RADIUS server being offline, it also means that if an
+attacker can DOS the RADIUS Servers, they can authenticate locally as well.
+
+.

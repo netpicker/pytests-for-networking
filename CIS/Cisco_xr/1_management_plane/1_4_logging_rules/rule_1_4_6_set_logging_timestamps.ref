@@ -1,0 +1,12 @@
+.rule_1_4_6_set_logging_timestamps
+
+Reference: 4/system-monitoring/configuration/guide/b-system-monitoring-cg-asr9000-64x/b-
+system-monitoring-cg-asr9000-64x_chapter_0101.html
+
+
+
+Remediation: Configure debug messages to include timestamps.
+
+IOSXR(config)#service timestamps log datetime msec
+
+.

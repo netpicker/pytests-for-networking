@@ -1,0 +1,13 @@
+.rule_3_1_4_1_if_vlan_interfaces_have_ip_addreses,_configure_anti_spoofing___ingress_filtering_protections
+
+Reference: 
+Remediation: Apply the command "ip verify unicast source reachable-via rx" to all VLAN interfaces
+that have IP addresses. This forces the check to verify that the packet is arriving on the
+correct interface.
+The command variant "ip verify unicast source reachable-via any" is not recommended,
+as it only filters for valid IP addresses. If the device has a default route, then this
+command variant has no affect.
+switch(config)# interface Vlan X
+switch(config-if)# ip verify unicast source reachable-via rx
+
+.

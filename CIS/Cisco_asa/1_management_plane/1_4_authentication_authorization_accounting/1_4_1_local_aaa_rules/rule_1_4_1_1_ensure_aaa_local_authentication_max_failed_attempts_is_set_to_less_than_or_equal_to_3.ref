@@ -1,0 +1,10 @@
+.rule_1_4_1_1_ensure_aaa_local_authentication_max_failed_attempts_is_set_to_less_than_or_equal_to_3
+
+Reference: xml/ios/sec_usr_aaa/configuration/xe-3s/sec-usr-aaa-xe-3s-book/sec-login-pw-
+retry.html
+
+Remediation: Run the following to configure the maximum number of consecutive local login failures to
+be less than or equal to 3
+hostname(config)# aaa local authentication attempts max-fail 3
+
+.

@@ -1,0 +1,6 @@
+.rule_1_2_7_disable_the_telnet_feature
+
+Reference: 
+Remediation: switch(config)# no feature telnet
+
+.
