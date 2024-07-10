@@ -1,4 +1,4 @@
-.rule_3_1_4_1_if_vlan_interfaces_have_ip_addreses,_configure_anti_spoofing___ingress_filtering_protections
+.rule_3_1_4_1_if_vlan_interfaces_have_ip_addreses_configure_anti_spoofing___ingress_filtering_protections
 
 Reference: 
 Remediation: Apply the command "ip verify unicast source reachable-via rx" to all VLAN interfaces
