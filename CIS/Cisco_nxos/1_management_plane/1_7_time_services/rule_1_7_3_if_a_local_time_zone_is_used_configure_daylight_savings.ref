@@ -1,4 +1,4 @@
-.rule_1_7_3_if_a_local_time_zone_is_used,_configure_daylight_savings
+.rule_1_7_3_if_a_local_time_zone_is_used_configure_daylight_savings
 
 Reference: 
 Remediation: In most cases, just the name of the DST timezone name is sufficient. NX-OS assumes 1

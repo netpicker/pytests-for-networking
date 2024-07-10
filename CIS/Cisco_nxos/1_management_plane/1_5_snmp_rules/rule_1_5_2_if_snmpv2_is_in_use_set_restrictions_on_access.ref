@@ -1,4 +1,4 @@
-.rule_1_5_2_if_snmpv2_is_in_use,_set_restrictions_on_access
+.rule_1_5_2_if_snmpv2_is_in_use_set_restrictions_on_access
 
 Reference: 
 Remediation: Create the ACL:
