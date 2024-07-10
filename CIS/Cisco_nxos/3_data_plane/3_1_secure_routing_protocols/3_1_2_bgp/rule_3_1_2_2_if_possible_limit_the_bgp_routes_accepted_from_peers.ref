@@ -1,4 +1,4 @@
-.rule_3_1_2_2_if_possible,_limit_the_bgp_routes_accepted_from_peers
+.rule_3_1_2_2_if_possible_limit_the_bgp_routes_accepted_from_peers
 
 Reference: os/unicast/configuration/guide/l3_cli_nxos/l3_bgp.html
 
