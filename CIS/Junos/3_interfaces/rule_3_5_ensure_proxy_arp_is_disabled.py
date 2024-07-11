@@ -3,7 +3,7 @@ from comfy.compliance import low
 
 @low(
       name='rule_3_5_ensure_proxy_arp_is_disabled',
-      platform=['juniper'],
+      platform=['juniper_junos'],
       commands=dict(chk_cmd='show configuration interfaces | match "proxy-arp" | count')
 )
 def rule_3_5_ensure_proxy_arp_is_disabled(commands, ref):

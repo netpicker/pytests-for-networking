@@ -3,7 +3,7 @@ from comfy.compliance import low
 
 @low(
       name='rule_6_2_1_ensure_archive_on_commit',
-      platform=['juniper'],
+      platform=['juniper_junos'],
       commands=dict(chk_cmd='')
 )
 def rule_6_2_1_ensure_archive_on_commit(commands, ref):
