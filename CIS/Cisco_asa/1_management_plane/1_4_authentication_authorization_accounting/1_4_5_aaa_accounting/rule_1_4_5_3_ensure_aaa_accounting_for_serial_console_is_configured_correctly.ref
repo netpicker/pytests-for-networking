@@ -1,9 +1,0 @@
-.rule_1_4_5_3_ensure_aaa_accounting_for_serial_console_is_configured_correctly
-
-Reference: guides/cli/general/asa-94-general-config/aaa-local.html
-
-Remediation: Run the following in order to record serial console session start and stop and to send them
-to the AAA servers
-hostname(config)#aaa accounting serial console <server-group_name>
-
-.

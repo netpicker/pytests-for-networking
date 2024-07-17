@@ -1,8 +1,0 @@
-.rule_2_1_7_ensure_ipv6_is_disabled_if_not_used
-
-Reference: 
-Remediation: Run the following command to enable or disable IPv6.
-Hostname> set ipv6-state on
-Hostname> set ipv6-state off
-
-.

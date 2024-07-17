@@ -1,8 +1,0 @@
-.rule_1_6_4_configure_logging_timestamps
-
-Reference: 
-Remediation: Use the "logging timestampe" command to configure this setting. Note that if set to
-"seconds" (the default), this command will not appear in the configuration.
-switch(config)# logging timestamp {microseconds | milliseconds | seconds}
-
-.

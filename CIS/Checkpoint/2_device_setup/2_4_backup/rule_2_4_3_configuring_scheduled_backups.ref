@@ -1,9 +1,0 @@
-.rule_2_4_3_configuring_scheduled_backups
-
-Reference: 
-Remediation: GUI:
-Navigate to Maintenance > System Backup > Scheduled Backup > Add Scheduled
-Backup
-Provide the Backup Type and Backup Schedule as per organization's policy.
-
-.

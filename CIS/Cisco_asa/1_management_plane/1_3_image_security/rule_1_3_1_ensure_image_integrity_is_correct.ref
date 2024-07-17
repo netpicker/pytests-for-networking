@@ -1,7 +1,0 @@
-.rule_1_3_1_ensure_image_integrity_is_correct
-
-Reference: 
-Remediation: Download a new image from the Cisco.com website and apply the audit procedure until
-obtaining the message 'Verified' at the end of the output.
-
-.

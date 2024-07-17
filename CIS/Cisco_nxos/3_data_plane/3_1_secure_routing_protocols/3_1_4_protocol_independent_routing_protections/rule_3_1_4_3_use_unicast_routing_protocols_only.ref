@@ -1,6 +1,0 @@
-.rule_3_1_4_3_use_unicast_routing_protocols_only
-
-Reference: 
-Remediation: Configure unicast routing only, for instance BGP.
-
-.
