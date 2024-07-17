@@ -1,7 +1,0 @@
-.rule_1_2_4_ensure_exec_timeout_for_console_sessions_is_set
-
-Reference: 
-Remediation: switch(config)# line console
-switch(config)# exec-timeout 10
-
-.

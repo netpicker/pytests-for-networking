@@ -1,8 +1,0 @@
-.rule_3_4_ensure_hit_count_is_enable_for_the_rules
-
-Reference: 
-Remediation: Go to the following path in Smart Console and Enable the Enable Hit Count setting.
-Navigate to Global Properties > Hit Count
-Checked the 'Enable Hit Count' setting
-
-.

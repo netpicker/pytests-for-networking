@@ -1,9 +1,0 @@
-.rule_3_19_ensure_automatic_arp_configuration_nat_is_enabled
-
-Reference: 
-Remediation: Go to the following path and Configured the Automatic ARP Configuration NAT.
-SmartConsole > Gateways & Servers > select each Gateway > NAT - Network
-Address Translation
-Unchecked the Automatic ARP Configuration NAT
-
-.

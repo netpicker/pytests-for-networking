@@ -1,9 +1,0 @@
-.rule_1_8_3_set_ssh_key_modulus_length
-
-Reference: 
-Remediation: Again, this must be implemented using an out-of-band (ie - not ssh) method.
-switch(config)# no feature ssh
-switch(config)# ssh key rsa 2048 force
-switch(config)# feature ssh
-
-.

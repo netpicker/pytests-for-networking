@@ -1,8 +1,0 @@
-.rule_1_4_4_2_ensure_aaa_authorization_exec_is_configured_correctly
-
-Reference: guides/cli/general/asa-94-general-config/aaa-local.html
-
-Remediation: Run the following to enable the AAA authorization exec
-hostname(config)# aaa authorization exec authentication-server auto-enable
-
-.

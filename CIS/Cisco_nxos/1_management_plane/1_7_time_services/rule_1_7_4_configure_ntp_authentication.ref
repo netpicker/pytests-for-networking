@@ -1,9 +1,0 @@
-.rule_1_7_4_configure_ntp_authentication
-
-Reference: 
-Remediation: switch(config)# ntp authenticate
-switch(config)# ntp authentication-key 42 md5 my-ntp-key
-switch(config)# ntp trusted-key 42
-switch(config)# ntp server 132.246.11.231 use-vrf management key 42
-
-.

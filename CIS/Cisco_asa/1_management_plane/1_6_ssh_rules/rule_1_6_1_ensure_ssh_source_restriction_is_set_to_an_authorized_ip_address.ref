@@ -1,8 +1,0 @@
-.rule_1_6_1_ensure_ssh_source_restriction_is_set_to_an_authorized_ip_address
-
-Reference: l/asa_91_general_config/admin_management.html
-
-Remediation: Run the following to enable SSH access source restriction
-hostname(config)#ssh <source_ip> <source_netmask> <interface_name>
-
-.
