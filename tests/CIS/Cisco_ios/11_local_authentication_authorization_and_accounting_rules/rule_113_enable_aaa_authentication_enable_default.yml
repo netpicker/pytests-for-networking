@@ -4,6 +4,11 @@ defaults:
 
 tests:
   rule_113_enable_aaa_authentication_enable_default:
+    - devices:
+        - platform: cisco_ios
+        - platform: cisco_xe
+      outcome: OK
+
     - outcome: TESTS_FAILED
       configuration: |
         hostname not-interesting
@@ -14,5 +19,7 @@ tests:
 
     - outcome: NO_TESTS_COLLECTED
       devices:
-        - platform: juniperOS
-          ipaddress: 19
+        - platform: juniper_junos
+    - outcome: OK
+      devices:
+        - platform: cisco_ios
