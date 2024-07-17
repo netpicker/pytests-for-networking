@@ -1,9 +1,0 @@
-.rule_1_11_5_ensure_snmp_community_string_is_not_the_default_string
-
-Reference: /asa_90_cli_config/monitor_snmp.html#52733
-
-Remediation: Run the following command to configure the SNMP community string
-hostname(config)#snmp-server community <snmp_community_string>
-In a multi-context environment, run the same command in the context.
-
-.

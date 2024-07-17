@@ -1,8 +1,0 @@
-.rule_1_7_2_configure_a_time_zone
-
-Reference: 
-Remediation: To set the timezone, define the timezone name, the offset in hours, then the offset in
-seconds. The example below shows EST (Offset of -5 hours, zero seconds).
-switch(config)# clock timezone EST -5 0
-
-.

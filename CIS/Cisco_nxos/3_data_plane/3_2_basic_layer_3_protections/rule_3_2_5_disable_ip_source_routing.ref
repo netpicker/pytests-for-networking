@@ -1,6 +1,0 @@
-.rule_3_2_5_disable_ip_source_routing
-
-Reference: 
-Remediation: switch(config)# no ip source-route
-
-.

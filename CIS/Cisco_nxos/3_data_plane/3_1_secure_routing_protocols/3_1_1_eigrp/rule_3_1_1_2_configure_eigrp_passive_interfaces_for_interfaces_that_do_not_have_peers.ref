@@ -1,9 +1,0 @@
-.rule_3_1_1_2_configure_eigrp_passive_interfaces_for_interfaces_that_do_not_have_peers
-
-Reference: 
-Remediation: If some IP interfaces have peers and some do not, set the ones with no peers to
-"passive"
-switch(config-if)# int vlan 1
-switch(config-if)# ip passive-interface eigrp <EIGRP process number>
-
-.

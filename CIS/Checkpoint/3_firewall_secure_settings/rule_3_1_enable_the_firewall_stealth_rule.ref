@@ -1,8 +1,0 @@
-.rule_3_1_enable_the_firewall_stealth_rule
-
-Reference: 
-Remediation: Login to the Management Server via SmartDashboard and create or edit the stealth rule,
-allowed only required IP address to manage the gateway and make sure it is on top of all
-rules.
-
-.
