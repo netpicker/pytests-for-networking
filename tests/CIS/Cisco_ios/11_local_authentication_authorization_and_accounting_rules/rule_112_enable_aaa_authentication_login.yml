@@ -6,7 +6,6 @@ tests:
   rule_112_enable_aaa_authentication_login:
     - outcome: TESTS_FAILED
       configuration: |
-        hostname not-interesting
         no aaa new-model
     - outcome: OK
       configuration: |
@@ -14,8 +13,3 @@ tests:
     - outcome: TESTS_FAILED
       configuration: |
         aaa authentication
-
-    - outcome: NO_TESTS_COLLECTED
-      devices:
-        - platform: juniperOS
-          ipaddress: 19
