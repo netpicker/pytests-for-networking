@@ -1,9 +1,0 @@
-.rule_3_3_ensure_unused_interfaces_are_set_to_disable
-
-Reference: 
-Remediation: To disable an interface enter the following command from the [edit interfaces
-<interface name>] hierarchy.
-[edit interfaces <interface name>]
-user@host#set disable
-
-.

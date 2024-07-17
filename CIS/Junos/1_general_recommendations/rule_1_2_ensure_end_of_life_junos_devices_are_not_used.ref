@@ -1,6 +1,0 @@
-.rule_1_2_ensure_end_of_life_junos_devices_are_not_used
-
-Reference: 
-Remediation: Administrators should plan to retire all JUNOS Devices before they reach EOS/EOSE
-
-.
