@@ -1,0 +1,35 @@
+defaults:
+  devices:
+    - ipaddress: 192.168.1.1
+      platform: cisco_wlc
+      tenant: default
+
+tests:
+  rule_112_configure_an_authorized_ip_address_for_ntp_server:
+    - outcome: OK
+      commands:
+          show time: Time............................................. Fri Feb 8 2019
+
+                     Timezone delta................................... 0:0
+                     Timezone location................................
+
+                     NTP Servers
+                     NTP Version.................................. 4
+
+                     Index NTP Key NTP Server NTP Key Polling Intervals
+                      Index Type Max Min
+                     -----------------------------------------------------------
+                      1 1 192.168.100.254 MD5 10 6
+
+                     NTPQ status list of NTP associations
+
+                     assoc
+                      ind assid status conf reach auth condition last_event cnt src_addr
+                      ===============================================================================
+                      1 1385 f63a yes yes ok sys.peer sys_peer 3 192.168.100.254
+    - outcome: TESTS_FAILED
+      commands:
+          show time: Time............................................. Fri Feb 8 2019
+
+                     Timezone delta................................... 0:0
+                     Timezone location................................
