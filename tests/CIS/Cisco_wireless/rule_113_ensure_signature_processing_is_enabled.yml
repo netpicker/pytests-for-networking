@@ -1,0 +1,36 @@
+defaults:
+  devices:
+    - ipaddress: 192.168.1.1
+      platform: cisco_wlc
+      tenant: default
+
+tests:
+  rule_113_ensure_signature_processing_is_enabled:
+    - outcome: OK
+      commands:
+          show wps summary: Untrusted AP Policy
+                              Rogue Location Discovery Protocol.............. Disabled
+                                RLDP Action.................................. Alarm Only
+                              Rogue APs
+                                Rogues AP advertising my SSID................ Alarm Only
+                                Detect and report Ad-Hoc Networks............ Enabled
+                              Rogue Clients
+                                Validate rogue clients against AAA........... Enabled
+                                Detect trusted clients on rogue APs.......... Alarm Only
+                              Rogue AP timeout............................... 1300
+                            Signature Policy
+                              Signature Processing........................... Enabled
+    - outcome: TESTS_FAILED
+      commands:
+          show wps summary: Untrusted AP Policy
+                              Rogue Location Discovery Protocol.............. Disabled
+                                RLDP Action.................................. Alarm Only
+                              Rogue APs
+                                Rogues AP advertising my SSID................ Alarm Only
+                                Detect and report Ad-Hoc Networks............ Enabled
+                              Rogue Clients
+                                Validate rogue clients against AAA........... Enabled
+                                Detect trusted clients on rogue APs.......... Alarm Only
+                              Rogue AP timeout............................... 1300
+                            Signature Policy
+                              Signature Processing........................... Disabled

@@ -1,0 +1,24 @@
+defaults:
+  devices:
+    - ipaddress: 192.168.1.1
+      platform: cisco_wlc
+      tenant: default
+
+tests:
+  rule_114_enable_all_policies_for_wps_client_exclusion:
+    - outcome: OK
+      commands:
+          show wps summary: Client Exclusion Policy
+                            Excessive 802.11-association failures.......... Enabled
+                            Excessive 802.11-authentication failures....... Enabled
+                            Excessive 802.1x-authentication................ Enabled
+                            IP-theft....................................... Enabled
+                            Excessive Web authentication failure........... Enabled
+    - outcome: TESTS_FAILED
+      commands:
+          show wps summary: Client Exclusion Policy
+                            Excessive 802.11-association failures.......... Disabled
+                            Excessive 802.11-authentication failures....... Disable
+                            Excessive 802.1x-authentication................ Disabled
+                            IP-theft....................................... Disabled
+                            Excessive Web authentication failure........... Disable
