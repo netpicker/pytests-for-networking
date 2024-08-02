@@ -1,0 +1,16 @@
+defaults:
+  devices:
+    - ipaddress: 192.168.1.1
+      platform: cisco_wlc
+      tenant: default
+
+tests:
+  rule_17_ensure_the_cli_login_timeout_is_less_than_or_equal:
+    - outcome: OK
+      commands:
+          show sessions: CLI Login Timeout (minutes)............ 5
+                         Maximum Number of CLI Sessions......... 5
+    - outcome: TESTS_FAILED
+      commands:
+          show sessions: CLI Login Timeout (minutes)............ 0
+                         Maximum Number of CLI Sessions......... 5

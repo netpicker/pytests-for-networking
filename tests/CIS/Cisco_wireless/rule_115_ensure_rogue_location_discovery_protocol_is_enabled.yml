@@ -1,0 +1,14 @@
+defaults:
+  devices:
+    - ipaddress: 192.168.1.1
+      platform: cisco_wlc
+      tenant: default
+
+tests:
+  rule_115_ensure_rogue_location_discovery_protocol_is_enabled:
+    - outcome: OK
+      commands:
+          show rogue ap rldp summary: Rogue Location Discovery Protocol................ Enabled
+    - outcome: TESTS_FAILED
+      commands:
+          show rogue ap rldp summary: Rogue Location Discovery Protocol................ Disabled
