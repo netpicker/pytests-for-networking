@@ -3,6 +3,22 @@
 
 
 Compliance Examples
-===================
+=======
 
-A set of common Netpicker compliance use-cases
+A set of common Netpicker compliance use-cases.
+
+<br />
+
+## Table of contents
+
+#### Format of the rules
+
+#### Simple Examples
+
+#### Multiple lines
+
+#### Multiple commands
+
+#### Using Textfsm
+
+
