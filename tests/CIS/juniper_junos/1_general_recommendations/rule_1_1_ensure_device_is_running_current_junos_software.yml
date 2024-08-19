@@ -1,0 +1,14 @@
+defaults:
+  devices:
+    - ipaddress: 192.168.1.1
+      platform: juniper_junos
+      tenant: default
+
+tests:
+  rule_1_1_ensure_device_is_running_current_junos_software:
+    - outcome: OK
+      commands:
+          show version: 21.4R3-S2.9
+    - outcome: TESTS_FAILED
+      commands:
+          show version: 18.2R3-S2.9
