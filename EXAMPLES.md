@@ -63,7 +63,7 @@ This rule checks the status of NTP synchronization and reports if the device is 
    commands=dict(show_ntp_status: 'show ntp status'),
 )
 def rule_ntp_sync(commands):
-    assert ' synchronized' in configuration
+    assert ' synchronized' in commands.show_ntp_status, "NTP is not synchronized"
 ```
 *This example executes the show ntp status command and checks if the output contains the word " synchronized." If the NTP status is not synchronized, the rule will fail, indicating that the device is not in sync with the NTP server.ecure manner.*
 
