@@ -70,7 +70,7 @@ def rule_ntp_sync(commands):
 ## Multiple Lines
 
 ### Example: Ensure Specific Log Servers are Configured
-This rule checks that specific log servers are configured in the device:ists:
+This rule checks that specific log servers are configured in the device:
 
 ```python
 @medium(
