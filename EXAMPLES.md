@@ -56,7 +56,7 @@ This rule checks the status of NTP synchronization and reports if the device is 
 @medium(
    name='rule_ntp_sync',
    platform=['cisco_ios'],
-   commands=dict(show_ntp_status: 'show ntp status'),
+   commands=dict(show_ntp_status='show ntp status'),
 )
 def rule_ntp_sync(commands):
     assert ' synchronized' in commands.show_ntp_status, "NTP is not synchronized"
