@@ -12,6 +12,8 @@ A set of common Netpicker compliance use-cases.
 2. [Simple Examples](#simple-examples)
 3. [Multiple Lines](#multiple-lines)
 4. [Using Configuration and Commands](#configuration-commands)
+5. [Using TextFSM](#using-textfsm)
+
 
 ## Format of the Rules
 
@@ -114,3 +116,26 @@ def rule_bgp_neighbors_status(configuration, device):
         assert len(neighbors_down) == 0, f"BGP neighbors down: {', '.join([line.split()[0] for line in neighbors_down])}"
 ```
 *This example looks for 'router bgp' in configuration and if found then executes the `show ip bgp summary` command and checks the status of all BGP neighbors. If any neighbor is in an "Idle," "Active," or "Connect" state, the rule will fail, listing the IP addresses of the down neighbors.*
+
+## Using TextFSM
+
+### Example: Interface Status Check Using TextFSM
+
+This rule checks the status of a specific interface on a Cisco IOS device using TextFSM for command output parsing. It ensures that the interface is up and running.
+
+```python
+@medium(
+    name='rule_interface_status_check',
+    platform=['cisco_ios'],
+)
+def rule_interface_status_check(device):
+    # Execute the command to get interface details using TextFSM parsing
+    inf_output = device.cli("show interface eth0/0").fsm[0]
+    
+    # Print the parsed output for debugging or verification purposes
+    print(inf_output)
+    
+    # Assert that the interface is up; fail the test if it is down
+    assert inf_output.link_status == "up", "Interface is down"
+```
+*This example uses TextFSM to parse the output of the `show interface eth0/0` command. The rule then checks the parsed output to verify that the interface is up. If the interface is down, the rule will fail, reporting the issue.* 
