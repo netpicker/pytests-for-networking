@@ -11,6 +11,7 @@ A set of common Netpicker compliance use-cases.
 1. [Format of the Rules](#format-of-the-rules)
 2. [Simple Examples](#simple-examples)
 3. [Multiple Lines](#multiple-lines)
+4. [Using Configuration and Commands](#configuration-commands)
 
 ## Format of the Rules
 
@@ -94,3 +95,22 @@ def rule_bgp_neighbors_up(commands):
     assert len(neighbors_down) == 0, f"BGP neighbors down: {', '.join([line.split()[0] for line in neighbors_down])}"
 ```
 *This example executes the `show ip bgp summary` command and checks the status of all BGP neighbors. If any neighbor is in an "Idle," "Active," or "Connect" state, the rule will fail, listing the IP addresses of the down neighbors.*
+
+## Using Configuration and Commands
+
+### Example: Conditional BGP Neighbor Status Check
+
+This rule first verifies whether BGP is configured on a Cisco IOS device. If BGP is configured, then it checks the status of BGP neighbors and reports if any neighbor is down.
+
+```python
+@medium(
+    name='rule_bgp_neighbors_status',
+    platform=['cisco_ios'],
+)
+def rule_bgp_neighbors_status(configuration, device):
+    if "router bgp" in configuration:
+        bgp_output = device.cli("show ip bgp summary")
+        neighbors_down = [line for line in bgp_output.splitlines() if 'Idle' in line or 'Active' in line or 'Connect' in line]
+        assert len(neighbors_down) == 0, f"BGP neighbors down: {', '.join([line.split()[0] for line in neighbors_down])}"
+```
+*This example looks for 'router bgp' in configuration and if found then executes the `show ip bgp summary` command and checks the status of all BGP neighbors. If any neighbor is in an "Idle," "Active," or "Connect" state, the rule will fail, listing the IP addresses of the down neighbors.*
