@@ -65,7 +65,7 @@ def rule_ntp_sync(commands):
 
 ## Multiple Lines
 
-### Example: Ensure Specific Log Servers are Configured
+### Example 1: Ensure Specific Log Servers are Configured
 This rule checks that specific log servers are configured in the device:
 
 ```python
@@ -78,3 +78,19 @@ def rule_specific_log_servers_configured(configuration):
     assert "logging host 2.3.4.5" in configuration, "Log server 2.3.4.5 is not configured"
 ```
 *This rule ensures that the device configuration includes the specific log servers 1.2.3.4 and 2.3.4.5. If either line is missing, the rule will fail and report which log server is not configured.*
+
+### Example 2: Ensure All BGP Neighbors Are Up
+This rule checks the status of BGP neighbors and reports if any neighbor is down:
+
+```python
+@medium(
+   name='rule_bgp_neighbors_up',
+   platform=['cisco_ios'],
+   commands={'show_bgp_summary': 'show ip bgp summary'},
+)
+def rule_bgp_neighbors_up(configuration, commands, device, devices):
+    bgp_output = commands.show_bgp_summary
+    neighbors_down = [line for line in bgp_output.splitlines() if 'Idle' in line or 'Active' in line or 'Connect' in line]
+    assert len(neighbors_down) == 0, f"BGP neighbors down: {', '.join([line.split()[0] for line in neighbors_down])}"
+```
+*This example executes the `show ip bgp summary` command and checks the status of all BGP neighbors. If any neighbor is in an "Idle," "Active," or "Connect" state, the rule will fail, listing the IP addresses of the down neighbors.*
