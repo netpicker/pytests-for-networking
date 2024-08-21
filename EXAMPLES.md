@@ -86,9 +86,9 @@ This rule checks the status of BGP neighbors and reports if any neighbor is down
 @medium(
    name='rule_bgp_neighbors_up',
    platform=['cisco_ios'],
-   commands={'show_bgp_summary': 'show ip bgp summary'},
+   commands=dict('show_bgp_summary'='show ip bgp summary'),
 )
-def rule_bgp_neighbors_up(configuration, commands, device, devices):
+def rule_bgp_neighbors_up(commands):
     bgp_output = commands.show_bgp_summary
     neighbors_down = [line for line in bgp_output.splitlines() if 'Idle' in line or 'Active' in line or 'Connect' in line]
     assert len(neighbors_down) == 0, f"BGP neighbors down: {', '.join([line.split()[0] for line in neighbors_down])}"
