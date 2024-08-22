@@ -7,13 +7,13 @@ from comfy.compliance import medium
 def rule_netbox(configuration, commands, device, netbox):
     devices = netbox.dcim.devices.all()
     device_names = [device.name for device in devices]
-    
+
     for name in device_names:
         print(name)
-    
+
     # Get the device by name
     netbox_device = netbox.dcim.devices.get(name=device.name)
-    
+
     assert netbox_device is not None, f"Device '{device.name}' not found in NetBox."
 
     # Fetch interfaces for the device
@@ -22,7 +22,7 @@ def rule_netbox(configuration, commands, device, netbox):
     if not interfaces:
         print(f"No interfaces found for device '{device.name}'.")
         return
-    
+
     # Execute the 'show interfaces' command
     show_interfaces_output = device.cli('show interfaces')
 
@@ -37,7 +37,7 @@ def rule_netbox(configuration, commands, device, netbox):
             else:
                 interface_status = 'disabled'
             cli_interfaces[interface_name] = interface_status
-    
+
     # List to accumulate mismatch messages
     mismatches = []
 
@@ -47,16 +47,16 @@ def rule_netbox(configuration, commands, device, netbox):
         netbox_interface_name = interface.name
         # NetBox interface status
         netbox_interface_status = 'enabled' if interface.enabled else 'disabled'
-        
+
         # Get the corresponding interface status from the CLI output
         cli_interface_status = cli_interfaces.get(netbox_interface_name, 'unknown')
-        
+
         # Check for mismatches
         if netbox_interface_status != cli_interface_status:
             mismatches.append(
                 f"Status mismatch for {netbox_interface_name}: "
                 f"NetBox = {netbox_interface_status}, CLI = {cli_interface_status}\n"
             )
-    
+
     # Perform a single assertion at the end
     assert not mismatches, " ".join(mismatches)
