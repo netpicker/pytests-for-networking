@@ -14,6 +14,7 @@ A set of common Netpicker compliance use-cases.
 4. [Using Configuration and Commands](#using-configuration-and-commands)
 5. [Using TextFSM](#using-textfsm)
 6. [Using Tags for Device Grouping](#using-tags-for-device-grouping)
+7. [Accessing Netbox Data in Netpicker Rules](#accessing-netbox-data-in-netpicker-rules)
 
 ## Format of the Rules
 
@@ -141,11 +142,11 @@ def rule_interface_status_check(device):
 *This example uses TextFSM to parse the output of the `show interface eth0/0` command. The rule then checks the parsed output to verify that the interface is up. If the interface is down, the rule will fail, reporting the issue.* 
 
 ## Using Tags for Device Grouping
+You can create tags such as `datacenter`, `campus`, or `branch`, and then apply specific rules to all devices in these groups.
 
 ### Example: Printing All Devices with a Specific Tag
 
 In this example, the `device_tags` parameter is set to `campus`, meaning the rule is intended to apply only to devices tagged as part of the `campus` group.
-You can create tags such as `datacenter`, `campus`, or `branch`, and then apply specific rules to all devices in these groups.
 
 ```python
 @medium(
@@ -160,3 +161,25 @@ def rule_one(devices, device):
             print(f"Device: {dev.name} and IP address: {dev.ipaddress}")
 ```
 *This example demonstrates how to print the name and IP address of all devices tagged with `campus`.*
+
+## Accessing NetBox Data in Netpicker Rules
+
+Netpicker allows you to integrate with NetBox, a popular open-source IP address management (IPAM) and data center infrastructure management (DCIM) tool. By accessing NetBox data within your Netpicker rules, you can enhance your network automation tasks by incorporating detailed device information directly from your source of truth.
+
+### Example: Accessing and Printing Device Names from NetBox
+```python
+@medium(
+    name='rule_netbox',
+)
+def rule_netbox(netbox):
+    # Fetch all devices from NetBox
+    devices = netbox.dcim.devices.all()
+    
+    # Extract the names of the devices
+    device_names = [device.name for device in devices]
+
+    # Print the names of all devices fetched from NetBox
+    for name in device_names:
+        print(name)
+```
+*The above example demonstrates how to access NetBox data within a Netpicker rule. This rule fetches all devices from NetBox and prints their names.*
