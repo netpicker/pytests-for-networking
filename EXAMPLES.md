@@ -14,6 +14,7 @@ A set of common Netpicker compliance use-cases.
 4. [Using Configuration and Commands](#using-configuration-and-commands)
 5. [Using TextFSM](#using-textfsm)
 6. [Using Tags for Device Grouping](#using-tags-for-device-grouping)
+7. [Accessing Netbox Data in Netpicker Rules](#accessing-netbox-data-in-netpicker-rules)
 
 ## Format of the Rules
 
@@ -160,3 +161,26 @@ def rule_one(devices, device):
             print(f"Device: {dev.name} and IP address: {dev.ipaddress}")
 ```
 *This example demonstrates how to print the name and IP address of all devices tagged with `campus`.*
+
+## Accessing NetBox Data in Netpicker Rules
+
+Netpicker allows you to integrate with NetBox, a popular open-source IP address management (IPAM) and data center infrastructure management (DCIM) tool. By accessing NetBox data within your Netpicker rules, you can enhance your network automation tasks by incorporating detailed device information directly from your source of truth.
+
+### Example: Accessing and Printing Device Names from NetBox
+```python
+@medium(
+    name='rule_netbox',
+)
+def rule_netbox(netbox):
+    # Fetch all devices from NetBox
+    devices = netbox.dcim.devices.all()
+    
+    # Extract the names of the devices
+    device_names = [device.name for device in devices]
+
+    # Print the names of all devices fetched from NetBox
+    for name in device_names:
+        print(name)
+```
+*The above example demonstrates how to access NetBox data within a Netpicker rule. This rule fetches all devices from NetBox and prints their names.*
+
