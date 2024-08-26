@@ -142,11 +142,11 @@ def rule_interface_status_check(device):
 *This example uses TextFSM to parse the output of the `show interface eth0/0` command. The rule then checks the parsed output to verify that the interface is up. If the interface is down, the rule will fail, reporting the issue.* 
 
 ## Using Tags for Device Grouping
+You can create tags such as `datacenter`, `campus`, or `branch`, and then apply specific rules to all devices in these groups.
 
 ### Example: Printing All Devices with a Specific Tag
 
-In this example, the device_tags parameter is set to `campus`, meaning the rule is intended to apply only to devices tagged as part of the `campus` group.
-You can create tags such as `datacenter`, `campus`, or `branch`, and then apply specific rules to all devices in these groups.
+In this example, the `device_tags` parameter is set to `campus`, meaning the rule is intended to apply only to devices tagged as part of the `campus` group.
 
 ```python
 @medium(
@@ -183,4 +183,3 @@ def rule_netbox(netbox):
         print(name)
 ```
 *The above example demonstrates how to access NetBox data within a Netpicker rule. This rule fetches all devices from NetBox and prints their names.*
-
