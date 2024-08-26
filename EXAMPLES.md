@@ -144,8 +144,8 @@ def rule_interface_status_check(device):
 
 ### Example: Printing All Devices with a Specific Tag
 
-In this example, the device_tags parameter is set to campus, meaning the rule is intended to apply only to devices tagged as part of the campus group.
-You can create tags such as datacenter, campus, or branch, and then apply specific rules to all devices in these groups.
+In this example, the device_tags parameter is set to `campus`, meaning the rule is intended to apply only to devices tagged as part of the `campus` group.
+You can create tags such as `datacenter`, `campus`, or `branch`, and then apply specific rules to all devices in these groups.
 
 ```python
 @medium(
@@ -159,4 +159,4 @@ def rule_one(devices, device):
         if 'campus' in dev.tags:
             print(f"Device: {dev.name} and IP address: {dev.ipaddress}")
 ```
-*This example demonstrates how to print the name and IP address of all devices tagged with campus.*
+*This example demonstrates how to print the name and IP address of all devices tagged with `campus`.*
