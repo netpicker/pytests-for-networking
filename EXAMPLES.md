@@ -11,7 +11,7 @@ A set of common Netpicker compliance use-cases.
 1. [Format of the Rules](#format-of-the-rules)
 2. [Simple Examples](#simple-examples)
 3. [Multiple Lines](#multiple-lines)
-4. [Using Configuration and Commands](#configuration-commands)
+4. [Using Configuration and Commands](#using-configuration-and-commands)
 5. [Using TextFSM](#using-textfsm)
 
 
