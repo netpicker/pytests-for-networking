@@ -13,7 +13,7 @@ A set of common Netpicker compliance use-cases.
 3. [Multiple Lines](#multiple-lines)
 4. [Using Configuration and Commands](#using-configuration-and-commands)
 5. [Using TextFSM](#using-textfsm)
-
+6. [Using Tags for Device Grouping](#using-tags-for-device-grouping)
 
 ## Format of the Rules
 
@@ -139,3 +139,24 @@ def rule_interface_status_check(device):
     assert inf_output.link_status == "up", "Interface is down"
 ```
 *This example uses TextFSM to parse the output of the `show interface eth0/0` command. The rule then checks the parsed output to verify that the interface is up. If the interface is down, the rule will fail, reporting the issue.* 
+
+## Using Tags for Device Grouping
+
+### Example: Printing All Devices with a Specific Tag
+
+In this example, the device_tags parameter is set to campus, meaning the rule is intended to apply only to devices tagged as part of the campus group.
+You can create tags such as datacenter, campus, or branch, and then apply specific rules to all devices in these groups.
+
+'''python
+@medium(
+    name='rule_one',
+    platform=['cisco_ios'],  # Specify the platform as usual
+    device_tags='campus',    # This rule will apply to devices tagged with 'campus'
+)
+def rule_one(devices, device):
+    # Iterate over all devices and print the details of those with the 'campus' tag
+    for dev in devices:
+        if 'campus' in dev.tags:
+            print(f"Device: {dev.name} and IP address: {dev.ipaddress}")
+'''
+*This example demonstrates how to print the name and IP address of all devices tagged with campus.*
