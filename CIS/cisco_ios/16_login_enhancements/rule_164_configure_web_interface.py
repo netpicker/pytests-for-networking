@@ -23,8 +23,8 @@ def rule_164_configure_web_interface(configuration, commands, device, devices):
         AssertionError: If configurations are not set correctly.
     """
 
-    ip_admission_output = commands['show_ip_admission']
-    config_lines = commands['show_running_config'].splitlines()
+    ip_admission_output = commands.show_ip_admission
+    config_lines = commands.show_running_config.splitlines()
 
     # Check SISF-Based Device Tracking is enabled
     assert 'device-tracking' in config_lines, \

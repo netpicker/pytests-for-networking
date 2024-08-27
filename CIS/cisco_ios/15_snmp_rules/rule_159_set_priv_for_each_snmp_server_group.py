@@ -7,7 +7,7 @@ from comfy.compliance import low
     commands={'show_snmp_group': 'show snmp group'}
 )
 def rule_159_set_priv_for_each_snmp_server_group(configuration, commands, device, devices):
-    snmp_groups_output = commands['show_snmp_group'].splitlines()
+    snmp_groups_output = commands.show_snmp_group.splitlines()
     snmp_v3_priv_groups = [
         line for line in snmp_groups_output
         if 'v3' in line and 'auth' in line and 'priv' in line

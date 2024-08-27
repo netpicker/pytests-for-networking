@@ -18,7 +18,7 @@ def rule_3341_require_bgp_auth_if_used(commands, ref):
 
     The test checks if BGP is configured and if so, ensures the 'neighbor password' for authentication is present.
     """
-    bgp_config = commands['bgp_config']
+    bgp_config = commands.bgp_config
     if 'router bgp' not in bgp_config:
         return  # BGP is not configured; no action needed
     assert 'neighbor' in bgp_config and 'password' in bgp_config, ref
