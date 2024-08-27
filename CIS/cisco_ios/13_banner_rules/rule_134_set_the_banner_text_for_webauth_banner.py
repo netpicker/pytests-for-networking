@@ -7,5 +7,5 @@ from comfy.compliance import medium
     commands={'chk_cmd': 'show ip admission auth-proxy-banner http'}
 )
 def rule_134_set_the_banner_text_for_webauth_banner(commands, ref):
-    banner_text = commands['chk_cmd']
+    banner_text = commands.chk_cmd
     assert 'Unauthorized access is prohibited' in banner_text, ref + " - Missing or incorrect banner text."

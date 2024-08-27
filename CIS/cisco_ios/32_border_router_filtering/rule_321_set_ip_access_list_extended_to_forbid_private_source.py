@@ -24,7 +24,7 @@ def rule_321_set_ip_access_list_extended_to_forbid_private_source_addresses_from
         other specified ranges.
     """
 
-    access_list_output = commands['show_ip_access_list'].splitlines()
+    access_list_output = commands.show_ip_access_list.splitlines()
     required_deny_entries = [
         'deny ip 127.0.0.0 0.255.255.255 any log',
         'deny ip 10.0.0.0 0.255.255.255 any log',

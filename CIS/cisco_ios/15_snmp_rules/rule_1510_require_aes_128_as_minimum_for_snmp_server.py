@@ -22,7 +22,7 @@ def rule_1510_require_aes_128_as_minimum_for_snmp_server(configuration, commands
         AssertionError: If any SNMPv3 user is not configured with AES 128 encryption.
     """
 
-    snmp_users_output = commands['show_snmp_user'].splitlines()
+    snmp_users_output = commands.show_snmp_user.splitlines()
     snmp_v3_users_aes128 = [line for line in snmp_users_output if 'AES 128' in line or 'AES128' in line]
 
     # Verify that there is at least one SNMPv3 user configured with AES 128

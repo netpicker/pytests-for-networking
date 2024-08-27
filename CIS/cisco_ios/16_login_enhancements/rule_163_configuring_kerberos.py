@@ -23,8 +23,8 @@ def rule_163_configuring_kerberos(configuration, commands, device, devices):
         AssertionError: If Kerberos is not configured correctly or credentials are not set properly.
     """
 
-    kerberos_cred_output = commands['show_kerberos_cred']
-    config_lines = commands['show_running_config'].splitlines()
+    kerberos_cred_output = commands.show_kerberos_cred
+    config_lines = commands.show_running_config.splitlines()
 
     # Check if Kerberos is enabled
     assert 'kerberos' in config_lines, "Kerberos is not enabled on this device."
