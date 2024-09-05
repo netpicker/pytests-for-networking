@@ -5,6 +5,13 @@ from comfy.compliance import medium
     name='rule_netbox',
 )
 def rule_netbox(configuration, commands, device, netbox):
+    # The next lines are used to disable SSL certificate verification
+    # https://pynetbox.readthedocs.io/en/stable/advanced.html#ssl-verification
+    import requests
+    my_cert_ignoring_session = requests.Session()
+    my_cert_ignoring_session.verify = False
+    netbox.http_session = my_cert_ignoring_session
+
     devices = netbox.dcim.devices.all()
     device_names = [device.name for device in devices]
 
