@@ -1,5 +1,5 @@
 from comfy.compliance import medium
-
+from infrahub_sdk import Config, InfrahubClientSync
 
 @medium(
     name='rule_infrahub',
@@ -14,7 +14,7 @@ def rule_infrahub(configuration, commands, device):
 
     infrahub = InfrahubClientSync(address=endpoint, config=Config(api_token=api_token))
     devices = infrahub.all(kind='InfraDevice', branch=branch)
-    device_names = [device.name.value for device in devices]
+    # device_names = [device.name.value for device in devices]
 
     # for name in device_names:
     #     print(name)
