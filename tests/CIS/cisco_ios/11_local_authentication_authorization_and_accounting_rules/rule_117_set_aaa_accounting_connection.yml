@@ -11,9 +11,11 @@ tests:
     - outcome: OK
       configuration: |
         aaa new-model
+        aaa accounting connection
     - outcome: OK
       configuration: |
         no aab new-model
+        aaa accounting connection
 
     - outcome: NO_TESTS_COLLECTED
       devices:

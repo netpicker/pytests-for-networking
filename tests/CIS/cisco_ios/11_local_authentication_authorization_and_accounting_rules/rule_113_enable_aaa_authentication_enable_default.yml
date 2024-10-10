@@ -4,10 +4,11 @@ defaults:
 
 tests:
   rule_113_enable_aaa_authentication_enable_default:
-    - devices:
+    - outcome: OK
+      devices:
         - platform: cisco_ios
-        - platform: cisco_xe
-      outcome: OK
+      configuration: |
+        aaa authentication enable
 
     - outcome: TESTS_FAILED
       configuration: |
@@ -20,6 +21,9 @@ tests:
     - outcome: NO_TESTS_COLLECTED
       devices:
         - platform: juniper_junos
+
     - outcome: OK
       devices:
         - platform: cisco_ios
+      configuration: |
+        aaa authentication enable
