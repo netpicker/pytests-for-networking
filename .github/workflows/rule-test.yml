@@ -11,4 +11,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run yaml tests
-        run: execute-rules --sys -p runner.yaml_rules -vvvl --rootdir $PWD $PWD
+        run: test-rules -p runner.yaml_rules -vvvl --rootdir $PWD $PWD
