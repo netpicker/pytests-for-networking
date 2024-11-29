@@ -1,0 +1,22 @@
+defaults:
+  devices:
+    - platform: cisco_xe
+
+tests:
+  rule_118_set_aaa_accounting_exec:
+    - outcome: TESTS_FAILED
+      configuration: |
+        hostname not-interesting
+        no aaa new-model
+    - outcome: OK
+      configuration: |
+        aaa accounting exec
+    - outcome: OK
+      configuration: |
+        no aab new-model
+        aaa accounting exec
+
+    - outcome: NO_TESTS_COLLECTED
+      devices:
+        - platform: juniperOS
+          ipaddress: 19
