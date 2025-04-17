@@ -18,7 +18,7 @@ import logging
 
 # Target Juniper platforms (Junos) using Netmiko platform type wildcard
 @job(platform='juniper_junos*')
-def set_ntp_server(device, ntp_server: str):
+def set_ntp_server_juniper_junos(device, ntp_server: str):
     """
     Configures the NTP server on a Juniper device and commits the change.
 
