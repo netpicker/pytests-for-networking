@@ -5,7 +5,7 @@ from comfy.automate import job
 @job(platform='cisco*')
 def rotate_password_cisco(device, username: str, new_password: str):
     """
-    Rotates the password for a specified user on a Cisco IOS device.
+    Rotates the password for a specified user on a Cisco IOS / NX-OS device.
 
     Args:
         device: The Netpicker device object.
