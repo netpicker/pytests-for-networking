@@ -1,5 +1,6 @@
 from comfy import high
 
+
 @high(
     name='rule_cve20241356',
     platform=['aruba_os'],
