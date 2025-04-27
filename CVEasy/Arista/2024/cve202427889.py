@@ -44,5 +44,6 @@ def rule_cve202427889(configuration, commands, device, devices):
         "- Upgrade to version 17.1\n"
         "- For version 17.0, apply the hotfix\n"
         "- Workaround: Disable Online Access for all Report Users\n"
-        "For more information, see https://www.arista.com/en/support/advisories-notices/security-advisory/19038-security-advisory-0093"
+        "For more information, see\n"
+        "https://www.arista.com/en/support/advisories-notices/security-advisory/19038-security-advisory-0093"
     )
