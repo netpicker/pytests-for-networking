@@ -7,7 +7,7 @@ from comfy import high
     commands=dict(
         show_version='show version',
         show_running_config='show running-config | include interface|port-security|device classifier|'
-          'system-auth-control|port-control|mab'
+                            'system-auth-control|port-control|mab'
     ),
 )
 def rule_cve202420276(configuration, commands, device, devices):
