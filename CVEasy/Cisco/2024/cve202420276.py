@@ -6,7 +6,8 @@ from comfy import high
     platform=['cisco_ios'],
     commands=dict(
         show_version='show version',
-        show_running_config='show running-config | include interface|port-security|device classifier|system-auth-control|port-control|mab'
+        show_running_config='show running-config | include interface|port-security|device classifier|'
+                           'system-auth-control|port-control|mab'
     ),
 )
 def rule_cve202420276(configuration, commands, device, devices):
@@ -59,5 +60,6 @@ def rule_cve202420276(configuration, commands, device, devices):
         f"Device {device.name} is vulnerable to CVE-2024-20276. "
         "The device is running a vulnerable version AND has port security, device classifier, or AAA enabled, "
         "which makes it susceptible to DoS attacks. "
-        "For more information, see https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ios-dos-Hq4d3tZG"
+        "For more information, see "
+        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ios-dos-Hq4d3tZG"
     )

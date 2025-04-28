@@ -1,5 +1,6 @@
 from comfy import high
 
+
 @high(
     name='rule_cve20242973',
     platform=['juniper_junos'],
