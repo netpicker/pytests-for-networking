@@ -157,8 +157,7 @@ In this example, the `device_tags` parameter is set to `campus`, meaning the rul
 def rule_one(devices, device):
     # Iterate over all devices and print the details of those with the 'campus' tag
     for dev in devices:
-        if 'campus' in dev.tags:
-            print(f"Device: {dev.name} and IP address: {dev.ipaddress}")
+        print(f"Device: {dev.name} and IP address: {dev.ipaddress}")
 ```
 *This example demonstrates how to print the name and IP address of all devices tagged with `campus`.*
 
