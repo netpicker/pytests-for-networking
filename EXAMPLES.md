@@ -90,7 +90,7 @@ This rule checks the status of BGP neighbors and reports if any neighbor is down
 @medium(
    name='rule_bgp_neighbors_up',
    platform=['cisco_ios'],
-   commands=dict('show_bgp_summary'='show ip bgp summary'),
+   commands=dict(show_bgp_summary='show ip bgp summary'),
 )
 def rule_bgp_neighbors_up(commands):
     bgp_output = commands.show_bgp_summary
