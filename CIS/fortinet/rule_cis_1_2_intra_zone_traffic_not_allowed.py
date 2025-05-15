@@ -10,7 +10,7 @@ def rule_cis_1_2_intra_zone_traffic_not_allowed(configuration, commands, device)
 
     # Split config into zone blocks
     zone_blocks = zone_output.split('edit ')
-    
+
     for block in zone_blocks:
         lines = block.strip().splitlines()
         if not lines:
