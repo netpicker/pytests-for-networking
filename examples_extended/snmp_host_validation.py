@@ -12,8 +12,8 @@ Expected trap hosts:
 
 Any missing or extra SNMP hosts will result in a failure.
 """
-
 import re
+from comfy import high
 
 @high(
     name='snmp_host_validation',
