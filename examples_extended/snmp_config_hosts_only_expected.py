@@ -18,12 +18,13 @@ The test will:
 Example line from config:
     snmp-server host 192.168.10.1 version 2c public
 """
-
+from comfy import high
 import re
+
 
 @high(
     name='snmp_config_hosts_only_expected',
-    platform=['cisco_ios', 'cisco_xe''arista_eos'],
+    platform=['cisco_ios', 'arista_eos'],
 )
 def snmp_config_hosts_only_expected(configuration):
     expected_hosts = {'192.168.10.1', '192.168.10.2'}
