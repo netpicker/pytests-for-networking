@@ -10,7 +10,7 @@ defaults:
       tenant: default
 
 tests:
-  rule_cve202320273:
+  rule_cve_2023_20273:
     - commands:
         'show version | include RELEASE SOFTWARE': 'Version 200.300.400'
       outcome: OK
