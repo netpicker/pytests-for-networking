@@ -3,7 +3,6 @@ anchors:
 
 defaults:
   tenant: default
-
   devices:
     - ipaddress: 192.168.1.1
       platform: cisco_xe
@@ -11,12 +10,38 @@ defaults:
 
 tests:
   rule_cve_2023_20273:
+
+    # ✅ Non-vulnerable version (safe): 17.3.8
     - commands:
-        'show version | include RELEASE SOFTWARE': 'Version 200.300.400'
+        *show_version: 'Version 17.3.8 RELEASE SOFTWARE'
       outcome: OK
+
+    # ✅ Non-vulnerable version (safe): 17.6.6
     - commands:
-        'show version | include RELEASE SOFTWARE': '4.5.6'
+        *show_version: 'Version 17.6.6 RELEASE SOFTWARE'
+      outcome: OK
+
+    # ❌ Vulnerable version (should fail): 17.3.3
+    - commands:
+        *show_version: 'Version 17.3.3 RELEASE SOFTWARE'
       outcome: TESTS_FAILED
+
+    # ❌ Vulnerable version (should fail): 16.12.8
     - commands:
-        *show_version: 'Version 16.12.11'
+        *show_version: 'Version 16.12.8 RELEASE SOFTWARE'
+      outcome: TESTS_FAILED
+
+    # ✅ Non-vulnerable version (safe): 16.12.10
+    - commands:
+        *show_version: 'Version 16.12.10 RELEASE SOFTWARE'
+      outcome: OK
+
+    # ❌ Vulnerable version (should fail): 17.9.1
+    - commands:
+        *show_version: 'Version 17.9.1 RELEASE SOFTWARE'
+      outcome: TESTS_FAILED
+
+    # ✅ Non-vulnerable version (safe): 17.9.4
+    - commands:
+        *show_version: 'Version 17.9.4 RELEASE SOFTWARE'
       outcome: OK
