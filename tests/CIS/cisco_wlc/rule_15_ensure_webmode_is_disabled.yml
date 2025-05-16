@@ -15,6 +15,7 @@ tests:
                                 Secure Web Mode Cipher-Option SSLv2......... Disable
                                 Secure Shell (ssh).......................... Enable
                                 Telnet...................................... Disable
+                                Webmode...................................... Disable
     - outcome: TESTS_FAILED
       commands:
           show network summary: RF-Network Name............................. RF
@@ -24,3 +25,4 @@ tests:
                                 Secure Web Mode Cipher-Option SSLv2......... Disable
                                 Secure Shell (ssh).......................... Enable
                                 Telnet...................................... Disable
+                                Webmode...................................... Enable
