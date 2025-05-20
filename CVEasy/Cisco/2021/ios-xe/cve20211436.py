@@ -41,5 +41,6 @@ def rule_cve20211436(configuration, commands, device, devices):
         "The device is running IOS XE SD-WAN Software with user accounts configured, "
         "which could allow an authenticated local attacker to conduct path traversal attacks "
         "and access sensitive files. "
-        "For more information, see https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-iosxe-sdwpathtrav-nsrue2Mt"
+        "For more information, see"
+        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-iosxe-sdwpathtrav-nsrue2Mt"
     )

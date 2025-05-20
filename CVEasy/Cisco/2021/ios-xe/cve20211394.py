@@ -41,7 +41,8 @@ def rule_cve20211394(configuration, commands, device, devices):
         f"Device {device.name} is potentially vulnerable to CVE-2021-1394. "
         "The device is an NCS 520 Router with web UI features enabled, which could allow an "
         "unauthenticated remote attacker to cause a denial of service condition through crafted TCP packets. "
-        "Note: This vulnerability does not impact traffic going through the device or to the Management Ethernet interface. "
+        "Note: This vulnerability does not impact traffic going through the device or"
+        "to the Management Ethernet interface. "
         "For more information, see"
         "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ncs520-tcp-ZpzzOxB"
     )

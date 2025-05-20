@@ -31,7 +31,7 @@ def rule_cve20211442(configuration, commands, device, devices):
 
     # Check for users with low privileges (not privilege 15)
     has_low_priv_users = any('privilege' in line and 'privilege 15' not in line
-                            for line in config.splitlines())
+    for line in config.splitlines())
 
     # Device is vulnerable if running PnP with low-privileged users
     is_vulnerable = pnp_enabled and has_low_priv_users
