@@ -48,5 +48,6 @@ def rule_cve20211377(configuration, commands, device, devices):
         f"Device {device.name} is vulnerable to CVE-2021-1377. "
         "The device is running IOS/IOS-XE software and lacks ARP protection mechanisms, "
         "which could allow an attacker to cause ARP resolution failures through malicious traffic. "
-        "For more information, see https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-arp-mtfhBfjE"
+        "For more information, see "
+        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-arp-mtfhBfjE"
     )
