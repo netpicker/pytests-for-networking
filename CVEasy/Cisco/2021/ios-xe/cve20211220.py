@@ -23,9 +23,8 @@ def rule_cve20211220(configuration, commands, device, devices):
     # Check if device is running IOS XE software
     if 'IOS XE Software' not in version_output:
         return
-        
-    webui_output = commands.check_webui
 
+    webui_output = commands.check_webui
 
     # Check if web UI is enabled
     webui_enabled = 'ip http server' in webui_output or 'ip http secure-server' in webui_output

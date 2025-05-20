@@ -17,7 +17,7 @@ def rule_cve20211352(configuration, commands, device, devices):
     """
     # Extract the version information from the command output
     version_output = commands.show_version
-    
+
     # Check if device is running IOS XE software
     if 'IOS XE Software' not in version_output:
         return
