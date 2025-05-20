@@ -2,6 +2,7 @@ from comfy import high
 import re
 from packaging import version
 
+
 @high(
     name="rule_cve_2023_20273",
     platform=["cisco_xe"],
