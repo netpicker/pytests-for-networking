@@ -17,7 +17,11 @@ def rule_cve20211352(configuration, commands, device, devices):
     """
     # Extract the version information from the command output
     version_output = commands.show_version
-    _ = version_output
+    
+    # Check if device is running IOS XE software
+    if 'IOS XE Software' not in version_output:
+        return
+
     # Check if DECnet is configured
     decnet_config = commands.check_decnet
     decnet_enabled = any(feature in decnet_config for feature in ['decnet', 'decnet-osi'])
