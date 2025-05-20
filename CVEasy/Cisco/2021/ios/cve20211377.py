@@ -1,5 +1,6 @@
 from comfy import high
 
+
 @high(
     name='rule_cve20211377',
     platform=['cisco_ios'],
@@ -14,8 +15,8 @@ def rule_cve20211377(configuration, commands, device, devices):
     The vulnerability is due to insufficient ARP entry management, which could allow an
     unauthenticated, remote attacker to prevent an affected device from resolving ARP entries
     for legitimate hosts on connected subnets, resulting in a denial of service condition.
-    
-    Note: This vulnerability exists because ARP entries are mismanaged. An attacker could 
+
+    Note: This vulnerability exists because ARP entries are mismanaged. An attacker could
     exploit this by continuously sending traffic that results in incomplete ARP entries.
     """
     # Extract the version information from the command output
