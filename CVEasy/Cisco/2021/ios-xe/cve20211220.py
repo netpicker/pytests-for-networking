@@ -19,7 +19,9 @@ def rule_cve20211220(configuration, commands, device, devices):
     """
     # Extract the output of the commands
     version_output = commands.show_version
+    _ = version_output
     webui_output = commands.check_webui
+
 
     # Check if web UI is enabled
     webui_enabled = 'ip http server' in webui_output or 'ip http secure-server' in webui_output
