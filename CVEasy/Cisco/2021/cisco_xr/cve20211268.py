@@ -35,5 +35,5 @@ def rule_cve20211268(configuration, commands, device, devices):
         "The device has IPv6 enabled on management interfaces, which could allow an adjacent attacker "
         "to cause a denial of service through IPv6 flooding with node-local multicast packets. "
         "For more information, see"
-        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-xripv6-spJem78K""
+        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-xripv6-spJem78K"
     )

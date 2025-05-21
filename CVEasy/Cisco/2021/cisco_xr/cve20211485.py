@@ -30,5 +30,5 @@ def rule_cve20211485(configuration, commands, device, devices):
         f"Device {device.name} is vulnerable to CVE-2021-1485. "
         "The device is running a vulnerable version. "
         "For more information, see"
-        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-xr-cmdinj-vsKGherc""
+        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-xr-cmdinj-vsKGherc"
     )

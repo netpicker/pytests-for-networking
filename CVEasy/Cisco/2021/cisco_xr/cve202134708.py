@@ -44,5 +44,5 @@ def rule_cve202134708(configuration, commands, device, devices):
         f"The device is a {'NCS 540 Series running NCS540L image' if is_ncs540 else '8000 Series'} router, "
         "which could allow an authenticated attacker to execute arbitrary code on the underlying operating system. "
         ""For more information, see"
-        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-lnt-QN9mCzwn""
+        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-lnt-QN9mCzwn"
     )

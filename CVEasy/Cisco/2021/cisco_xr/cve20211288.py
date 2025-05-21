@@ -36,5 +36,5 @@ def rule_cve20211288(configuration, commands, device, devices):
         "The device has ingress packet processing features enabled, which could allow "
         "an unauthenticated attacker to cause a denial of service through crafted packets. "
         "For more information, see"
-        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-iosxr-dos-WwDdghs2""
+        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-iosxr-dos-WwDdghs2"
     )

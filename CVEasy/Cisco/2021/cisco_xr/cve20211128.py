@@ -36,5 +36,5 @@ def rule_cve20211128(configuration, commands, device, devices):
         "The device is running a vulnerable version. Configure 'aaa authorization exec default local' "
         "to limit information displayed to unprivileged users. "
         "For more information, see"
-        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ios-infodisc-4mtm9Gyt""
+        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ios-infodisc-4mtm9Gyt"
         )

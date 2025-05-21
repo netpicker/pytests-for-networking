@@ -35,5 +35,5 @@ def rule_cve20211389(configuration, commands, device, devices):
         "The device has IPv6 ACLs configured and applied to interfaces, which could allow "
         "an unauthenticated attacker to bypass ACL restrictions through crafted IPv6 packets. "
         "For more information, see"
-        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ipv6-acl-CHgdYk8j""
+        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ipv6-acl-CHgdYk8j"
     )

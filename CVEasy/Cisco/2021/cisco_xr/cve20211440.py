@@ -36,5 +36,5 @@ def rule_cve20211440(configuration, commands, device, devices):
         "The device has BGP configured with RPKI enabled, which could allow an unauthenticated attacker "
         "to cause a denial of service through crafted RTR packets. "
         "For more information, see"
-        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-xrbgp-rpki-dos-gvmjqxbk""
+        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-xrbgp-rpki-dos-gvmjqxbk"
     )
