@@ -53,9 +53,9 @@ def rule_cve20211243(configuration, commands, device, devices):
     # Only flag if both vulnerable version and MPP config match
     if vulnerable and has_mpp and has_snmp_restriction:
         assert False, (
-        f"Device {device.name} is vulnerable to CVE-2021-1243. "
-        "The device has management plane protection configured with SNMP restrictions, which could allow "
-        "an unauthenticated attacker to bypass ACL restrictions for SNMP access. "
-        "For more information, see"
-        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-snmp-7MKrW7Nq"
+            f"Device {device.name} is vulnerable to CVE-2021-1243. "
+            "The device has management plane protection configured with SNMP restrictions, which could allow "
+            "an unauthenticated attacker to bypass ACL restrictions for SNMP access. "
+            "For more information, see"
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-snmp-7MKrW7Nq"
     )
