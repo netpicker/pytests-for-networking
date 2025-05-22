@@ -44,7 +44,8 @@ def rule_cve20211268(configuration, commands, device, devices):
         assert False, (
             f"Device {device.name} is vulnerable to CVE-2021-1268. "
             f"Running IOS XR version {version} with IPv6 enabled on management interfaces, which may allow "
-            "an adjacent attacker to cause a denial of service through IPv6 flooding using node-local multicast packets. "
+            "an adjacent attacker to cause a denial of service through IPv6 flooding using node-local "
+            "multicast packets. "
             "For more information, see "
             "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-xripv6-spJem78K"
         )

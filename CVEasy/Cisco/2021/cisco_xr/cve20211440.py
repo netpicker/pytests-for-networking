@@ -45,7 +45,8 @@ def rule_cve20211440(configuration, commands, device, devices):
     if vulnerable and has_bgp and has_rpki:
         assert False, (
             f"Device {device.name} is vulnerable to CVE-2021-1440. "
-            f"Running IOS XR version {version} with BGP and RPKI configured, which may allow an unauthenticated attacker "
+            f"Running IOS XR version {version} with BGP and RPKI configured, which may allow an unauthenticated"
+            "attacker "
             "to crash the BGP process by sending crafted RTR packets. "
             "For more information, see "
             "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-xrbgp-rpki-dos-gvmjqxbk"
