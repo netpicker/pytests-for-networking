@@ -58,4 +58,4 @@ def rule_cve20211243(configuration, commands, device, devices):
             "an unauthenticated attacker to bypass ACL restrictions for SNMP access. "
             "For more information, see "
             "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-snmp-7MKrW7Nq"
-    )
+        )
