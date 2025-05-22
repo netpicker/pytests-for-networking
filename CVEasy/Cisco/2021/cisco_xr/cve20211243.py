@@ -56,6 +56,6 @@ def rule_cve20211243(configuration, commands, device, devices):
             f"Device {device.name} is vulnerable to CVE-2021-1243. "
             "The device has management plane protection configured with SNMP restrictions, which could allow "
             "an unauthenticated attacker to bypass ACL restrictions for SNMP access. "
-            "For more information, see"
+            "For more information, see "
             "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-snmp-7MKrW7Nq"
     )
