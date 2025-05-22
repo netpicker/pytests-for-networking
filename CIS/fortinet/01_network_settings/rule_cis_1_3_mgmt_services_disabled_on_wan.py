@@ -11,8 +11,9 @@ Expected: 'set allowaccess' on WAN ports should NOT include any of these service
 
 Reference: CIS Fortinet Benchmark v1.0.0 - Section 1.3
 """
-
+from comfy import high
 import re
+
 
 @high(
     name='rule_cis_1_3_mgmt_services_disabled_on_wan',
