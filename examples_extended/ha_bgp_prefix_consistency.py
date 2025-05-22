@@ -19,11 +19,11 @@ from comfy import medium
 
 
 @medium(
-    name='ha_bgp_prefix_consistency',
+    name='rule_ha_bgp_prefix_consistency',
     platform=['fortinet'],
     device_tags='fw_test',
 )
-def ha_bgp_prefix_consistency(configuration, commands, device):
+def rule_ha_bgp_prefix_consistency(configuration, commands, device):
     summary_output = device.cli("get router info bgp summary")
     neighbor_ips = []
 
