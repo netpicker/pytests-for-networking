@@ -41,7 +41,8 @@ def rule_cve20211584(configuration, commands, device, devices):
     assert not is_vulnerable, (
         f"Device {device.name} is vulnerable to CVE-2021-1584. "
         "The device is a Nexus 9000 in ACI mode with administrator users configured, which could allow "
-        "an authenticated attacker with admin privileges to execute arbitrary commands as root through command injection. "
+        "an authenticated attacker with admin privileges to execute arbitrary commands as root through "
+        "command injection. "
         "For more information, see"
         "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-naci-mdvul-vrKVgNU"
     )

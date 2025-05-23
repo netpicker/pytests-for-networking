@@ -37,7 +37,8 @@ def rule_cve20211361(configuration, commands, device, devices):
     assert not is_vulnerable, (
         f"Device {device.name} is vulnerable to CVE-2021-1361. "
         "The device is a Nexus 3000 or standalone 9000 series switch, which could allow an unauthenticated attacker "
-        "to create, delete, or overwrite arbitrary files with root privileges through crafted TCP packets to port 9075. "
+        "to create, delete, or overwrite arbitrary files with root privileges through crafted TCP packets to "
+        "port 9075. "
         "For more information, see"
         "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-3000-9000-fileaction-QtLzDRy2"
     )

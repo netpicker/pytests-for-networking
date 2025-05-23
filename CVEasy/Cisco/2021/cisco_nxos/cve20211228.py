@@ -21,7 +21,6 @@ def rule_cve20211228(configuration, commands, device, devices):
     version_output = commands.show_version
     lldp_output = commands.check_lldp
 
-    _ = version_output
     # Check if device is a Nexus 9000 in ACI mode
     is_n9k_aci = 'Nexus 9000' in version_output and 'ACI' in version_output
 
@@ -42,5 +41,5 @@ def rule_cve20211228(configuration, commands, device, devices):
         "The device is a Nexus 9000 in ACI mode with LLDP enabled and in fabric mode, "
         "which could allow an adjacent attacker to connect unauthorized servers to the infrastructure VLAN. "
         "For more information, see"
-        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-n9kaci-unauth-access-5PWzDx2w""
+        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-n9kaci-unauth-access-5PWzDx2w"
     )
