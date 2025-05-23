@@ -28,7 +28,6 @@ def rule_cve20211313(configuration, commands, device, devices):
 
     version = match.group(1)
     major, minor, patch = map(int, version.split("."))
-
     current = (major, minor, patch)
 
     def is_vulnerable(version):
