@@ -29,14 +29,19 @@ def rule_cve20211440(configuration, commands, device, devices):
     version = match.group(1)
     major, minor, patch = map(int, version.split("."))
 
-    # Define version >= 4.3.0 and <= 7.3.0 as vulnerable
-    def version_at_least(v):
-        return (major > v[0]) or (major == v[0] and minor > v[1]) or (major == v[0] and minor == v[1] and patch >= v[2])
+    current = (major, minor, patch)
 
-    def version_at_most(v):
-        return (major < v[0]) or (major == v[0] and minor < v[1]) or (major == v[0] and minor == v[1] and patch <= v[2])
+    def is_vulnerable(version):
+        # Assume any version before 7.3.1 is vulnerable
+        if version[0] == 7 and version[1] == 3 and version[2] < 15:
+            return True
+        if version[0] == 7 and version[1] == 4 and version[2] < 1:
+            return True
+        if version[0] < 7:
+            return True
+        return False
 
-    vulnerable = version_at_least((4, 3, 0)) and version_at_most((7, 3, 0))
+    vulnerable = is_vulnerable(current)
 
     # Check if BGP is configured with RPKI
     has_bgp = 'router bgp' in rpki_output

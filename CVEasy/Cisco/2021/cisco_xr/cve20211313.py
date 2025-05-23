@@ -29,11 +29,23 @@ def rule_cve20211313(configuration, commands, device, devices):
     version = match.group(1)
     major, minor, patch = map(int, version.split("."))
 
-    # Affected if version < 6.7.3 or < 7.2.2
-    vulnerable = (
-        (major == 6 and (minor < 7 or (minor == 7 and patch < 3))) or
-        (major == 7 and (minor < 2 or (minor == 2 and patch < 2)))
-    )
+    current = (major, minor, patch)
+
+    def is_vulnerable(version):
+        # Version < 5.2.6
+        if version[0] == 5 and version[1] == 0:
+            return True
+        if version[0] == 5 and version[1] == 2 and version[2] < 6:
+            return True
+        if version[0] == 5 and version[1] == 3 and version[2] < 4:
+            return True
+        if version[0] == 6 and version[1] == 0 and version[2] < 2:
+            return True
+        if version[0] < 5:
+            return True
+        return False
+
+    vulnerable = is_vulnerable(current)
 
     # Check if enforcement features are configured
     has_enf_features = any(feature in enf_output for feature in ['enf', 'enforcement'])

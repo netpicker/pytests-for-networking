@@ -29,8 +29,17 @@ def rule_cve20211389(configuration, commands, device, devices):
     version = match.group(1)
     major, minor, patch = map(int, version.split("."))
 
-    # Affected if version < 6.6.3
-    vulnerable = (major == 6 and (minor < 6 or (minor == 6 and patch < 3)))
+    current = (major, minor, patch)
+
+    def is_vulnerable(v):
+        return (
+            (v[0] == 6 and v[1] == 6 and v[2] < 3) or
+            (v[0] == 6 and v[1] == 7 and v[2] < 1) or
+            (v[0] == 7 and v[1] == 1 and v[2] < 1) or
+            (v[0] == 7 and v[1] == 2 and v[2] < 1)
+        )
+
+    vulnerable = is_vulnerable(current)
 
     # Check if IPv6 ACLs are configured and applied to interfaces
     has_ipv6_acl = 'ipv6 access-list' in acl_output

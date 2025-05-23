@@ -28,12 +28,18 @@ def rule_cve20211288(configuration, commands, device, devices):
     version = match.group(1)
     major, minor, patch = map(int, version.split("."))
 
-    # Affected if version < 6.7.3 or < 7.2.2
-    vulnerable = (
-        (major == 6 and (minor < 7 or (minor == 7 and patch < 3))) or
-        (major == 7 and (minor < 2 or (minor == 2 and patch < 2)))
-    )
+    current = (major, minor, patch)
 
+    def is_vulnerable(version):
+        return (
+            (version[0] == 6 and version[1] == 7 and version[2] < 3) or
+            (version[0] == 7 and version[1] == 1 and version[2] < 3) or
+            (version[0] == 7 and version[1] == 2 and version[2] < 2) or
+            (version[0] == 7 and version[1] == 3 and version[2] < 1)
+        )
+
+    vulnerable = is_vulnerable(current)
+    
     # Check if ingress features (like QoS) are configured
     has_ingress_features = any(feature in ingress_output for feature in ['ingress', 'qos'])
 
