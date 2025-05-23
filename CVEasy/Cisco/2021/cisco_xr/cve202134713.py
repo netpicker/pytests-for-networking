@@ -29,14 +29,19 @@ def rule_cve202134713(configuration, commands, device, devices):
     version = match.group(1)
     major, minor, patch = map(int, version.split("."))
 
-    # Affected if version >= 6.4 and < 6.6.3
-    vulnerable = (
-        major == 6 and (
-            (minor == 4) or
-            (minor == 5) or
-            (minor == 6 and patch < 3)
+    current = (major, minor, patch)
+
+    def is_vulnerable(v):
+        return (
+            (v[0] == 6 and v[1] == 4) or
+            (v[0] == 6 and v[1] == 5) or
+            (v[0] == 6 and v[1] == 6 and v[2] < 3) or
+            (v[0] == 6 and v[1] == 7 and v[2] < 1) or
+            (v[0] == 7 and v[1] == 0 and v[2] < 2) or
+            (v[0] == 7 and v[1] == 1 and v[2] < 1)
         )
-    )
+
+    vulnerable = is_vulnerable(current)
 
     # Check if device is an ASR 9000 Series router
     is_asr9k = any(model in platform_output for model in [

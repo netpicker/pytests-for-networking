@@ -30,14 +30,16 @@ def rule_cve202134737(configuration, commands, device, devices):
     version = match.group(1)
     major, minor, patch = map(int, version.split("."))
 
-    # Vulnerable if version < 7.3.2
-    vulnerable = (
-        (major < 7) or
-        (major == 7 and (
-            minor < 3 or
-            (minor == 3 and patch < 2)
-        ))
-    )
+    current = (major, minor, patch)
+
+    def is_vulnerable(v):
+        return (
+            (v >= (6, 7, 2) and v < (7, 3, 2)) or
+            (v >= (7, 1, 2) and v < (7, 3, 2)) or
+            (v >= (7, 2, 1) and v < (7, 3, 2))
+        )
+
+    vulnerable = is_vulnerable(current)
 
     # Check if DHCPv4 server is enabled
     dhcp_server_enabled = 'ipv4 dhcp server' in dhcp_output

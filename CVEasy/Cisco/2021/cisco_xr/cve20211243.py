@@ -38,11 +38,21 @@ def rule_cve20211243(configuration, commands, device, devices):
     version = match.group(1)
     major, minor, patch = map(int, version.split("."))
 
-    # Define affected versions (prior to 6.6.3 or prior to 7.0.2)
-    vulnerable = (
-        (major == 6 and (minor < 6 or (minor == 6 and patch < 3))) or
-        (major == 7 and (minor == 0 and patch < 2))
-    )
+    def version_tuple_is_between(version_tuple, lower, upper):
+        return lower < version_tuple < upper
+
+    current = (major, minor, patch)
+
+    vulnerable_ranges = [
+        ((6, 1, 1), (6, 6, 4)),
+        ((6, 6, 4), (6, 7, 2)),
+        ((6, 7, 2), (7, 0, 2)),
+        ((7, 0, 2), (7, 0, 12)),
+        ((7, 0, 12), (7, 1, 1)),
+        ((7, 1, 1), (7, 2, 1)),
+    ]
+
+    vulnerable = any(version_tuple_is_between(current, lower, upper) for (lower, upper) in vulnerable_ranges)
 
     if not vulnerable:
         return  # Not affected
