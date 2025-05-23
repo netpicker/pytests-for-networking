@@ -39,7 +39,7 @@ def rule_cve20211288(configuration, commands, device, devices):
         )
 
     vulnerable = is_vulnerable(current)
-    
+
     # Check if ingress features (like QoS) are configured
     has_ingress_features = any(feature in ingress_output for feature in ['ingress', 'qos'])
 
