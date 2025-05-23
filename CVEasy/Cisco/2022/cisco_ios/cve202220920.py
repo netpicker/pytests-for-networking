@@ -12,10 +12,10 @@ from comfy import high
 def rule_cve202220920(configuration, commands, device, devices):
     """
     This rule checks for the CVE-2022-20920 vulnerability in Cisco IOS Software.
-    The vulnerability is due to improper handling of resources during an exceptional 
+    The vulnerability is due to improper handling of resources during an exceptional
     situation in the SSH implementation.
     An authenticated, remote attacker could exploit this vulnerability by continuously connecting to an affected device
-    and sending specific SSH requests, causing the device to reload and resulting in a 
+    and sending specific SSH requests, causing the device to reload and resulting in a
     denial of service (DoS) condition.
     """
     # Extract the output of the command to check SSH configuration

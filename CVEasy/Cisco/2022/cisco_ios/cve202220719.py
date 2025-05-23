@@ -15,7 +15,7 @@ def rule_cve202220719(configuration, commands, device, devices):
     The vulnerability is due to insufficient protection in the Cisco IOS application
     hosting environment.  Multiple vulnerabilities could allow an attacker to inject
     arbitrary commands into the underlying host operating system, execute arbitrary
-    code, install applications without authentication, or conduct cross-site 
+    code, install applications without authentication, or conduct cross-site
     scripting (XSS) attacks.
     """
     # Extract the output of the command to check IOS configuration

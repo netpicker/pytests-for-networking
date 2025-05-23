@@ -12,7 +12,7 @@ from comfy import high
 def rule_cve202220919(configuration, commands, device, devices):
     """
     This rule checks for the CVE-2022-20919 vulnerability in Cisco IOS Software.
-    The vulnerability is due to insufficient input validation during processing of 
+    The vulnerability is due to insufficient input validation during processing of
     Common Industrial Protocol (CIP) packets.
     An unauthenticated, remote attacker could exploit this vulnerability by sending
     malformed CIP packets to an affected device,
