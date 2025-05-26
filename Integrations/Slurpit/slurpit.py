@@ -1,5 +1,6 @@
 from comy import medium
 
+
 @medium(
     name='rule_slurpit',
 )
