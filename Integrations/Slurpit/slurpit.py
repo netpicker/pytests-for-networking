@@ -1,3 +1,5 @@
+from comy import medium
+
 @medium(
     name='rule_slurpit',
 )
@@ -11,5 +13,5 @@ async def rule_slurpit(slurpit):
 
     for d in devices:
         print(d.hostname)
-    
+
     assert any(d.hostname == 'sandbox-iosxr-1.cisco.com' for d in devices)
