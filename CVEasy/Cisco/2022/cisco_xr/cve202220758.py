@@ -31,7 +31,8 @@ def rule_cve202220758(configuration, commands, device, devices):
     assert not is_vulnerable, (
         f"Device {device.name} is vulnerable to CVE-2022-20758. "
         "The device has BGP configured with L2VPN EVPN address-family, "
-        "which could allow an unauthenticated attacker to cause a denial of service through crafted BGP update messages. "
+        "which could allow an unauthenticated attacker to cause a denial of service through crafted "
+        "BGP update messages. "
         "For more information, see"
         "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-bgpevpn-zWTRtPBb"
     )
