@@ -31,7 +31,8 @@ def rule_cve202220851(configuration, commands, device, devices):
     assert not webui_enabled, (
         f"Device {device.name} is vulnerable to CVE-2022-20851. "
         "The device has web UI or RESTCONF enabled, "
-        "which could allow an authenticated attacker with Administrator privileges to execute arbitrary commands with root privileges. "
+        "which could allow an authenticated attacker with Administrator privileges to execute arbitrary "
+        "commands with root privileges. "
         "For more information, see"
         "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-webui-cmdinj-Gje47EMn"
     )

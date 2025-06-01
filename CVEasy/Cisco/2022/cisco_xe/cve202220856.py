@@ -42,7 +42,8 @@ def rule_cve202220856(configuration, commands, device, devices):
     assert not is_vulnerable, (
         f"Device {device.name} is vulnerable to CVE-2022-20856. "
         "The device is a Catalyst 9000 Series wireless controller with mobility configured, "
-        "which could allow an unauthenticated attacker to cause a denial of service through crafted CAPWAP Mobility packets. "
+        "which could allow an unauthenticated attacker to cause a denial of service through crafted "
+        "CAPWAP Mobility packets. "
         "For more information, see"
         "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-c9800-mob-dos-342YAc6J"
     )

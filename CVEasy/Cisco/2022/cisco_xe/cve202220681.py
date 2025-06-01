@@ -20,6 +20,8 @@ def rule_cve202220681(configuration, commands, device, devices):
     # Extract the version information from the command output
     version_output = commands.show_version
 
+    _ = version_output  # intentionally unused
+
     # Extract the platform information
     platform_output = commands.check_platform
 

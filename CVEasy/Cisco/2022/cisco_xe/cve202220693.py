@@ -31,7 +31,8 @@ def rule_cve202220693(configuration, commands, device, devices):
     assert not webui_enabled, (
         f"Device {device.name} is vulnerable to CVE-2022-20693. "
         "The device has web UI or RESTCONF enabled, "
-        "which could allow an authenticated attacker to inject commands with root privileges through crafted API input. "
+        "which could allow an authenticated attacker to inject commands with root privileges through "
+        "crafted API input. "
         "For more information, see"
         "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-webuiapi-inj-Nyrq92Od"
     )

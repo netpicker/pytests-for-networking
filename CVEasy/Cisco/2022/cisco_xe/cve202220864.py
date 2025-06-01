@@ -38,7 +38,8 @@ def rule_cve202220864(configuration, commands, device, devices):
     assert not password_recovery_disabled, (
         f"Device {device.name} is vulnerable to CVE-2022-20864. "
         "The device is a Catalyst switch with password recovery disabled, "
-        "which could allow an unauthenticated attacker with physical access to recover configuration or reset passwords. "
+        "which could allow an unauthenticated attacker with physical access to recover configuration "
+        "or reset passwords. "
         "For more information, see"
         "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-iosxe-info-disc-nrORXjO"
     )

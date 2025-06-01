@@ -31,7 +31,8 @@ def rule_cve202220837(configuration, commands, device, devices):
     assert not is_vulnerable, (
         f"Device {device.name} is vulnerable to CVE-2022-20837. "
         "The device has NAT configured with DNS ALG enabled, "
-        "which could allow an unauthenticated attacker to cause a denial of service through crafted IPv4 TCP DNS packets. "
+        "which could allow an unauthenticated attacker to cause a denial of service through crafted "
+        "IPv4 TCP DNS packets. "
         "For more information, see"
         "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-alg-dos-KU9Z8kFX"
     )
