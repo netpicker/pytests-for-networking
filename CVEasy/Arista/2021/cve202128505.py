@@ -13,7 +13,7 @@ from comfy import high
 def rule_cve202128505(configuration, commands, device, devices):
     """
     This rule checks for CVE-2021-28505 vulnerability in Arista EOS devices.
-    The vulnerability occurs when VXLAN match rules in IPv4 access-lists are applied to 
+    The vulnerability occurs when VXLAN match rules in IPv4 access-lists are applied to
     ingress L2/L3 ports or SVIs, causing subsequent ACL rules to ignore IP protocol fields.
     """
     # Extract the version information from the command output
@@ -61,5 +61,6 @@ def rule_cve202128505(configuration, commands, device, devices):
         "  * Replace 'protocol vxlan' matches in ACLs with:\n"
         "    - protocol udp\n"
         "    - destination port 4789 (or configured VXLAN port)\n"
-        "For more information, see https://www.arista.com/en/support/advisories-notices/security-advisory/15267-security-advisory-0073"
+        "For more information, see"
+        "https://www.arista.com/en/support/advisories-notices/security-advisory/15267-security-advisory-0073"
     )

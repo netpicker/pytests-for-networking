@@ -13,8 +13,8 @@ from comfy import high
 def rule_cve202128504(configuration, commands, device, devices):
     """
     This rule checks for CVE-2021-28504 vulnerability in Arista EOS devices.
-    The vulnerability occurs on Strata family products when TCAM profile is enabled and 
-    port IPv4 access-lists contain rules matching VXLAN protocol, causing subsequent rules 
+    The vulnerability occurs on Strata family products when TCAM profile is enabled and
+    port IPv4 access-lists contain rules matching VXLAN protocol, causing subsequent rules
     to not match IP protocol fields as expected.
     """
     # Extract the version information from the command output
@@ -59,5 +59,6 @@ def rule_cve202128504(configuration, commands, device, devices):
         "  * Replace 'protocol vxlan' matches in ACLs with:\n"
         "    - protocol udp\n"
         "    - destination port 4789 (or configured VXLAN port)\n"
-        "For more information, see https://www.arista.com/en/support/advisories-notices/security-advisory/15267-security-advisory-0073"
+        "For more information, see"
+        "https://www.arista.com/en/support/advisories-notices/security-advisory/15267-security-advisory-0073"
     )

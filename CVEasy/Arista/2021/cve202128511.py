@@ -66,5 +66,6 @@ def rule_cve202128511(configuration, commands, device, devices):
         "2. Until upgrade is complete, implement this workaround:\n"
         "  * Configure a NAT 'drop' ACL rule for each security ACL 'drop' rule\n"
         "  * Apply these rules to interfaces with NAT configured\n"
-        "For more information, see https://www.arista.com/en/support/advisories-notices/security-advisory/15862-security-advisory-0078"
+        "For more information, see"
+        "https://www.arista.com/en/support/advisories-notices/security-advisory/15862-security-advisory-0078"
     )

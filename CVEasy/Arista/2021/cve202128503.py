@@ -13,7 +13,7 @@ from comfy import high
 def rule_cve202128503(configuration, commands, device, devices):
     """
     This rule checks for CVE-2021-28503 vulnerability in Arista EOS devices.
-    The vulnerability allows remote attackers to bypass authentication when certificate-based 
+    The vulnerability allows remote attackers to bypass authentication when certificate-based
     authentication is used with eAPI, due to improper credential re-evaluation.
     """
     # Extract the version information from the command output
@@ -67,5 +67,6 @@ def rule_cve202128503(configuration, commands, device, devices):
         "    switch(config)#management security\n"
         "    switch(config-mgmt-security)#ssl profile profileEAPI\n"
         "    switch(config-mgmt-sec-ssl-profile-profileEAPI)#no trust certificate user.cert\n"
-        "For more information, see https://www.arista.com/en/support/advisories-notices/security-advisory/13605-security-advisory-0072"
+        "For more information, see"
+        "https://www.arista.com/en/support/advisories-notices/security-advisory/13605-security-advisory-0072"
     )

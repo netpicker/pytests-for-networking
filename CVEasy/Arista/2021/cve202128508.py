@@ -67,5 +67,6 @@ def rule_cve202128508(configuration, commands, device, devices):
         "  * 4.24.10 or later for 4.24.x train\n"
         "2. Until upgrade is complete, implement this workaround:\n"
         "  * Disable TerminAttr agent\n"
-        "For more information, see https://www.arista.com/en/support/advisories-notices/security-advisory/15484-security-advisory-0077"
+        "For more information, see"
+        "https://www.arista.com/en/support/advisories-notices/security-advisory/15484-security-advisory-0077"
     )

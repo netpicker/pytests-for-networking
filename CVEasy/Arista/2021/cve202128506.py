@@ -65,5 +65,6 @@ def rule_cve202128506(configuration, commands, device, devices):
         "  * Apply the appropriate hotfix with proxy service:\n"
         "    - For 32-bit systems: SecurityAdvisory0071Hotfix.i386.swix\n"
         "    - For 64-bit systems: SecurityAdvisory0071Hotfix.x86_64.swix\n"
-        "For more information, see https://www.arista.com/en/support/advisories-notices/security-advisory/13449-security-advisory-0071"
+        "For more information, see"
+        "https://www.arista.com/en/support/advisories-notices/security-advisory/13449-security-advisory-0071"
     )

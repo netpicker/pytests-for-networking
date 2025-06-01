@@ -67,5 +67,6 @@ def rule_cve202128510(configuration, commands, device, devices):
         "3. A hotfix is available:\n"
         "  * SecurityAdvisory76_CVE-2021-28510_Hotfix.swix\n"
         "  * Note: Installing/uninstalling will cause PTP agent to restart\n"
-        "For more information, see https://www.arista.com/en/support/advisories-notices/security-advisory/15439-security-advisory-0076"
+        "For more information, see"
+        "https://www.arista.com/en/support/advisories-notices/security-advisory/15439-security-advisory-0076"
     )

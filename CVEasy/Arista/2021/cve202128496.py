@@ -13,7 +13,7 @@ from comfy import high
 def rule_cve202128496(configuration, commands, device, devices):
     """
     This rule checks for CVE-2021-28496 vulnerability in Arista EOS devices.
-    The vulnerability allows BFD shared secret passwords to be leaked when displaying output 
+    The vulnerability allows BFD shared secret passwords to be leaked when displaying output
     over eAPI or other JSON outputs to authenticated users on the device.
     """
     # Extract the version information from the command output
@@ -66,5 +66,6 @@ def rule_cve202128496(configuration, commands, device, devices):
         "  * For 4.22.0 - 4.25.0: SecurityAdvisory0069Hotfix-4.22-4.25.0.swix\n"
         "  * For 4.25.1 - 4.26.1: SecurityAdvisory0069Hotfix-4.25.1-4.26.1.swix\n"
         "3. As a workaround, restrict access to CLI show commands using role-based authorization\n"
-        "For more information, see https://www.arista.com/en/support/advisories-notices/security-advisory/13243-security-advisory-0069"
+        "For more information, see"
+        "https://www.arista.com/en/support/advisories-notices/security-advisory/13243-security-advisory-0069"
     )
