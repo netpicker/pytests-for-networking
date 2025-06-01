@@ -14,7 +14,8 @@ def rule_cve202220824(configuration, commands, device, devices):
     This rule checks for the CVE-2022-20824 vulnerability in Cisco NX-OS Software.
     The vulnerability is due to improper input validation of specific values within Cisco Discovery Protocol messages.
     An unauthenticated, adjacent attacker could exploit this vulnerability by sending malicious CDP packets to an
-    affected device, allowing them to execute arbitrary code with root privileges or cause a denial of service condition.
+    affected device, allowing them to execute arbitrary code with root privileges or cause a denial of "
+    "service condition.
     Note: CDP is enabled by default, and the attacker must be in the same broadcast domain (Layer 2 adjacent).
     """
     # Extract the output of the command to check CDP configuration
@@ -31,7 +32,7 @@ def rule_cve202220824(configuration, commands, device, devices):
     assert not cdp_enabled, (
         f"Device {device.name} is vulnerable to CVE-2022-20824. "
         "The device has Cisco Discovery Protocol enabled, "
-        "which could allow an adjacent attacker to execute arbitrary code with root privileges or cause a denial of service. "
-        "For more information, see"
+        "which could allow an adjacent attacker to execute arbitrary code with root privileges or cause a "
+        "denial of service. For more information, see"
         "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nxos-cdp-dos-ce-wWvPucC9"
     )
