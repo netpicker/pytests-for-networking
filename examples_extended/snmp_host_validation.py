@@ -17,10 +17,10 @@ from comfy import high
 
 
 @high(
-    name='snmp_host_validation',
+    name='rule_snmp_host_validation',
     platform=['cisco_ios'],
 )
-def snmp_host_validation(configuration, commands, device):
+def rule_snmp_host_validation(configuration, commands, device):
     expected_hosts = {'192.168.10.1', '192.168.10.2'}
 
     # Run the CLI command to get SNMP hosts
