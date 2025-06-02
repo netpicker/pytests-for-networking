@@ -23,10 +23,10 @@ import re
 
 
 @high(
-    name='snmp_config_hosts_only_expected',
+    name='rule_snmp_config_hosts_only_expected',
     platform=['cisco_ios', 'arista_eos'],
 )
-def snmp_config_hosts_only_expected(configuration):
+def rule_snmp_config_hosts_only_expected(configuration):
     expected_hosts = {'192.168.10.1', '192.168.10.2'}
 
     # Ensure we are working with raw config text
