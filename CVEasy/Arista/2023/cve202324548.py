@@ -51,7 +51,6 @@ def rule_cve202324548(configuration, commands, device, devices):
 
     # Check if VXLAN VNIs are routable
     vxlan_vni = commands.show_vxlan_vni
-    vlan_info = commands.show_vlan
     ip_interfaces = commands.show_ip_interface
 
     # Look for routable VNIs (either VLAN interfaces or VRF-mapped)

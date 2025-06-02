@@ -53,7 +53,8 @@ def rule_cve202324545(configuration, commands, device, devices):
     # Assert that the device is not vulnerable
     assert not is_vulnerable, (
         f"Device {device.name} is vulnerable to CVE-2023-24545. "
-        "The device is running a vulnerable version on CloudEOS platform with Software Forwarding Engine (SFE) enabled, "
+        "The device is running a vulnerable version on CloudEOS platform with "
+        "Software Forwarding Engine (SFE) enabled, "
         "which could allow malformed packets to cause buffer leaks and stop traffic forwarding. "
         "Recommended fixes:\n"
         "- Upgrade to one of the following fixed versions:\n"

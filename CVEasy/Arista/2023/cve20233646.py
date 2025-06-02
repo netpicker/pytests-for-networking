@@ -7,7 +7,6 @@ from comfy import high
     commands=dict(
         show_version='show version',
         show_monitor='show monitor session',
-        show_config='show running-config | section monitor'
     ),
 )
 def rule_cve20233646(configuration, commands, device, devices):
@@ -36,7 +35,6 @@ def rule_cve20233646(configuration, commands, device, devices):
 
     # Check for multiple destination ports in monitor sessions
     monitor_output = commands.show_monitor
-    config_output = commands.show_config
 
     # Check if any monitor session has multiple destinations configured
     multiple_destinations = False

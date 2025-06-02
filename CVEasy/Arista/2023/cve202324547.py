@@ -38,7 +38,7 @@ def rule_cve202324547(configuration, commands, device, devices):
 
     # Check BGP configuration for plaintext passwords
     bgp_config = commands.show_bgp_config
-    
+
     # Look for BGP neighbor password configurations without type 7 encryption
     has_plaintext_password = False
     for line in bgp_config.splitlines():
