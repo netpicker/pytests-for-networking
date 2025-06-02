@@ -12,7 +12,7 @@ from comfy import high
 def rule_cve20244578(configuration, commands, device, devices):
     """
     This rule checks for CVE-2024-4578 vulnerability in Arista Wireless Access Points.
-    The vulnerability allows privilege escalation via spawning a bash shell when authenticated 
+    The vulnerability allows privilege escalation via spawning a bash shell when authenticated
     as the "config" user via SSH. The spawned shell can obtain root privileges.
     """
     # Extract the version information from the command output
