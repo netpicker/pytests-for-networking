@@ -29,6 +29,6 @@ def rule_cve202320081(configuration, commands, device, devices):
         f"Device {device.name} is vulnerable to CVE-2023-20081. "
         "The device has DHCPv6 client configured, "
         "which could allow an attacker to cause a denial of service through crafted DHCPv6 messages. "
-        "For more information,see"
-        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-asaftdios-dhcpv6-cli-Zf3zTv"
+        "For more information,see https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-"
+        "sa-asaftdios-dhcpv6-cli-Zf3zTv"
     )

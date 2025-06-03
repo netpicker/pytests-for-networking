@@ -13,8 +13,8 @@ def rule_cve202320186(configuration, commands, device, devices):
     """
     This rule checks for the CVE-2023-20186 vulnerability in Cisco IOS Software.
     The vulnerability is due to incorrect processing of SCP commands in AAA command authorization checks.
-    An attacker with valid credentials and level 15 privileges could exploit this vulnerability by using 
-    SCP to connect to an affected device from an external machine, potentially allowing them to obtain 
+    An attacker with valid credentials and level 15 privileges could exploit this vulnerability by using
+    SCP to connect to an affected device from an external machine, potentially allowing them to obtain
     or change the configuration of the affected device.
     """
     # Extract the version information from the command output

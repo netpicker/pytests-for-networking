@@ -12,9 +12,9 @@ from comfy import high
 def rule_cve202320109(configuration, commands, device, devices):
     """
     This rule checks for the CVE-2023-20109 vulnerability in Cisco IOS Software.
-    The vulnerability is due to insufficient validation of attributes in the Group Domain of 
-    Interpretation (GDOI) and G-IKEv2 protocols of the GET VPN feature. An attacker could 
-    exploit this vulnerability by either compromising an installed key server or modifying 
+    The vulnerability is due to insufficient validation of attributes in the Group Domain of
+    Interpretation (GDOI) and G-IKEv2 protocols of the GET VPN feature. An attacker could
+    exploit this vulnerability by either compromising an installed key server or modifying
     the configuration of a group member to point to a key server that is controlled by the attacker.
     """
     # Extract the output of the command to check GET VPN configuration
