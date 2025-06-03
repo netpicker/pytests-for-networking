@@ -28,5 +28,6 @@ def rule_cve202320100(configuration, commands, device, devices):
         "The device has wireless LAN controller and CAPWAP configured, "
         "which could allow an attacker to cause a denial of service through the AP joining process. "
         "For more information, see"
-        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-c9800-apjoin-dos-nXRHkt5"
+        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-"
+        "sa-c9800-apjoin-dos-nXRHkt5"
     )

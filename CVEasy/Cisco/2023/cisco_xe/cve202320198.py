@@ -72,5 +72,6 @@ def rule_cve202320198(configuration, commands, device, devices):
         "The device is running a vulnerable version AND has web UI enabled, "
         "which could allow an attacker to gain privileged access. This vulnerability is being actively exploited. "
         "For more information, see"
-        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-iosxe-webui-privesc-j22SaA4z"
+        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-"
+        "sa-iosxe-webui-privesc-j22SaA4z"
     )

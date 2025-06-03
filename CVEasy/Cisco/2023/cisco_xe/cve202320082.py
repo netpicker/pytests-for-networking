@@ -11,10 +11,12 @@ from comfy import high
 )
 def rule_cve202320082(configuration, commands, device, devices):
     """
-    This rule checks for the CVE-2023-20082 vulnerability in Cisco IOS XE Software for Catalyst 9300 Series Switches.
-    The vulnerability is due to errors that occur when retrieving the public release key used for image signature verification.
-    An attacker could exploit this vulnerability by modifying specific variables in the SPI flash memory,
-    allowing them to execute persistent code at boot time and break the chain of trust.
+    This rule checks for the CVE-2023-20082 vulnerability in Cisco IOS XE Software 
+    for Catalyst 9300 Series Switches. The vulnerability is due to errors that occur 
+    when retrieving the public release key used for image signature verification.
+    An attacker could exploit this vulnerability by modifying specific variables in the 
+    SPI flash memory, allowing them to execute persistent code at boot time and break 
+    the chain of trust.
     """
     # Extract the output of the command to check platform type
     platform_output = commands.check_platform

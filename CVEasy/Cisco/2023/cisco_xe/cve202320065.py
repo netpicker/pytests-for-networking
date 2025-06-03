@@ -56,5 +56,6 @@ def rule_cve202320065(configuration, commands, device, devices):
         "The device is running a vulnerable version AND has IOx application hosting configured, "
         "which could allow an attacker to elevate privileges to root. "
         "For more information, see"
-        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-iox-priv-escalate-Xg8zkyPk"
+        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-"
+        "sa-iox-priv-escalate-Xg8zkyPk"
     )

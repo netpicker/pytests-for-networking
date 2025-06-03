@@ -62,5 +62,6 @@ def rule_cve202320227(configuration, commands, device, devices):
         "The device is running a vulnerable version AND has L2TP configured, "
         "which could allow an attacker to cause a denial of service. "
         "For more information, see"
-        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ios-xe-l2tp-dos-eB5tuFmV"
+        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-"
+        "sa-ios-xe-l2tp-dos-eB5tuFmV"
     )

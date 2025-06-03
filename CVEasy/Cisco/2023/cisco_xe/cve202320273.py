@@ -74,5 +74,6 @@ def rule_cve202320273(configuration, commands, device, devices):
         "which could allow an authenticated attacker to execute arbitrary commands with root privileges. "
         "This vulnerability is being actively exploited. "
         "For more information, see"
-        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-iosxe-webui-privesc-j22SaA4z"
+        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-"
+        "sa-iosxe-webui-privesc-j22SaA4z"
     )
