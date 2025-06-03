@@ -12,8 +12,8 @@ from comfy import high
 def rule_cve202320185(configuration, commands, device, devices):
     """
     This rule checks for the CVE-2023-20185 vulnerability in Cisco NX-OS System Software in ACI Mode.
-    The vulnerability is due to an issue with the implementation of the ciphers used by the 
-    CloudSec encryption feature, which could allow an unauthenticated, remote attacker to read or modify 
+    The vulnerability is due to an issue with the implementation of the ciphers used by the
+    CloudSec encryption feature, which could allow an unauthenticated, remote attacker to read or modify
     intersite encrypted traffic.
     """
     # Extract the version information from the command output

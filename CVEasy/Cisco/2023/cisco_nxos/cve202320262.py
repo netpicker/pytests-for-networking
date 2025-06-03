@@ -13,7 +13,7 @@ def rule_cve202320262(configuration, commands, device, devices):
     """
     This rule checks for the CVE-2023-20262 vulnerability in Cisco Catalyst SD-WAN Manager.
     The vulnerability is due to insufficient resource management when an affected system is in an error condition,
-    which could allow an unauthenticated, remote attacker to cause a process crash, resulting in a DoS condition 
+    which could allow an unauthenticated, remote attacker to cause a process crash, resulting in a DoS condition
     for SSH access.
     """
     # Extract the version information from the command output
@@ -38,13 +38,15 @@ def rule_cve202320262(configuration, commands, device, devices):
         # 20.1 versions
         '20.1.1', '20.1.1.1', '20.1.11', '20.1.12', '20.1.2', '20.1.3', '20.1.3.1',
         # 20.3 versions
-        '20.3.1', '20.3.2', '20.3.2.1', '20.3.3', '20.3.3.1', '20.3.4', '20.3.4.1', '20.3.4.2', '20.3.4.3', '20.3.5', '20.3.5.1', '20.3.6',
+        '20.3.1', '20.3.2', '20.3.2.1', '20.3.3', '20.3.3.1', '20.3.4', '20.3.4.1', '20.3.4.2', '20.3.4.3',
+        '20.3.5', '20.3.5.1', '20.3.6',
         # 20.4 versions
         '20.4.1', '20.4.1.1', '20.4.1.2', '20.4.2', '20.4.2.1', '20.4.2.2', '20.4.2.3',
         # 20.5 versions
         '20.5.1', '20.5.1.1', '20.5.1.2',
         # 20.6 versions
-        '20.6.1', '20.6.1.1', '20.6.1.2', '20.6.2', '20.6.2.1', '20.6.2.2', '20.6.3', '20.6.3.1', '20.6.3.2', '20.6.3.3', '20.6.3.4', '20.6.4', '20.6.4.1', '20.6.4.2', '20.6.5', '20.6.5.2', '20.6.5.4', '20.6.5.5',
+        '20.6.1', '20.6.1.1', '20.6.1.2', '20.6.2', '20.6.2.1', '20.6.2.2', '20.6.3', '20.6.3.1', '20.6.3.2',
+        '20.6.3.3', '20.6.3.4', '20.6.4', '20.6.4.1', '20.6.4.2', '20.6.5', '20.6.5.2', '20.6.5.4', '20.6.5.5',
         # 20.7 versions
         '20.7.1', '20.7.1.1',
         # 20.8 versions
