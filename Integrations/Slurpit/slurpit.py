@@ -1,4 +1,4 @@
-from comy import medium
+from comfy import medium
 
 
 @medium(
