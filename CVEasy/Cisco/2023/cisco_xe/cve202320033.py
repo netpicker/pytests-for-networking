@@ -13,8 +13,8 @@ def rule_cve202320033(configuration, commands, device, devices):
     """
     This rule checks for the CVE-2023-20033 vulnerability in Cisco IOS XE Software for
     Catalyst 3650/3850 Series Switches. The vulnerability is due to improper resource
-    management when processing traffic received on the management interface.  
-    An attacker could exploit this vulnerability by sending a high rate of traffic to 
+    management when processing traffic received on the management interface.
+    An attacker could exploit this vulnerability by sending a high rate of traffic to
     the management interface.
     """
     # Extract the version information from the command output
