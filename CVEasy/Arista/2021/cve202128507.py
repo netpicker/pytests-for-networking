@@ -18,7 +18,7 @@ def rule_cve202128507(configuration, commands, device, devices):
     which could result in denied requests being forwarded to the agent.
     """
     # Extract the version information from the command output
-    version_output = commands.show_version
+    version_output = str(commands.show_version)
 
     # List of vulnerable software versions
     vulnerable_versions = [
@@ -46,12 +46,12 @@ def rule_cve202128507(configuration, commands, device, devices):
         return
 
     # Check if OpenConfig or RESTCONF is enabled
-    openconfig_config = commands.show_openconfig
-    restconf_config = commands.show_restconf
+    openconfig_config = str(commands.show_openconfig)
+    restconf_config = str(commands.show_restconf)
     apis_enabled = bool(openconfig_config or 'enabled' in restconf_config.lower())
 
     # Check if service ACLs are configured
-    acl_config = commands.show_acl
+    acl_config = str(commands.show_acl)
     has_service_acl = 'service-acl' in acl_config
 
     # Device is vulnerable if APIs are enabled and using service ACLs

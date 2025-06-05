@@ -17,7 +17,7 @@ def rule_cve202128508(configuration, commands, device, devices):
     which could allow authorized users to decrypt or modify IPsec traffic.
     """
     # Extract the version information from the command output
-    version_output = commands.show_version
+    version_output = str(commands.show_version)
 
     # List of vulnerable software versions
     vulnerable_versions = [
@@ -44,11 +44,11 @@ def rule_cve202128508(configuration, commands, device, devices):
         return
 
     # Check if TerminAttr is enabled
-    terminattr_config = commands.show_terminattr
+    terminattr_config = str(commands.show_terminattr)
     terminattr_enabled = bool(terminattr_config)
 
     # Check if IPsec is configured
-    ipsec_config = commands.show_ipsec
+    ipsec_config = str(commands.show_ipsec)
     ipsec_configured = bool(ipsec_config)
 
     # Device is vulnerable if both TerminAttr and IPsec are enabled

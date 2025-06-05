@@ -16,7 +16,7 @@ def rule_cve202128510(configuration, commands, device, devices):
     malformed PTP packets with invalid TLV values, causing the PTP agent to restart repeatedly.
     """
     # Extract the version information from the command output
-    version_output = commands.show_version
+    version_output = str(commands.show_version)
 
     # List of vulnerable software versions
     vulnerable_versions = [
@@ -43,7 +43,7 @@ def rule_cve202128510(configuration, commands, device, devices):
         return
 
     # Check if PTP is configured
-    ptp_config = commands.show_ptp
+    ptp_config = str(commands.show_ptp)
     ptp_enabled = 'ptp' in ptp_config.lower()
 
     # Device is vulnerable if running affected version and PTP is enabled

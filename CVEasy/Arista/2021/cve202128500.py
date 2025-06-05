@@ -17,7 +17,7 @@ def rule_cve202128500(configuration, commands, device, devices):
     configuration due to incorrect use of EOS's AAA APIs by OpenConfig and TerminAttr agents.
     """
     # Extract the version information from the command output
-    version_output = commands.show_version
+    version_output = str(commands.show_version)
 
     # List of vulnerable software versions
     vulnerable_versions = [
@@ -45,11 +45,11 @@ def rule_cve202128500(configuration, commands, device, devices):
         return
 
     # Check if any users are configured with nopassword
-    users_config = commands.show_users
+    users_config = str(commands.show_users)
     has_nopassword_users = 'nopassword' in users_config
 
     # Check if OpenConfig or TerminAttr agents are enabled
-    agents_config = commands.show_agents
+    agents_config = str(commands.show_agents)
     agents_enabled = 'openconfig' in agents_config or 'terminattr' in agents_config
 
     # Device is vulnerable if it has nopassword users and agents enabled

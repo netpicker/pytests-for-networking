@@ -17,7 +17,7 @@ def rule_cve202128503(configuration, commands, device, devices):
     authentication is used with eAPI, due to improper credential re-evaluation.
     """
     # Extract the version information from the command output
-    version_output = commands.show_version
+    version_output = str(commands.show_version)
 
     # List of vulnerable software versions
     vulnerable_versions = [
@@ -41,11 +41,11 @@ def rule_cve202128503(configuration, commands, device, devices):
         return
 
     # Check if eAPI is enabled
-    eapi_config = commands.show_eapi
+    eapi_config = str(commands.show_eapi)
     eapi_enabled = 'enabled' in eapi_config.lower()
 
     # Check if certificate-based authentication is configured
-    cert_config = commands.show_cert_auth
+    cert_config = str(commands.show_cert_auth)
     cert_auth_enabled = 'certificate user' in cert_config
 
     # Device is vulnerable if both eAPI and certificate auth are enabled

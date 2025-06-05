@@ -17,7 +17,7 @@ def rule_cve202128509(configuration, commands, device, devices):
     which could allow authorized users to decrypt or modify MACsec traffic.
     """
     # Extract the version information from the command output
-    version_output = commands.show_version
+    version_output = str(commands.show_version)
 
     # List of vulnerable software versions
     vulnerable_versions = [
@@ -44,11 +44,11 @@ def rule_cve202128509(configuration, commands, device, devices):
         return
 
     # Check if TerminAttr is enabled
-    terminattr_config = commands.show_terminattr
+    terminattr_config = str(commands.show_terminattr)
     terminattr_enabled = 'terminattr' in terminattr_config.lower()
 
     # Check if MACsec is configured
-    macsec_config = commands.show_macsec
+    macsec_config = str(commands.show_macsec)
     macsec_configured = 'macsec' in macsec_config.lower()
 
     # Device is vulnerable if both TerminAttr and MACsec are enabled

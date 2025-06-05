@@ -17,7 +17,7 @@ def rule_cve202128511(configuration, commands, device, devices):
     matches a packet flow that should be denied by a security ACL.
     """
     # Extract the version information from the command output
-    version_output = commands.show_version
+    version_output = str(commands.show_version)
 
     # List of vulnerable software versions
     vulnerable_versions = [
@@ -41,11 +41,11 @@ def rule_cve202128511(configuration, commands, device, devices):
         return
 
     # Check if NAT is configured
-    nat_config = commands.show_nat
+    nat_config = str(commands.show_nat)
     nat_enabled = 'ip nat' in nat_config.lower()
 
     # Check if security ACLs are configured
-    acl_config = commands.show_acl
+    acl_config = str(commands.show_acl)
     security_acl_enabled = 'ip access-list' in acl_config.lower()
 
     # Device is vulnerable if both NAT and security ACLs are enabled

@@ -17,7 +17,7 @@ def rule_cve202128505(configuration, commands, device, devices):
     ingress L2/L3 ports or SVIs, causing subsequent ACL rules to ignore IP protocol fields.
     """
     # Extract the version information from the command output
-    version_output = commands.show_version
+    version_output = str(commands.show_version)
 
     # List of vulnerable software versions
     vulnerable_versions = [
@@ -35,11 +35,11 @@ def rule_cve202128505(configuration, commands, device, devices):
         return
 
     # Check if any ACL has VXLAN protocol matching
-    acl_config = commands.show_acl
+    acl_config = str(commands.show_acl)
     has_vxlan_acl = 'protocol vxlan' in acl_config.lower()
 
     # Check if ACLs are applied to ingress L2/L3 ports or SVIs
-    interface_config = commands.show_interfaces
+    interface_config = str(commands.show_interfaces)
     has_ingress_acl = any(keyword in interface_config.lower() for keyword in [
         'ip access-group',
         'ipv4 access-group'

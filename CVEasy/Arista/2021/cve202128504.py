@@ -18,7 +18,7 @@ def rule_cve202128504(configuration, commands, device, devices):
     to not match IP protocol fields as expected.
     """
     # Extract the version information from the command output
-    version_output = commands.show_version
+    version_output = str(commands.show_version)
 
     # List of vulnerable software versions
     vulnerable_versions = [
@@ -36,11 +36,11 @@ def rule_cve202128504(configuration, commands, device, devices):
         return
 
     # Check if TCAM profile feature is enabled
-    tcam_output = commands.show_tcam
+    tcam_output = str(commands.show_tcam)
     tcam_enabled = 'Profile:' in tcam_output
 
     # Check if any ACL has VXLAN protocol matching
-    acl_config = commands.show_acl
+    acl_config = str(commands.show_acl)
     has_vxlan_acl = 'protocol vxlan' in acl_config.lower()
 
     # Device is vulnerable if TCAM profile is enabled and has VXLAN protocol matching in ACLs

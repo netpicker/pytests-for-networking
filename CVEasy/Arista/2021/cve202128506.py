@@ -18,7 +18,7 @@ def rule_cve202128506(configuration, commands, device, devices):
     potentially allowing factory reset of the device.
     """
     # Extract the version information from the command output
-    version_output = commands.show_version
+    version_output = str(commands.show_version)
 
     # List of vulnerable software versions
     vulnerable_versions = [
@@ -38,9 +38,9 @@ def rule_cve202128506(configuration, commands, device, devices):
         return
 
     # Check if any of the vulnerable APIs are enabled
-    gnmi_config = commands.show_gnmi
-    restconf_config = commands.show_restconf
-    gnoi_config = commands.show_gnoi
+    gnmi_config = str(commands.show_gnmi)
+    restconf_config = str(commands.show_restconf)
+    gnoi_config = str(commands.show_gnoi)
 
     apis_enabled = any([
         'enabled' in gnmi_config.lower(),
