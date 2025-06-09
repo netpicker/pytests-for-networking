@@ -53,8 +53,10 @@ def rule_ha_bgp_prefix_consistency(configuration, commands, device):
 
     for neighbor, prefixes in neighbor_prefixes.items():
         if prefixes != reference_prefixes:
+            reference_list = "\n  - ".join(sorted(reference_prefixes))
+            neighbor_list = "\n  - ".join(sorted(prefixes))
             raise AssertionError(
                 f"Prefixes from {neighbor} do not match {reference_neighbor}.\n"
-                f"{reference_neighbor} has: {sorted(reference_prefixes)}\n"
-                f"{neighbor} has: {sorted(prefixes)}"
+                f"{reference_neighbor} has:\n  - {reference_list}\n"
+                f"{neighbor} has:\n  - {neighbor_list}"
             )
