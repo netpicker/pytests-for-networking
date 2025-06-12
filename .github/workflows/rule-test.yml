@@ -10,5 +10,7 @@ jobs:
       options: --cpus 1
     steps:
       - uses: actions/checkout@v3
+      - name: Check rule collector
+        run: collect-rules -p comfy.plugin -p asyncio -o asyncio_mode=auto -vvv --co --rootdir $PWD $PWD
       - name: Run yaml tests
         run: test-rules -p runner.yaml_rules -vvvl --rootdir $PWD $PWD
