@@ -45,18 +45,26 @@ def rule_ha_bgp_prefix_consistency(configuration, commands, device):
             if match:
                 prefixes.add(match.group(1))
 
-        assert prefixes, f"No prefixes received from neighbor {neighbor}"
-        neighbor_prefixes[neighbor] = prefixes
+        sorted_prefixes = sorted(prefixes)
+        assert sorted_prefixes, f"No prefixes received from neighbor {neighbor}"
+        neighbor_prefixes[neighbor] = sorted_prefixes
 
     reference_neighbor = neighbor_ips[0]
     reference_prefixes = neighbor_prefixes[reference_neighbor]
 
     for neighbor, prefixes in neighbor_prefixes.items():
         if prefixes != reference_prefixes:
-            reference_list = "\n  - ".join(sorted(reference_prefixes))
-            neighbor_list = "\n  - ".join(sorted(prefixes))
+            # Generate a manual diff string
+            only_in_ref = sorted(set(reference_prefixes) - set(prefixes))
+            only_in_neighbor = sorted(set(prefixes) - set(reference_prefixes))
+
+            diff = []
+            if only_in_ref:
+                diff.append(f"\n❌ Missing from {neighbor}:\n  - " + "\n  - ".join(only_in_ref))
+            if only_in_neighbor:
+                diff.append(f"\n❌ Extra in {neighbor}:\n  - " + "\n  - ".join(only_in_neighbor))
+
             raise AssertionError(
-                f"Prefixes from {neighbor} do not match {reference_neighbor}.\n"
-                f"{reference_neighbor} has:\n  - {reference_list}\n"
-                f"{neighbor} has:\n  - {neighbor_list}"
+                f"BGP prefix mismatch between {neighbor} and {reference_neighbor}."
+                + "".join(diff)
             )
