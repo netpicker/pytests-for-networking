@@ -10,5 +10,5 @@ jobs:
       options: --cpus 1
     steps:
       - uses: actions/checkout@v3
-      - name: Run yaml tests
-        run: collect-jobs --co -p comfy.automate --no-summary --rootdir $PWD/jobs $PWD/jobs
+      - name: Run Job Collection
+        run: PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 collect-jobs --co -p comfy.automate --no-summary --rootdir $PWD/jobs $PWD/jobs
