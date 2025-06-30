@@ -3,8 +3,12 @@ from comfy.automate import job
 
 
 @job(platform='cisco_ios')
-def configure_vlan_cisco_ios(device, vlan_id: int, vlan_name: str,
-                   save_config: bool = True):
+def configure_vlan_cisco_ios(
+    device,
+    vlan_id: int,
+    vlan_name: str,
+    save_config: bool = True
+):
     """
     Configures a VLAN with a specific name on a Cisco IOS device.
 
@@ -40,10 +44,9 @@ def configure_vlan_cisco_ios(device, vlan_id: int, vlan_name: str,
             # Netmiko's send_command handles prompts like filename confirmation
             # We might need send_command_timing for very slow saves.
             logging.info(f"{log_prefix} Attempting to save configuration.")
-            # Send command and expect the confirm prompt
-            save_result = device.cli.send_command(
-                save_command, expect_string=r'\[confirm\]'
-            )
+            # Send command and expect the confirmation prompt
+            save_result = device.cli.send_command(save_command,
+                                                  expect_string=r'\[confirm\]')
             # Send newline to confirm the default filename prompt,
             # expecting the standard IOS prompt (#)
             save_result_confirm = device.cli.send_command(

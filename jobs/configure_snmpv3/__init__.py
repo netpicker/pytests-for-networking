@@ -1,6 +1,7 @@
 import logging
 from comfy.automate import job
 
+
 @job(platform='cisco*')
 def configure_snmpv3(
     device,

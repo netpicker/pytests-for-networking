@@ -2,6 +2,7 @@ import logging
 import re
 from comfy.automate import job
 
+
 @job(platform='cisco*')
 def ensure_logging_server(device, logging_host: str, severity: str = "informational"):
     """
@@ -29,7 +30,7 @@ def ensure_logging_server(device, logging_host: str, severity: str = "informatio
         if already_configured:
             logging.info(f"{log_prefix} Logging server {logging_host} already configured. No action needed.")
             return {"status": "exists", "logging_host": logging_host}
-        
+
         # Step 2: If not configured, add it
         config_commands = [f"logging host {logging_host} {severity}"]
         if device.platform == "cisco_nxos":

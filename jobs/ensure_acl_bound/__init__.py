@@ -1,6 +1,6 @@
 import logging
-import re
 from comfy.automate import job
+
 
 @job(platform='cisco*')
 def ensure_acl_bound(device, interface: str, acl_name: str, direction: str = "in"):
@@ -27,7 +27,12 @@ def ensure_acl_bound(device, interface: str, acl_name: str, direction: str = "in
 
         if already_bound:
             logging.info(f"{log_prefix} ACL already bound. No changes needed.")
-            return {"status": "exists", "interface": interface, "acl": acl_name, "direction": direction}
+            return {
+                "status": "exists",
+                "interface": interface,
+                "acl": acl_name,
+                "direction": direction
+            }
 
         # Step 3: Apply ACL binding
         config_commands = [
