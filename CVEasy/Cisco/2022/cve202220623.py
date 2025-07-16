@@ -1,5 +1,5 @@
 from comfy import high
-
+import re
 
 @high(
     name='rule_cve202220623',
@@ -11,34 +11,45 @@ from comfy import high
 )
 def rule_cve202220623(configuration, commands, device, devices):
     """
-    This rule checks for the CVE-2022-20623 vulnerability in Cisco NX-OS Software.
-    The vulnerability is due to a logic error in the BFD rate limiter functionality of Nexus 9000 Series Switches.
-    An unauthenticated, remote attacker could exploit this vulnerability by sending a crafted stream of traffic
-    through the device, causing BFD traffic to be dropped and resulting in BFD session flaps, route instability,
-    and a denial of service condition.
+    CVE-2022-20623: BFD DoS vulnerability in Cisco NX-OS.
+    Affects Nexus 9000 Series if BFD is enabled and version ≤ 7.0(3)I7(10) or ≤ 9.3(8).
     """
-    # Extract the platform information
     platform_output = commands.show_version
+    bfd_output = commands.check_bfd
 
-    # Check if the device is a Nexus 9000 Series
+    # 1. Check if device is a Nexus 9000
     is_n9k = 'Nexus 9000' in platform_output
-
-    # If not a Nexus 9000 device, it's not vulnerable
     if not is_n9k:
         return
 
-    # Extract the output of the command to check BFD configuration
-    bfd_output = commands.check_bfd
-
-    # Check if BFD is enabled
+    # 2. Check if BFD is enabled
     bfd_enabled = 'feature bfd' in bfd_output
+    if not bfd_enabled:
+        return
 
-    # Assert that the device is not vulnerable
-    assert not bfd_enabled, (
+    # 3. Extract NX-OS version
+    match = re.search(r'NXOS:\s+version\s+([\w\.\(\)]+)', platform_output, re.IGNORECASE)
+    if not match:
+        return  # Can't extract version
+
+    version = match.group(1)
+
+    def parse_version(ver):
+        return [int(x) if x.isdigit() else x for x in re.split(r'[\.\(\)I]+', ver) if x]
+
+    v = parse_version(version)
+    is_vulnerable = False
+
+    # 4. Compare version against vulnerable builds
+    if version.startswith("7.0.3") and 'I' in version:
+        is_vulnerable = v <= parse_version("7.0.3.I7.10")
+    elif version.startswith("9.3"):
+        is_vulnerable = v <= parse_version("9.3.8")
+
+    # 5. Assert only if BFD is enabled and version is affected
+    assert not is_vulnerable, (
         f"Device {device.name} is vulnerable to CVE-2022-20623. "
-        "The device is a Nexus 9000 Series switch with BFD enabled, "
-        "which could allow an unauthenticated attacker to cause BFD session flaps and a denial of service "
-        "through crafted traffic. "
-        "For more information, see"
-        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nxos-bfd-dos-wGQXrzxn"
+        f"Nexus 9000 Series switch with NX-OS version {version} has BFD enabled, "
+        "which could allow a remote attacker to cause BFD session flaps and a denial of service. "
+        "See: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nxos-bfd-dos-wGQXrzxn"
     )
