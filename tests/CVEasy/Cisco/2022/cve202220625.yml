@@ -1,0 +1,36 @@
+.show_version: &show_version 'show version'
+.check_cdp: &check_cdp 'show running-config | include no cdp enable|cdp enable'
+
+defaults:
+  devices:
+    - platform: cisco_nxos
+
+tests:
+  rule_cve202220625:
+
+    # 1. Vulnerable: CDP enabled, version 9.3(7)
+    - outcome: TESTS_FAILED
+      commands:
+        *show_version: |
+          Cisco Nexus Operating System (NX-OS) Software
+          NXOS: version 9.3(7)
+        *check_cdp: |
+          cdp enable
+
+    # 2. Fixed: CDP enabled, version 9.3(8)
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco Nexus Operating System (NX-OS) Software
+          NXOS: version 9.3(8)
+        *check_cdp: |
+          cdp enable
+
+    # 3. Safe: CDP disabled, version doesn't matter
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco Nexus Operating System (NX-OS) Software
+          NXOS: version 9.3(7)
+        *check_cdp: |
+          # No CDP config

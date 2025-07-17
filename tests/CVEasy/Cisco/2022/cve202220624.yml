@@ -1,0 +1,54 @@
+.show_version: &show_version 'show version'
+.check_cfs: &check_cfs 'show running-config | include cfs ipv4 distribute'
+
+defaults:
+  devices:
+    - platform: cisco_nxos
+
+tests:
+  rule_cve202220624:
+
+    # 1. Vulnerable: CFSoIP enabled, version 7.0.3.I7.9
+    - outcome: TESTS_FAILED
+      commands:
+        *show_version: |
+          Cisco Nexus Operating System (NX-OS) Software
+          NXOS: version 7.0.3.I7.9
+        *check_cfs: |
+          cfs ipv4 distribute
+
+    # 2. Vulnerable: CFSoIP enabled, version 9.3(7)
+    - outcome: TESTS_FAILED
+      commands:
+        *show_version: |
+          Cisco Nexus Operating System (NX-OS) Software
+          NXOS: version 9.3(7)
+        *check_cfs: |
+          cfs ipv4 distribute
+
+    # 3. Fixed version: CFSoIP enabled, version 7.0.3.I7.10
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco Nexus Operating System (NX-OS) Software
+          NXOS: version 7.0.3.I7.10
+        *check_cfs: |
+          cfs ipv4 distribute
+
+    # 4. Fixed version: CFSoIP enabled, version 9.3(8)
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco Nexus Operating System (NX-OS) Software
+          NXOS: version 9.3(8)
+        *check_cfs: |
+          cfs ipv4 distribute
+
+    # 5. Safe: CFSoIP not configured (regardless of version)
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco Nexus Operating System (NX-OS) Software
+          NXOS: version 7.0.3.I7.9
+        *check_cfs: |
+          # no cfs config present

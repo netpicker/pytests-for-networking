@@ -1,5 +1,5 @@
 from comfy import high
-
+import re
 
 @high(
     name='rule_cve202220625',
@@ -11,28 +11,41 @@ from comfy import high
 )
 def rule_cve202220625(configuration, commands, device, devices):
     """
-    This rule checks for the CVE-2022-20625 vulnerability in Cisco NX-OS Software.
-    The vulnerability is due to improper handling of Cisco Discovery Protocol messages.
-    An unauthenticated, adjacent attacker could exploit this vulnerability by sending
-    malicious CDP packets to an affected device, causing the CDP service to fail and
-    restart, and in rare conditions, causing the entire device to restart.
+    CVE-2022-20625: DoS via CDP in NX-OS.
+    Vulnerable if CDP is enabled AND version is < fixed.
+    Fixed in: 7.0(3)I7(10), 8.4(5), 9.3(8)
     """
-    # Extract the output of the command to check CDP configuration
     cdp_output = commands.check_cdp
+    version_output = commands.show_version
 
     # Check if CDP is enabled
     cdp_enabled = 'cdp enable' in cdp_output
-
-    # If CDP is not enabled, device is not vulnerable
     if not cdp_enabled:
-        return
+        return  # Safe
 
-    # Assert that the device is not vulnerable
-    assert not cdp_enabled, (
-        f"Device {device.name} is vulnerable to CVE-2022-20625. "
-        "The device has Cisco Discovery Protocol enabled, "
-        "which could allow an adjacent attacker to cause a denial of service through "
-        "malicious CDP packets. "
-        "For more information, see"
-        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-cdp-dos-G8DPLWYG"
+    # Extract NX-OS version
+    match = re.search(r'NXOS:\s+version\s+([\w\.\(\)]+)', version_output, re.IGNORECASE)
+    if not match:
+        return  # Unknown version, skip
+
+    version = match.group(1)
+
+    def parse_version(v):
+        return [int(x) if x.isdigit() else x for x in re.split(r'[\.\(\)I]+', v) if x]
+
+    v = parse_version(version)
+    is_vulnerable = False
+
+    if version.startswith("7.0.3") and 'I' in version:
+        is_vulnerable = v < parse_version("7.0.3.I7.10")
+    elif version.startswith("8.4"):
+        is_vulnerable = v < parse_version("8.4.5")
+    elif version.startswith("9.3"):
+        is_vulnerable = v < parse_version("9.3.8")
+
+    assert not is_vulnerable, (
+        f"Device {device.name or device.ipaddress or 'unknown'} is vulnerable to CVE-2022-20625. "
+        f"NX-OS version {version} with CDP enabled allows an adjacent attacker to crash the service or device. "
+        "Upgrade to a fixed release. "
+        "See: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-cdp-dos-G8DPLWYG"
     )
