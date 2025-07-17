@@ -1,0 +1,36 @@
+.show_version: &show_version 'show version'
+.check_bfd: &check_bfd 'show running-config | include feature bfd'
+
+defaults:
+  devices:
+    - platform: cisco_nxos
+
+tests:
+  rule_cve202220623:
+    - outcome: TESTS_FAILED
+      commands:
+        *show_version: |
+          Cisco Nexus Operating System (NX-OS) Software
+          Nexus 9000 C9300v Chassis
+          NXOS: version 7.0.3.I7.9
+        *check_bfd: |
+          feature bfd
+
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco Nexus Operating System (NX-OS) Software
+          Nexus 9000 C9300v Chassis
+          NXOS: version 7.0.3.I7.10
+        *check_bfd: |
+          # BFD is disabled (no config line)
+
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco Nexus Operating System (NX-OS) Software
+          Nexus 7000 Chassis
+          NXOS: version 8.4.2
+        *check_bfd: |
+          feature bfd
+
