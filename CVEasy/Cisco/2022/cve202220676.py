@@ -37,5 +37,6 @@ def rule_cve202220676(configuration, commands, device, devices):
     assert False, (
         f"Device {device.name or device.ipaddress or 'unknown'} is potentially vulnerable to CVE-2022-20676. "
         "Tcl shell is enabled. Use Cisco Software Checker to determine the fixed version. "
-        "See: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-iosxe-priv-esc-grbtubU"
+        "See: "
+        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-iosxe-priv-esc-grbtubU"
     )
