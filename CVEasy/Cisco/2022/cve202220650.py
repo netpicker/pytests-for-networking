@@ -1,37 +1,53 @@
 from comfy import high
+import re
 
 
 @high(
-    name='rule_cve202220650',
-    platform=['cisco_nxos'],
+    name="rule_cve202220650",
+    platform=["cisco_nxos"],
     commands=dict(
-        show_version='show version',
-        check_nxapi='show running-config | include feature nxapi'
+        show_version="show version",
+        show_feature_nxapi="show feature | include nxapi",
     ),
 )
 def rule_cve202220650(configuration, commands, device, devices):
     """
-    This rule checks for the CVE-2022-20650 vulnerability in Cisco NX-OS Software.
-    The vulnerability is due to insufficient input validation of user supplied data that is sent to the NX-API.
-    An authenticated, remote attacker could exploit this vulnerability by sending a crafted HTTP POST request
-    to the NX-API of an affected device, allowing them to execute arbitrary commands with root privileges.
-    Note: The NX-API feature is disabled by default.
+    CVE-2022-20650: NX-API command injection vulnerability in Cisco NX-OS
+    An authenticated attacker could exploit the NX-API feature to run arbitrary
+    OS commands as root due to improper input sanitization.
     """
-    # Extract the output of the command to check NX-API configuration
-    nxapi_output = commands.check_nxapi
 
-    # Check if NX-API is enabled
-    nxapi_enabled = 'feature nxapi' in nxapi_output
+    version_output = commands.show_version
+    nxapi_output = commands.show_feature_nxapi
 
-    # If NX-API is not enabled, device is not vulnerable
-    if not nxapi_enabled:
+    if "nxapi" not in nxapi_output or "enabled" not in nxapi_output:
         return
 
-    # Assert that the device is not vulnerable
-    assert not nxapi_enabled, (
-        f"Device {device.name} is vulnerable to CVE-2022-20650. "
-        "The device has NX-API enabled, which could allow an authenticated attacker "
-        "to execute arbitrary commands with root privileges through crafted HTTP POST requests. "
-        "For more information, see"
-        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nxos-nxapi-cmdinject-ULukNMZ2"
+    if not any(model in version_output for model in [
+        "Nexus 3000", "Nexus 5500", "Nexus 5600", "Nexus 6000", "Nexus 9000"
+    ]):
+        return
+
+    match = re.search(r"NXOS:\s+version\s+([\w\.\(\)]+)", version_output, re.IGNORECASE)
+    if not match:
+        return
+
+    version = match.group(1)
+
+    def parse_version(v):
+        return [int(x) if x.isdigit() else x for x in re.split(r"[.\(\)I]+", v) if x]
+
+    v = parse_version(version)
+    is_safe = False
+
+    if v[:2] == parse_version("7.0")[:2]:
+        is_safe = v >= parse_version("7.0.3.I7.10")
+    elif v[:2] == parse_version("9.3")[:2]:
+        is_safe = v >= parse_version("9.3.8")
+
+    assert is_safe, (
+        f"Device {device.name or device.ipaddress or 'unknown'} is vulnerable to CVE-2022-20650. "
+        "NX-API is enabled and the software version is unpatched. "
+        "See: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-"
+        "sa-nxos-nxapi-cmdinject-ULukNMZ2"
     )

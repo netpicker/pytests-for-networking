@@ -1,0 +1,43 @@
+.show_version: &show_version "show version"
+
+defaults:
+  devices:
+    - platform: cisco_iosxr
+
+tests:
+  rule_cve202220655:
+
+    # 1. Vulnerable: Affected platform and version
+    - outcome: TESTS_FAILED
+      commands:
+        *show_version: |
+          Cisco IOS XR Software
+          Version 7.0.1
+
+    # 2. Safe: Fixed version
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco IOS XR Software
+          Version 7.0.2
+
+    # 3. Safe: Fixed version in another branch
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco IOS XR Software
+          Version 7.1.1
+
+    # 4. Skipped: Unaffected platform (NX-OS)
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco NX-OS Software
+          NXOS: version 9.3(6)
+
+    # 5. Corner Case: Malformed version (treated as vulnerable)
+    - outcome: TESTS_FAILED
+      commands:
+        *show_version: |
+          Cisco IOS XR Software
+          Version unknown

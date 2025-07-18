@@ -1,0 +1,57 @@
+.show_version: &show_version "show version"
+.show_feature_nxapi: &show_feature_nxapi "show feature | include nxapi"
+
+defaults:
+  devices:
+    - platform: cisco_nxos
+
+tests:
+  rule_cve202220650:
+
+    # 1. Vulnerable: NXAPI enabled, vulnerable version
+    - outcome: TESTS_FAILED
+      commands:
+        *show_version: |
+          Cisco NX-OS Software
+          Nexus 9000 C93180YC-FX
+          NXOS: version 7.0.3.I7.5
+        *show_feature_nxapi: |
+          nxapi                1        enabled
+
+    # 2. Safe: NXAPI enabled, fixed version
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco NX-OS Software
+          Nexus 9000 Chassis
+          NXOS: version 7.0.3.I7.10
+        *show_feature_nxapi: |
+          nxapi                1        enabled
+
+    # 3. Skipped: NXAPI disabled
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco NX-OS Software
+          NXOS: version 7.0.3.I7.5
+        *show_feature_nxapi: |
+          nxapi                1        disabled
+
+    # 4. Skipped: Unaffected platform
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco NX-OS Software
+          Nexus 7000
+          NXOS: version 8.3(2)
+        *show_feature_nxapi: |
+          nxapi                1        enabled
+
+    # 5. Corner Case: Malformed version
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco NX-OS Software
+          NXOS: version unknown
+        *show_feature_nxapi: |
+          nxapi                1        enabled

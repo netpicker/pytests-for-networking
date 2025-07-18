@@ -1,0 +1,98 @@
+id: CVE-2022-20655
+title: Multiple Cisco Products CLI Command Injection Vulnerability
+platform: cisco_iosxr
+
+description: |
+  A vulnerability in the CLI implementation of multiple Cisco products could allow
+  an authenticated local attacker to execute arbitrary commands with root privileges.
+  This is due to insufficient validation of process arguments during command execution.
+
+impact:
+  summary: Authenticated local CLI command injection
+  conditions:
+    - User is authenticated and has CLI access
+    - Affected software version is in use
+  result: Arbitrary OS command execution with root-level privileges
+
+affected_platforms:
+  - Cisco IOS XR (64-bit)
+  - Cisco IOS XE SD-WAN
+  - Cisco SD-WAN vBond, vEdge, vManage, vSmart
+  - Cisco NFVIS
+  - Cisco NSO
+  - Cisco VTS
+  - Cisco Ultra Gateway Platform
+
+fixed_versions:
+  - version: 6.15.0
+    note: Cisco Ultra Gateway Platform
+  - version: 3.12.1
+    note: Cisco NFVIS
+  - version: 2.6.5
+    note: Cisco VTS
+  - version: 4.3.9.1
+    note: Cisco NSO branch 4.3
+  - version: 4.4.5.6
+    note: Cisco NSO branch 4.4
+  - version: 4.5.7
+    note: Cisco NSO branch 4.5
+  - version: 4.6.1.7
+    note: Cisco NSO branch 4.6
+  - version: 4.7.1
+    note: Cisco NSO branch 4.7
+  - version: 5.1.0.1
+    note: Cisco NSO branch 5.1
+  - version: 5.2
+    note: Cisco NSO branch 5.2
+  - version: 16.10.2
+    note: IOS XE SD-WAN
+  - version: 16.12.1b
+    note: IOS XE SD-WAN
+  - version: 17.2.1r
+    note: IOS XE SD-WAN
+  - version: 7.0.2
+    note: IOS XR 64-bit
+  - version: 7.1.1
+    note: IOS XR 64-bit
+  - version: 6.5.32
+    note: IOS XR for NCS 4009/4016
+  - version: 18.4.4
+    note: SD-WAN vBond/vEdge/vManage/vSmart
+  - version: 19.2.1
+    note: SD-WAN vBond/vEdge/vManage/vSmart
+  - version: 19.3.0
+    note: SD-WAN vBond/vEdge/vManage/vSmart
+  - version: 20.1.1
+    note: SD-WAN vBond/vEdge/vManage/vSmart
+
+not_affected:
+  - Cisco NX-OS Software
+  - Cisco IOS XE (non-SDWAN)
+  - Cisco IOS (classic)
+  - Cisco IOS XR (32-bit)
+  - Cisco Prime, WAAS, MSE, UCS, and RV series routers
+
+detection:
+  cli_check: show version
+  config_keywords:
+    - N/A
+  other_indicators:
+    - Match platform and software version against affected list
+
+references:
+  - https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-cli-cmdinj-4MttWZPB
+  - Cisco Bug IDs: CSCvm76596, CSCvq21764, CSCvq22323
+
+cvss:
+  base_score: 8.8
+  vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H
+
+rule_metadata:
+  name: rule_cve202220655
+  commands:
+    - show_version
+  tags:
+    - cve
+    - security
+    - command-injection
+    - iosxr

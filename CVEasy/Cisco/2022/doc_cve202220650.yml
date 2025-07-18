@@ -1,0 +1,64 @@
+id: CVE-2022-20650
+title: Cisco NX-OS Software NX-API Command Injection Vulnerability
+platform: cisco_nxos
+
+description: |
+  A vulnerability in the NX-API feature of Cisco NX-OS Software could allow
+  an authenticated, remote attacker to execute arbitrary commands with root privileges.
+  The issue stems from insufficient input validation in NX-API HTTP POST requests.
+
+impact:
+  summary: Authenticated command injection via NX-API
+  conditions:
+    - NX-API feature is enabled
+    - Device is running a vulnerable NX-OS version
+    - Attacker is authenticated and sends crafted HTTP POST request
+  result: Remote code execution with root privileges
+
+affected_platforms:
+  - Nexus 3000 Series Switches
+  - Nexus 5500 Platform Switches
+  - Nexus 5600 Platform Switches
+  - Nexus 6000 Series Switches
+  - Nexus 9000 Series Switches (Standalone NX-OS mode)
+
+fixed_versions:
+  - version: 7.0(3)I7(10)
+    note: Fixed SMU for Nexus 3000/9000
+  - version: 9.3(8)
+    note: Fixed SMU for Nexus 3000/9000
+
+not_affected:
+  - Nexus 7000 Series
+  - Nexus 9000 ACI Mode
+  - MDS 9000 Series
+  - UCS 6200, 6300, 6400 Series
+  - Firepower 1000–9300 Series
+  - Nexus 1000V, Virtual Edge
+
+detection:
+  cli_check: show feature | include nxapi
+  config_keywords:
+    - nxapi                1        enabled
+  other_indicators:
+    - NXOS version < 7.0(3)I7(10) or < 9.3(8)
+
+references:
+  - https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nxos-nxapi-cmdinject-ULukNMZ2
+  - Cisco Bug IDs: CSCvz80191, CSCvz81047
+
+cvss:
+  base_score: 8.8
+  vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+
+rule_metadata:
+  name: rule_cve202220650
+  commands:
+    - show_version
+    - show_feature_nxapi
+  tags:
+    - cve
+    - security
+    - command-injection
+    - nxos
+

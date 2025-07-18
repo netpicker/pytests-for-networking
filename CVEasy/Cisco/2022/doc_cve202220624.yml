@@ -1,0 +1,70 @@
+id: CVE-2022-20624
+title: Cisco NX-OS Cisco Fabric Services Over IP Denial of Service Vulnerability
+platform: cisco_nxos
+
+description: |
+  A vulnerability in the Cisco Fabric Services over IP (CFSoIP) feature of Cisco NX-OS Software
+  could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition.
+  The vulnerability is due to insufficient validation of incoming CFSoIP packets.
+  An attacker could exploit this by sending crafted CFSoIP packets, causing the affected device to reload.
+
+impact:
+  summary: Remote DoS via CFSoIP packet processing flaw, leads to device reload.
+  conditions:
+    - Device is running vulnerable NX-OS version
+    - CFSoIP is enabled (`Distribution over IP: Enabled`)
+  result: Device reload and DoS condition
+
+affected_platforms:
+  - Nexus 3000 (NX-OS mode)
+  - Nexus 9000 (NX-OS mode)
+  - UCS 6400 Fabric Interconnects
+
+fixed_versions:
+  - version: 7.0(3)I7(10)
+    note: Nexus 3000/9000
+  - version: 9.3(8)
+    note: Nexus 3000/9000
+  - version: 4.1(3h)
+    note: UCS 6400
+  - version: 4.2(1l)
+    note: UCS 6400
+
+not_affected:
+  - Nexus 5500, 5600, 6000, 7000
+  - Nexus 9000 (ACI mode)
+  - UCS 6200, 6300
+  - Firepower Series
+  - MDS 9000
+  - Nexus 1000V
+  - Virtual Edge
+  - Fabric Interconnects not listed above
+
+detection:
+  cli_check: show cfs status
+  config_keywords:
+    - Distribution over IP : Enabled
+  other_indicators:
+    - Platform check for Nexus 3000/9000/UCS6400
+    - NX-OS version check
+
+references:
+  - https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-cfsoip-dos-tpykyDr
+  - Cisco Bug IDs: CSCvy95696, CSCvy95840
+
+cvss:
+  base_score: 8.6
+  vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H
+
+rule_metadata:
+  name: rule_cve202220624
+  commands:
+    - show_version
+    - show_cfs_status
+  tags:
+    - cve
+    - security
+    - dos
+    - cfsoip
+    - nxos
+    - fabric_services
