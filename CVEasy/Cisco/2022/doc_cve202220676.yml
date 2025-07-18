@@ -1,0 +1,56 @@
+id: CVE-2022-20676
+title: Cisco IOS XE Tool Command Language Privilege Escalation Vulnerability
+platform: cisco_xe
+
+description: |
+  A vulnerability in the Tool Command Language (Tcl) interpreter of Cisco IOS XE Software could allow
+  an authenticated, local attacker to escalate from privilege level 15 to root-level privileges.
+  This is due to insufficient input validation of data passed into the Tcl interpreter.
+  Devices are only affected if the `tclsh` command is supported and enabled.
+
+impact:
+  summary: Local privilege escalation from privilege 15 to root
+  conditions:
+    - Tcl interpreter (`tclsh`) is enabled
+    - Attacker has privilege level 15 access
+  result: Arbitrary command execution as root by injecting malicious Tcl code
+
+affected_platforms:
+  - Cisco IOS XE (all platforms supporting `tclsh`)
+
+fixed_versions:
+  - version: Refer Cisco Software Checker
+    note: Use Cisco Software Checker to identify the fixed version for your platform and release.
+
+not_affected:
+  - Cisco IOS
+  - Cisco IOS XR
+  - Cisco NX-OS
+  - Cisco Meraki
+
+detection:
+  cli_check: show running-config | include tclsh
+  config_keywords:
+    - tclsh
+  other_indicators:
+    - Device returns valid Tcl shell prompt
+    - No error on executing `tclsh` in CLI
+
+references:
+  - https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-iosxe-priv-esc-grbtubU
+  - https://nvd.nist.gov/vuln/detail/CVE-2022-20676
+
+cvss:
+  base_score: 5.1
+  vector: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:L/I:H/A:N
+
+rule_metadata:
+  name: rule_cve202220676
+  commands:
+    - show_version
+    - show_running_config_include_tclsh
+  tags:
+    - cve
+    - security
+    - privilege-escalation
+    - iosxe

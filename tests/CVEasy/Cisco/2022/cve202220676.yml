@@ -1,0 +1,88 @@
+.show_version: &show_version "show version"
+.show_running_config_include_tclsh: &tcl_check "show running-config | include tclsh"
+
+defaults:
+  devices:
+    - platform: cisco_xe
+
+tests:
+  rule_cve202220676:
+
+    # 1. Vulnerable: IOS XE, Tcl enabled
+    - outcome: TESTS_FAILED
+      commands:
+        *show_version: |
+          Cisco IOS XE Software, Version 16.12.3
+        *tcl_check: |
+          tclsh
+
+    # 2. Skipped: IOS XE, Tcl disabled
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco IOS XE Software, Version 16.12.3
+        *tcl_check: |
+          # No tclsh
+
+    # 3. Skipped: IOS platform (not affected)
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco IOS Software, C2951 Software (C2951-UNIVERSALK9-M), Version 15.1(4)M7
+        *tcl_check: |
+          tclsh
+
+    # 4. Skipped: NX-OS platform
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco Nexus Operating System (NX-OS) Software, Version 9.3(8)
+        *tcl_check: |
+          tclsh
+
+    # 5. Skipped: Meraki
+    - outcome: OK
+      commands:
+        *show_version: |
+          Meraki Cloud Managed Device
+        *tcl_check: |
+          tclsh
+
+    # 6. Malformed version
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco IOS XE Software, Version ??
+        *tcl_check: |
+          tclsh
+
+    # 7. Version with uncommon format
+    - outcome: TESTS_FAILED
+      commands:
+        *show_version: |
+          Cisco IOS XE Software, Version 17.3(1)r
+        *tcl_check: |
+          tclsh
+
+    # 8. Empty config output
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco IOS XE Software, Version 16.9.4
+        *tcl_check: |
+
+    # 9. Feature enabled, platform ambiguous
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco Operating System
+        *tcl_check: |
+          tclsh
+
+    # 10. Safe: Feature explicitly removed
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco IOS XE Software, Version 16.12.3
+        *tcl_check: |
+          no tclsh
