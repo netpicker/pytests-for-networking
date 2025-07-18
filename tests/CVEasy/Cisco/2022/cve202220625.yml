@@ -1,5 +1,5 @@
-.show_version: &show_version 'show version'
-.check_cdp: &check_cdp 'show running-config | include no cdp enable|cdp enable'
+.show_version: &show_version "show version"
+.show_running_config_cdp: &show_running_config_cdp "show running-config cdp all | include \"cdp enable\""
 
 defaults:
   devices:
@@ -8,29 +8,51 @@ defaults:
 tests:
   rule_cve202220625:
 
-    # 1. Vulnerable: CDP enabled, version 9.3(7)
+    # 1. Vulnerable: CDP enabled, vulnerable version
     - outcome: TESTS_FAILED
       commands:
         *show_version: |
-          Cisco Nexus Operating System (NX-OS) Software
-          NXOS: version 9.3(7)
-        *check_cdp: |
+          Cisco NX-OS Software
+          Nexus 9000 C93180YC-FX
+          NXOS: version 7.0.3.I7.8
+        *show_running_config_cdp: |
+          cdp enable
           cdp enable
 
-    # 2. Fixed: CDP enabled, version 9.3(8)
+    # 2. Safe: CDP enabled, fixed version
     - outcome: OK
       commands:
         *show_version: |
-          Cisco Nexus Operating System (NX-OS) Software
-          NXOS: version 9.3(8)
-        *check_cdp: |
+          Cisco NX-OS Software
+          NXOS: version 7.0.3.I7.10
+        *show_running_config_cdp: |
+          cdp enable
           cdp enable
 
-    # 3. Safe: CDP disabled, version doesn't matter
+    # 3. Skipped: CDP not enabled
     - outcome: OK
       commands:
         *show_version: |
-          Cisco Nexus Operating System (NX-OS) Software
-          NXOS: version 9.3(7)
-        *check_cdp: |
-          # No CDP config
+          Cisco NX-OS Software
+          NXOS: version 7.0.3.I7.8
+        *show_running_config_cdp: |
+          # empty
+
+    # 4. Skipped: Unaffected platform
+    - outcome: TESTS_FAILED
+      commands:
+        *show_version: |
+          Cisco NX-OS Software
+          Nexus 1000V
+          NXOS: version 5.2(1)SM1(5.1)
+        *show_running_config_cdp: |
+          cdp enable
+
+    # 5. Corner Case: Malformed version
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco NX-OS Software
+          NXOS: version unknown
+        *show_running_config_cdp: |
+          cdp enable

@@ -1,0 +1,35 @@
+id: CVE-2022-20623
+title: Cisco NX-OS Software BFD Denial of Service Vulnerability
+severity: high
+vendor: Cisco
+url: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nxos-bfd-dos-wGQXrzxn
+platform: cisco_nxos
+affected_models:
+  - name: Nexus 9500
+    vulnerable_versions:
+      - "< 7.0(3)I7(10)"
+      - "< 9.3(8)"
+      - "10.2(2) with GX ASIC (not detected)"
+    safe_versions:
+      - ">= 7.0(3)I7(10)"
+      - ">= 9.3(8)"
+      - "10.2(2) without GX ASIC"
+    notes:
+      - Nexus 9200 and 9300 series are NOT affected, even on same NX-OS versions.
+
+conditions:
+  required_config:
+    - feature bfd
+  skip_if_config_missing: true
+  notes:
+    - Vulnerability only present if "feature bfd" is enabled.
+    - Version 10.2(2) is conditionally vulnerable — only if GX ASIC is in use (not covered here).
+
+actions:
+  recommendation: Upgrade to fixed version or apply SMU
+  smus:
+    - platform: Nexus 9500
+      versions:
+        "7.0(3)I7(10)": nxos.CSCvx75912-n9k_ALL-1.0.0-7.0.3.I7.10.lib32_n9000.rpm
+        "9.3(8)": nxos.CSCvx75912-n9k_ALL-1.0.0-9.3.8.lib32_n9000.rpm
+        "10.2(2)": nxos64-cs.CSCwb07349-1.0.0-10.2.2.lib32_64_n9000.rpm

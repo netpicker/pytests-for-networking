@@ -1,0 +1,79 @@
+id: CVE-2022-20625
+title: Cisco FXOS and NX-OS Discovery Protocol Service Denial of Service Vulnerability
+platform: cisco_nxos
+
+description: |
+  A vulnerability in Cisco Discovery Protocol service in Cisco FXOS and NX-OS software
+  allows unauthenticated, adjacent attackers to cause the protocol service to restart.
+  In rare conditions, the device itself may reload, leading to a denial of service (DoS).
+  The flaw is due to improper handling of malformed Cisco Discovery Protocol messages.
+
+impact:
+  summary: Adjacent unauthenticated DoS via malformed CDP packets
+  conditions:
+    - Cisco Discovery Protocol (CDP) is enabled on any interface
+    - Device is running a vulnerable FXOS or NX-OS software release
+    - Attacker is on the same Layer 2 segment
+  result: CDP service restart or full device reload
+
+affected_platforms:
+  - Nexus 3000 Series Switches
+  - Nexus 5500 Platform Switches
+  - Nexus 5600 Platform Switches
+  - Nexus 6000 Series Switches
+  - Nexus 7000 Series Switches
+  - Nexus 9000 Series Switches (Standalone and ACI)
+  - MDS 9000 Series Multilayer Switches
+  - UCS 6200/6300/6400 Series Fabric Interconnects
+  - Firepower 4100/9300 Security Appliances
+  - Nexus 1000V (VMware, Hyper-V, Virtual Edge)
+
+fixed_versions:
+  - version: 7.0(3)I7(10)
+    note: Fixed SMU for Nexus 3000/9000
+  - version: 8.4(5)
+    note: Fixed SMU for Nexus 7000
+  - version: 9.3(8)
+    note: Fixed SMU for Nexus 3000/9000
+  - version: 4.1(3h)
+    note: Fixed UCS 6200–6400
+  - version: 4.2(1l)
+    note: Fixed UCS 6200–6400
+  - version: 2.3.1.219
+    note: FXOS fixed for Firepower 4100/9300
+  - version: 2.9.1.158
+    note: FXOS fixed for Firepower 4100/9300
+  - version: 2.10.1.179
+    note: FXOS fixed for Firepower 4100/9300
+
+not_affected:
+  - Firepower 1000 Series
+  - Firepower 2100 Series
+
+detection:
+  cli_check: show running-config cdp all | include "cdp enable"
+  config_keywords:
+    - cdp enable
+  other_indicators:
+    - NXOS version < 7.0(3)I7(10) or < 9.3(8)
+    - UCS < 4.1(3h)
+    - FXOS < 2.3.1.219 or < 2.9.1.158
+
+references:
+  - https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-cdp-dos-G8DPLWYG
+  - Cisco Bug IDs: CSCvz72442, CSCvz72462, CSCvz72463
+
+cvss:
+  base_score: 4.3
+  vector: CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
+
+rule_metadata:
+  name: rule_cve202220625
+  commands:
+    - show_version
+    - show_running_config_cdp
+  tags:
+    - cve
+    - security
+    - dos
+    - nxos

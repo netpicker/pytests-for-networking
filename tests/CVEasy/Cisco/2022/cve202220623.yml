@@ -7,30 +7,63 @@ defaults:
 
 tests:
   rule_cve202220623:
+
+    # 1. Vulnerable: Nexus 9500, version < 7.0.3.I7.10, BFD enabled
     - outcome: TESTS_FAILED
       commands:
         *show_version: |
           Cisco Nexus Operating System (NX-OS) Software
-          Nexus 9000 C9300v Chassis
+          Nexus 9500 C9500-32QC Chassis
           NXOS: version 7.0.3.I7.9
         *check_bfd: |
           feature bfd
 
-    - outcome: OK
+    # 2. Vulnerable: Nexus 9500, version < 9.3(8), BFD enabled
+    - outcome: TESTS_FAILED
       commands:
         *show_version: |
           Cisco Nexus Operating System (NX-OS) Software
-          Nexus 9000 C9300v Chassis
-          NXOS: version 7.0.3.I7.10
-        *check_bfd: |
-          # BFD is disabled (no config line)
-
-    - outcome: OK
-      commands:
-        *show_version: |
-          Cisco Nexus Operating System (NX-OS) Software
-          Nexus 7000 Chassis
-          NXOS: version 8.4.2
+          Nexus 9500 C9500-48Y4C Chassis
+          NXOS: version 9.3(7)
         *check_bfd: |
           feature bfd
 
+    # 3. Safe: Nexus 9500, fixed version 7.0.3.I7.10, BFD enabled
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco Nexus Operating System (NX-OS) Software
+          Nexus 9500 C9500-32QC Chassis
+          NXOS: version 7.0.3.I7.10
+        *check_bfd: |
+          feature bfd
+
+    # 4. Safe: Nexus 9500, fixed version 9.3(8), BFD enabled
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco Nexus Operating System (NX-OS) Software
+          Nexus 9500 C9500-32QC Chassis
+          NXOS: version 9.3(8)
+        *check_bfd: |
+          feature bfd
+
+    # 5. Safe: BFD not enabled (even if on older version)
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco Nexus Operating System (NX-OS) Software
+          Nexus 9500 C9500-32QC Chassis
+          NXOS: version 7.0.3.I7.9
+        *check_bfd: |
+          # No BFD configuration
+
+    # 6. Safe: Nexus 9300 platform (not affected), BFD enabled
+    - outcome: OK
+      commands:
+        *show_version: |
+          Cisco Nexus Operating System (NX-OS) Software
+          Nexus 9300 C93180YC-FX Chassis
+          NXOS: version 7.0.3.I7.9
+        *check_bfd: |
+          feature bfd
