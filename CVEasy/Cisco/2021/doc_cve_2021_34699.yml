@@ -1,0 +1,57 @@
+id: CVE-2021-34699
+title: Cisco IOS and IOS XE Software TrustSec CLI Parser Denial of Service Vulnerability
+platform:
+  - cisco_ios
+  - cisco_xe
+
+description: |
+  A vulnerability exists in the TrustSec CLI parser of Cisco IOS and Cisco IOS XE Software.
+
+impact:
+  summary: An authenticated, remote attacker could cause an affected device to reload, resulting in a denial of service (DoS) condition.
+  conditions:
+    - improper interaction between the web UI and the CLI parser
+    - requesting a particular CLI command to be run through the web UI
+    - device must be running a vulnerable release of Cisco IOS or IOS XE Software
+    - device must have TrustSec capabilities
+    - device must have the web UI enabled
+  result: The device reloads, leading to a denial of service (DoS) condition.
+
+affected_platforms:
+  - Cisco devices running a vulnerable release of Cisco IOS or IOS XE Software, that have TrustSec capabilities, and have the web UI enabled.
+
+fixed_versions: [] # Information on specific fixed versions could not be programmatically extracted from the advisory.
+
+not_affected:
+  - IOS XR Software
+  - NX-OS Software
+
+detection:
+  commands:
+    show_subsys:
+      patterns:
+        - "cts_core"
+    show_running_config_http:
+      patterns:
+        - "ip http server"
+        - "ip http secure-server"
+  logic: |
+    Device is vulnerable if TrustSec capabilities are present AND web UI is enabled AND device is running a vulnerable version.
+    Note: Specific vulnerable version information could not be programmatically extracted from the advisory.
+    Manual verification against the advisory's "Fixed Software" section is recommended.
+
+references:
+  - https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-trustsec-dos-7fuXDR2
+
+cvss:
+  base_score: 7.7
+  vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H/E:X/RL:X/RC:X
+
+rule_metadata:
+  name: rule_cve_2021_34699
+  version: 1.0
+  type: cve
+  cve: CVE-2021-34699
+  platform:
+    - cisco_ios
+    - cisco_xe

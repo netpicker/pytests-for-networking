@@ -1,0 +1,98 @@
+.show_subsys: &show_subsys "show subsys | include cts_core"
+.show_http_config: &show_http_config "show running-config | include ip http server|secure-server"
+
+defaults:
+  devices:
+    - platform: cisco_ios
+
+tests:
+  rule_cve_2021_34699:
+
+    # 1. Vulnerable: TrustSec present, HTTP enabled
+    - outcome: TESTS_FAILED
+      commands:
+        *show_subsys: |
+          cts_core             Protocol    1.000.001
+        *show_http_config: |
+          ip http server
+
+    # 2. Vulnerable: TrustSec present, HTTPS enabled
+    - outcome: TESTS_FAILED
+      commands:
+        *show_subsys: |
+          cts_core             Protocol    1.000.001
+        *show_http_config: |
+          ip http secure-server
+
+    # 3. Safe: TrustSec absent
+    - outcome: OK
+      commands:
+        *show_subsys: ""
+        *show_http_config: |
+          ip http server
+
+    # 4. Safe: HTTP server disabled
+    - outcome: OK
+      commands:
+        *show_subsys: |
+          cts_core             Protocol    1.000.001
+        *show_http_config: ""
+
+    # 5. Safe: active-session-modules none disables exploit over HTTP
+    - outcome: OK
+      commands:
+        *show_subsys: |
+          cts_core             Protocol    1.000.001
+        *show_http_config: |
+          ip http server
+          ip http active-session-modules none
+
+    # 6. Safe: secure-active-session-modules none disables exploit over HTTPS
+    - outcome: OK
+      commands:
+        *show_subsys: |
+          cts_core             Protocol    1.000.001
+        *show_http_config: |
+          ip http secure-server
+          ip http secure-active-session-modules none
+
+    # 7. Malformed TrustSec output
+    - outcome: OK
+      commands:
+        *show_subsys: |
+          unexpected text
+        *show_http_config: |
+          ip http server
+
+    # 8. Malformed HTTP output
+    - outcome: OK
+      commands:
+        *show_subsys: |
+          cts_core xyz
+        *show_http_config: |
+          not-a-command
+
+    # 9. Unknown version context (still vulnerable detection logic independent of version)
+    - outcome: TESTS_FAILED
+      commands:
+        *show_subsys: |
+          cts_core
+        *show_http_config: |
+          ip http secure-server
+
+    # 10. Skip on same platform but TrustSec not in features
+    - outcome: OK
+      commands:
+        *show_subsys: |
+          other_subsys
+        *show_http_config: |
+          ip http server
+
+    # 11. Edge: multiple features present
+    - outcome: TESTS_FAILED
+      commands:
+        *show_subsys: |
+          cts_core
+        *show_http_config: |
+          ip http server
+          ip http secure-server
