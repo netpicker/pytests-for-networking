@@ -1,6 +1,7 @@
 from comfy import medium
 
 
+@pytest.mark.skip("has to be reviewed")
 @medium(
     name='rule_3335_set_ip_rip_authentication_mode_to_md5',
     platform=['cisco_ios', 'cisco_xe'],

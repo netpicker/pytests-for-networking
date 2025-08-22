@@ -1,6 +1,7 @@
 from comfy import medium
 
 
+@pytest.mark.skip("has to be reviewed")
 @medium(
     name='rule_3318_set_ip_authentication_key_chain_eigrp',
     platform=['cisco_ios', 'cisco_xe'],

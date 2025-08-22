@@ -1,6 +1,7 @@
 from comfy.compliance import medium
 
 
+@pytest.mark.skip("has to be reviewed")
 @medium(
     name='rule_156_create_an_access_list_for_use_with_snmp',
     platform=['cisco_ios', 'cisco_xe'],

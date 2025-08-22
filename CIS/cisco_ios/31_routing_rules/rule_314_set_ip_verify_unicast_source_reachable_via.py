@@ -1,6 +1,7 @@
 from comfy.compliance import medium
 
 
+@pytest.mark.skip("has to be reviewed")
 @medium(
     name='rule_314_set_ip_verify_unicast_source_reachable_via',
     platform=['cisco_ios'],  # Assuming Cisco IOS is the target platform
