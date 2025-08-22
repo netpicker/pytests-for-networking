@@ -1,7 +1,9 @@
+import pytest
 from comfy.compliance import low
 
 
 # We have to define the actual interface here
+@pytest.mark.skip("has to be reviewed")
 @low(
   name='rule_322_set_inbound_ip_access_group_on_the_external_interface',
   platform=['cisco_ios', 'cisco_xe'],

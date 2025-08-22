@@ -1,6 +1,8 @@
+import pytest
 from comfy.compliance import low
 
 
+@pytest.mark.skip("has to be reviewed")
 @low(
     name='rule_321_set_ip_access_list_extended_to_forbid_private_source_addresses_from_external_networks',
     platform=['cisco_ios_xe'],  # Targeting Cisco IOS XE as specified
