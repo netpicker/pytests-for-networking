@@ -6,7 +6,7 @@ from comfy import high
     platform=['cisco_ios'],
     commands=dict(
         show_version='show version',
-        check_ios='show running-config | include ios'
+        check_iox='show running-config | include iox'
     ),
 )
 def rule_cve202220721(configuration, commands, device, devices):
@@ -17,18 +17,18 @@ def rule_cve202220721(configuration, commands, device, devices):
     operating system, execute arbitrary code, install applications without authentication, or conduct
     cross-site scripting (XSS) attacks.
     """
-    # Extract the output of the command to check IOS configuration
-    ios_output = commands.check_ios
+    # Extract the output of the command to check IOx configuration
+    iox_output = commands.check_iox
 
-    # Check if IOS is configured
-    ios_configured = 'ios' in ios_output
+    # Check if IOx is configured
+    iox_configured = 'iox' in iox_output
 
     # Assert that the device is not vulnerable
-    assert not ios_configured, (
+    assert not iox_configured, (
         f"Device {device.name} is vulnerable to CVE-2022-20721. "
-        "The device has IOS application hosting configured, "
+        "The device has IOx application hosting configured, "
         "which could allow an attacker to execute arbitrary commands, install unauthorized applications, "
         "or conduct XSS attacks. "
         "For more information, see "
-        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ios-yuXQ6hFj"
+        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-iox-yuXQ6hFj"
     )
