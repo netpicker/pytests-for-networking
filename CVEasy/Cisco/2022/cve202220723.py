@@ -24,7 +24,7 @@ def rule_cve202220723(configuration, commands, device, devices):
     iox_configured = 'iox' in iox_output
 
     # Assert that the device is not vulnerable
-    assert not ios_configured, (
+    assert not iox_configured, (
         f"Device {device.name} is vulnerable to CVE-2022-20723. "
         "The device has IOx application hosting configured, "
         "which could allow an attacker to execute arbitrary commands, install unauthorized applications, "
