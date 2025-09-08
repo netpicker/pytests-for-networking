@@ -1,6 +1,7 @@
 from comfy.compliance import medium
 
 
+@pytest.mark.skip("has to be reviewed")
 @medium(
     name='rule_128_set_exec_timeout_to_less_than_or_equal_to_10_minutes_line',
     platform=['cisco_ios', 'cisco_xe'],

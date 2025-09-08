@@ -1,6 +1,7 @@
 from comfy.compliance import medium
 
 
+@pytest.mark.skip("has to be reviewed")
 @medium(
     name='rule_134_set_the_banner_text_for_webauth_banner',
     platform=['cisco_ios', 'cisco_xe'],

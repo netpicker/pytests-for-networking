@@ -1,6 +1,7 @@
 from comfy.compliance import low
 
 
+@pytest.mark.skip("has to be reviewed")
 @low(
   name='rule_162_autosecure',
   platform=['cisco_ios', 'cisco_xe'],

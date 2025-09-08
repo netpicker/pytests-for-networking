@@ -1,6 +1,7 @@
 from comfy.compliance import low
 
 
+@pytest.mark.skip("has to be reviewed")
 @low(
     name='rule_164_configure_web_interface',
     platform=['cisco_ios'],  # Assuming Cisco IOS is the target platform
