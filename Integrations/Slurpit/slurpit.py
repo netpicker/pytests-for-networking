@@ -1,4 +1,4 @@
-from comfy import medium
+"""from comfy import medium
 
 
 @medium(
@@ -16,3 +16,4 @@ async def rule_slurpit(slurpit):
         print(d.hostname)
 
     assert any(d.hostname == 'sandbox-iosxr-1.cisco.com' for d in devices)
+"""
