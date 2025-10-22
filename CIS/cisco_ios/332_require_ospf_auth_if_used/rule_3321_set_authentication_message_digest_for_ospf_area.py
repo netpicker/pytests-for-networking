@@ -3,10 +3,10 @@ import re
 
 
 @medium(
-    name='rule_3322_set_ip_ospf_message_digest_key_md5',
-    platform=['cisco_ios'],
+    name='rule_3321_set_authentication_message_digest_for_ospf_area',
+    platform=['cisco_ios','cisco_xe'],
 )
-def rule_3322_set_ip_ospf_message_digest_key_md5(configuration, device, ref):
+def rule_3321_set_authentication_message_digest_for_ospf_area(configuration, device):
     config = str(configuration)
     interfaces = re.split(r'\ninterface ', config)
     failed_interfaces = []
@@ -28,7 +28,7 @@ def rule_3322_set_ip_ospf_message_digest_key_md5(configuration, device, ref):
         if has_ospf:
             # Check for authentication
             has_auth = any(
-                re.search(r'\bip ospf authentication message-digest key\b', line)
+                re.search(r'\bip ospf authentication message-digest\b', line)
                 for line in lines
             )
             if not has_auth:
@@ -36,11 +36,10 @@ def rule_3322_set_ip_ospf_message_digest_key_md5(configuration, device, ref):
     
     combined_message = {
         "message": (
-            "OSPF authentication (message-digest-key) missing on interfaces: "
+            "OSPF authentication (message-digest) missing on interfaces: "
             + ", ".join(failed_interfaces)
         ),
         "ref": ref,
-    }
     assert (
         len(failed_interfaces) == 0
-    ), combined_message
+    ), ref
