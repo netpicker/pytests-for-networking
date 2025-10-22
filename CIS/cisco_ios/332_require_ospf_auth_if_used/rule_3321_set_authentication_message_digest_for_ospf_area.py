@@ -40,6 +40,7 @@ def rule_3321_set_authentication_message_digest_for_ospf_area(configuration, dev
             + ", ".join(failed_interfaces)
         ),
         "ref": ref,
+    }
     assert (
         len(failed_interfaces) == 0
     ), ref

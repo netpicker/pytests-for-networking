@@ -33,7 +33,7 @@ def rule_3322_set_ip_ospf_message_digest_key_md5(configuration, device, ref):
             )
             if not has_auth:
                 failed_interfaces.append(interface_name)
-    
+
     combined_message = {
         "message": (
             "OSPF authentication (message-digest-key) missing on interfaces: "
