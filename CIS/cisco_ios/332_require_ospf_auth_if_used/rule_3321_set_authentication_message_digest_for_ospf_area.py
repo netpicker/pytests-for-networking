@@ -4,9 +4,9 @@ import re
 
 @medium(
     name='rule_3321_set_authentication_message_digest_for_ospf_area',
-    platform=['cisco_ios','cisco_xe'],
+    platform=['cisco_ios', 'cisco_xe'],
 )
-def rule_3321_set_authentication_message_digest_for_ospf_area(configuration, device):
+def rule_3321_set_authentication_message_digest_for_ospf_area(configuration, device, ref):
     config = str(configuration)
     interfaces = re.split(r'\ninterface ', config)
     failed_interfaces = []
@@ -33,7 +33,7 @@ def rule_3321_set_authentication_message_digest_for_ospf_area(configuration, dev
             )
             if not has_auth:
                 failed_interfaces.append(interface_name)
-    
+
     combined_message = {
         "message": (
             "OSPF authentication (message-digest) missing on interfaces: "
@@ -43,4 +43,4 @@ def rule_3321_set_authentication_message_digest_for_ospf_area(configuration, dev
     }
     assert (
         len(failed_interfaces) == 0
-    ), ref
+    ), combined_message
