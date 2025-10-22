@@ -1,4 +1,4 @@
-.rule_3321_set_authetnication_message_digest_for_ospf_area
+.rule_3321_set_authentication_message_digest_for_ospf_area
 
   References: 1. http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_ospf/command/ospf-i1.html#GUID-3D5781A3-F8DF-4760-A551-6A3AB80A42ED
               2. http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_ospf/command/ospf-a1.html#GUID-81D0F753-D8D5-494E-9A10-B15433CFD445
