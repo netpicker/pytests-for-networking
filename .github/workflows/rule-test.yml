@@ -7,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: netpicker/crt
-      options: --cpus 1
+      # options: --cpus 1
     steps:
       - uses: actions/checkout@v3
       - name: Run yaml tests
-        run: test-rules -p runner.yaml_rules -vvvl --rootdir $PWD $PWD
+        run: test-rules -n auto -p runner.yaml_rules -vvvl --rootdir $PWD $PWD
