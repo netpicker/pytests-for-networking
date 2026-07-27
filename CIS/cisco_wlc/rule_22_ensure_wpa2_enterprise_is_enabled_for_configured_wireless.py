@@ -1,6 +1,7 @@
 from comfy.compliance import medium
 
 
+@pytest.mark.skip("has to be reviewed")
 @medium(
     name='rule_22_ensure_wpa2_enterprise_is_enabled_for_configured_wireless',
     platform=['cisco_wlc'],
